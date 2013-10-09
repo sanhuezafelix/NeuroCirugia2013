@@ -1,0 +1,102 @@
+//
+//  mSeleccionJornadaViewController.m
+//  DualmobileCongress
+//
+//  Created by luis Gonzalez on 12-05-13.
+//  Copyright (c) 2013 Luis Gonzalez. All rights reserved.
+//
+
+#import "mSeleccionJornadaViewController.h"
+#import "GAI.h"
+
+@interface mSeleccionJornadaViewController ()
+
+@end
+
+@implementation mSeleccionJornadaViewController
+
+-(void)awakeFromNib{
+    self.Jornadas = [[NSArray alloc]initWithObjects:@"Primera Jornada",@"Segunda Jornada",@"Tercera Jornada", nil];
+     self.InicioJornadas = [[NSArray alloc]initWithObjects:@"2013-05-29 09:00:00 +0000",@"2013-05-29 11:00:00 +0000",@"2013-05-29 14:30:00 +0000", nil];
+    self.FinJornadas = [[NSArray alloc]initWithObjects:@"2013-05-29 10:31:00 +0000",@"2013-05-29 13:01:00 +0000",@"2013-05-29 19:00:00 +0000", nil];
+}
+
+- (void)viewDidLoad
+{
+    [super viewDidLoad];
+    //trackenado GA
+    
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [trackerJornada sendView:@"SeleccionJornada"];
+    UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
+    [self.BotonMenu setBackgroundImage:barButtonImage
+                              forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    self.title = @" ";
+    
+        UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
+    [self.BotonNotificaciones setBackgroundImage:NotButtonImage
+                              forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+   
+    self.title = @" ";
+}
+#pragma -mark Tableview datasource y delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return [self.Jornadas count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    NSString *cellIdentifier = @"customCell";
+    mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
+    
+    cell.Titulo.text = [self.Jornadas objectAtIndex:indexPath.row];
+    
+    return cell;
+}
+
+
+#pragma -mark enviamos datos de la celda selecionadas a la vista de detalle
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Comprobamos si el identificador esta bien.
+    
+    if ([segue.identifier isEqualToString:@"Jornada"])
+    {
+    // Definimos el destino.
+        mJornadaViewController *destino = (mJornadaViewController *)segue.destinationViewController;
+        destino.InicioJornada = [self.InicioJornadas objectAtIndex:[self.CustomTableview indexPathForSelectedRow].row];
+        destino.FinJornada = [self.FinJornadas objectAtIndex:[self.CustomTableview indexPathForSelectedRow].row];
+        destino.Titulo =[self.Jornadas objectAtIndex:[self.CustomTableview indexPathForSelectedRow].row];
+    }
+}
+
+#pragma -mark Alto de la cada celda
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    return 73.0f;
+}
+
+- (IBAction)RevelarMenuLateral:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECRight];
+}
+
+- (IBAction)RevelarNotificaciones:(id)sender {
+    [self.slidingViewController anchorTopViewTo:ECLeft];
+}
+- (void)viewDidUnload {
+    [self setBotonMenu:nil];
+    [self setCustomTableview:nil];
+    [super viewDidUnload];
+}
+@end
