@@ -65,7 +65,7 @@ float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
     
     if (sysVer >= 7.0){
         
-        _dele.window.tintColor = [UIColor darkGrayColor];
+        _dele.window.tintColor = [UIColor lightGrayColor];
         
 //        self.navigationItem.hidesBackButton = YES;
 //        

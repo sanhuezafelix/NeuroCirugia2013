@@ -42,7 +42,7 @@ float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
     
     if (sysVer >= 7.0){
         
-        _dele.window.tintColor = [UIColor darkGrayColor];
+        _dele.window.tintColor = [UIColor lightGrayColor];
         
         //        [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont boldSystemFontOfSize:16.0f], UITextAttributeFont, [UIColor darkGrayColor], UITextAttributeTextShadowColor, [NSValue valueWithCGSize:CGSizeMake(0.0,-1.0)], UITextAttributeTextShadowOffset, nil] forState:UIControlStateNormal];
         
