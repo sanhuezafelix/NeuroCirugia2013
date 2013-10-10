@@ -136,12 +136,6 @@ for (NSString *unaEntidad in nombresEntidad)
 
 #pragma mark - Plist Metodos
 
-/*
- * esta funcion guarda es de ejemplo para ver en el simulador notificaciones borrarla para probar notificaciones
- *  en el dispocitivo
- *
- */
-
 -(void)Guardar{
     
     NSLog(@"guardando...");

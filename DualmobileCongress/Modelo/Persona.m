@@ -2,7 +2,7 @@
 //  Persona.m
 //  DualmobileCongress
 //
-//  Created by felix sanhueza on 6/6/13.
+//  Created by Arturo Sanhueza on 09-10-13.
 //  Copyright (c) 2013 Luis Gonzalez. All rights reserved.
 //
 
@@ -16,6 +16,7 @@
 @implementation Persona
 
 @dynamic bio;
+@dynamic cargo;
 @dynamic nombre;
 @dynamic tratamiento;
 @dynamic eventoQueDicto;

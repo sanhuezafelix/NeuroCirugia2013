@@ -38,7 +38,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:60.0], @"kIntervaloHora",
+                                       [NSNumber numberWithFloat:6.0], @"kIntervaloHora",
                                        [NSNumber numberWithFloat:300.0], @"kIntervaloHoraImagen",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacionImagen",
@@ -66,20 +66,8 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     [NSURLCache setSharedURLCache:URLCache];
     
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
-//        
-//    if (_window.frame.size.height == 480) {
-//        UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Iphone" bundle:nil];
-//        [_window setRootViewController:[storyboard instantiateInitialViewController]];
-//        [defaults setObject:[NSNumber numberWithBool:false] forKey:@"@4i"];
-//        
-//    } else  {
-//        UIStoryboard * storyboard = [UIStoryboard storyboardWithName:@"Iphone@4i" bundle:nil];
-//        [_window setRootViewController:[storyboard instantiateInitialViewController]];
-//        [defaults setObject:[NSNumber numberWithBool:true] forKey:@"@4i"];
-//    }
-// 
-       return YES;
-//}
+    
+    return YES;
     
 }
 
@@ -174,7 +162,6 @@ static NSString *const kStoreName = @"Congresos.sqlite";
             NSLog(@"Oops, could copy preloaded data");
     }
 }
- 
     NSDictionary *options = @{
                               NSInferMappingModelAutomaticallyOption : @(YES),
                               NSMigratePersistentStoresAutomaticallyOption: @(YES)

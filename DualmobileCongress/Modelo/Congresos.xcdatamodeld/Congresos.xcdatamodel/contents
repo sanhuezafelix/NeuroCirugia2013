@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="2061" systemVersion="12E55" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="3396" systemVersion="12F37" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
     <entity name="Evento" representedClassName="Evento" syncable="YES">
         <attribute name="descripcionEvento" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaFin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaInicio" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tematica" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="eventoDelQueSoyHijo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="eventoMadre" inverseEntity="Evento" syncable="YES"/>
-        <relationship name="eventoDelQueSoyPadre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="eventoHijo" inverseEntity="Evento" syncable="YES"/>
-        <relationship name="eventoHijo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="eventoDelQueSoyPadre" inverseEntity="Evento" syncable="YES"/>
-        <relationship name="eventoMadre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="eventoDelQueSoyHijo" inverseEntity="Evento" syncable="YES"/>
         <relationship name="imagenEvento" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Imagen" inverseName="eventoQueGrafico" inverseEntity="Imagen" syncable="YES"/>
         <relationship name="institucionPatrocinante" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Institucion" inverseName="eventoQuePatrocino" inverseEntity="Institucion" syncable="YES"/>
         <relationship name="lugarEnQueMeDesarrollo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lugar" inverseName="eventoLugar" inverseEntity="Lugar" syncable="YES"/>
@@ -44,6 +40,7 @@
     </entity>
     <entity name="Persona" representedClassName="Persona" syncable="YES">
         <attribute name="bio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="cargo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tratamiento" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="eventoQueDicto" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="speaker" inverseEntity="Evento" syncable="YES"/>
@@ -60,13 +57,13 @@
         <relationship name="institucionQueDetermino" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Institucion" inverseName="tipoInstitucion" inverseEntity="Institucion" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Evento" positionX="277" positionY="126" width="128" height="253"/>
-        <element name="Imagen" positionX="43" positionY="239" width="128" height="103"/>
-        <element name="Institucion" positionX="484" positionY="308" width="128" height="133"/>
-        <element name="Lugar" positionX="457" positionY="497" width="182" height="133"/>
-        <element name="Pais" positionX="675" positionY="513" width="200" height="75"/>
-        <element name="Persona" positionX="52" positionY="464" width="128" height="148"/>
-        <element name="TipoEvento" positionX="279" positionY="9" width="128" height="75"/>
-        <element name="TipoInstitucion" positionX="682" positionY="288" width="128" height="75"/>
+        <element name="Evento" positionX="349" positionY="45" width="128" height="193"/>
+        <element name="Imagen" positionX="304" positionY="576" width="128" height="103"/>
+        <element name="Institucion" positionX="585" positionY="407" width="128" height="133"/>
+        <element name="Lugar" positionX="-459" positionY="369" width="182" height="133"/>
+        <element name="Pais" positionX="-65" positionY="558" width="200" height="75"/>
+        <element name="Persona" positionX="-288" positionY="83" width="128" height="163"/>
+        <element name="TipoEvento" positionX="547" positionY="630" width="128" height="75"/>
+        <element name="TipoInstitucion" positionX="574" positionY="168" width="128" height="75"/>
     </elements>
 </model>

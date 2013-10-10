@@ -2,7 +2,7 @@
 //  Persona.h
 //  DualmobileCongress
 //
-//  Created by felix sanhueza on 6/6/13.
+//  Created by Arturo Sanhueza on 09-10-13.
 //  Copyright (c) 2013 Luis Gonzalez. All rights reserved.
 //
 
@@ -14,6 +14,7 @@
 @interface Persona : NSManagedObject
 
 @property (nonatomic, retain) NSString * bio;
+@property (nonatomic, retain) NSString * cargo;
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSString * tratamiento;
 @property (nonatomic, retain) NSSet *eventoQueDicto;

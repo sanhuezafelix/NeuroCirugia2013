@@ -16,9 +16,9 @@
 @implementation mSeleccionJornadaViewController
 
 -(void)awakeFromNib{
-    self.Jornadas = [[NSArray alloc]initWithObjects:@"Primera Jornada",@"Segunda Jornada",@"Tercera Jornada", nil];
-     self.InicioJornadas = [[NSArray alloc]initWithObjects:@"2013-05-29 09:00:00 +0000",@"2013-05-29 11:00:00 +0000",@"2013-05-29 14:30:00 +0000", nil];
-    self.FinJornadas = [[NSArray alloc]initWithObjects:@"2013-05-29 10:31:00 +0000",@"2013-05-29 13:01:00 +0000",@"2013-05-29 19:00:00 +0000", nil];
+    self.Jornadas = [[NSArray alloc]initWithObjects:@"Miércoles 23",@"Jueves 24",@"Viernes 25",@"Sábado 26", nil];
+     self.InicioJornadas = [[NSArray alloc]initWithObjects:@"2013-10-23 14:00:00 +0000",@"2013-10-24 08:00:00 +0000",@"2013-10-25 07:30:00 +0000",@"2013-10-26 09:00:00 +0000", nil];
+    self.FinJornadas = [[NSArray alloc]initWithObjects:@"2013-10-23 20:31:00 +0000",@"2013-10-24 20:01:00 +0000",@"2013-10-25 21:01:00 +0000",@"2013-10-26 13:01:00 +0000", nil];
 }
 
 - (void)viewDidLoad

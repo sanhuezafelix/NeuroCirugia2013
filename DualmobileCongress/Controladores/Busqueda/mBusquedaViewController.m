@@ -145,10 +145,7 @@
         destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
-
-        
     }
-    
 }
 
 #pragma -mark Alto de la cada celda
