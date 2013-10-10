@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		7849982B17E019190019D7BB /* Iphone@4i.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7849982917E019190019D7BB /* Iphone@4i.storyboard */; };
+		786DBFD018074D98005342F7 /* navbar_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCD18074D98005342F7 /* navbar_about.png */; };
+		786DBFD118074D98005342F7 /* navbar_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCE18074D98005342F7 /* navbar_about@2x.png */; };
+		786DBFD218074D98005342F7 /* navbar128_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCF18074D98005342F7 /* navbar128_about@2x.png */; };
 		892D70F4174504FE00DC5B08 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F3174504FE00DC5B08 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F51745050400DC5B08 /* MessageUI.framework */; };
 		8957F7A8175EC35800C59973 /* mJornadaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957F7A5175EC35800C59973 /* mJornadaViewController.m */; };
@@ -291,6 +294,9 @@
 /* Begin PBXFileReference section */
 		4FDDBEA3C2F846D79A2536B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7849982917E019190019D7BB /* Iphone@4i.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Iphone@4i.storyboard"; sourceTree = "<group>"; };
+		786DBFCD18074D98005342F7 /* navbar_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_about.png; sourceTree = "<group>"; };
+		786DBFCE18074D98005342F7 /* navbar_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_about@2x.png"; sourceTree = "<group>"; };
+		786DBFCF18074D98005342F7 /* navbar128_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar128_about@2x.png"; sourceTree = "<group>"; };
 		892D70F3174504FE00DC5B08 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		892D70F51745050400DC5B08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8957F7A4175EC35800C59973 /* mJornadaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mJornadaViewController.h; sourceTree = "<group>"; };
@@ -1325,6 +1331,9 @@
 		C3EF4C0E18073EDC000569FC /* About */ = {
 			isa = PBXGroup;
 			children = (
+				786DBFCD18074D98005342F7 /* navbar_about.png */,
+				786DBFCE18074D98005342F7 /* navbar_about@2x.png */,
+				786DBFCF18074D98005342F7 /* navbar128_about@2x.png */,
 				C3EF4C0F18073EDC000569FC /* aimagos_web.png */,
 				C3EF4C1018073EDC000569FC /* aimagos_web@2x.png */,
 				C3EF4C1118073EDC000569FC /* fondo_about.png */,
@@ -1647,6 +1656,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3EF4CB618073EDD000569FC /* logo_facebook.png in Resources */,
+				786DBFD018074D98005342F7 /* navbar_about.png in Resources */,
 				C3EF4C9118073EDD000569FC /* fondo_about.png in Resources */,
 				C3EF4CF018073EDD000569FC /* ButtonAbout@2x.png in Resources */,
 				C3EF4CB918073EDD000569FC /* navbar@2x.png in Resources */,
@@ -1708,6 +1718,7 @@
 				C3EF4CBA18073EDD000569FC /* no_hay_activ.png in Resources */,
 				C3EF4CD018073EDD000569FC /* icon_sopnia_114.png in Resources */,
 				C3EF4CA318073EDD000569FC /* boton_calendario@2x.png in Resources */,
+				786DBFD218074D98005342F7 /* navbar128_about@2x.png in Resources */,
 				C3953421174C5DCC0048543B /* Manifest.lock in Resources */,
 				C3EF4CDD18073EDD000569FC /* celda_mapa.png in Resources */,
 				C3EF4CAD18073EDD000569FC /* fotoSpeaker@2x.png in Resources */,
@@ -1781,6 +1792,7 @@
 				C3EF4CED18073EDD000569FC /* butonhome.png in Resources */,
 				C3EF4CC818073EDD000569FC /* shareontwit.png in Resources */,
 				C3EF4C9F18073EDD000569FC /* fondo_inicio@2x.jpg in Resources */,
+				786DBFD118074D98005342F7 /* navbar_about@2x.png in Resources */,
 				C3EF4CD818073EDD000569FC /* dia de la actividad.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
