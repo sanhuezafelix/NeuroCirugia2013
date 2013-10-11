@@ -14,6 +14,12 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>icon_sopnia_58</string>
+				<string>icon_sopnia_80</string>
+				<string>icon_sopnia_29</string>
+				<string>icon_sopnia_120</string>
+				<string>icon_sopnia_114</string>
+				<string>icon_sopnia_57</string>
 				<string>mcongress_icon_57.png</string>
 				<string>mcongress_icon_114.png</string>
 			</array>
