@@ -215,7 +215,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         UIView *ColorSelecion = [[UIView alloc] init];
         ColorSelecion.backgroundColor = [UIColor colorWithRed:(246/255.0) green:(146/255.0) blue:(28/255.0) alpha:1.0f];
         cell.selectedBackgroundView = ColorSelecion;
-        cell.contentView.backgroundColor    =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"eem73.png"]];
+        cell.contentView.backgroundColor    =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"eem.png"]];
         cell.Titulo.text = info.titulo;
         cell.Subtitulo.text = info.speaker.nombre;
         cell.Imagen.image = beforeImage;
@@ -550,7 +550,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     }
     
     [super viewWillAppear:animated];
-
 }
 
 - (void)viewDidUnload

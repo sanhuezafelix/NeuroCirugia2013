@@ -22,9 +22,9 @@
 
 -(void)awakeFromNib
 {
-    self.IconoMenu   = [[NSArray alloc]initWithObjects:@"butonhome.png",@"ButtonJornada.png",@"ButtonSpeakers.png",@"ButtonBusqueda.png",@"ButtonMapa.png",@"ButtonAbout.png", nil];
+    self.IconoMenu   = [[NSArray alloc]initWithObjects:@"butonhome.png",@"ButtonJornada.png",@"ButtonSpeakers.png",@"ButtonBusqueda.png",@"ButtonMapa.png", @"buttonhoteleria.png",@"ButtonAbout.png", nil];
                     
-    self.MenuItems  = [[NSArray alloc]initWithObjects: @"Ahora",@"Jornada",@"Speaker",@"Busqueda",@"Mapas",@"About", nil];
+    self.MenuItems  = [[NSArray alloc]initWithObjects: @"Ahora",@"Jornada",@"Speaker",@"Busqueda",@"Mapas",@"Hazte Socio", nil];
 }
 
 - (void)viewDidLoad
@@ -32,9 +32,7 @@
     [super viewDidLoad];
 	[self.slidingViewController setAnchorRightRevealAmount:205.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
-
 }
-
 
 #pragma mark Tableview Delegate y DataSource
 
@@ -42,7 +40,6 @@
 {
     return self.MenuItems.count;
 }
-
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -61,7 +58,6 @@
     
     return cell;
 }
-
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {

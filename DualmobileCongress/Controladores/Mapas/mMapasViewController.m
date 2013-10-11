@@ -46,8 +46,6 @@
 
 -(void)IniciarPageView{
     REPagedScrollView *scrollView = [[REPagedScrollView alloc] initWithFrame:self.view.bounds];
-//    scrollView.pageControl.pageIndicatorTintColor = [UIColor grayColor];
-//    scrollView.pageControl.currentPageIndicatorTintColor = [UIColor blackColor];
     [self.view addSubview:scrollView];
     mZoomMapas *zoom = [[mZoomMapas alloc]initWithImageMapName:@"salonriesco_nivel1.jpg" atLocation:CGPointMake(5, 5)];
     [scrollView addPage:zoom];

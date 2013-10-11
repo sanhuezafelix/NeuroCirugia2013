@@ -11,6 +11,8 @@
 		786DBFD018074D98005342F7 /* navbar_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCD18074D98005342F7 /* navbar_about.png */; };
 		786DBFD118074D98005342F7 /* navbar_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCE18074D98005342F7 /* navbar_about@2x.png */; };
 		786DBFD218074D98005342F7 /* navbar128_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCF18074D98005342F7 /* navbar128_about@2x.png */; };
+		7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C75C180890260055D0D7 /* mSimposioViewController.m */; };
+		7893C765180890300055D0D7 /* mSocioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C764180890300055D0D7 /* mSocioViewController.m */; };
 		892D70F4174504FE00DC5B08 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F3174504FE00DC5B08 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F51745050400DC5B08 /* MessageUI.framework */; };
 		8957F7A8175EC35800C59973 /* mJornadaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957F7A5175EC35800C59973 /* mJornadaViewController.m */; };
@@ -297,6 +299,10 @@
 		786DBFCD18074D98005342F7 /* navbar_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_about.png; sourceTree = "<group>"; };
 		786DBFCE18074D98005342F7 /* navbar_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_about@2x.png"; sourceTree = "<group>"; };
 		786DBFCF18074D98005342F7 /* navbar128_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar128_about@2x.png"; sourceTree = "<group>"; };
+		7893C75B180890260055D0D7 /* mSimposioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSimposioViewController.h; path = Simposio/mSimposioViewController.h; sourceTree = "<group>"; };
+		7893C75C180890260055D0D7 /* mSimposioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mSimposioViewController.m; path = Simposio/mSimposioViewController.m; sourceTree = "<group>"; };
+		7893C763180890300055D0D7 /* mSocioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSocioViewController.h; path = Socio/mSocioViewController.h; sourceTree = "<group>"; };
+		7893C764180890300055D0D7 /* mSocioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mSocioViewController.m; path = Socio/mSocioViewController.m; sourceTree = "<group>"; };
 		892D70F3174504FE00DC5B08 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		892D70F51745050400DC5B08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8957F7A4175EC35800C59973 /* mJornadaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mJornadaViewController.h; sourceTree = "<group>"; };
@@ -635,6 +641,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */,
 				C33738F21785100A00BD0FA9 /* CFNetwork.framework in Frameworks */,
 				C33738F017850FFB00BD0FA9 /* SystemConfiguration.framework in Frameworks */,
 				C33738EC17850FE900BD0FA9 /* AudioToolbox.framework in Frameworks */,
@@ -644,7 +651,6 @@
 				C33738E417850FBF00BD0FA9 /* libz.1.1.3.dylib in Frameworks */,
 				C33738E217850F8B00BD0FA9 /* Security.framework in Frameworks */,
 				C33738E017850F8400BD0FA9 /* MobileCoreServices.framework in Frameworks */,
-				892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */,
 				AA1D23BA176FCA340080F649 /* EventKitUI.framework in Frameworks */,
 				AA1D23B8176FC8E20080F649 /* EventKit.framework in Frameworks */,
 				892D70F4174504FE00DC5B08 /* Social.framework in Frameworks */,
@@ -669,6 +675,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7893C766180890360055D0D7 /* Simposio */ = {
+			isa = PBXGroup;
+			children = (
+				7893C75B180890260055D0D7 /* mSimposioViewController.h */,
+				7893C75C180890260055D0D7 /* mSimposioViewController.m */,
+			);
+			name = Simposio;
+			sourceTree = "<group>";
+		};
+		7893C7671808903D0055D0D7 /* Socio */ = {
+			isa = PBXGroup;
+			children = (
+				7893C763180890300055D0D7 /* mSocioViewController.h */,
+				7893C764180890300055D0D7 /* mSocioViewController.m */,
+			);
+			name = Socio;
+			sourceTree = "<group>";
+		};
 		8957F7A3175EC35800C59973 /* Jornadas */ = {
 			isa = PBXGroup;
 			children = (
@@ -722,6 +746,8 @@
 				89F524F117450E1A00802855 /* Navegacion */,
 				89F524F417450E1A00802855 /* Notificaciones */,
 				89F524F717450E1A00802855 /* Speakers */,
+				7893C766180890360055D0D7 /* Simposio */,
+				7893C7671808903D0055D0D7 /* Socio */,
 			);
 			name = Controladores;
 			path = DualmobileCongress/Controladores;
@@ -1868,10 +1894,12 @@
 				C344742617F6264000B1126E /* UIImageView+AFNetworking.m in Sources */,
 				89F524FF17450E1A00802855 /* mDetalleViewController.m in Sources */,
 				89F5250017450E1A00802855 /* mHomeViewController.m in Sources */,
+				7893C765180890300055D0D7 /* mSocioViewController.m in Sources */,
 				89F5250417450E1A00802855 /* mMapasViewController.m in Sources */,
 				C344742417F6264000B1126E /* AFURLConnectionOperation.m in Sources */,
 				89F5250517450E1A00802855 /* ECSlidingViewController.m in Sources */,
 				89F5250617450E1A00802855 /* UIImage+ImageWithUIView.m in Sources */,
+				7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */,
 				89F5250717450E1A00802855 /* mMenuLateralViewController.m in Sources */,
 				89F5250817450E1A00802855 /* mNavigationMasterViewController.m in Sources */,
 				C341AE6B18053C48002017AB /* Pais.m in Sources */,
