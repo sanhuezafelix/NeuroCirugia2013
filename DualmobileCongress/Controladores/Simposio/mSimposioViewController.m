@@ -7,6 +7,9 @@
 //
 
 #import "mSimposioViewController.h"
+#import "mAppDelegate.h"
+#import "NSDataAdditions.h"
+#import "GAI.h"
 
 @interface mSimposioViewController ()
 
@@ -25,10 +28,22 @@
 
 - (void)viewDidLoad
 {
+    
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    
+    //trackenado GA
+    
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [trackerJornada sendView:@"Simposio"];
+    
+    UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
+                               resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
+    [self.BotonNotificaciones setBackgroundImage:NotButtonImage
+                                        forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    self.title = @" ";
+    
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

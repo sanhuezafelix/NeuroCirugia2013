@@ -149,7 +149,7 @@
         }
         
         twitter.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [twitter addImage:[UIImage imageNamed:@"mcongress_icon_114"]];
+        [twitter addImage:[UIImage imageNamed:@"mcongress_icon_120"]];
         [twitter addURL:[NSURL URLWithString:@"http://www.mobicongress.com"]];
         [twitter setInitialText:self.MensajeInicial];
         [twitter setCompletionHandler:completionHandler];
@@ -197,6 +197,10 @@
 
 - (IBAction)GuardarCalendario:(id)sender
 {
+    
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"navbar_about"];
+    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    
        EKEventStore *AlmacenEventos = [[EKEventStore alloc] init];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >=6.0f) {
@@ -237,7 +241,8 @@
         UIImage *ImagenBotonCalendario = [[UIImage imageNamed:@"boton_vacio"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)];
         
         [[UIBarButtonItem appearance] setBackgroundImage:ImagenBotonCalendario forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-        
+    
+    self.view.backgroundColor = [UIColor whiteColor];
     
         controlador.topViewController.title = @" ";
         controlador.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;

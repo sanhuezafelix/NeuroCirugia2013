@@ -78,12 +78,16 @@
 }
 
 - (IBAction)showEmail:(id)sender {
+    
+    UIImage *navBackgroundImage = [UIImage imageNamed:@"navbar_about"];
+    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
+    
     // Email Subject
     NSString *emailTitle = @"Contacto Socio SOPNIA";
     // Email Content
     NSString *messageBody = @"Gracias por contactarse con SOPNIA <br> <br>Le solicitamos que llene los siguientes datos: <br><br> Nombre: <br> Apellido: <br> Correo Electronico: <br> Numero de contacto: <br> <br>Gracias.";
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"support@appcoda.com"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"correo@sopnia.cl"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
