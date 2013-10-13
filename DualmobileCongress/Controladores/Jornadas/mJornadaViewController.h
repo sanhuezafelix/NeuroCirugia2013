@@ -18,6 +18,7 @@
 #import "Imagen.h"
 #import "Institucion.h"
 #import "GAITrackedViewController.h"
+#import "AnimatedImagesView.h"
 
 
 @interface mJornadaViewController : UIViewController<UITableViewDataSource,UITableViewDelegate ,NSFetchedResultsControllerDelegate>
@@ -29,6 +30,8 @@
 @property(nonatomic,strong)NSString *Titulo;
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
+
 - (IBAction)RevelarNotificaciones:(id)sender;
 
 

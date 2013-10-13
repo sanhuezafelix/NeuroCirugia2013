@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 #import "GAITrackedViewController.h"
+#import "AnimatedImagesView.h"
 
 @interface mDetalleAboutViewController : UIViewController<UIWebViewDelegate>
 
@@ -16,6 +17,7 @@
 @property (nonatomic,strong) IBOutlet UILabel *caga;
 @property (nonatomic,strong) IBOutlet UIWebView *WebView;
 @property (nonatomic,strong) IBOutlet UIActivityIndicatorView *indicador;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 - (IBAction)RevelarNotificaciones:(id)sender;
 

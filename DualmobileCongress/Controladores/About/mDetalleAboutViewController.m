@@ -27,6 +27,12 @@
     NSURLRequest *loadURL   = [[NSURLRequest alloc] initWithURL:url];
     _caga.text = @"Sin acceso";
     [self.WebView loadRequest:loadURL];
+    
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"aimagos.png",@"publicidad_ahora.png", nil];
+    [self.animationImageView setImagesArr:arr];
+    self.animationImageView.showNavigator = NO;
+    [self.animationImageView startAnimating];
 
 }
 

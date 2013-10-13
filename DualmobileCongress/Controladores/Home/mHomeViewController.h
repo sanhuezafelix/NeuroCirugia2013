@@ -21,6 +21,8 @@
 #import "Imagen.h"
 #import "Institucion.h"
 #import "GAITrackedViewController.h"
+#import "AnimatedImagesView.h"
+
 
 
 
@@ -44,6 +46,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonMenu;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
 @property (nonatomic, strong) NSArray *nombresEntidad;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 
 

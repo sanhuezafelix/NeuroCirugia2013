@@ -20,6 +20,7 @@
 #import "Pais.h"
 #import "Imagen.h"
 #import "Institucion.h"
+#import "AnimatedImagesView.h"
 
 @class mBusquedaCloseViewController;
 
@@ -36,6 +37,7 @@
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *BotonNotificaciones;
 @property (nonatomic, strong) NSArray *ResultadosCoreData;
 @property (nonatomic, strong) NSMutableArray * DysplayItems;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 #pragma -mark Eventos
 

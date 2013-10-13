@@ -10,6 +10,8 @@
 #import <QuartzCore/QuartzCore.h>
 #import "ECSlidingViewController.h"
 #import "mCustomCell.h"
+#import "AnimatedImagesView.h"
+
 @interface mMapasViewController : UIViewController
 
 
@@ -17,4 +19,5 @@
 - (IBAction)RevelarMenuLateral:(id)sender;
 - (IBAction)RevelarNotificaciones:(id)sender;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 @end

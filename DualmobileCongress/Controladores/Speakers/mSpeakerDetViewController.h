@@ -18,6 +18,7 @@
 #import "Imagen.h"
 #import "Institucion.h"
 #import "NSDataAdditions.h"
+#import "AnimatedImagesView.h"
 
 @interface mSpeakerDetViewController : UIViewController <UITableViewDataSource, UITableViewDelegate , NSFetchedResultsControllerDelegate>
 @property (strong, nonatomic) IBOutlet UIImageView *ImageViewSpeaker;
@@ -34,6 +35,7 @@
 @property(nonatomic, retain)NSString*ReferenciaSpeaker;
 @property(nonatomic, retain)UIImage*ImagenDelSpeaker;
 @property (strong, nonatomic) IBOutlet UITextView *Biografia;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UITableView *DetailSpeakerTableview;

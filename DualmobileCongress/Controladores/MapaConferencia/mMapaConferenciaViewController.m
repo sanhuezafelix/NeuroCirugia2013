@@ -39,6 +39,12 @@
     [self.view addSubview:zoom];
     self.title = @" ";
     [super viewDidLoad];
+    
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"aimagos.png",@"publicidad_ahora.png", nil];
+    [self.animationImageView setImagesArr:arr];
+    self.animationImageView.showNavigator = NO;
+    [self.animationImageView startAnimating];
 	
 }
 

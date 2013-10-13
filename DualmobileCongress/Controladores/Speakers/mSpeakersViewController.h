@@ -18,6 +18,7 @@
 #import "Persona.h"
 #import "Lugar.h"
 #import "Institucion.h"
+#import "AnimatedImagesView.h"
 
 @class mSpeakerCloseViewController;
 @interface mSpeakersViewController : UIViewController<UITableViewDataSource,UITableViewDelegate , UISearchBarDelegate>{
@@ -40,6 +41,8 @@
 @property (strong, nonatomic) IBOutlet UISearchBar *buscar;
 
 @property (strong, nonatomic) IBOutlet UITableView *SpeakerTableview;
+
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 #pragma -mark eventos
 

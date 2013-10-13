@@ -149,6 +149,14 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     EstadoDeLaconexion = [UIDevice estaConectado];
     [self llamarEventos];
     self.refresh = refresh;
+    
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"aimagos.png",@"publicidad_ahora.png", nil];
+    [self.animationImageView setImagesArr:arr];
+    self.animationImageView.showNavigator = NO;
+    [self.animationImageView startAnimating];
+    
+    
 }
 
 

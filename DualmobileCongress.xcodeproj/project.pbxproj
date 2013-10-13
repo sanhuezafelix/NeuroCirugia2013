@@ -13,6 +13,10 @@
 		786DBFD218074D98005342F7 /* navbar128_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786DBFCF18074D98005342F7 /* navbar128_about@2x.png */; };
 		7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C75C180890260055D0D7 /* mSimposioViewController.m */; };
 		7893C765180890300055D0D7 /* mSocioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C764180890300055D0D7 /* mSocioViewController.m */; };
+		78A99C60180A3BE40062865B /* AnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99C5D180A3BE40062865B /* AnimatedImagesView.m */; };
+		78A99C61180A3BE40062865B /* LTransitionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99C5F180A3BE40062865B /* LTransitionImageView.m */; };
+		78DDCBD6180A44D80098FEB0 /* aimagos_sidebar.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78DDCBD4180A44D80098FEB0 /* aimagos_sidebar.jpg */; };
+		78DDCBD7180A44D80098FEB0 /* aimagos_sidebar@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 78DDCBD5180A44D80098FEB0 /* aimagos_sidebar@2x.jpg */; };
 		892D70F4174504FE00DC5B08 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F3174504FE00DC5B08 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F51745050400DC5B08 /* MessageUI.framework */; };
 		8957F7A8175EC35800C59973 /* mJornadaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957F7A5175EC35800C59973 /* mJornadaViewController.m */; };
@@ -303,6 +307,12 @@
 		7893C75C180890260055D0D7 /* mSimposioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mSimposioViewController.m; path = Simposio/mSimposioViewController.m; sourceTree = "<group>"; };
 		7893C763180890300055D0D7 /* mSocioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSocioViewController.h; path = Socio/mSocioViewController.h; sourceTree = "<group>"; };
 		7893C764180890300055D0D7 /* mSocioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mSocioViewController.m; path = Socio/mSocioViewController.m; sourceTree = "<group>"; };
+		78A99C5C180A3BE40062865B /* AnimatedImagesView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimatedImagesView.h; sourceTree = "<group>"; };
+		78A99C5D180A3BE40062865B /* AnimatedImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedImagesView.m; sourceTree = "<group>"; };
+		78A99C5E180A3BE40062865B /* LTransitionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTransitionImageView.h; sourceTree = "<group>"; };
+		78A99C5F180A3BE40062865B /* LTransitionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTransitionImageView.m; sourceTree = "<group>"; };
+		78DDCBD4180A44D80098FEB0 /* aimagos_sidebar.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = aimagos_sidebar.jpg; sourceTree = "<group>"; };
+		78DDCBD5180A44D80098FEB0 /* aimagos_sidebar@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "aimagos_sidebar@2x.jpg"; sourceTree = "<group>"; };
 		892D70F3174504FE00DC5B08 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		892D70F51745050400DC5B08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8957F7A4175EC35800C59973 /* mJornadaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mJornadaViewController.h; sourceTree = "<group>"; };
@@ -693,6 +703,17 @@
 			name = Socio;
 			sourceTree = "<group>";
 		};
+		78A99C5B180A3BE40062865B /* source */ = {
+			isa = PBXGroup;
+			children = (
+				78A99C5C180A3BE40062865B /* AnimatedImagesView.h */,
+				78A99C5D180A3BE40062865B /* AnimatedImagesView.m */,
+				78A99C5E180A3BE40062865B /* LTransitionImageView.h */,
+				78A99C5F180A3BE40062865B /* LTransitionImageView.m */,
+			);
+			path = source;
+			sourceTree = "<group>";
+		};
 		8957F7A3175EC35800C59973 /* Jornadas */ = {
 			isa = PBXGroup;
 			children = (
@@ -1073,6 +1094,7 @@
 		C31AAAA217C4AD98002B49F2 /* LibExternas */ = {
 			isa = PBXGroup;
 			children = (
+				78A99C5B180A3BE40062865B /* source */,
 				C395339E174C5DCC0048543B /* Pods */,
 				C31AAA8D17C4AD37002B49F2 /* 2010_3_NSDataAdditions */,
 				C31AAA8517C4AD06002B49F2 /* Orbiter */,
@@ -1508,6 +1530,8 @@
 		C3EF4C7218073EDD000569FC /* MenuLateral */ = {
 			isa = PBXGroup;
 			children = (
+				78DDCBD4180A44D80098FEB0 /* aimagos_sidebar.jpg */,
+				78DDCBD5180A44D80098FEB0 /* aimagos_sidebar@2x.jpg */,
 				C3EF4C7318073EDD000569FC /* barraMenu.png */,
 				C3EF4C7418073EDD000569FC /* barraMenu@2x.png */,
 				C3EF4C7518073EDD000569FC /* butonhome.png */,
@@ -1681,6 +1705,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78DDCBD6180A44D80098FEB0 /* aimagos_sidebar.jpg in Resources */,
 				C3EF4CB618073EDD000569FC /* logo_facebook.png in Resources */,
 				786DBFD018074D98005342F7 /* navbar_about.png in Resources */,
 				C3EF4C9118073EDD000569FC /* fondo_about.png in Resources */,
@@ -1814,6 +1839,7 @@
 				C3EF4CEC18073EDD000569FC /* barraMenu@2x.png in Resources */,
 				C3EF4CA218073EDD000569FC /* boton_calendario.png in Resources */,
 				C3EF4CF918073EDD000569FC /* ButtonNotificaciones.png in Resources */,
+				78DDCBD7180A44D80098FEB0 /* aimagos_sidebar@2x.jpg in Resources */,
 				C3EF4CC418073EDD000569FC /* salonriesco_nivel2.jpg in Resources */,
 				C3EF4CED18073EDD000569FC /* butonhome.png in Resources */,
 				C3EF4CC818073EDD000569FC /* shareontwit.png in Resources */,
@@ -1886,6 +1912,7 @@
 				C344741F17F6264000B1126E /* AFHTTPRequestOperation.m in Sources */,
 				AAC02D141738ABAD000AF765 /* main.m in Sources */,
 				AAC02D181738ABAD000AF765 /* mAppDelegate.m in Sources */,
+				78A99C60180A3BE40062865B /* AnimatedImagesView.m in Sources */,
 				AAC02D241738ABAD000AF765 /* mViewController.m in Sources */,
 				89F524FA17450E1A00802855 /* mAboutViewController.m in Sources */,
 				89F524FB17450E1A00802855 /* mDetalleAboutViewController.m in Sources */,
@@ -1899,6 +1926,7 @@
 				C344742417F6264000B1126E /* AFURLConnectionOperation.m in Sources */,
 				89F5250517450E1A00802855 /* ECSlidingViewController.m in Sources */,
 				89F5250617450E1A00802855 /* UIImage+ImageWithUIView.m in Sources */,
+				78A99C61180A3BE40062865B /* LTransitionImageView.m in Sources */,
 				7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */,
 				89F5250717450E1A00802855 /* mMenuLateralViewController.m in Sources */,
 				89F5250817450E1A00802855 /* mNavigationMasterViewController.m in Sources */,

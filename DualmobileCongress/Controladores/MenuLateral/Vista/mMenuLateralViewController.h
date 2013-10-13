@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 #import "mMenuCell.h"
+#import "AnimatedImagesView.h"
 
 @interface mMenuLateralViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 @property(nonatomic, strong)NSArray * MenuItems;
 @property(nonatomic, strong)NSArray * IconoMenu;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 @end

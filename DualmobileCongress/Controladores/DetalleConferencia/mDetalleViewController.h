@@ -13,6 +13,7 @@
 #import "mMapaConferenciaViewController.h"
 #import <EventKit/EventKit.h>
 #import <EventKitUI/EventKitUI.h>
+#import "AnimatedImagesView.h"
 
 @interface mDetalleViewController : UIViewController<EKEventEditViewDelegate, EKEventViewDelegate>
 
@@ -29,6 +30,8 @@
 @property (strong, nonatomic) IBOutlet UITextView *ContenidoExposicion;
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicarFacebook;
 @property (strong, nonatomic) IBOutlet UIImageView*imagen;
+
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 @property(nonatomic,strong)UIImage  *imagenEX;
 @property(nonatomic,strong)NSString *tituloCelda;

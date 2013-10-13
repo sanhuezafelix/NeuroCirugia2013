@@ -13,11 +13,13 @@
 #import <UIKit/UIKit.h>
 #import "ECSlidingViewController.h"
 #import <MessageUI/MessageUI.h>
+#import "AnimatedImagesView.h"
 
 @interface mSocioViewController : UIViewController <MFMailComposeViewControllerDelegate>
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonMenu;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 - (IBAction)enviarCorreo:(id)sender;
 - (IBAction)RevelarMenuLateral:(id)sender;

@@ -51,6 +51,12 @@
     self.Biografia.text = self.BiografiaCelda;
     
     NSLog(@"nombre: %@ Pais %@ Institucion %@", self.Nombrecelda , self.Paiscelda , self.Institucioncelda);
+    
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"aimagos.png",@"publicidad_ahora.png", nil];
+    [self.animationImageView setImagesArr:arr];
+    self.animationImageView.showNavigator = NO;
+    [self.animationImageView startAnimating];
 }
 
 

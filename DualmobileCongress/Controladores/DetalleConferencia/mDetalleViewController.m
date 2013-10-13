@@ -57,6 +57,12 @@
    
     self.title = @" ";
     NSLog(@" este es un%@n", self.tituloCelda);
+    
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"aimagos.png",@"publicidad_ahora.png", nil];
+    [self.animationImageView setImagesArr:arr];
+    self.animationImageView.showNavigator = NO;
+    [self.animationImageView startAnimating];
 
 }
 

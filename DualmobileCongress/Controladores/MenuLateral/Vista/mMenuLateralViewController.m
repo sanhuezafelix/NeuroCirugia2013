@@ -32,7 +32,15 @@
     [super viewDidLoad];
 	[self.slidingViewController setAnchorRightRevealAmount:205.0f];
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
+    
+    NSArray *arr = [NSArray arrayWithObjects:
+                    @"aimagos_sidebar.jpg",@"publicidad_sidebar.png", nil];
+    [self.animationImageView setImagesArr:arr];
+    self.animationImageView.showNavigator = NO;
+    [self.animationImageView startAnimating];
 }
+
+
 
 #pragma mark Tableview Delegate y DataSource
 

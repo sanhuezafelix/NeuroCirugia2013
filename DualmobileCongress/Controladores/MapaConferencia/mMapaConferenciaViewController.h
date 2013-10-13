@@ -10,11 +10,14 @@
 #import "mZoomMapas.h"
 #import "GAITrackedViewController.h"
 #import "GAI.h"
+#import "AnimatedImagesView.h"
+
 @interface mMapaConferenciaViewController : UIViewController{
     float Cordenadax;
     float Cordenaday;
 }
 @property(nonatomic,strong)NSString *salon;
 @property(nonatomic,strong)NSString *NombreMapa;
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 @end

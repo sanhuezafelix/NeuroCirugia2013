@@ -11,6 +11,7 @@
 #import "mCustomCell.h"
 #import "mJornadaViewController.h"
 #import "GAITrackedViewController.h"
+#import "AnimatedImagesView.h"
 
 @interface mSeleccionJornadaViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 
@@ -20,6 +21,8 @@
 @property (nonatomic,strong) NSArray *Jornadas;
 @property (nonatomic,strong) NSArray *InicioJornadas;
 @property (nonatomic,strong) NSArray *FinJornadas;
+
+@property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 
 - (IBAction)RevelarMenuLateral:(id)sender;
