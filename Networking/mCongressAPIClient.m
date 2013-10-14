@@ -28,7 +28,6 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     return self;
 }
 
-
 #pragma mark - AFIncrementalStore
 
 - (NSURLRequest *)requestForFetchRequest:(NSFetchRequest *)fetchRequest
@@ -37,7 +36,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     NSMutableURLRequest *mutableURLRequest = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
 
-        self.estadoAutorizadorSincronizacion = [defaults boolForKey:@"kAutorizadorSincronizacion"];
+    self.estadoAutorizadorSincronizacion = [defaults boolForKey:@"kAutorizadorSincronizacion"];
     self.estadoAutorizadorSincronizacionImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
     if (self.estadoAutorizadorSincronizacion == YES) {
@@ -78,7 +77,6 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                 NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
 }
         
-
             else if ([fetchRequest.entityName isEqualToString:@"Lugar"]) {
                 
                 mutableURLRequest = [self requestWithMethod:@"GET" path:@"lugars" parameters:nil];
@@ -98,8 +96,7 @@ else
             mutableURLRequest = [self requestWithMethod:@"GET" path:@"imagens" parameters:nil];
             
             NSLog(@"Debería Sincronizar IMAGEN ==> %@", [mutableURLRequest description]);
-            
-        }
+    }
         else {
                         
             NSLog(@"***NO*** Debería Sincronizar IMAGEN==> %@", [mutableURLRequest description]);
@@ -214,7 +211,6 @@ else
                                            };
             
         }
-        
     }
     
     else if([entity.name isEqualToString:@"Eventopadres"])
