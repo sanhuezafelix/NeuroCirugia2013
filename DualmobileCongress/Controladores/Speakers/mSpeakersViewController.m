@@ -217,6 +217,7 @@
     cell.Imagen.image   =   [UIImage imageWithData:dataObj];
     
     
+    
     return cell;
 }
 
@@ -244,6 +245,8 @@
         destino.ReferenciaSpeaker = info.tratamiento;
         destino.BiografiaCelda = info.bio;
         destino.Institucioncelda = info.institucionQueMePatrocina.nombreInstitucion;
+        
+        
     }
 }
 

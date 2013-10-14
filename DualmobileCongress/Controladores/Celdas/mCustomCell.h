@@ -22,6 +22,8 @@
 @property (weak, nonatomic) IBOutlet UILabel *monthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *dayOfMonthLabel;
 @property (weak, nonatomic) IBOutlet UILabel *timeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *lugar;
+
 
 -(void)setTime:(NSDate*)time;
 

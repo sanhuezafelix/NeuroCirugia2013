@@ -19,6 +19,7 @@
 
 -(void)awakeFromNib{
     [self.DetailSpeakerTableview reloadData];
+    
 }
 
 - (void)viewDidLoad
@@ -52,6 +53,7 @@
     self.Biografia.text = self.BiografiaCelda;
     
     NSLog(@"nombre: %@ Pais %@ Institucion %@", self.Nombrecelda , self.Paiscelda , self.Institucioncelda);
+    self.EventoQueParticipo = [[NSMutableArray alloc]initWithArray:[self CargarEventosQueParticipo]];
     
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
@@ -96,5 +98,89 @@
     [self setBiografia:nil];
     [super viewDidUnload];
 }
+
+#pragma -mark Tableview datasource y delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    NSLog(@"Cantidad de eventos que participo ==> %d",[self.EventoQueParticipo count]);
+    return [self.EventoQueParticipo count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Evento *info = [self.EventoQueParticipo objectAtIndex:indexPath.row];
+    NSString *cellIdentifier = @"CharlasCell";
+    mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
+    
+    cell.Titulo.text = info.titulo;
+    cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];;
+    cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];;
+    cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+    NSLog(@"nombre del lugar ==> %@" ,info.lugarEnQueMeDesarrollo.nombreLugar);
+    cell.Subtitulo.text = info.speaker.nombre;
+
+    
+    return cell;
+}
+
+
+#pragma mark - Fetchs Coredata
+
+-(NSArray*)CargarEventosQueParticipo
+{
+    
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"speaker.nombre = %@ ",self.ReferenciaSpeaker];
+    [fetchRequest setPredicate:Predicado];
+    
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"horaInicio" ascending:YES];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error = nil;
+    
+    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+}
+-(NSDate*)StringToDate:(NSString*)hora{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
+    NSRange RangoReemplazo = {20,5};
+    
+    NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0300"];
+    return  [dateFormatter dateFromString:remplaso];
+}
+
+-(NSString*)DateToString:(NSDate*)Date{
+    
+    
+    NSDateFormatter *formateadorFecha = [[NSDateFormatter alloc] init];
+    [formateadorFecha setDateFormat:@"H:mm"];
+    return  [formateadorFecha stringFromDate:Date];
+    
+}
+
+
+#pragma -mark Alto de la cada celda
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+  
+    return 73.0f;
+}
+
+
+
 
 @end

@@ -33,6 +33,7 @@
 @property(nonatomic, retain)UIImage*ImagenDelSpeaker;
 @property (strong, nonatomic) IBOutlet UITextView *Biografia;
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
+@property(nonatomic, retain)NSMutableArray *EventoQueParticipo;
 
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UITableView *DetailSpeakerTableview;

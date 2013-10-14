@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -980,11 +980,11 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SpeakerCell" rowHeight="73" id="X8E-h6-VRK" customClass="mCustomCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SpeakerCell" rowHeight="73" id="X8E-h6-VRK" customClass="mCustomCell">
                                         <rect key="frame" x="0.0" y="130" width="320" height="73"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8E-h6-VRK" id="O0K-U5-KyL">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="287" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWQ-D7-m6J">
@@ -1018,7 +1018,7 @@
                                             <outlet property="Subtitulo" destination="1bD-QX-nk8" id="pmc-Wv-Awh"/>
                                             <outlet property="Titulo" destination="hWQ-D7-m6J" id="1A3-T4-Eze"/>
                                             <outlet property="texto" destination="tnJ-5c-ILM" id="PkR-fp-CEZ"/>
-                                            <segue destination="KQa-aA-TfA" kind="push" identifier="SpeakerDet" id="KSV-V5-sZG"/>
+                                            <segue destination="F4Q-c9-0Xh" kind="push" identifier="SpeakerDet" id="KYT-OL-7De"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -1900,7 +1900,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <constraint firstAttribute="width" constant="320" id="yrb-bD-TdB"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="70" id="KgS-4F-ofT" customClass="mCustomCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharlasCell" rowHeight="70" id="KgS-4F-ofT" customClass="mCustomCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KgS-4F-ofT" id="PGt-lQ-V7u">
@@ -1954,8 +1954,19 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                                 </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="Actividad" destination="rrQ-lc-iZS" id="mhe-oX-W7C"/>
+                                            <outlet property="Hora" destination="6rE-Jg-GFH" id="4qS-LB-M7a"/>
+                                            <outlet property="Subtitulo" destination="4gy-Sk-KpW" id="cVy-1x-VX4"/>
+                                            <outlet property="Titulo" destination="fda-IO-g8x" id="DNg-0b-zba"/>
+                                            <outlet property="horaInicio" destination="JIJ-FQ-g2A" id="XyV-va-4HK"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="F4Q-c9-0Xh" id="Yod-cu-cAk"/>
+                                    <outlet property="delegate" destination="F4Q-c9-0Xh" id="apQ-Ki-FIV"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1992,7 +2003,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8y-s2-7Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3213" y="-3837"/>
+            <point key="canvasLocation" x="3199" y="-3780"/>
         </scene>
         <!--M Speaker Det View Controller-->
         <scene sceneID="uhd-QP-n60">
@@ -2029,7 +2040,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Nombre" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-2F-QG7">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Nombre" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-2F-QG7">
                                 <rect key="frame" x="13" y="70" width="294" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -2039,7 +2050,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Institucion" translatesAutoresizingMaskIntoConstraints="NO" id="4gD-Yk-Ws3">
+                            <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Institucion" translatesAutoresizingMaskIntoConstraints="NO" id="4gD-Yk-Ws3">
                                 <rect key="frame" x="13" y="135" width="294" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2139,6 +2150,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="EMG-95-6gg"/>
+        <segue reference="KqV-2t-pIY"/>
     </inferredMetricsTieBreakers>
 </document>
