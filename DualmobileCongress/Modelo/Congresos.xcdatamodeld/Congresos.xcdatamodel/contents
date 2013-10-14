@@ -15,7 +15,7 @@
         <relationship name="notificacionMeReferencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notificacion" inverseName="eventoAsociado" inverseEntity="Notificacion" syncable="YES"/>
         <relationship name="speaker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Persona" inverseName="eventoQueDicto" inverseEntity="Persona" syncable="YES"/>
     </entity>
-    <entity name="Eventopadre" syncable="YES">
+    <entity name="Eventopadre" representedClassName="Eventopadre" syncable="YES">
         <attribute name="descripcionEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaFinEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaInicioEP" optional="YES" attributeType="String" syncable="YES"/>
@@ -50,7 +50,7 @@
         <relationship name="institucionAqui" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Institucion" inverseName="lugarEnqueEstoy" inverseEntity="Institucion" syncable="YES"/>
         <relationship name="personaDelQueSoyProcedencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persona" inverseName="lugarDondeProvengo" inverseEntity="Persona" syncable="YES"/>
     </entity>
-    <entity name="Notificacion" syncable="YES">
+    <entity name="Notificacion" representedClassName="Notificacion" syncable="YES">
         <attribute name="almacenado" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="contenidoNoti" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="esBoton" optional="YES" attributeType="Boolean" syncable="YES"/>
@@ -74,11 +74,11 @@
     </entity>
     <elements>
         <element name="Evento" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Eventopadre" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Imagen" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Institucion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Lugar" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Notificacion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Persona" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Eventopadre" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

@@ -2,12 +2,13 @@
 //  Imagen.m
 //  DualmobileCongress
 //
-//  Created by Arturo Sanhueza on 09-10-13.
+//  Created by Arturo Sanhueza on 14-10-13.
 //  Copyright (c) 2013 Luis Gonzalez. All rights reserved.
 //
 
 #import "Imagen.h"
 #import "Evento.h"
+#import "Eventopadre.h"
 #import "Persona.h"
 
 
@@ -17,5 +18,6 @@
 @dynamic nombre;
 @dynamic eventoQueGrafico;
 @dynamic personaQueGrafico;
+@dynamic eventoPadreQueGrafico;
 
 @end

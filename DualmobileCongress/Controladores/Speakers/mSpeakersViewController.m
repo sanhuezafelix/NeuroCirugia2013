@@ -118,7 +118,7 @@
         
         [fetchRequest setPredicate:predicadoSpeaker];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.paisEnQueEstoy.nombrePais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@)) AND(nombre >%@)", text, text,text,@""];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.ciudad CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@)) AND(nombre >%@)", text, text,text,@""];
         
       [fetchRequest setPredicate:predicate];
         searching = YES;
@@ -213,7 +213,7 @@
      NSData *dataObj    = [NSData dataWithBase64EncodedString:info.fotoPersona.binarioImagen];
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
-    cell.texto.text     =   info.lugarDondeProvengo.paisEnQueEstoy.nombrePais;
+    cell.texto.text     =   info.lugarDondeProvengo.ciudad;
     cell.Imagen.image   =   [UIImage imageWithData:dataObj];
     
     
@@ -236,7 +236,10 @@
         Persona *info = [self.ResultadosCoreData objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
          NSData *dataObj = [NSData dataWithBase64EncodedString:info.fotoPersona.binarioImagen];
         destino.Nombrecelda = info.nombre;
-        destino.Paiscelda = info.lugarDondeProvengo.paisEnQueEstoy.nombrePais;
+        
+        //como se saco la entidad pai deje el pais celda como ciudad del hueón, por mientras.
+
+        destino.Paiscelda = info.lugarDondeProvengo.ciudad;
         destino.ImagenDelSpeaker = [UIImage imageWithData:dataObj];
         destino.ReferenciaSpeaker = info.tratamiento;
         destino.BiografiaCelda = info.bio;

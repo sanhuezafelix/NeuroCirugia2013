@@ -2,22 +2,21 @@
 //  Lugar.h
 //  DualmobileCongress
 //
-//  Created by Arturo Sanhueza on 09-10-13.
+//  Created by Arturo Sanhueza on 14-10-13.
 //  Copyright (c) 2013 Luis Gonzalez. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Evento, Institucion, Pais, Persona;
+@class Evento, Institucion, Persona;
 
 @interface Lugar : NSManagedObject
 
 @property (nonatomic, retain) NSString * ciudad;
-@property (nonatomic, retain) NSString * nombreLugar;
+@property (nonatomic, retain) NSString * pais;
 @property (nonatomic, retain) NSSet *eventoLugar;
 @property (nonatomic, retain) NSSet *institucionAqui;
-@property (nonatomic, retain) Pais *paisEnQueEstoy;
 @property (nonatomic, retain) NSSet *personaDelQueSoyProcedencia;
 @end
 
