@@ -35,10 +35,13 @@
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
                                         forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-    
+    NSLog(@"el nombre es ==> %@",self.Nombrecelda);
     self.title = @" ";
     self.delegate = [[UIApplication sharedApplication]delegate];
-    self.NombreSpeaker.text = [self.ReferenciaSpeaker stringByAppendingFormat:@" %@",self.Nombrecelda];
+   // self.NombreSpeaker.text = [self.ReferenciaSpeaker stringByAppendingFormat:@" %@",self.Nombrecelda];
+    
+    self.NombreSpeaker.text = self.Nombrecelda;
+    
     self.PaisSpeaker.text = self.Paiscelda;
     self.ImageViewSpeaker.image = self.ImagenDelSpeaker;
     if (self.Institucioncelda== nil) {
@@ -179,6 +182,39 @@
   
     return 73.0f;
 }
+
+#pragma -mark enviamos datos de la celda selecionadas a la vista de detalle
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    // Comprobamos si el identificador es el adecuado
+    
+    if ([segue.identifier isEqualToString:@"DetalleEvento"])
+    {
+        Evento *info = [_fetchedResultsController
+                        objectAtIndexPath:[self.DetailSpeakerTableview indexPathForSelectedRow]];
+        mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+        NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
+        UIImage *beforeImage = [UIImage imageWithData:dataObj];
+        destino.ExpositorCelda = info.speaker.nombre;
+        destino.tituloCelda = info.titulo;
+        destino.ContenidoCelda =info.tematica;
+        destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
+        destino.NombreImagen = beforeImage;
+        NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
+        destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
+        destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
+        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+        destino.BiografiaSpeaker = info.speaker.bio;
+        destino.Referencia  = info.speaker.tratamiento;
+        destino.DateFin = [self StringToDate:info.horaFin];
+        destino.DateInicio = [self StringToDate:info.horaInicio];
+        destino.ActividadSpeaker = info.descripcionEvento;
+        
+    }
+}
+
+
 
 
 

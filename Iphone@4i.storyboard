@@ -932,7 +932,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LqX-Jl-1zS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2660" y="-3121"/>
+            <point key="canvasLocation" x="2607" y="-3121"/>
         </scene>
         <!--M Navigation Master View Controller-->
         <scene sceneID="QNs-S3-tRq">
@@ -980,11 +980,11 @@
                                     </connections>
                                 </searchBar>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="SpeakerCell" rowHeight="73" id="X8E-h6-VRK" customClass="mCustomCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="SpeakerCell" rowHeight="73" id="X8E-h6-VRK" customClass="mCustomCell">
                                         <rect key="frame" x="0.0" y="130" width="320" height="73"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="X8E-h6-VRK" id="O0K-U5-KyL">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Nombre" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hWQ-D7-m6J">
@@ -1960,6 +1960,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                             <outlet property="Subtitulo" destination="4gy-Sk-KpW" id="cVy-1x-VX4"/>
                                             <outlet property="Titulo" destination="fda-IO-g8x" id="DNg-0b-zba"/>
                                             <outlet property="horaInicio" destination="JIJ-FQ-g2A" id="XyV-va-4HK"/>
+                                            <segue destination="3Sn-vW-Hnt" kind="push" identifier="DetalleEvento" id="82c-rv-EFy"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2003,7 +2004,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8y-s2-7Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3199" y="-3780"/>
+            <point key="canvasLocation" x="2607" y="-3780"/>
         </scene>
         <!--M Speaker Det View Controller-->
         <scene sceneID="uhd-QP-n60">
@@ -2111,7 +2112,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQV-81-Mww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2667" y="-3780"/>
+            <point key="canvasLocation" x="3177" y="-4556"/>
         </scene>
         <!--M Navigation Master View Controller-->
         <scene sceneID="OIc-J1-wbD">
@@ -2134,14 +2135,36 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
