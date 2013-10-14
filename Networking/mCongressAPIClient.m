@@ -1,7 +1,7 @@
 #import "mCongressAPIClient.h"
 #import "AFJSONRequestOperation.h"
 
-static NSString * const kmCongressAPIBaseURLString = @"http://evening-reef-1233.herokuapp.com/";
+static NSString * const kmCongressAPIBaseURLString = @"http://sopnia2013-chile.herokuapp.com/";
 
 
 @implementation mCongressAPIClient
