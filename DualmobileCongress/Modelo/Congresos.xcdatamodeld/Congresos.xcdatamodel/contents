@@ -8,14 +8,14 @@
         <attribute name="tematica" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoEvento" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="eventoPadre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventoPadre" inverseName="eventoHijo" inverseEntity="EventoPadre" syncable="YES"/>
+        <relationship name="eventoPadre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Eventopadre" inverseName="eventoHijo" inverseEntity="Eventopadre" syncable="YES"/>
         <relationship name="imagenEvento" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagen" inverseName="eventoQueGrafico" inverseEntity="Imagen" syncable="YES"/>
         <relationship name="institucionPatrocinante" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Institucion" inverseName="eventoQuePatrocino" inverseEntity="Institucion" syncable="YES"/>
         <relationship name="lugarEnQueMeDesarrollo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lugar" inverseName="eventoLugar" inverseEntity="Lugar" syncable="YES"/>
         <relationship name="notificacionMeReferencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Notificacion" inverseName="eventoAsociado" inverseEntity="Notificacion" syncable="YES"/>
         <relationship name="speaker" optional="YES" minCount="1" maxCount="1" deletionRule="Nullify" destinationEntity="Persona" inverseName="eventoQueDicto" inverseEntity="Persona" syncable="YES"/>
     </entity>
-    <entity name="EventoPadre" syncable="YES">
+    <entity name="Eventopadre" syncable="YES">
         <attribute name="descripcionEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaFinEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaInicioEP" optional="YES" attributeType="String" syncable="YES"/>
@@ -30,7 +30,7 @@
     <entity name="Imagen" representedClassName="Imagen" syncable="YES">
         <attribute name="binarioImagen" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="eventoPadreQueGrafico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventoPadre" inverseName="imagenEventoPadre" inverseEntity="EventoPadre" syncable="YES"/>
+        <relationship name="eventoPadreQueGrafico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Eventopadre" inverseName="imagenEventoPadre" inverseEntity="Eventopadre" syncable="YES"/>
         <relationship name="eventoQueGrafico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="imagenEvento" inverseEntity="Evento" syncable="YES"/>
         <relationship name="personaQueGrafico" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persona" inverseName="fotoPersona" inverseEntity="Persona" syncable="YES"/>
     </entity>
@@ -38,7 +38,7 @@
         <attribute name="descripcionInstitucion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="nombreInstitucion" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoInstitucion" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="eventoPadreQuePatrocino" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EventoPadre" inverseName="institucionPatrocinante" inverseEntity="EventoPadre" syncable="YES"/>
+        <relationship name="eventoPadreQuePatrocino" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Eventopadre" inverseName="institucionPatrocinante" inverseEntity="Eventopadre" syncable="YES"/>
         <relationship name="eventoQuePatrocino" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="institucionPatrocinante" inverseEntity="Evento" syncable="YES"/>
         <relationship name="lugarEnqueEstoy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lugar" inverseName="institucionAqui" inverseEntity="Lugar" syncable="YES"/>
         <relationship name="personaQuePatrocino" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persona" inverseName="institucionQueMePatrocina" inverseEntity="Persona" syncable="YES"/>
@@ -65,7 +65,7 @@
         <attribute name="nombre" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="rol" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tratamiento" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="eventoParticipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EventoPadre" inverseName="participantes" inverseEntity="EventoPadre" syncable="YES"/>
+        <relationship name="eventoParticipo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Eventopadre" inverseName="participantes" inverseEntity="Eventopadre" syncable="YES"/>
         <relationship name="eventoQueDicto" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="speaker" inverseEntity="Evento" syncable="YES"/>
         <relationship name="fotoPersona" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagen" inverseName="personaQueGrafico" inverseEntity="Imagen" syncable="YES"/>
         <relationship name="institucionQueMePatrocina" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institucion" inverseName="personaQuePatrocino" inverseEntity="Institucion" syncable="YES"/>
@@ -73,12 +73,12 @@
         <relationship name="notificacionSobreMi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notificacion" inverseName="personaAsociada" inverseEntity="Notificacion" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Evento" positionX="-1046" positionY="-891" width="128" height="238"/>
-        <element name="Imagen" positionX="-1485" positionY="-1045" width="128" height="118"/>
-        <element name="Institucion" positionX="-875" positionY="-1161" width="128" height="148"/>
-        <element name="Lugar" positionX="-1811" positionY="-868" width="182" height="118"/>
-        <element name="Persona" positionX="-2007" positionY="-1080" width="128" height="208"/>
-        <element name="Notificacion" positionX="-1847" positionY="-1287" width="128" height="148"/>
-        <element name="EventoPadre" positionX="-1197" positionY="-1260" width="128" height="193"/>
+        <element name="Evento" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Eventopadre" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Imagen" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Institucion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Lugar" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Notificacion" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Persona" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>
