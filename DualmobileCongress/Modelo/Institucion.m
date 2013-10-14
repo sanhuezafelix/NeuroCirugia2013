@@ -18,9 +18,9 @@
 @dynamic descripcionInstitucion;
 @dynamic nombreInstitucion;
 @dynamic tipoInstitucion;
+@dynamic eventoPadreQuePatrocino;
 @dynamic eventoQuePatrocino;
 @dynamic lugarEnqueEstoy;
 @dynamic personaQuePatrocino;
-@dynamic eventoPadreQuePatrocino;
 
 @end

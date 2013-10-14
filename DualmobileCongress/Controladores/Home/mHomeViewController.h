@@ -30,7 +30,7 @@
 }
 
 @property (strong, nonatomic) IBOutlet UITableView *HomeTableview;
-//@property (strong, nonatomic) SSPullToRefreshView *pullToRefreshView ;
+@property (strong, nonatomic) SSPullToRefreshView *pullToRefreshView ;
 @property (strong, nonatomic) UIRefreshControl *refresh;
 
 @property NSUInteger *numeroObjetos;
@@ -49,7 +49,6 @@
 
 - (IBAction)RevelarMenuLateral:(id)sender;
 - (IBAction)RevelarNotificaciones:(id)sender;
-- (IBAction)comenzarAccion:(id)sender;
 
 
 

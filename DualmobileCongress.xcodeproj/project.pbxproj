@@ -66,6 +66,13 @@
 		C31AAA9717C4AD49002B49F2 /* mCongressIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AAA9517C4AD49002B49F2 /* mCongressIncrementalStore.m */; };
 		C31AAAA017C4AD66002B49F2 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C31AAA9E17C4AD66002B49F2 /* libGoogleAnalytics.a */; };
 		C31AAAA117C4AD66002B49F2 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C31AAA9F17C4AD66002B49F2 /* libGoogleAnalytics_debug.a */; };
+		C3293943180C582700B6958A /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293942180C582700B6958A /* Evento.m */; };
+		C3293946180C582800B6958A /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293945180C582800B6958A /* Persona.m */; };
+		C3293949180C582800B6958A /* Notificacion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293948180C582800B6958A /* Notificacion.m */; };
+		C329394C180C582800B6958A /* Imagen.m in Sources */ = {isa = PBXBuildFile; fileRef = C329394B180C582800B6958A /* Imagen.m */; };
+		C329394F180C582800B6958A /* Eventopadre.m in Sources */ = {isa = PBXBuildFile; fileRef = C329394E180C582800B6958A /* Eventopadre.m */; };
+		C3293952180C582800B6958A /* Lugar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293951180C582800B6958A /* Lugar.m */; };
+		C3293955180C582800B6958A /* Institucion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293954180C582800B6958A /* Institucion.m */; };
 		C33738E017850F8400BD0FA9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738DF17850F8400BD0FA9 /* MobileCoreServices.framework */; };
 		C33738E217850F8B00BD0FA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738E117850F8B00BD0FA9 /* Security.framework */; };
 		C33738E417850FBF00BD0FA9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738E317850FBF00BD0FA9 /* libz.1.1.3.dylib */; };
@@ -106,13 +113,6 @@
 		C395342B174C5DCC0048543B /* TTTImageTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = C395340B174C5DCC0048543B /* TTTImageTransformers.m */; };
 		C395342C174C5DCC0048543B /* TTTStringTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = C395340D174C5DCC0048543B /* TTTStringTransformers.m */; };
 		C3AF863F174197A5000743BE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3AF863E174197A5000743BE /* CoreData.framework */; };
-		C3D386A9180B9ADF001C9317 /* Imagen.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386A8180B9ADF001C9317 /* Imagen.m */; };
-		C3D386AC180B9AE0001C9317 /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386AB180B9AE0001C9317 /* Persona.m */; };
-		C3D386AF180B9AE0001C9317 /* Lugar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386AE180B9AE0001C9317 /* Lugar.m */; };
-		C3D386B2180B9AE0001C9317 /* Institucion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386B1180B9AE0001C9317 /* Institucion.m */; };
-		C3D386B5180B9AE0001C9317 /* Notificacion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386B4180B9AE0001C9317 /* Notificacion.m */; };
-		C3D386B8180B9AE0001C9317 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386B7180B9AE0001C9317 /* Evento.m */; };
-		C3D386BB180B9AE0001C9317 /* Eventopadre.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386BA180B9AE0001C9317 /* Eventopadre.m */; };
 		C3D38866180BB0B0001C9317 /* aimagos_web.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387DD180BB0B0001C9317 /* aimagos_web.png */; };
 		C3D38867180BB0B0001C9317 /* aimagos_web@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387DE180BB0B0001C9317 /* aimagos_web@2x.png */; };
 		C3D38868180BB0B0001C9317 /* fondo_about.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387DF180BB0B0001C9317 /* fondo_about.png */; };
@@ -409,6 +409,20 @@
 		C31AAA9D17C4AD66002B49F2 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
 		C31AAA9E17C4AD66002B49F2 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		C31AAA9F17C4AD66002B49F2 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
+		C3293941180C582700B6958A /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
+		C3293942180C582700B6958A /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
+		C3293944180C582800B6958A /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
+		C3293945180C582800B6958A /* Persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persona.m; sourceTree = "<group>"; };
+		C3293947180C582800B6958A /* Notificacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notificacion.h; sourceTree = "<group>"; };
+		C3293948180C582800B6958A /* Notificacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notificacion.m; sourceTree = "<group>"; };
+		C329394A180C582800B6958A /* Imagen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imagen.h; sourceTree = "<group>"; };
+		C329394B180C582800B6958A /* Imagen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imagen.m; sourceTree = "<group>"; };
+		C329394D180C582800B6958A /* Eventopadre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Eventopadre.h; sourceTree = "<group>"; };
+		C329394E180C582800B6958A /* Eventopadre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Eventopadre.m; sourceTree = "<group>"; };
+		C3293950180C582800B6958A /* Lugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lugar.h; sourceTree = "<group>"; };
+		C3293951180C582800B6958A /* Lugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lugar.m; sourceTree = "<group>"; };
+		C3293953180C582800B6958A /* Institucion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institucion.h; sourceTree = "<group>"; };
+		C3293954180C582800B6958A /* Institucion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institucion.m; sourceTree = "<group>"; };
 		C33738DF17850F8400BD0FA9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C33738E117850F8B00BD0FA9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C33738E317850FBF00BD0FA9 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
@@ -508,20 +522,6 @@
 		C395340C174C5DCC0048543B /* TTTStringTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStringTransformers.h; sourceTree = "<group>"; };
 		C395340D174C5DCC0048543B /* TTTStringTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTStringTransformers.m; sourceTree = "<group>"; };
 		C3AF863E174197A5000743BE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		C3D386A7180B9ADF001C9317 /* Imagen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imagen.h; sourceTree = "<group>"; };
-		C3D386A8180B9ADF001C9317 /* Imagen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imagen.m; sourceTree = "<group>"; };
-		C3D386AA180B9AE0001C9317 /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
-		C3D386AB180B9AE0001C9317 /* Persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persona.m; sourceTree = "<group>"; };
-		C3D386AD180B9AE0001C9317 /* Lugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lugar.h; sourceTree = "<group>"; };
-		C3D386AE180B9AE0001C9317 /* Lugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lugar.m; sourceTree = "<group>"; };
-		C3D386B0180B9AE0001C9317 /* Institucion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institucion.h; sourceTree = "<group>"; };
-		C3D386B1180B9AE0001C9317 /* Institucion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institucion.m; sourceTree = "<group>"; };
-		C3D386B3180B9AE0001C9317 /* Notificacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notificacion.h; sourceTree = "<group>"; };
-		C3D386B4180B9AE0001C9317 /* Notificacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notificacion.m; sourceTree = "<group>"; };
-		C3D386B6180B9AE0001C9317 /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
-		C3D386B7180B9AE0001C9317 /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
-		C3D386B9180B9AE0001C9317 /* Eventopadre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Eventopadre.h; sourceTree = "<group>"; };
-		C3D386BA180B9AE0001C9317 /* Eventopadre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Eventopadre.m; sourceTree = "<group>"; };
 		C3D387DD180BB0B0001C9317 /* aimagos_web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aimagos_web.png; sourceTree = "<group>"; };
 		C3D387DE180BB0B0001C9317 /* aimagos_web@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aimagos_web@2x.png"; sourceTree = "<group>"; };
 		C3D387DF180BB0B0001C9317 /* fondo_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo_about.png; sourceTree = "<group>"; };
@@ -734,20 +734,20 @@
 			isa = PBXGroup;
 			children = (
 				8986FE4D175EC2100042993F /* Congresos.xcdatamodeld */,
-				C3D386B9180B9AE0001C9317 /* Eventopadre.h */,
-				C3D386BA180B9AE0001C9317 /* Eventopadre.m */,
-				C3D386B6180B9AE0001C9317 /* Evento.h */,
-				C3D386B7180B9AE0001C9317 /* Evento.m */,
-				C3D386B3180B9AE0001C9317 /* Notificacion.h */,
-				C3D386B4180B9AE0001C9317 /* Notificacion.m */,
-				C3D386B0180B9AE0001C9317 /* Institucion.h */,
-				C3D386B1180B9AE0001C9317 /* Institucion.m */,
-				C3D386AD180B9AE0001C9317 /* Lugar.h */,
-				C3D386AE180B9AE0001C9317 /* Lugar.m */,
-				C3D386AA180B9AE0001C9317 /* Persona.h */,
-				C3D386AB180B9AE0001C9317 /* Persona.m */,
-				C3D386A7180B9ADF001C9317 /* Imagen.h */,
-				C3D386A8180B9ADF001C9317 /* Imagen.m */,
+				C3293953180C582800B6958A /* Institucion.h */,
+				C3293954180C582800B6958A /* Institucion.m */,
+				C3293950180C582800B6958A /* Lugar.h */,
+				C3293951180C582800B6958A /* Lugar.m */,
+				C329394D180C582800B6958A /* Eventopadre.h */,
+				C329394E180C582800B6958A /* Eventopadre.m */,
+				C329394A180C582800B6958A /* Imagen.h */,
+				C329394B180C582800B6958A /* Imagen.m */,
+				C3293947180C582800B6958A /* Notificacion.h */,
+				C3293948180C582800B6958A /* Notificacion.m */,
+				C3293944180C582800B6958A /* Persona.h */,
+				C3293945180C582800B6958A /* Persona.m */,
+				C3293941180C582700B6958A /* Evento.h */,
+				C3293942180C582700B6958A /* Evento.m */,
 			);
 			name = Modelo;
 			path = DualmobileCongress/Modelo;
@@ -1921,13 +1921,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				C344741F17F6264000B1126E /* AFHTTPRequestOperation.m in Sources */,
+				C3293955180C582800B6958A /* Institucion.m in Sources */,
+				C329394C180C582800B6958A /* Imagen.m in Sources */,
 				AAC02D141738ABAD000AF765 /* main.m in Sources */,
+				C3293952180C582800B6958A /* Lugar.m in Sources */,
 				AAC02D181738ABAD000AF765 /* mAppDelegate.m in Sources */,
 				78A99C60180A3BE40062865B /* AnimatedImagesView.m in Sources */,
 				AAC02D241738ABAD000AF765 /* mViewController.m in Sources */,
 				89F524FA17450E1A00802855 /* mAboutViewController.m in Sources */,
 				89F524FB17450E1A00802855 /* mDetalleAboutViewController.m in Sources */,
-				C3D386B5180B9AE0001C9317 /* Notificacion.m in Sources */,
+				C3293949180C582800B6958A /* Notificacion.m in Sources */,
 				89F524FD17450E1A00802855 /* mCustomCell.m in Sources */,
 				89F524FE17450E1A00802855 /* mMenuCell.m in Sources */,
 				C344742617F6264000B1126E /* UIImageView+AFNetworking.m in Sources */,
@@ -1942,7 +1945,6 @@
 				7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */,
 				89F5250717450E1A00802855 /* mMenuLateralViewController.m in Sources */,
 				89F5250817450E1A00802855 /* mNavigationMasterViewController.m in Sources */,
-				C3D386AF180B9AE0001C9317 /* Lugar.m in Sources */,
 				C344742517F6264000B1126E /* AFXMLRequestOperation.m in Sources */,
 				89F5250917450E1A00802855 /* mNotificacionesViewController.m in Sources */,
 				89F5250A17450E1A00802855 /* mSpeakersViewController.m in Sources */,
@@ -1954,17 +1956,14 @@
 				C3953429174C5DCC0048543B /* NSValueTransformer+TransformerKit.m in Sources */,
 				C344742217F6264000B1126E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C395342A174C5DCC0048543B /* TTTDateTransformers.m in Sources */,
-				C3D386A9180B9ADF001C9317 /* Imagen.m in Sources */,
 				C395342B174C5DCC0048543B /* TTTImageTransformers.m in Sources */,
 				C395342C174C5DCC0048543B /* TTTStringTransformers.m in Sources */,
-				C3D386BB180B9AE0001C9317 /* Eventopadre.m in Sources */,
 				AA0C0156175600840001C043 /* mConexionRed.m in Sources */,
 				AA698D041757D1DE00982743 /* SSPullToRefreshDefaultContentView.m in Sources */,
 				AA698D051757D1DE00982743 /* SSPullToRefreshSimpleContentView.m in Sources */,
 				AA698D061757D1DE00982743 /* SSPullToRefreshView.m in Sources */,
-				C3D386AC180B9AE0001C9317 /* Persona.m in Sources */,
 				AA656BD6175886070009E5D2 /* mNavigationAboutViewController.m in Sources */,
-				C3D386B2180B9AE0001C9317 /* Institucion.m in Sources */,
+				C3293946180C582800B6958A /* Persona.m in Sources */,
 				C344741E17F6264000B1126E /* AFHTTPClient.m in Sources */,
 				AA05964917593FA7003D0B96 /* mSpeakerDetViewController.m in Sources */,
 				8986FE65175EC2100042993F /* Congresos.xcdatamodeld in Sources */,
@@ -1980,9 +1979,10 @@
 				AACA757F176834E9006E3520 /* mMapaConferenciaViewController.m in Sources */,
 				AA1D23AC176FB5180080F649 /* REPagedScrollView.m in Sources */,
 				C31AAA8817C4AD06002B49F2 /* Orbiter.m in Sources */,
+				C3293943180C582700B6958A /* Evento.m in Sources */,
 				C31AAA9017C4AD37002B49F2 /* NSDataAdditions.m in Sources */,
+				C329394F180C582800B6958A /* Eventopadre.m in Sources */,
 				C31AAA9617C4AD49002B49F2 /* mCongressAPIClient.m in Sources */,
-				C3D386B8180B9AE0001C9317 /* Evento.m in Sources */,
 				C31AAA9717C4AD49002B49F2 /* mCongressIncrementalStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

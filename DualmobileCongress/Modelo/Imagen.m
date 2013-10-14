@@ -16,8 +16,8 @@
 
 @dynamic binarioImagen;
 @dynamic nombre;
+@dynamic eventoPadreQueGrafico;
 @dynamic eventoQueGrafico;
 @dynamic personaQueGrafico;
-@dynamic eventoPadreQueGrafico;
 
 @end

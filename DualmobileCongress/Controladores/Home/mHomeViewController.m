@@ -10,6 +10,7 @@
 #import "mAppDelegate.h"
 #import "NSDataAdditions.h"
 #import "GAI.h"
+#import "Evento.h"
 
 @interface mHomeViewController ()
 
@@ -140,14 +141,13 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
                                         forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-     
-    self.title = @" ";
     self.delegate = [[UIApplication sharedApplication]delegate];
+
+    self.title = @" ";
     self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
     self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
-//    self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.HomeTableview delegate:self];
+  //  self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.HomeTableview delegate:self];
     EstadoDeLaconexion = [UIDevice estaConectado];
-    [self llamarEventos];
     self.refresh = refresh;
     
     NSArray *arr = [NSArray arrayWithObjects:
@@ -160,14 +160,15 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 }
 
 
--(void)llamarEventos {
-
+-(void)jaja{
+    
     NSError *error;
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Evento" inManagedObjectContext:_delegate.managedObjectContext];
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
     NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
     [fetch setEntity:entidad];
-    NSArray *arrayengue = [_delegate.managedObjectContext executeFetchRequest:fetch error:&error];
-    NSLog(@"%@",arrayengue);
+    NSArray *arraya = [self.delegate.managedObjectContext executeFetchRequest:fetch error:&error];
+    NSLog(@"%@",arraya);
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -261,7 +262,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 -(NSDate*)StringToDate:(NSString*)hora{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
-    NSRange RangoReemplazo = {20, 5};
+    NSRange RangoReemplazo = {20,5};
     
    NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0400"];
     return  [dateFormatter dateFromString:remplaso];
@@ -385,33 +386,27 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSArray*)CargarEnEsteMomento
 {
-    
-    
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:-14400];
+    NSDate *horaDispositivo = [[NSDate alloc]initWithTimeIntervalSinceNow:-14400];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
  
-    NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
+    NSString *strDate = [dateFormatter stringFromDate:horaDispositivo];
     NSRange remplazoFecha = {0, 10};
     NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-05-29"]];
    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    
-    // Define the entity we are looking for
-    
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
     NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio <= %@) AND (horaFin > %@)",HoraActual,HoraActual];
     [fetchRequest setPredicate:Predicado];
-    // Define how we want our entities to be sorted
+
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
                                         initWithKey:@"horaInicio" ascending:YES];
     NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
-    
-    
     NSError *error = nil;
+    
     return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
 }
@@ -420,7 +415,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     
     NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:-14400];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
     
     
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
@@ -516,7 +511,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     [self.ProximasActividades removeAllObjects];
     self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
     [self.HomeTableview reloadData];
-    
     [self.refresh endRefreshing];
     
 }
@@ -526,6 +520,15 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     EstadoDeLaconexion = [UIDevice estaConectado];
     NSLog(@"conexcion ==> %d", EstadoDeLaconexion);
 }
+
+
+
+
+
+
+
+
+
 
 
 - (void)viewWillAppear:(BOOL)animated {

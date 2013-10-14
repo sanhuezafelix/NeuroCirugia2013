@@ -15,6 +15,7 @@
 @implementation Lugar
 
 @dynamic ciudad;
+@dynamic nombreLugar;
 @dynamic pais;
 @dynamic eventoLugar;
 @dynamic institucionAqui;

@@ -21,9 +21,9 @@
 @dynamic patrocinioEP;
 @dynamic tipoEP;
 @dynamic titulo;
-@dynamic participantes;
-@dynamic institucionPatrocinante;
-@dynamic imagenEventoPadre;
 @dynamic eventoHijo;
+@dynamic imagenEventoPadre;
+@dynamic institucionPatrocinante;
+@dynamic participantes;
 
 @end

@@ -129,7 +129,7 @@ else
             [mutablePropertyValues setValue:RepresentacionBinarioImagen forKey:@"binarioImagen"];
             
         }
-
+    
 
     return mutablePropertyValues;
 }

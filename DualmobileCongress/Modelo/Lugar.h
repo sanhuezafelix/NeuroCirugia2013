@@ -14,6 +14,7 @@
 @interface Lugar : NSManagedObject
 
 @property (nonatomic, retain) NSString * ciudad;
+@property (nonatomic, retain) NSString * nombreLugar;
 @property (nonatomic, retain) NSString * pais;
 @property (nonatomic, retain) NSSet *eventoLugar;
 @property (nonatomic, retain) NSSet *institucionAqui;

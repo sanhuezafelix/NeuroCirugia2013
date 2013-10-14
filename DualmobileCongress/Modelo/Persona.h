@@ -18,12 +18,12 @@
 @property (nonatomic, retain) NSString * nombre;
 @property (nonatomic, retain) NSString * rol;
 @property (nonatomic, retain) NSString * tratamiento;
+@property (nonatomic, retain) Eventopadre *eventoParticipo;
 @property (nonatomic, retain) NSSet *eventoQueDicto;
 @property (nonatomic, retain) Imagen *fotoPersona;
 @property (nonatomic, retain) Institucion *institucionQueMePatrocina;
 @property (nonatomic, retain) Lugar *lugarDondeProvengo;
 @property (nonatomic, retain) Notificacion *notificacionSobreMi;
-@property (nonatomic, retain) Eventopadre *eventoParticipo;
 @end
 
 @interface Persona (CoreDataGeneratedAccessors)

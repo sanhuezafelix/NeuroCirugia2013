@@ -24,11 +24,12 @@
 @dynamic tematica;
 @dynamic tipoEvento;
 @dynamic titulo;
+@dynamic jornada;
+@dynamic eventoPadre;
 @dynamic imagenEvento;
 @dynamic institucionPatrocinante;
 @dynamic lugarEnQueMeDesarrollo;
 @dynamic notificacionMeReferencia;
 @dynamic speaker;
-@dynamic eventoPadre;
 
 @end

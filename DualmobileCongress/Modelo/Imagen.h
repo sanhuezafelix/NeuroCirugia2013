@@ -15,12 +15,17 @@
 
 @property (nonatomic, retain) id binarioImagen;
 @property (nonatomic, retain) NSString * nombre;
+@property (nonatomic, retain) NSSet *eventoPadreQueGrafico;
 @property (nonatomic, retain) NSSet *eventoQueGrafico;
 @property (nonatomic, retain) NSSet *personaQueGrafico;
-@property (nonatomic, retain) NSSet *eventoPadreQueGrafico;
 @end
 
 @interface Imagen (CoreDataGeneratedAccessors)
+
+- (void)addEventoPadreQueGraficoObject:(Eventopadre *)value;
+- (void)removeEventoPadreQueGraficoObject:(Eventopadre *)value;
+- (void)addEventoPadreQueGrafico:(NSSet *)values;
+- (void)removeEventoPadreQueGrafico:(NSSet *)values;
 
 - (void)addEventoQueGraficoObject:(Evento *)value;
 - (void)removeEventoQueGraficoObject:(Evento *)value;
@@ -31,10 +36,5 @@
 - (void)removePersonaQueGraficoObject:(Persona *)value;
 - (void)addPersonaQueGrafico:(NSSet *)values;
 - (void)removePersonaQueGrafico:(NSSet *)values;
-
-- (void)addEventoPadreQueGraficoObject:(Eventopadre *)value;
-- (void)removeEventoPadreQueGraficoObject:(Eventopadre *)value;
-- (void)addEventoPadreQueGrafico:(NSSet *)values;
-- (void)removeEventoPadreQueGrafico:(NSSet *)values;
 
 @end

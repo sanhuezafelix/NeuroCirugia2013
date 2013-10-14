@@ -19,22 +19,22 @@
 @property (nonatomic, retain) NSNumber * patrocinioEP;
 @property (nonatomic, retain) NSString * tipoEP;
 @property (nonatomic, retain) NSString * titulo;
-@property (nonatomic, retain) NSSet *participantes;
-@property (nonatomic, retain) Institucion *institucionPatrocinante;
-@property (nonatomic, retain) Imagen *imagenEventoPadre;
 @property (nonatomic, retain) NSSet *eventoHijo;
+@property (nonatomic, retain) Imagen *imagenEventoPadre;
+@property (nonatomic, retain) Institucion *institucionPatrocinante;
+@property (nonatomic, retain) NSSet *participantes;
 @end
 
 @interface Eventopadre (CoreDataGeneratedAccessors)
-
-- (void)addParticipantesObject:(Persona *)value;
-- (void)removeParticipantesObject:(Persona *)value;
-- (void)addParticipantes:(NSSet *)values;
-- (void)removeParticipantes:(NSSet *)values;
 
 - (void)addEventoHijoObject:(Evento *)value;
 - (void)removeEventoHijoObject:(Evento *)value;
 - (void)addEventoHijo:(NSSet *)values;
 - (void)removeEventoHijo:(NSSet *)values;
+
+- (void)addParticipantesObject:(Persona *)value;
+- (void)removeParticipantesObject:(Persona *)value;
+- (void)addParticipantes:(NSSet *)values;
+- (void)removeParticipantes:(NSSet *)values;
 
 @end

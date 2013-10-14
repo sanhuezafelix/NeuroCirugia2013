@@ -4,6 +4,7 @@
         <attribute name="descripcionEvento" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaFin" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaInicio" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jornada" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="patrocionio" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="tematica" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="tipoEvento" optional="YES" attributeType="String" syncable="YES"/>
@@ -45,6 +46,7 @@
     </entity>
     <entity name="Lugar" representedClassName="Lugar" syncable="YES">
         <attribute name="ciudad" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nombreLugar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pais" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="eventoLugar" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="lugarEnQueMeDesarrollo" inverseEntity="Evento" syncable="YES"/>
         <relationship name="institucionAqui" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Institucion" inverseName="lugarEnqueEstoy" inverseEntity="Institucion" syncable="YES"/>
@@ -74,11 +76,11 @@
     </entity>
     <elements>
         <element name="Evento" positionX="0" positionY="0" width="0" height="0"/>
+        <element name="Eventopadre" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Imagen" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Institucion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Lugar" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Notificacion" positionX="0" positionY="0" width="0" height="0"/>
         <element name="Persona" positionX="0" positionY="0" width="0" height="0"/>
-        <element name="Eventopadre" positionX="0" positionY="0" width="0" height="0"/>
     </elements>
 </model>

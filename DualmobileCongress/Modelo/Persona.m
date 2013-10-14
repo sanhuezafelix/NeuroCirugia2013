@@ -22,11 +22,11 @@
 @dynamic nombre;
 @dynamic rol;
 @dynamic tratamiento;
+@dynamic eventoParticipo;
 @dynamic eventoQueDicto;
 @dynamic fotoPersona;
 @dynamic institucionQueMePatrocina;
 @dynamic lugarDondeProvengo;
 @dynamic notificacionSobreMi;
-@dynamic eventoParticipo;
 
 @end

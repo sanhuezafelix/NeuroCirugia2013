@@ -20,12 +20,13 @@
 @property (nonatomic, retain) NSString * tematica;
 @property (nonatomic, retain) NSString * tipoEvento;
 @property (nonatomic, retain) NSString * titulo;
+@property (nonatomic, retain) NSString * jornada;
+@property (nonatomic, retain) Eventopadre *eventoPadre;
 @property (nonatomic, retain) Imagen *imagenEvento;
 @property (nonatomic, retain) NSSet *institucionPatrocinante;
 @property (nonatomic, retain) Lugar *lugarEnQueMeDesarrollo;
 @property (nonatomic, retain) NSSet *notificacionMeReferencia;
 @property (nonatomic, retain) Persona *speaker;
-@property (nonatomic, retain) Eventopadre *eventoPadre;
 @end
 
 @interface Evento (CoreDataGeneratedAccessors)

@@ -62,24 +62,12 @@
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.title = @" ";
-    [self llamadoEventus];
-    
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
     
-}
-
--(void)llamadoEventus{
-    
-    NSError *error;
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Persona" inManagedObjectContext:_delegate.managedObjectContext];
-    NSFetchRequest *fetchengue = [[NSFetchRequest alloc] init];
-    [fetchengue setEntity:entidad];
-    NSArray *arrayengue = [_delegate.managedObjectContext executeFetchRequest:fetchengue error:&error];
-    NSLog(@"%@",arrayengue);
 }
 
 
@@ -230,7 +218,7 @@
 
 -(NSDate*)StringToDate:(NSString*)hora{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
     NSRange RangoReemplazo = {20, 5};
     
     NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0400"];
