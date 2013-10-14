@@ -20,11 +20,11 @@
 @dynamic descripcionEvento;
 @dynamic horaFin;
 @dynamic horaInicio;
+@dynamic jornada;
 @dynamic patrocionio;
 @dynamic tematica;
 @dynamic tipoEvento;
 @dynamic titulo;
-@dynamic jornada;
 @dynamic eventoPadre;
 @dynamic imagenEvento;
 @dynamic institucionPatrocinante;

@@ -20,9 +20,10 @@
         <attribute name="descripcionEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaFinEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="horaInicioEP" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="jornadaEP" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="patrocinioEP" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="tipoEP" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="titulo" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="tituloEP" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="eventoHijo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="eventoPadre" inverseEntity="Evento" syncable="YES"/>
         <relationship name="imagenEventoPadre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagen" inverseName="eventoPadreQueGrafico" inverseEntity="Imagen" syncable="YES"/>
         <relationship name="institucionPatrocinante" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institucion" inverseName="eventoPadreQuePatrocino" inverseEntity="Institucion" syncable="YES"/>

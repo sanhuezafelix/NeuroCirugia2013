@@ -20,7 +20,8 @@
 @dynamic horaInicioEP;
 @dynamic patrocinioEP;
 @dynamic tipoEP;
-@dynamic titulo;
+@dynamic tituloEP;
+@dynamic jornadaEP;
 @dynamic eventoHijo;
 @dynamic imagenEventoPadre;
 @dynamic institucionPatrocinante;
