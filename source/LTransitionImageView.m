@@ -62,7 +62,7 @@
 
 - (void)initialize
 {
-    _animationDuration = 2;
+    _animationDuration = 0.5;
     
     [self loadGUI];
     [self bindGUI];

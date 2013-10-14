@@ -34,7 +34,7 @@
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"aimagos_sidebar.jpg",@"publicidad_sidebar.png", nil];
+                    @"publi_side_1.png",@"publi_side_2.png",@"publi_side_3.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];

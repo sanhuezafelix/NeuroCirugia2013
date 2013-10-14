@@ -9,7 +9,7 @@
 #import "AnimatedImagesView.h"
 #import "LTransitionImageView.h"
 
-#define AnimaterImageTransitionDuration       2.0f
+#define AnimaterImageTransitionDuration       5.0f
 #define AnimatedImagesViewImageViewsBorderOffset  0
 
 @interface AnimatedImagesView ()
