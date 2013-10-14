@@ -80,14 +80,6 @@
 		C33738EC17850FE900BD0FA9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738EB17850FE900BD0FA9 /* AudioToolbox.framework */; };
 		C33738F017850FFB00BD0FA9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738EF17850FFB00BD0FA9 /* SystemConfiguration.framework */; };
 		C33738F21785100A00BD0FA9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738F11785100A00BD0FA9 /* CFNetwork.framework */; };
-		C341AE5618053C47002017AB /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE5518053C47002017AB /* Evento.m */; };
-		C341AE5918053C48002017AB /* Imagen.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE5818053C48002017AB /* Imagen.m */; };
-		C341AE5C18053C48002017AB /* Institucion.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE5B18053C48002017AB /* Institucion.m */; };
-		C341AE5F18053C48002017AB /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE5E18053C48002017AB /* Persona.m */; };
-		C341AE6218053C48002017AB /* TipoEvento.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE6118053C48002017AB /* TipoEvento.m */; };
-		C341AE6518053C48002017AB /* TipoInstitucion.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE6418053C48002017AB /* TipoInstitucion.m */; };
-		C341AE6818053C48002017AB /* Lugar.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE6718053C48002017AB /* Lugar.m */; };
-		C341AE6B18053C48002017AB /* Pais.m in Sources */ = {isa = PBXBuildFile; fileRef = C341AE6A18053C48002017AB /* Pais.m */; };
 		C344741E17F6264000B1126E /* AFHTTPClient.m in Sources */ = {isa = PBXBuildFile; fileRef = C344740C17F6264000B1126E /* AFHTTPClient.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C344741F17F6264000B1126E /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C344740E17F6264000B1126E /* AFHTTPRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C344742017F6264000B1126E /* AFImageRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C344741017F6264000B1126E /* AFImageRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
@@ -119,6 +111,13 @@
 		C395342B174C5DCC0048543B /* TTTImageTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = C395340B174C5DCC0048543B /* TTTImageTransformers.m */; };
 		C395342C174C5DCC0048543B /* TTTStringTransformers.m in Sources */ = {isa = PBXBuildFile; fileRef = C395340D174C5DCC0048543B /* TTTStringTransformers.m */; };
 		C3AF863F174197A5000743BE /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3AF863E174197A5000743BE /* CoreData.framework */; };
+		C3D386A9180B9ADF001C9317 /* Imagen.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386A8180B9ADF001C9317 /* Imagen.m */; };
+		C3D386AC180B9AE0001C9317 /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386AB180B9AE0001C9317 /* Persona.m */; };
+		C3D386AF180B9AE0001C9317 /* Lugar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386AE180B9AE0001C9317 /* Lugar.m */; };
+		C3D386B2180B9AE0001C9317 /* Institucion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386B1180B9AE0001C9317 /* Institucion.m */; };
+		C3D386B5180B9AE0001C9317 /* Notificacion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386B4180B9AE0001C9317 /* Notificacion.m */; };
+		C3D386B8180B9AE0001C9317 /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386B7180B9AE0001C9317 /* Evento.m */; };
+		C3D386BB180B9AE0001C9317 /* Eventopadre.m in Sources */ = {isa = PBXBuildFile; fileRef = C3D386BA180B9AE0001C9317 /* Eventopadre.m */; };
 		C3EF4C8F18073EDD000569FC /* aimagos_web.png in Resources */ = {isa = PBXBuildFile; fileRef = C3EF4C0F18073EDC000569FC /* aimagos_web.png */; };
 		C3EF4C9018073EDD000569FC /* aimagos_web@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3EF4C1018073EDC000569FC /* aimagos_web@2x.png */; };
 		C3EF4C9118073EDD000569FC /* fondo_about.png in Resources */ = {isa = PBXBuildFile; fileRef = C3EF4C1118073EDC000569FC /* fondo_about.png */; };
@@ -420,22 +419,6 @@
 		C33738EB17850FE900BD0FA9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		C33738EF17850FFB00BD0FA9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C33738F11785100A00BD0FA9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		C341AE5418053C47002017AB /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
-		C341AE5518053C47002017AB /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
-		C341AE5718053C48002017AB /* Imagen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imagen.h; sourceTree = "<group>"; };
-		C341AE5818053C48002017AB /* Imagen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imagen.m; sourceTree = "<group>"; };
-		C341AE5A18053C48002017AB /* Institucion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institucion.h; sourceTree = "<group>"; };
-		C341AE5B18053C48002017AB /* Institucion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institucion.m; sourceTree = "<group>"; };
-		C341AE5D18053C48002017AB /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
-		C341AE5E18053C48002017AB /* Persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persona.m; sourceTree = "<group>"; };
-		C341AE6018053C48002017AB /* TipoEvento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoEvento.h; sourceTree = "<group>"; };
-		C341AE6118053C48002017AB /* TipoEvento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoEvento.m; sourceTree = "<group>"; };
-		C341AE6318053C48002017AB /* TipoInstitucion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TipoInstitucion.h; sourceTree = "<group>"; };
-		C341AE6418053C48002017AB /* TipoInstitucion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TipoInstitucion.m; sourceTree = "<group>"; };
-		C341AE6618053C48002017AB /* Lugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lugar.h; sourceTree = "<group>"; };
-		C341AE6718053C48002017AB /* Lugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lugar.m; sourceTree = "<group>"; };
-		C341AE6918053C48002017AB /* Pais.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Pais.h; sourceTree = "<group>"; };
-		C341AE6A18053C48002017AB /* Pais.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Pais.m; sourceTree = "<group>"; };
 		C344740B17F6264000B1126E /* AFHTTPClient.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPClient.h; sourceTree = "<group>"; };
 		C344740C17F6264000B1126E /* AFHTTPClient.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPClient.m; sourceTree = "<group>"; };
 		C344740D17F6264000B1126E /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
@@ -526,6 +509,20 @@
 		C395340C174C5DCC0048543B /* TTTStringTransformers.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TTTStringTransformers.h; sourceTree = "<group>"; };
 		C395340D174C5DCC0048543B /* TTTStringTransformers.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TTTStringTransformers.m; sourceTree = "<group>"; };
 		C3AF863E174197A5000743BE /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3D386A7180B9ADF001C9317 /* Imagen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Imagen.h; sourceTree = "<group>"; };
+		C3D386A8180B9ADF001C9317 /* Imagen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Imagen.m; sourceTree = "<group>"; };
+		C3D386AA180B9AE0001C9317 /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
+		C3D386AB180B9AE0001C9317 /* Persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persona.m; sourceTree = "<group>"; };
+		C3D386AD180B9AE0001C9317 /* Lugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lugar.h; sourceTree = "<group>"; };
+		C3D386AE180B9AE0001C9317 /* Lugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lugar.m; sourceTree = "<group>"; };
+		C3D386B0180B9AE0001C9317 /* Institucion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institucion.h; sourceTree = "<group>"; };
+		C3D386B1180B9AE0001C9317 /* Institucion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institucion.m; sourceTree = "<group>"; };
+		C3D386B3180B9AE0001C9317 /* Notificacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notificacion.h; sourceTree = "<group>"; };
+		C3D386B4180B9AE0001C9317 /* Notificacion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Notificacion.m; sourceTree = "<group>"; };
+		C3D386B6180B9AE0001C9317 /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
+		C3D386B7180B9AE0001C9317 /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
+		C3D386B9180B9AE0001C9317 /* Eventopadre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Eventopadre.h; sourceTree = "<group>"; };
+		C3D386BA180B9AE0001C9317 /* Eventopadre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Eventopadre.m; sourceTree = "<group>"; };
 		C3EF4C0F18073EDC000569FC /* aimagos_web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = aimagos_web.png; sourceTree = "<group>"; };
 		C3EF4C1018073EDC000569FC /* aimagos_web@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "aimagos_web@2x.png"; sourceTree = "<group>"; };
 		C3EF4C1118073EDC000569FC /* fondo_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fondo_about.png; sourceTree = "<group>"; };
@@ -729,22 +726,20 @@
 			isa = PBXGroup;
 			children = (
 				8986FE4D175EC2100042993F /* Congresos.xcdatamodeld */,
-				C341AE6918053C48002017AB /* Pais.h */,
-				C341AE6A18053C48002017AB /* Pais.m */,
-				C341AE6618053C48002017AB /* Lugar.h */,
-				C341AE6718053C48002017AB /* Lugar.m */,
-				C341AE6318053C48002017AB /* TipoInstitucion.h */,
-				C341AE6418053C48002017AB /* TipoInstitucion.m */,
-				C341AE6018053C48002017AB /* TipoEvento.h */,
-				C341AE6118053C48002017AB /* TipoEvento.m */,
-				C341AE5D18053C48002017AB /* Persona.h */,
-				C341AE5E18053C48002017AB /* Persona.m */,
-				C341AE5A18053C48002017AB /* Institucion.h */,
-				C341AE5B18053C48002017AB /* Institucion.m */,
-				C341AE5718053C48002017AB /* Imagen.h */,
-				C341AE5818053C48002017AB /* Imagen.m */,
-				C341AE5418053C47002017AB /* Evento.h */,
-				C341AE5518053C47002017AB /* Evento.m */,
+				C3D386B9180B9AE0001C9317 /* Eventopadre.h */,
+				C3D386BA180B9AE0001C9317 /* Eventopadre.m */,
+				C3D386B6180B9AE0001C9317 /* Evento.h */,
+				C3D386B7180B9AE0001C9317 /* Evento.m */,
+				C3D386B3180B9AE0001C9317 /* Notificacion.h */,
+				C3D386B4180B9AE0001C9317 /* Notificacion.m */,
+				C3D386B0180B9AE0001C9317 /* Institucion.h */,
+				C3D386B1180B9AE0001C9317 /* Institucion.m */,
+				C3D386AD180B9AE0001C9317 /* Lugar.h */,
+				C3D386AE180B9AE0001C9317 /* Lugar.m */,
+				C3D386AA180B9AE0001C9317 /* Persona.h */,
+				C3D386AB180B9AE0001C9317 /* Persona.m */,
+				C3D386A7180B9ADF001C9317 /* Imagen.h */,
+				C3D386A8180B9ADF001C9317 /* Imagen.m */,
 			);
 			name = Modelo;
 			path = DualmobileCongress/Modelo;
@@ -1916,6 +1911,7 @@
 				AAC02D241738ABAD000AF765 /* mViewController.m in Sources */,
 				89F524FA17450E1A00802855 /* mAboutViewController.m in Sources */,
 				89F524FB17450E1A00802855 /* mDetalleAboutViewController.m in Sources */,
+				C3D386B5180B9AE0001C9317 /* Notificacion.m in Sources */,
 				89F524FD17450E1A00802855 /* mCustomCell.m in Sources */,
 				89F524FE17450E1A00802855 /* mMenuCell.m in Sources */,
 				C344742617F6264000B1126E /* UIImageView+AFNetworking.m in Sources */,
@@ -1930,13 +1926,10 @@
 				7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */,
 				89F5250717450E1A00802855 /* mMenuLateralViewController.m in Sources */,
 				89F5250817450E1A00802855 /* mNavigationMasterViewController.m in Sources */,
-				C341AE6B18053C48002017AB /* Pais.m in Sources */,
-				C341AE5C18053C48002017AB /* Institucion.m in Sources */,
+				C3D386AF180B9AE0001C9317 /* Lugar.m in Sources */,
 				C344742517F6264000B1126E /* AFXMLRequestOperation.m in Sources */,
 				89F5250917450E1A00802855 /* mNotificacionesViewController.m in Sources */,
 				89F5250A17450E1A00802855 /* mSpeakersViewController.m in Sources */,
-				C341AE6818053C48002017AB /* Lugar.m in Sources */,
-				C341AE5F18053C48002017AB /* Persona.m in Sources */,
 				C395340E174C5DCC0048543B /* AFIncrementalStore.m in Sources */,
 				C395340F174C5DCC0048543B /* AFRESTClient.m in Sources */,
 				C395341D174C5DCC0048543B /* NSString+InflectorKit.m in Sources */,
@@ -1945,19 +1938,21 @@
 				C3953429174C5DCC0048543B /* NSValueTransformer+TransformerKit.m in Sources */,
 				C344742217F6264000B1126E /* AFNetworkActivityIndicatorManager.m in Sources */,
 				C395342A174C5DCC0048543B /* TTTDateTransformers.m in Sources */,
+				C3D386A9180B9ADF001C9317 /* Imagen.m in Sources */,
 				C395342B174C5DCC0048543B /* TTTImageTransformers.m in Sources */,
 				C395342C174C5DCC0048543B /* TTTStringTransformers.m in Sources */,
+				C3D386BB180B9AE0001C9317 /* Eventopadre.m in Sources */,
 				AA0C0156175600840001C043 /* mConexionRed.m in Sources */,
 				AA698D041757D1DE00982743 /* SSPullToRefreshDefaultContentView.m in Sources */,
-				C341AE5918053C48002017AB /* Imagen.m in Sources */,
 				AA698D051757D1DE00982743 /* SSPullToRefreshSimpleContentView.m in Sources */,
 				AA698D061757D1DE00982743 /* SSPullToRefreshView.m in Sources */,
+				C3D386AC180B9AE0001C9317 /* Persona.m in Sources */,
 				AA656BD6175886070009E5D2 /* mNavigationAboutViewController.m in Sources */,
+				C3D386B2180B9AE0001C9317 /* Institucion.m in Sources */,
 				C344741E17F6264000B1126E /* AFHTTPClient.m in Sources */,
 				AA05964917593FA7003D0B96 /* mSpeakerDetViewController.m in Sources */,
 				8986FE65175EC2100042993F /* Congresos.xcdatamodeld in Sources */,
 				8957F7A8175EC35800C59973 /* mJornadaViewController.m in Sources */,
-				C341AE6218053C48002017AB /* TipoEvento.m in Sources */,
 				8957F7A9175EC35800C59973 /* mSeleccionJornadaViewController.m in Sources */,
 				C344742017F6264000B1126E /* AFImageRequestOperation.m in Sources */,
 				AA49D4B5175F93370082E9A8 /* mSpeakerCloseViewController.m in Sources */,
@@ -1965,14 +1960,13 @@
 				AA49D4DE175F94720082E9A8 /* mBusquedaCloseViewController.m in Sources */,
 				AA49D4DF175F94720082E9A8 /* mBusquedaViewController.m in Sources */,
 				C344742317F6264000B1126E /* AFPropertyListRequestOperation.m in Sources */,
-				C341AE6518053C48002017AB /* TipoInstitucion.m in Sources */,
 				AACA757317681EF4006E3520 /* mZoomMapas.m in Sources */,
 				AACA757F176834E9006E3520 /* mMapaConferenciaViewController.m in Sources */,
 				AA1D23AC176FB5180080F649 /* REPagedScrollView.m in Sources */,
 				C31AAA8817C4AD06002B49F2 /* Orbiter.m in Sources */,
 				C31AAA9017C4AD37002B49F2 /* NSDataAdditions.m in Sources */,
 				C31AAA9617C4AD49002B49F2 /* mCongressAPIClient.m in Sources */,
-				C341AE5618053C47002017AB /* Evento.m in Sources */,
+				C3D386B8180B9AE0001C9317 /* Evento.m in Sources */,
 				C31AAA9717C4AD49002B49F2 /* mCongressIncrementalStore.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

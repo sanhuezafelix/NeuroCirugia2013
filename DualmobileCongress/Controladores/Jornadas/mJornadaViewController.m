@@ -221,11 +221,11 @@
 
     cell.Titulo.text = info.titulo;
     cell.Subtitulo.text = info.speaker.nombre;
-    cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+    cell.texto.text = info.lugarEnQueMeDesarrollo.ciudad;
     cell.Imagen.image = beforeImage;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-    cell.Actividad.text = info.tipoEvento.idTipoEvento;
+    cell.Actividad.text = info.descripcionEvento;
 }
 
 -(NSDate*)StringToDate:(NSString*)hora{
@@ -263,7 +263,7 @@
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
         destino.ContenidoCelda =info.tematica;
-        destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
+        destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
         destino.NombreImagen = beforeImage;
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -273,7 +273,7 @@
         destino.Referencia  = info.speaker.tratamiento;
         destino.DateFin = [self StringToDate:info.horaFin];
         destino.DateInicio = [self StringToDate:info.horaInicio];
-        destino.ActividadSpeaker = info.tipoEvento.idTipoEvento;
+        destino.ActividadSpeaker = info.descripcionEvento;
 
     }
 }

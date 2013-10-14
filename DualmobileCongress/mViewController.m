@@ -10,7 +10,6 @@
 #import "mAppDelegate.h"
 #import "GAI.h"
 
-
 @interface mViewController ()
 
 @property (nonatomic,strong) mAppDelegate *delegate;
@@ -108,7 +107,7 @@
 -(void)CargadorBaseDatosNoImagenes:(NSArray*)nombresEntidad
 {
     
-    nombresEntidad = [NSArray arrayWithObjects:@"Evento", @"Persona", @"Lugar",@"TipoEvento",@"TipoInstitucion",@"Institucion",@"Pais", nil];
+    nombresEntidad = [NSArray arrayWithObjects:@"Evento", @"Persona", @"Lugar",@"Eventopadre",@"Notificacion",@"Institucion", nil];
     
 for (NSString *unaEntidad in nombresEntidad)
     {

@@ -97,10 +97,10 @@
     cell.Titulo.text = info.titulo;
     cell.Subtitulo.text = info.speaker.nombre;
     cell.Imagen.image = [UIImage imageWithData:dataObj];
-    cell.texto.text   = info.lugarEnQueMeDesarrollo.nombreLugar;
+    cell.texto.text   = info.lugarEnQueMeDesarrollo.ciudad;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-    cell.Actividad.text = info.tipoEvento.idTipoEvento;
+    cell.Actividad.text = info.descripcionEvento;
    
     return cell;
 }
@@ -142,8 +142,8 @@
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
         destino.ContenidoCelda =info.tematica;
-        destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
-        destino.ActividadSpeaker = info.tipoEvento.idTipoEvento;
+        destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
+        destino.ActividadSpeaker = info.descripcionEvento;
         destino.NombreImagen = beforeImage;
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -190,7 +190,9 @@
         self.SearchTableview.scrollEnabled = YES;
         searching = YES;
         // define cuantas entidades queremos que se filtren
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(titulo CONTAINS[cd] %@) OR (speaker.nombre CONTAINS[cd] %@) OR (tipoEvento.idTipoEvento CONTAINS[cd] %@) OR (lugarEnQueMeDesarrollo.nombreLugar CONTAINS[cd] %@)", text, text,text,text];
+        //hice unas hueas reparches en la busqueda hay que arreglarlas de ahí
+        
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(titulo CONTAINS[cd] %@) OR (speaker.nombre CONTAINS[cd] %@) OR (speaker.bio CONTAINS[cd] %@) OR (lugarEnQueMeDesarrollo.ciudad CONTAINS[cd] %@)", text, text,text,text];
         [fetchRequest setPredicate:predicate];
     }
     else
