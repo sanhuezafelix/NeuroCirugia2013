@@ -126,7 +126,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
             [mutablePropertyValues setValue:RepresentacionBinarioImagen forKey:@"binarioImagen"];
             
         }
-    
+    ///pa cambiar una heua no más
 
     return mutablePropertyValues;
 }
