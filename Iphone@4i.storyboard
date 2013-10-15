@@ -382,7 +382,7 @@
                         <viewControllerLayoutGuide type="bottom" id="HXY-HU-uBL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YbU-vR-Idy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-E1-fzA">
@@ -394,12 +394,12 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QXR-Oz-gTB" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="0.0" y="503" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="415" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-Z5-gsG" customClass="AnimatedImagesView">
-                                <rect key="frame" x="70" y="508" width="180" height="55"/>
+                                <rect key="frame" x="70" y="420" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.39607843139999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1559,21 +1559,21 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <!--M Mapa Conferencia View Controller-->
         <scene sceneID="MfS-IM-Pxu">
             <objects>
-                <viewController id="kFj-mK-wTP" customClass="mMapaConferenciaViewController" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" id="kFj-mK-wTP" customClass="mMapaConferenciaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mfv-ws-6R5"/>
                         <viewControllerLayoutGuide type="bottom" id="dNt-de-J1o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Js-4V-RJr">
-                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-eK-Hdq" colorLabel="IBBuiltInLabel-Green">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-eK-Hdq" colorLabel="IBBuiltInLabel-Green">
                                 <rect key="frame" x="0.0" y="439" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-UI-nMg" customClass="AnimatedImagesView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-UI-nMg" customClass="AnimatedImagesView">
                                 <rect key="frame" x="70" y="444" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.39607843139999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1610,11 +1610,11 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <viewControllerLayoutGuide type="bottom" id="sPZ-nb-Pue"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="NZW-SJ-qvi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pN-QX-CSK" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="0.0" y="503" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="415" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -1651,7 +1651,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVP-4w-I6H" customClass="AnimatedImagesView">
-                                <rect key="frame" x="70" y="508" width="180" height="55"/>
+                                <rect key="frame" x="70" y="420" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.39607843139999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1660,7 +1660,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPP-Dg-oiR">
-                                <rect key="frame" x="20" y="447" width="45" height="40"/>
+                                <rect key="frame" x="20" y="359" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1UU-Gn-VIh"/>
@@ -1679,7 +1679,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcW-GO-url">
-                                <rect key="frame" x="61" y="447" width="45" height="40"/>
+                                <rect key="frame" x="61" y="359" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="UR0-U8-rfT"/>
@@ -1698,7 +1698,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-bA-sMY">
-                                <rect key="frame" x="247" y="447" width="40" height="40"/>
+                                <rect key="frame" x="247" y="359" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="aus-Ej-hwd"/>
@@ -1714,7 +1714,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UWx-G3-CqU">
-                                <rect key="frame" x="206" y="447" width="40" height="40"/>
+                                <rect key="frame" x="206" y="359" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1ye-1Q-r8X"/>
@@ -1733,7 +1733,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1fA-P3-BGl">
-                                <rect key="frame" x="118" y="358" width="188" height="20"/>
+                                <rect key="frame" x="118" y="270" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="Jgq-vf-3b6"/>
@@ -1744,7 +1744,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sgL-D2-IQD">
-                                <rect key="frame" x="21" y="358" width="157" height="20"/>
+                                <rect key="frame" x="21" y="270" width="157" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="YZ4-IM-hvR"/>
@@ -1755,7 +1755,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-V0-M0G">
-                                <rect key="frame" x="14" y="238" width="293" height="51"/>
+                                <rect key="frame" x="14" y="150" width="293" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="Hno-74-cxy"/>
@@ -1765,7 +1765,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfJ-40-HIM">
-                                <rect key="frame" x="21" y="302" width="163" height="17"/>
+                                <rect key="frame" x="21" y="214" width="163" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="163" id="nGj-aq-Y9b"/>
@@ -1775,7 +1775,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="eSt-38-Gaw">
-                                <rect key="frame" x="14" y="323" width="293" height="35"/>
+                                <rect key="frame" x="14" y="235" width="293" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="1jj-0e-929"/>
@@ -2384,7 +2384,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="TXI-jL-fCN"/>
