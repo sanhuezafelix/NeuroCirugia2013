@@ -66,7 +66,6 @@
     }
 }
 
-
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
    
@@ -77,7 +76,6 @@
                          withLabel:@"Abrío el menu lateral desde About"
                          withValue:nil];
 }
-
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
