@@ -22,7 +22,7 @@
 
 -(void)awakeFromNib
 {
-    self.IconoMenu   = [[NSArray alloc]initWithObjects:@"butonhome.png",@"ButtonJornada.png",@"ButtonSpeakers.png",@"ButtonBusqueda.png",@"ButtonMapa.png", @"buttonhoteleria.png",@"ButtonAbout.png", nil];
+    self.IconoMenu   = [[NSArray alloc]initWithObjects:@"butonhome.png",@"ButtonJornada.png",@"ButtonSpeakers.png",@"ButtonBusqueda.png",@"ButtonMapa.png", @"buttonSopnia.png",@"ButtonAbout.png", nil];
                     
     self.MenuItems  = [[NSArray alloc]initWithObjects: @"Ahora",@"Jornada",@"Speaker",@"Busqueda",@"Mapas",@"Hazte Socio", nil];
 }
