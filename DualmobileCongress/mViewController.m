@@ -8,6 +8,8 @@
 
 #import "mViewController.h"
 #import "mAppDelegate.h"
+#import "Institucion.h"
+#import "Lugar.h"
 #import "GAI.h"
 #import "Evento.h"
 
@@ -31,8 +33,12 @@
 
     if ([[NSFileManager defaultManager]fileExistsAtPath:[self Ruta]] == TRUE) {
         self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
+        
+        [self CargadorBaseDatosNoImagenes:_nombresEntidad];
     }
     else{
+        [self CargadorBaseDatosNoImagenes:_nombresEntidad];
+
       self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
         
     }

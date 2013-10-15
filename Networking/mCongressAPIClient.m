@@ -35,7 +35,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
 {
     NSMutableURLRequest *mutableURLRequest = nil;
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
+    
     self.estadoAutorizadorSincronizacion = [defaults boolForKey:@"kAutorizadorSincronizacion"];
     self.estadoAutorizadorSincronizacionImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
@@ -45,89 +45,87 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
             
             
             NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
-
-        }
-            else if ([fetchRequest.entityName isEqualToString:@"Persona"]) {
-                
-                mutableURLRequest = [self requestWithMethod:@"GET" path:@"personas" parameters:nil];
             
-                
-                NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
-                                
-}
-            else if ([fetchRequest.entityName isEqualToString:@"Institucion"]) {
-                
-                mutableURLRequest = [self requestWithMethod:@"GET" path:@"institucions" parameters:nil];
-                
-                NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
-                
-                
-}
-            else if ([fetchRequest.entityName isEqualToString:@"Eventopadre"]) {
-                
-                mutableURLRequest = [self requestWithMethod:@"GET" path:@"eventopadres" parameters:nil];
-                
-                NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
-}
+        }
+        else if ([fetchRequest.entityName isEqualToString:@"Persona"]) {
+            
+            mutableURLRequest = [self requestWithMethod:@"GET" path:@"personas" parameters:nil];
+            
+            NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
+            
+        }
+        else if ([fetchRequest.entityName isEqualToString:@"Lugar"]) {
+            
+            mutableURLRequest = [self requestWithMethod:@"GET" path:@"lugars" parameters:nil];
+            
+            NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
+            
+            
+        }
+        else if ([fetchRequest.entityName isEqualToString:@"Eventopadre"]) {
+            
+            mutableURLRequest = [self requestWithMethod:@"GET" path:@"eventopadres" parameters:nil];
+            
+            NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
+        }
         
-            else if ([fetchRequest.entityName isEqualToString:@"Notificacion"]) {
-                
-                mutableURLRequest = [self requestWithMethod:@"GET" path:@"notificacions" parameters:nil];
-                
-                NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
-}
+        else if ([fetchRequest.entityName isEqualToString:@"Notificacion"]) {
+            
+            mutableURLRequest = [self requestWithMethod:@"GET" path:@"notificacions" parameters:nil];
+            
+            NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
+        }
         
-            else if ([fetchRequest.entityName isEqualToString:@"Lugar"]) {
-                
-                mutableURLRequest = [self requestWithMethod:@"GET" path:@"lugars" parameters:nil];
-                
-                NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
-            }
+        else if ([fetchRequest.entityName isEqualToString:@"Institucion"]) {
+            
+            mutableURLRequest = [self requestWithMethod:@"GET" path:@"institucions" parameters:nil];
+            
+            NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
+        }
         else
-            {
-                NSLog(@"***NO*** Debería Sincronizar ==> %@", [mutableURLRequest description]);
-            }
+        {
+            NSLog(@"***NO*** Debería Sincronizar ==> %@", [mutableURLRequest description]);
+        }
     }
     
     if (self.estadoAutorizadorSincronizacionImagen == YES) {
         
-    if ([fetchRequest.entityName isEqualToString:@"Imagen"]) {
-        
+        if ([fetchRequest.entityName isEqualToString:@"Imagen"]) {
+            
             mutableURLRequest = [self requestWithMethod:@"GET" path:@"imagens" parameters:nil];
             
             NSLog(@"Debería Sincronizar IMAGEN ==> %@", [mutableURLRequest description]);
-    }
+        }
         else {
-                        
+            
             NSLog(@"***NO*** Debería Sincronizar IMAGEN==> %@", [mutableURLRequest description]);
         }
     }
     
-        return mutableURLRequest;
+    return mutableURLRequest;
 }
 
 
 - (id)representationOrArrayOfRepresentationsFromResponseObject:(id)responseObject {
- 
+    
     return responseObject;
 }
 
-
 - (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation
-                                     ofEntity:(NSEntityDescription *)entity 
+                                     ofEntity:(NSEntityDescription *)entity
                                  fromResponse:(NSHTTPURLResponse *)response
 
 {
     
     NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
-    if ([entity.name isEqualToString:@"Imagen"]) {
-            
-            NSString *RepresentacionBinarioImagen = [NSString stringWithFormat:@"%@", [representation valueForKey:@"binarioImagen"]];
-            [mutablePropertyValues setValue:RepresentacionBinarioImagen forKey:@"binarioImagen"];
-            
-        }
+    if ([entity.name isEqualToString:@"Lugar"]) {
+        
+        NSString *RepresentacionBinarioImagen = [NSString stringWithFormat:@"%@", [representation valueForKey:@"pais"]];
+        [mutablePropertyValues setValue:RepresentacionBinarioImagen forKey:@"pais"];
+        
+    }
     ///pa cambiar una heua no más
-
+    
     return mutablePropertyValues;
 }
 
@@ -168,17 +166,13 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
             diccionarioPaLasRelaciones = @{ @"notificacionSobreMi" : @{@"id" : representacionNotifiDelHuea }
                                             
                                             };
-            
         }
-
-        
         
         NSString *representacionPaInstitucionPatrocinante = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionQueMePatrocina_id"]];
         if (![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"]) {
             diccionarioPaLasRelaciones = @{
                                            @"institucionQueMePatrocina" : @{@"id" : representacionPaInstitucionPatrocinante}
                                            };
-            
         }
         
         NSString *representacionParticipacion = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoParticipo_id"]];
@@ -186,29 +180,28 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
             diccionarioPaLasRelaciones = @{
                                            @"eventoParticipo" : @{@"id" : representacionParticipacion}
                                            };
-            
         }
-
+        
         
     }
     
     else if([entity.name isEqualToString:@"Lugar"])
     {
-        NSString *representacionPaInstitucionAqui = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionAqui_id"]];
-        
-        if (![representacionPaInstitucionAqui isEqualToString:@"(null)"]) {
-            diccionarioPaLasRelaciones = @{
-                                           @"institucionAqui" : @{@"id" : representacionPaInstitucionAqui}
-                                           };
-            
-        }
-        NSString *representacionPaPaisEnQueEstoy = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"paisEnQueEstoy_id"]];
-        
-        if (![representacionPaPaisEnQueEstoy isEqualToString:@"(null)"]  && ![representacionPaPaisEnQueEstoy isEqualToString:@"<null>"]) {
-            diccionarioPaLasRelaciones = @{
-                                           @"paisEnQueEstoy" : @{@"id" : representacionPaPaisEnQueEstoy}
-                                           };
-        }
+        //        NSString *representacionPaInstitucionAqui = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"ciudad"]];
+        //
+        //        if (![representacionPaInstitucionAqui isEqualToString:@"(null)"]) {
+        //            diccionarioPaLasRelaciones = @{
+        //                                           @"ciudad" : @{@"id" : representacionPaInstitucionAqui}
+        //                                           };
+        //
+        //        }
+        //        NSString *representacionPaPaisEnQueEstoy = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"nombreLugar"]];
+        //
+        //        if (![representacionPaPaisEnQueEstoy isEqualToString:@"(null)"]  && ![representacionPaPaisEnQueEstoy isEqualToString:@"<null>"]) {
+        //            diccionarioPaLasRelaciones = @{
+        //                                           @"nombreLugar" : @{@"id" : representacionPaPaisEnQueEstoy}
+        //                                           };
+        //        }
     }
     
     else if([entity.name isEqualToString:@"Institucion"])
@@ -231,6 +224,14 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                            };
         }
     }
+    NSString *eventID2 = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDesarrolloEP_id"]];
+    if (![eventID2 isEqualToString:@"(null)"]) {
+        diccionarioPaLasRelaciones = @{
+                                       @"lugarDesarrolloEP" : @{@"id" : eventID2}
+                                       };
+    }
+    
+    
     
     else if([entity.name isEqualToString:@"Notificacion"])
     {
@@ -241,24 +242,17 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                            };
         }
         
-        
         NSString *representacionRelsTipoEvento2= [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"personaAsociada_id"]];
         if (![representacionRelsTipoEvento2 isEqualToString:@"(null)"]) {
             diccionarioPaLasRelaciones = @{
                                            @"personaAsociada" : @{@"id" : representacionRelsTipoEvento2}
                                            };
         }
-        
-        
-
-        
-        
     }
     
     else if([entity.name isEqualToString:@"Imagen"])
+        
     {
-        
-        
         NSString *representacionPaPersonaQueGrafico = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"personaQueGrafico_id"]];
         
         if (![representacionPaPersonaQueGrafico isEqualToString:@"(null)"]) {
