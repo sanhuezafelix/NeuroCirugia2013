@@ -93,13 +93,16 @@
     // Email Content
     NSString *messageBody = @"Gracias por contactarse con SOPNIA <br> <br>Le solicitamos que llene los siguientes datos: <br><br> Nombre: <br> Apellido: <br> Correo Electronico: <br> Numero de contacto: <br> <br>Gracias.";
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"correo@sopnia.cl"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"secretaria@sopnia.cl"];
+    // To bbc
+    NSArray *bbc = [NSArray arrayWithObject:@"congreso@mobicongress.com"];
     
     MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
     mc.mailComposeDelegate = self;
     [mc setSubject:emailTitle];
     [mc setMessageBody:messageBody isHTML:YES];
     [mc setToRecipients:toRecipents];
+    [mc setBccRecipients:bbc];
     
     // Present mail view controller on screen
     [self presentViewController:mc animated:YES completion:NULL];
