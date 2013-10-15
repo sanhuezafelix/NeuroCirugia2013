@@ -216,16 +216,12 @@
     cell.texto.text     =   info.cargo;
     cell.Imagen.image   =   [UIImage imageWithData:dataObj];
     
-    
-    
     return cell;
 }
-
 
 -(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.buscar resignFirstResponder];
 }
-
 
 #pragma -mark enviamos datos de la celda selecionadas a la vista de detalle
 
@@ -245,8 +241,6 @@
         destino.ReferenciaSpeaker = info.tratamiento;
         destino.BiografiaCelda = info.bio;
         destino.Institucioncelda = info.institucionQueMePatrocina.nombreInstitucion;
-        
-        
     }
 }
 
@@ -268,7 +262,7 @@
 {
     if(ovController == nil)
         [self.buscar resignFirstResponder];
-    else
+   else
         [self CerrarTeclado];
     
     [self.slidingViewController anchorTopViewTo:ECRight];
@@ -336,10 +330,7 @@
         // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
         
         [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-        
-    }
-    
-    
+}
     [super viewWillAppear:animated];
     
 }
