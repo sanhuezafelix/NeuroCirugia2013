@@ -57,7 +57,7 @@
     
     NSLog(@"nombre: %@ Pais %@ Institucion %@", self.Nombrecelda , self.Paiscelda , self.Institucioncelda);
     self.EventoQueParticipo = [[NSMutableArray alloc]initWithArray:[self CargarEventosQueParticipo]];
-    
+ 
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
     [self.animationImageView setImagesArr:arr];

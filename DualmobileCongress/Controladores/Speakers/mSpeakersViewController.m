@@ -213,7 +213,7 @@
      NSData *dataObj    = [NSData dataWithBase64EncodedString:info.fotoPersona.binarioImagen];
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
-    cell.texto.text     =   info.cargo;
+    cell.texto.text     =   info.lugarDondeProvengo.pais; //tratandi de sacar pais a la vista speaker
     cell.Imagen.image   =   [UIImage imageWithData:dataObj];
     
     return cell;
@@ -236,7 +236,7 @@
         
         //como se saco la entidad pai deje el pais celda como ciudad del hueón, por mientras.
 
-        destino.Paiscelda = info.lugarDondeProvengo.ciudad;
+        destino.Paiscelda = info.lugarDondeProvengo.pais;
         destino.ImagenDelSpeaker = [UIImage imageWithData:dataObj];
         destino.ReferenciaSpeaker = info.tratamiento;
         destino.BiografiaCelda = info.bio;
