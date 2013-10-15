@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -262,7 +262,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ9-Fq-HsK">
-                                                    <rect key="frame" x="43" y="51" width="98" height="15"/>
+                                                    <rect key="frame" x="48" y="39" width="242" height="18"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -283,9 +283,9 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="top" fixedFrame="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" translatesAutoresizingMaskIntoConstraints="NO" id="CTW-ib-deY">
-                                                    <rect key="frame" x="43" y="-5" width="252" height="50"/>
+                                                    <rect key="frame" x="43" y="-4" width="252" height="50"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="13"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="flechaSpeaker.png" translatesAutoresizingMaskIntoConstraints="NO" id="2Zw-P0-bg4">
@@ -293,7 +293,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tipo de actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npb-i8-SEO">
-                                                    <rect key="frame" x="154" y="53" width="97" height="15"/>
+                                                    <rect key="frame" x="48" y="54" width="97" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -306,7 +306,7 @@
                                             <outlet property="Actividad" destination="npb-i8-SEO" id="q2n-pR-m9q"/>
                                             <outlet property="Hora" destination="ZzR-Vy-643" id="vbO-pS-DGB"/>
                                             <outlet property="Subtitulo" destination="jZ9-Fq-HsK" id="N4c-rX-Hxf"/>
-                                            <outlet property="Titulo" destination="CTW-ib-deY" id="1B8-Uq-CPA"/>
+                                            <outlet property="Titulo" destination="CTW-ib-deY" id="tgQ-GT-Q6K"/>
                                             <outlet property="horaInicio" destination="WvP-bE-SZl" id="82s-aa-8g3"/>
                                             <outlet property="texto" destination="0F8-JZ-vIV" id="abS-gS-8Qp"/>
                                             <segue destination="3Sn-vW-Hnt" kind="push" identifier="home" id="TXI-jL-fCN"/>
@@ -540,14 +540,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-Ow-eHc">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-Ow-eHc">
                                 <rect key="frame" x="13" y="12" width="293" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="1OU-Pi-0va"/>
                                     <constraint firstAttribute="height" constant="51" id="6IJ-9o-yer"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fP-Xk-zqd">
@@ -589,10 +589,10 @@
                                 </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
-                                <rect key="frame" x="20" y="68" width="163" height="22"/>
+                                <rect key="frame" x="20" y="68" width="285" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="163" id="76U-ug-gvS"/>
+                                    <constraint firstAttribute="width" constant="285" id="LvX-Db-5Hk"/>
                                     <constraint firstAttribute="height" constant="22" id="McM-KZ-1F8"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -600,7 +600,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
-                                <rect key="frame" x="13" y="96" width="293" height="70"/>
+                                <rect key="frame" x="13" y="96" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="7vv-hq-AwV"/>
