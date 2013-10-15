@@ -16,10 +16,10 @@
 @property (nonatomic, retain) NSString * descripcionEP;
 @property (nonatomic, retain) NSString * horaFinEP;
 @property (nonatomic, retain) NSString * horaInicioEP;
+@property (nonatomic, retain) NSString * jornadaEP;
 @property (nonatomic, retain) NSNumber * patrocinioEP;
 @property (nonatomic, retain) NSString * tipoEP;
 @property (nonatomic, retain) NSString * tituloEP;
-@property (nonatomic, retain) NSString * jornadaEP;
 @property (nonatomic, retain) NSSet *eventoHijo;
 @property (nonatomic, retain) Imagen *imagenEventoPadre;
 @property (nonatomic, retain) Institucion *institucionPatrocinante;

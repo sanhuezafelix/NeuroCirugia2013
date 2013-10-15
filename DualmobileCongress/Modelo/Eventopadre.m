@@ -18,10 +18,10 @@
 @dynamic descripcionEP;
 @dynamic horaFinEP;
 @dynamic horaInicioEP;
+@dynamic jornadaEP;
 @dynamic patrocinioEP;
 @dynamic tipoEP;
 @dynamic tituloEP;
-@dynamic jornadaEP;
 @dynamic eventoHijo;
 @dynamic imagenEventoPadre;
 @dynamic institucionPatrocinante;

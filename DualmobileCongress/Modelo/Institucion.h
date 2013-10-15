@@ -18,7 +18,7 @@
 @property (nonatomic, retain) NSString * tipoInstitucion;
 @property (nonatomic, retain) NSSet *eventoPadreQuePatrocino;
 @property (nonatomic, retain) Evento *eventoQuePatrocino;
-@property (nonatomic, retain) Lugar *lugarEnqueEstoy;
+@property (nonatomic, retain) NSSet *lugarEnqueEstoy;
 @property (nonatomic, retain) NSSet *personaQuePatrocino;
 @end
 
@@ -28,6 +28,11 @@
 - (void)removeEventoPadreQuePatrocinoObject:(Eventopadre *)value;
 - (void)addEventoPadreQuePatrocino:(NSSet *)values;
 - (void)removeEventoPadreQuePatrocino:(NSSet *)values;
+
+- (void)addLugarEnqueEstoyObject:(Lugar *)value;
+- (void)removeLugarEnqueEstoyObject:(Lugar *)value;
+- (void)addLugarEnqueEstoy:(NSSet *)values;
+- (void)removeLugarEnqueEstoy:(NSSet *)values;
 
 - (void)addPersonaQuePatrocinoObject:(Persona *)value;
 - (void)removePersonaQuePatrocinoObject:(Persona *)value;

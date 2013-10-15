@@ -17,7 +17,7 @@
 @property (nonatomic, retain) NSString * nombreLugar;
 @property (nonatomic, retain) NSString * pais;
 @property (nonatomic, retain) NSSet *eventoLugar;
-@property (nonatomic, retain) NSSet *institucionAqui;
+@property (nonatomic, retain) Institucion *institucionAqui;
 @property (nonatomic, retain) NSSet *personaDelQueSoyProcedencia;
 @end
 
@@ -27,11 +27,6 @@
 - (void)removeEventoLugarObject:(Evento *)value;
 - (void)addEventoLugar:(NSSet *)values;
 - (void)removeEventoLugar:(NSSet *)values;
-
-- (void)addInstitucionAquiObject:(Institucion *)value;
-- (void)removeInstitucionAquiObject:(Institucion *)value;
-- (void)addInstitucionAqui:(NSSet *)values;
-- (void)removeInstitucionAqui:(NSSet *)values;
 
 - (void)addPersonaDelQueSoyProcedenciaObject:(Persona *)value;
 - (void)removePersonaDelQueSoyProcedenciaObject:(Persona *)value;

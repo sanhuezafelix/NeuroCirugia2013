@@ -42,7 +42,7 @@
         <attribute name="tipoInstitucion" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="eventoPadreQuePatrocino" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Eventopadre" inverseName="institucionPatrocinante" inverseEntity="Eventopadre" syncable="YES"/>
         <relationship name="eventoQuePatrocino" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Evento" inverseName="institucionPatrocinante" inverseEntity="Evento" syncable="YES"/>
-        <relationship name="lugarEnqueEstoy" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lugar" inverseName="institucionAqui" inverseEntity="Lugar" syncable="YES"/>
+        <relationship name="lugarEnqueEstoy" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Lugar" inverseName="institucionAqui" inverseEntity="Lugar" syncable="YES"/>
         <relationship name="personaQuePatrocino" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persona" inverseName="institucionQueMePatrocina" inverseEntity="Persona" syncable="YES"/>
     </entity>
     <entity name="Lugar" representedClassName="Lugar" syncable="YES">
@@ -50,7 +50,7 @@
         <attribute name="nombreLugar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pais" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="eventoLugar" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="lugarEnQueMeDesarrollo" inverseEntity="Evento" syncable="YES"/>
-        <relationship name="institucionAqui" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Institucion" inverseName="lugarEnqueEstoy" inverseEntity="Institucion" syncable="YES"/>
+        <relationship name="institucionAqui" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institucion" inverseName="lugarEnqueEstoy" inverseEntity="Institucion" syncable="YES"/>
         <relationship name="personaDelQueSoyProcedencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persona" inverseName="lugarDondeProvengo" inverseEntity="Persona" syncable="YES"/>
     </entity>
     <entity name="Notificacion" representedClassName="Notificacion" syncable="YES">
