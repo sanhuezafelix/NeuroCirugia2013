@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		7849982B17E019190019D7BB /* Iphone@4i.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7849982917E019190019D7BB /* Iphone@4i.storyboard */; };
+		786C26C6180CCCD3005A55CC /* mSimposioDetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786C26C5180CCCD3005A55CC /* mSimposioDetViewController.m */; };
 		7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C75C180890260055D0D7 /* mSimposioViewController.m */; };
 		7893C765180890300055D0D7 /* mSocioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C764180890300055D0D7 /* mSocioViewController.m */; };
 		78A99C60180A3BE40062865B /* AnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99C5D180A3BE40062865B /* AnimatedImagesView.m */; };
@@ -303,6 +304,8 @@
 /* Begin PBXFileReference section */
 		4FDDBEA3C2F846D79A2536B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7849982917E019190019D7BB /* Iphone@4i.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Iphone@4i.storyboard"; sourceTree = "<group>"; };
+		786C26C4180CCCD3005A55CC /* mSimposioDetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSimposioDetViewController.h; path = Simposio/mSimposioDetViewController.h; sourceTree = "<group>"; };
+		786C26C5180CCCD3005A55CC /* mSimposioDetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mSimposioDetViewController.m; path = Simposio/mSimposioDetViewController.m; sourceTree = "<group>"; };
 		7893C75B180890260055D0D7 /* mSimposioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSimposioViewController.h; path = Simposio/mSimposioViewController.h; sourceTree = "<group>"; };
 		7893C75C180890260055D0D7 /* mSimposioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = mSimposioViewController.m; path = Simposio/mSimposioViewController.m; sourceTree = "<group>"; };
 		7893C763180890300055D0D7 /* mSocioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSocioViewController.h; path = Socio/mSocioViewController.h; sourceTree = "<group>"; };
@@ -695,6 +698,8 @@
 			children = (
 				7893C75B180890260055D0D7 /* mSimposioViewController.h */,
 				7893C75C180890260055D0D7 /* mSimposioViewController.m */,
+				786C26C4180CCCD3005A55CC /* mSimposioDetViewController.h */,
+				786C26C5180CCCD3005A55CC /* mSimposioDetViewController.m */,
 			);
 			name = Simposio;
 			sourceTree = "<group>";
@@ -1942,6 +1947,7 @@
 				78A99C61180A3BE40062865B /* LTransitionImageView.m in Sources */,
 				7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */,
 				89F5250717450E1A00802855 /* mMenuLateralViewController.m in Sources */,
+				786C26C6180CCCD3005A55CC /* mSimposioDetViewController.m in Sources */,
 				89F5250817450E1A00802855 /* mNavigationMasterViewController.m in Sources */,
 				C344742517F6264000B1126E /* AFXMLRequestOperation.m in Sources */,
 				89F5250917450E1A00802855 /* mNotificacionesViewController.m in Sources */,
@@ -2055,7 +2061,7 @@
 			baseConfigurationReference = A96B3F0664D24CA99A8DE5D1 /* Pods.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Felix Luna (YWNZA7PU67)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",

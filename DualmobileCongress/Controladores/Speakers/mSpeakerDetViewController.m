@@ -129,6 +129,7 @@
     NSLog(@"nombre del lugar ==> %@" ,info.lugarEnQueMeDesarrollo.nombreLugar);
     cell.Subtitulo.text = info.speaker.nombre;
 
+
     
     return cell;
 }
