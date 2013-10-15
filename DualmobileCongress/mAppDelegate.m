@@ -33,8 +33,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-       // [self GuardarNotificacion:@"Bienvenido, te saluda Aimagos"];
-}
+    }
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -47,7 +46,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
                                        nil];
         
         [defaults registerDefaults:defaultValues];
-}
+    }
     // Opcional: envia automáticamente excepciones no controladas de nuestra app a Google.
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     // Opcional: establece 20 segundos como intervalo para comunicar con Google.
