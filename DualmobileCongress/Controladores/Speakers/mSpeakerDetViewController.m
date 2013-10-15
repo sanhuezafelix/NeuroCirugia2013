@@ -57,7 +57,7 @@
     
     NSLog(@"nombre: %@ Pais %@ Institucion %@", self.Nombrecelda , self.Paiscelda , self.Institucioncelda);
     self.EventoQueParticipo = [[NSMutableArray alloc]initWithArray:[self CargarEventosQueParticipo]];
-    
+ 
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
     [self.animationImageView setImagesArr:arr];
@@ -210,7 +210,7 @@
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
         destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
-        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.pais;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
         destino.DateFin = [self StringToDate:info.horaFin];
