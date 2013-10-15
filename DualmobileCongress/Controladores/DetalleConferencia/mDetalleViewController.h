@@ -15,7 +15,20 @@
 #import <EventKitUI/EventKitUI.h>
 #import "AnimatedImagesView.h"
 
-@interface mDetalleViewController : UIViewController<EKEventEditViewDelegate, EKEventViewDelegate>
+
+
+//modelo
+#import "Evento.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Imagen.h"
+#import "Institucion.h"
+#import "Eventopadre.h"
+
+
+
+@interface mDetalleViewController : UIViewController<EKEventEditViewDelegate, EKEventViewDelegate ,UITableViewDataSource , UITableViewDataSource>
+@property (strong, nonatomic) IBOutlet UITableView *DetailTableview;
 
 @property (strong, nonatomic) IBOutlet UILabel *Lugar;
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
@@ -30,6 +43,9 @@
 @property (strong, nonatomic) IBOutlet UITextView *ContenidoExposicion;
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicarFacebook;
 @property (strong, nonatomic) IBOutlet UIImageView*imagen;
+@property (strong, nonatomic) IBOutlet UILabel *labelSimposio;
+
+
 
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
@@ -49,6 +65,8 @@
 @property(nonatomic,strong)NSDate   *DateInicio;
 @property(nonatomic,strong)NSDate   *DateFin;
 @property(nonatomic,strong)UIImage  *NombreImagen;
+@property(nonatomic)BOOL  *EsSimposio;
+@property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
 
 - (IBAction)PublicaEnFaceBook:(id)sender;
 - (IBAction)PublicaEnTwiter:(id)sender;

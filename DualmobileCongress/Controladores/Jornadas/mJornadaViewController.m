@@ -104,14 +104,14 @@
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
 {
     NSString *sectionName;
-
+    
     if (section == 0) {
         if ([self.EventosPadre count]>0)
         {
             sectionName = NSLocalizedString(@"Simposios", @"Simposios");
         }
         else;
-
+        
     }
     if (section == 1) {
         if ([self.EventosHijos count]>0)
@@ -121,7 +121,7 @@
         else;
         
     }
-
+    
     
     return sectionName;
 }
@@ -152,7 +152,6 @@
     
     else
     {
-        
         Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
@@ -219,10 +218,6 @@
 }
 
 
-
-
-
-
 -(NSDate*)StringToDate:(NSString*)hora{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
@@ -248,8 +243,55 @@
     
     // Comprobamos si el identificador es el adecuado
     
-    if ([segue.identifier isEqualToString:@"JornadaDetalle"])
+    if ([segue.identifier isEqualToString:@"DetalleMixto"])
     {
+        
+        NSIndexPath *indexPath = [self.JornadasTableView indexPathForSelectedRow];
+        NSLog(@"seccion seleccionada es ==> %d",indexPath.section);
+        if (indexPath.section == 0)
+        {
+            Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
+            mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+            
+            
+            destino.tituloCelda = info.tituloEP;
+            destino.ContenidoCelda =info.tipoEP;
+            
+            
+            NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicioEP]]];
+            destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFinEP]]];
+            destino.EsSimposio = true;
+            
+            
+            
+            
+        }
+        else{
+            Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
+            mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+            NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
+            UIImage *beforeImage = [UIImage imageWithData:dataObj];
+            destino.ExpositorCelda = info.speaker.nombre;
+            destino.tituloCelda = info.titulo;
+            destino.ContenidoCelda =info.tematica;
+            destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
+            destino.NombreImagen = beforeImage;
+            NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
+            destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
+            destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
+            destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+            destino.BiografiaSpeaker = info.speaker.bio;
+            destino.Referencia  = info.speaker.tratamiento;
+            destino.DateFin = [self StringToDate:info.horaFin];
+            destino.DateInicio = [self StringToDate:info.horaInicio];
+            destino.ActividadSpeaker = info.descripcionEvento;
+            destino.EsSimposio = FALSE;
+            
+        }
+        
+        
+        
+        
         Evento *info = [_fetchedResultsController
                         objectAtIndexPath:[self.JornadasTableView indexPathForSelectedRow]];
         mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
@@ -258,18 +300,17 @@
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
         destino.ContenidoCelda =info.tematica;
-        destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
+        destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
         destino.NombreImagen = beforeImage;
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
         destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
-        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.pais;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
         destino.DateFin = [self StringToDate:info.horaFin];
         destino.DateInicio = [self StringToDate:info.horaInicio];
         destino.ActividadSpeaker = info.descripcionEvento;
-        
         
         
     }

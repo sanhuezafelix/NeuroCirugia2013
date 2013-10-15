@@ -7,11 +7,12 @@
 //
 
 #import "mDetalleViewController.h"
+#import "mAppDelegate.h"
 #import "GAI.h"
 
 
 @interface mDetalleViewController ()
-
+@property(nonatomic,strong)mAppDelegate *delegate;
 @end
 
 @implementation mDetalleViewController
@@ -49,12 +50,19 @@
     {
         [self.botonDeTalleSpeaker setHidden:YES];
     }
+    if (!self.EsSimposio) {
+        NSLog( @"es un evento ");
+        self.DetailTableview.hidden = true;
+        self.labelSimposio.hidden = true;
+    }
+    self.delegate = [[UIApplication sharedApplication]delegate];
     
+    self.EventosDelSimposio = [[NSMutableArray alloc]initWithArray:[self CargarEventosDelSimposio]];
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
-                              forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-   
+                                        forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
     self.title = @" ";
     NSLog(@" este es un%@n", self.tituloCelda);
     
@@ -63,7 +71,7 @@
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
-
+    
 }
 
 
@@ -102,7 +110,7 @@
         {
             self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
         }
-         
+        
         Facebook.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [Facebook setInitialText:self.MensajeInicial];
         [Facebook addImage:[UIImage imageNamed:@"mcongress_icon_114"]];
@@ -110,7 +118,7 @@
         [Facebook setCompletionHandler:completionHandler];
         [self presentViewController:Facebook animated:YES completion:nil];
     }
-   
+    
     //Pa la interacción social con feibu.
 }
 
@@ -118,8 +126,8 @@
     
     id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [socialTracking sendSocial:send
-                     withAction:action
-                     withTarget:nil];
+                    withAction:action
+                    withTarget:nil];
     
 }
 
@@ -138,12 +146,12 @@
                 case SLComposeViewControllerResultDone:
                     NSLog(@"Se ha publicado satisfactoriamente.");
                     [self socialTracking:@"Twitter" :@"Tweet"];
-
+                    
                     break;
                 default:
                     break;
             }
-    };
+        };
         
         if (([self.Titulo.text isEqualToString:@"Almuerzo"]==TRUE)||([self.Titulo.text isEqualToString:@"Coffee Break"]==TRUE))
         {
@@ -159,11 +167,11 @@
         [twitter addURL:[NSURL URLWithString:@"http://www.mobicongress.com"]];
         [twitter setInitialText:self.MensajeInicial];
         [twitter setCompletionHandler:completionHandler];
-
+        
         [self presentViewController:twitter animated:YES completion:nil];
     }
     
-   
+    
     //Interacción social con twitter.
 }
 
@@ -172,23 +180,23 @@
 {
     // Comprobamos si el identificador es el adecuado
     
-        if ([segue.identifier isEqualToString:@"det"])
-            {        
-                // Obtenemos el controlador destino
-                mSpeakerDetViewController  *destino = (mSpeakerDetViewController *)segue.destinationViewController;
-                destino.Nombrecelda = self.ExpositorCelda;
-                destino.Institucioncelda = self.InstitucionSpeaker;
-                destino.BiografiaCelda = self.BiografiaSpeaker;
-                destino.Paiscelda = self.PaisSpeaker;
-                destino.ImagenDelSpeaker = self.NombreImagen;
-                destino.ReferenciaSpeaker  =  self.Referencia;
-            }
-        if ([segue.identifier isEqualToString:@"MapSpeaker"])
-            {
-                mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
-               
-                destino.salon = self.LugarCelda;
-            }
+    if ([segue.identifier isEqualToString:@"det"])
+    {
+        // Obtenemos el controlador destino
+        mSpeakerDetViewController  *destino = (mSpeakerDetViewController *)segue.destinationViewController;
+        destino.Nombrecelda = self.ExpositorCelda;
+        destino.Institucioncelda = self.InstitucionSpeaker;
+        destino.BiografiaCelda = self.BiografiaSpeaker;
+        destino.Paiscelda = self.PaisSpeaker;
+        destino.ImagenDelSpeaker = self.NombreImagen;
+        destino.ReferenciaSpeaker  =  self.Referencia;
+    }
+    if ([segue.identifier isEqualToString:@"MapSpeaker"])
+    {
+        mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
+        
+        destino.salon = self.LugarCelda;
+    }
 }
 
 
@@ -196,9 +204,9 @@
     [self.slidingViewController anchorTopViewTo:ECLeft];
     id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [eventoMenuLateral sendEventWithCategory:@"uiAction"
-                               withAction:@"buttonPress"
-                                withLabel:@"Interactúo con Menú Lateral"
-                                withValue:nil];
+                                  withAction:@"buttonPress"
+                                   withLabel:@"Interactúo con Menú Lateral"
+                                   withValue:nil];
 }
 
 - (IBAction)GuardarCalendario:(id)sender
@@ -207,7 +215,7 @@
     UIImage *navBackgroundImage = [UIImage imageNamed:@"navbar_about"];
     [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
     
-       EKEventStore *AlmacenEventos = [[EKEventStore alloc] init];
+    EKEventStore *AlmacenEventos = [[EKEventStore alloc] init];
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] >=6.0f) {
         EKAuthorizationStatus status = [EKEventStore authorizationStatusForEntityType:EKEntityTypeEvent];
@@ -217,49 +225,49 @@
             [AlmacenEventos requestAccessToEntityType:status completion:^(BOOL permiso, NSError *error) {
                 if (permiso== true) {
                     NSLog(@"***** granted ***** :");
-                   
+                    
                 }}];}}
     
-        EKEvent *evento  = [EKEvent eventWithEventStore:AlmacenEventos];
-        if ([self.tituloCelda isEqualToString:@"Coffee Break"]==TRUE || [self.tituloCelda isEqualToString:@"Almuerzo"]== TRUE )
-        {
-            evento.title     = self.tituloCelda;
-        }
-        else
-        {
-            NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
-            titulo = [titulo stringByAppendingString:self.ExpositorCelda];
-            evento.title     = titulo;
-        }
-        evento.location = self.LugarCelda;
-        evento.startDate = self.DateInicio;
-        evento.endDate   = self.DateFin;
-        evento.allDay = NO;
-        evento.notes =self.ContenidoCelda;
-        evento.URL = [NSURL URLWithString:@"http://www.aimagos.com/index.php/es/"];
-        
-        EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];
-        
-        controlador.eventStore = AlmacenEventos;
-        controlador.event = evento;
-        controlador.topViewController.view.backgroundColor = [UIColor grayColor];
-        
-        UIImage *ImagenBotonCalendario = [[UIImage imageNamed:@"boton_vacio"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)];
-        
-        [[UIBarButtonItem appearance] setBackgroundImage:ImagenBotonCalendario forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    EKEvent *evento  = [EKEvent eventWithEventStore:AlmacenEventos];
+    if ([self.tituloCelda isEqualToString:@"Coffee Break"]==TRUE || [self.tituloCelda isEqualToString:@"Almuerzo"]== TRUE )
+    {
+        evento.title     = self.tituloCelda;
+    }
+    else
+    {
+        NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
+        titulo = [titulo stringByAppendingString:self.ExpositorCelda];
+        evento.title     = titulo;
+    }
+    evento.location = self.LugarCelda;
+    evento.startDate = self.DateInicio;
+    evento.endDate   = self.DateFin;
+    evento.allDay = NO;
+    evento.notes =self.ContenidoCelda;
+    evento.URL = [NSURL URLWithString:@"http://www.aimagos.com/index.php/es/"];
+    
+    EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];
+    
+    controlador.eventStore = AlmacenEventos;
+    controlador.event = evento;
+    controlador.topViewController.view.backgroundColor = [UIColor grayColor];
+    
+    UIImage *ImagenBotonCalendario = [[UIImage imageNamed:@"boton_vacio"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 7, 0, 7)];
+    
+    [[UIBarButtonItem appearance] setBackgroundImage:ImagenBotonCalendario forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-        controlador.topViewController.title = @" ";
-        controlador.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [self presentModalViewController:controlador animated:YES];
-        controlador.editViewDelegate = self;
-        
-        id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-        [gaiBotonCalendario sendEventWithCategory:@"uiAction"
-                                       withAction:@"buttonPress"
-                                        withLabel:@"Abrio el calendario"
-                                        withValue:nil];
+    controlador.topViewController.title = @" ";
+    controlador.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
+    [self presentModalViewController:controlador animated:YES];
+    controlador.editViewDelegate = self;
+    
+    id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [gaiBotonCalendario sendEventWithCategory:@"uiAction"
+                                   withAction:@"buttonPress"
+                                    withLabel:@"Abrio el calendario"
+                                    withValue:nil];
 }
 
 -(void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
@@ -282,6 +290,95 @@
     [self setBotonDeTalleSpeaker:nil];
     [super viewDidUnload];
 }
+#pragma tableview
 
+
+#pragma -mark Tableview datasource y delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    //NSLog(@"Cantidad de eventos que participo ==> %d",[self.EventoQueParticipo count]);
+    return [self.EventosDelSimposio count];
+    
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    Evento *info = [self.EventosDelSimposio objectAtIndex:indexPath.row];
+    NSString *cellIdentifier = @"CharlasCell";
+    mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil)
+    {
+        cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    
+    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
+    
+    cell.Titulo.text = info.titulo;
+    cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
+    cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
+    cell.texto.text = info.speaker.nombre;
+    cell.Subtitulo.text = info.tipoEvento;
+    cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+    
+    //cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];;
+    // cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];;
+    // cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+    // NSLog(@"nombre del lugar ==> %@" ,info.lugarEnQueMeDesarrollo.nombreLugar);
+    // cell.Subtitulo.text = info.speaker.nombre;
+    
+    
+    
+    return cell;
+}
+
+
+#pragma mark - Fetchs Coredata
+
+-(NSArray*)CargarEventosDelSimposio
+{
+    
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"eventoPadre.tituloEP = %@ ",self.tituloCelda];
+    [fetchRequest setPredicate:Predicado];
+    
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"horaInicio" ascending:YES];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error = nil;
+    
+    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+}
+-(NSDate*)StringToDate:(NSString*)hora{
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
+    NSRange RangoReemplazo = {20,5};
+    
+    NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0300"];
+    return  [dateFormatter dateFromString:remplaso];
+}
+
+-(NSString*)DateToString:(NSDate*)Date{
+    
+    
+    NSDateFormatter *formateadorFecha = [[NSDateFormatter alloc] init];
+    [formateadorFecha setDateFormat:@"H:mm"];
+    return  [formateadorFecha stringFromDate:Date];
+    
+}
+
+
+#pragma -mark Alto de la cada celda
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+{
+    
+    return 73.0f;
+}
 
 @end
