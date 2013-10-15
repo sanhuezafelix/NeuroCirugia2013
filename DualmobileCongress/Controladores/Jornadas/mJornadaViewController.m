@@ -79,164 +79,113 @@
 
 #pragma -mark Tableview datasource y delegate
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    id <NSFetchedResultsSectionInfo> sectionInfo =
-    [[self.fetchedResultsController sections] objectAtIndex:section];
-    
-    return [sectionInfo numberOfObjects];
-}
 
+
+
+
+#pragma -mark Tableview datasource y delegate
+
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+ 
+    return [self.EventosPadre count];
+    
+}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    
     NSString *cellIdentifier = @"JornadaCell";
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     if (cell == nil)
     {
         cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        cell.opaque = YES;
+        cell.Imagen.opaque = YES;
+        cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdas_actividades_jornada.png"]];
+
     }
     
-    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdas_actividades_jornada.png"]];
-    [self configureCell:cell atIndexPath:indexPath];
+    if (indexPath.section == 0)
+    {
+        Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
+        cell.Titulo.text = info.tituloEP;
+        cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
+        cell.Hora.text = [self DateToString:[self StringToDate:info.horaFinEP]];
+    }
+    
+    else
+    {
+        
+        Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
+        cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
+        cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
+        cell.Titulo.text = info.titulo;
+        cell.Subtitulo.text = info.speaker.nombre;
+        cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+        cell.Actividad.text = info.tipoEvento;
+        
+    }
+    
     return cell;
-  }
+}
+
+
+#pragma mark - Fetchs Coredata
+
+-(NSArray*)CargarSimposios
+{
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Eventopadre" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicioEP >= %@) AND (horaFin < %@)",self.InicioJornada,self.FinJornada];
+    [fetchRequest setPredicate:Predicado];
+    
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"horaInicioEP" ascending:YES];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error = nil;
+    
+    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+}
+
+-(NSArray*)CargarEventos
+{
+    
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio >= %@) AND (horaFin < %@)",self.InicioJornada,self.FinJornada];
+    [fetchRequest setPredicate:Predicado];
+    
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"horaInicio" ascending:YES];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    NSError *error = nil;
+    
+    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+}
 
 
 #pragma -mark Alto de la cada celda
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
+    
     return 73.0f;
 }
 
 
-#pragma -mark FetchResult controller metodos
 
-- (NSFetchedResultsController *)fetchedResultsController
-{
-    if (_fetchedResultsController != nil) {
-        return _fetchedResultsController;
-    }
-//    NSError *er;
-//    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-//    NSEntityDescription *entitida = [NSEntityDescription entityForName:@"Evento"
-//                                              inManagedObjectContext:self.delegate.managedObjectContext];
-//    [fetch setEntity:entitida];
-//    NSArray *arraya = [self.delegate.managedObjectContext executeFetchRequest:fetch error:&er];
-//    
-//    
-//    NSArray *fetchHoras = [arraya valueForKey:@"horaInicio"];
-//    NSMutableArray* arrayOfDatesAsStrings = [[NSMutableArray alloc]init];
-//
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
-//    
-//    for (NSString *fetchHora in fetchHoras) {
-//        //get the date next NSDate from the array as: NSDate *dateAsDate...
-//        
-//        NSDate *strDate = [dateFormatter dateFromString:fetchHora];
-//        
-//        [arrayOfDatesAsStrings addObject:strDate];
-//        
-//        NSLog(@"jajajaja::::%@",arrayOfDatesAsStrings);
-//
-//    }
-//    NSArray*arraya2 = arrayOfDatesAsStrings;
-    
-    NSDate *HoraInicio = [dateFormatter dateFromString:self.InicioJornada];
-    NSDate *HoraFin = [dateFormatter dateFromString:self.FinJornada];
-    
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription entityForName:@"Evento"
-                                              inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    [fetchRequest setFetchBatchSize:20];
-    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"horaInicio" ascending:YES];
-    NSArray *sortDescriptors = @[sortDescriptor];
-    
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio >= %@) AND (horaFin < %@)",self.InicioJornada,self.FinJornada];
-    [fetchRequest setPredicate:Predicado];
-    
-    NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc]
-                                                             initWithFetchRequest:fetchRequest
-                                                             managedObjectContext:self.delegate.managedObjectContext
-                                                             sectionNameKeyPath:nil
-                                                             cacheName:nil];
-    _fetchedResultsController.delegate = self;
-    self.fetchedResultsController = aFetchedResultsController;
-    
-    NSError *error = nil;
-    if (![self.fetchedResultsController performFetch:&error])
-    {
-        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
-        abort();
-    }
-    return _fetchedResultsController;
-}
 
-- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller {
-    [self.JornadasTableView beginUpdates];
-}
-- (void)controller:(NSFetchedResultsController *)controller didChangeSection:(id <NSFetchedResultsSectionInfo>)sectionInfo
-           atIndex:(NSUInteger)sectionIndex forChangeType:(NSFetchedResultsChangeType)type {
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            [self.JornadasTableView insertSections:[NSIndexSet indexSetWithIndex:sectionIndex]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-            break;
-        case NSFetchedResultsChangeDelete:
-            [self.JornadasTableView deleteSections:[NSIndexSet indexSetWithIndex:sectionIndex]
-                              withRowAnimation:UITableViewRowAnimationAutomatic];
-            break;
-    }
-}
 
-- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject
-       atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type
-      newIndexPath:(NSIndexPath *)newIndexPath {
-    UITableView *tableView = self.JornadasTableView;
-    //Pegarle una mira después.
-    switch(type) {
-        case NSFetchedResultsChangeInsert:
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-        case NSFetchedResultsChangeDelete:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-        case NSFetchedResultsChangeUpdate:
-            [self configureCell:[tableView cellForRowAtIndexPath:indexPath] atIndexPath:indexPath];
-            break;
-        case NSFetchedResultsChangeMove:
-            [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-            [tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
-            break;
-    }
-}
-
-- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller {
-   
-    [self.JornadasTableView endUpdates];
-}
-
-- (void)configureCell:(mCustomCell *)cell atIndexPath:(NSIndexPath *)indexPath {
-    Evento *info = [_fetchedResultsController
-                    objectAtIndexPath:indexPath];
-    UIView *ColorSelecion = [[UIView alloc] init];
-    ColorSelecion.backgroundColor = [UIColor colorWithRed:(76/255.0) green:(124/255.0) blue:(255/255.0) alpha:1.0f];
-    cell.selectedBackgroundView = ColorSelecion;
-
-    NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
-    UIImage *beforeImage = [UIImage imageWithData:dataObj];
-
-    cell.Titulo.text = info.titulo;
-    cell.Subtitulo.text = info.speaker.nombre;
-    cell.texto.text = info.lugarEnQueMeDesarrollo.ciudad;
-    cell.Imagen.image = beforeImage;
-    cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
-    cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-    cell.Actividad.text = info.descripcionEvento;
-}
 
 -(NSDate*)StringToDate:(NSString*)hora{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
