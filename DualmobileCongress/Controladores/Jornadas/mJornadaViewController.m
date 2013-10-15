@@ -60,8 +60,10 @@
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
-                              forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+                                        forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.title = @" ";
+    self.EventosPadre = [[NSMutableArray alloc]initWithArray:[self CargarSimposios]];
+    self.EventosHijos = [[NSMutableArray alloc]initWithArray:[self CargarEventos]];
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
     [self.animationImageView setImagesArr:arr];
@@ -79,17 +81,52 @@
 
 #pragma -mark Tableview datasource y delegate
 
-
-
-
-
 #pragma -mark Tableview datasource y delegate
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
- 
-    return [self.EventosPadre count];
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    int rows;
+    if (section == 0) {
+        rows = [self.EventosPadre count];
+    }
+    else{
+        rows = [self.EventosHijos count];
+        
+    }
+    return rows;
     
 }
+
+-(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    
+    return 2;
+}
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
+{
+    NSString *sectionName;
+
+    if (section == 0) {
+        if ([self.EventosPadre count]>0)
+        {
+            sectionName = NSLocalizedString(@"Simposios", @"Simposios");
+        }
+        else;
+
+    }
+    if (section == 1) {
+        if ([self.EventosHijos count]>0)
+        {
+            sectionName = NSLocalizedString(@"Eventos", @"Eventos");
+        }
+        else;
+        
+    }
+
+    
+    return sectionName;
+}
+
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
@@ -102,7 +139,7 @@
         cell.opaque = YES;
         cell.Imagen.opaque = YES;
         cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdas_actividades_jornada.png"]];
-
+        
     }
     
     if (indexPath.section == 0)
@@ -139,7 +176,7 @@
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Eventopadre" inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicioEP >= %@) AND (horaFin < %@)",self.InicioJornada,self.FinJornada];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicioEP >= %@) AND (horaFinEP < %@)",self.InicioJornada,self.FinJornada];
     [fetchRequest setPredicate:Predicado];
     
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
@@ -155,12 +192,11 @@
 -(NSArray*)CargarEventos
 {
     
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio >= %@) AND (horaFin < %@)",self.InicioJornada,self.FinJornada];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio >= %@) AND (horaFin < %@) AND (eventoPadre.tituloEP == %@)",self.InicioJornada,self.FinJornada, NULL];
     [fetchRequest setPredicate:Predicado];
     
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
@@ -233,7 +269,9 @@
         destino.DateFin = [self StringToDate:info.horaFin];
         destino.DateInicio = [self StringToDate:info.horaInicio];
         destino.ActividadSpeaker = info.descripcionEvento;
-
+        
+        
+        
     }
 }
 
@@ -245,7 +283,7 @@
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Jornada"
                                                 withValue:nil];
-
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
     
@@ -256,15 +294,15 @@
     
     
     if (estadoAutorizador == YES) {
-    // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-    
-    [self AnularActualizaEstadoAutorizadorSincronizacion];
+        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
+        
+        [self AnularActualizaEstadoAutorizadorSincronizacion];
         
     }
     if (estadoAutorizadorImagen == YES) {
-    // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
+        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
         
-    [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
+        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
     }
     
     [super viewWillAppear:animated];
@@ -274,7 +312,7 @@
 
 - (void)viewDidUnload
 {
-  
+    
     [self setTituloJornada:nil];
     [self setJornadasTableView:nil];
     [super viewDidUnload];
