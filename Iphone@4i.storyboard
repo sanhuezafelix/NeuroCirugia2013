@@ -822,11 +822,11 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <prototypes>
-                                    <tableViewCell alpha="0.90000000000000002" contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="JornadaCell" rowHeight="73" id="QjR-q3-A2I" customClass="mCustomCell">
+                                    <tableViewCell alpha="0.90000000000000002" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="JornadaCell" rowHeight="73" id="QjR-q3-A2I" customClass="mCustomCell">
                                         <rect key="frame" x="0.0" y="107" width="320" height="73"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QjR-q3-A2I" id="kOa-GP-bga">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="73"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="73"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="Hlg-W3-IT9">
@@ -844,7 +844,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="lugar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ChP-E9-qc2">
-                                                    <rect key="frame" x="249" y="54" width="64" height="14"/>
+                                                    <rect key="frame" x="189" y="54" width="118" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1904,7 +1904,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8HT-Jg-9J4">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8HT-Jg-9J4">
                                 <rect key="frame" x="0.0" y="218" width="320" height="286"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1916,7 +1916,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KgS-4F-ofT" id="PGt-lQ-V7u">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="JIJ-FQ-g2A">
@@ -1927,21 +1927,21 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4gy-Sk-KpW">
-                                                    <rect key="frame" x="61" y="52" width="171" height="13"/>
+                                                    <rect key="frame" x="61" y="53" width="171" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="lugar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cZf-rb-Cfj">
-                                                    <rect key="frame" x="253" y="52" width="64" height="14"/>
+                                                    <rect key="frame" x="253" y="53" width="64" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="6rE-Jg-GFH">
-                                                    <rect key="frame" x="0.0" y="40" width="42" height="20"/>
+                                                    <rect key="frame" x="0.0" y="41" width="42" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -1958,7 +1958,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tipo de actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rrQ-lc-iZS">
-                                                    <rect key="frame" x="61" y="39" width="171" height="15"/>
+                                                    <rect key="frame" x="61" y="40" width="171" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2178,7 +2178,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <constraint firstAttribute="height" constant="55" id="EH8-Wh-QpL"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AyV-1g-LGo">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="AyV-1g-LGo">
                                 <rect key="frame" x="0.0" y="228" width="320" height="276"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2190,7 +2190,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DVk-os-ASK" id="Ye7-np-C9M">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="69"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="wHf-pq-KFj">
@@ -2201,21 +2201,21 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FnK-do-jvE">
-                                                    <rect key="frame" x="61" y="52" width="171" height="13"/>
+                                                    <rect key="frame" x="61" y="53" width="171" height="13"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="lugar" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="otp-4M-osW">
-                                                    <rect key="frame" x="253" y="52" width="64" height="14"/>
+                                                    <rect key="frame" x="193" y="53" width="120" height="14"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="Q9t-hk-aK3">
-                                                    <rect key="frame" x="0.0" y="40" width="42" height="20"/>
+                                                    <rect key="frame" x="0.0" y="41" width="42" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2232,7 +2232,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tipo de actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Qb-a9-at3">
-                                                    <rect key="frame" x="61" y="39" width="171" height="15"/>
+                                                    <rect key="frame" x="61" y="40" width="171" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2246,6 +2246,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                             <outlet property="Subtitulo" destination="FnK-do-jvE" id="Eif-QO-1Cu"/>
                                             <outlet property="Titulo" destination="uHU-ak-bE9" id="7gP-D8-Zd3"/>
                                             <outlet property="horaInicio" destination="wHf-pq-KFj" id="Ek5-6k-K5o"/>
+                                            <outlet property="lugar" destination="otp-4M-osW" id="0RL-Rg-QdK"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2336,7 +2337,10 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="BotonNotificaciones" destination="Ak5-pl-vwQ" id="mm2-3e-HHI"/>
+                        <outlet property="ContenidoExposicion" destination="IvL-Fm-q12" id="A3M-GU-8y0"/>
                         <outlet property="DetailTableview" destination="AyV-1g-LGo" id="Tjm-sj-3oR"/>
+                        <outlet property="Lugar" destination="LXJ-Ma-jdh" id="dE1-Ps-RMU"/>
+                        <outlet property="TipoEventoPadre" destination="ts2-xt-GKr" id="EOd-y7-jbO"/>
                         <outlet property="Titulo" destination="PkI-h8-8ef" id="9sZ-uy-5BI"/>
                         <outlet property="animationImageView" destination="JUF-XO-TgG" id="gRZ-eG-oih"/>
                         <outlet property="labelSimposio" destination="kdd-KQ-30Z" id="nWC-4d-04x"/>
@@ -2349,14 +2353,38 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>

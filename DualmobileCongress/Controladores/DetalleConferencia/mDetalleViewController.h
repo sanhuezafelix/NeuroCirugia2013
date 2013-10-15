@@ -31,6 +31,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *DetailTableview;
 
 @property (strong, nonatomic) IBOutlet UILabel *Lugar;
+@property (strong, nonatomic) IBOutlet UILabel *TipoEventoPadre;
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
 @property (strong, nonatomic) IBOutlet UITextView *Titulo;

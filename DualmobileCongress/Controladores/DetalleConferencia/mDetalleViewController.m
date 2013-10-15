@@ -309,25 +309,17 @@
     if (cell == nil)
     {
         cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+        
     }
-    
     cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
+  
     
     cell.Titulo.text = info.titulo;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-    cell.texto.text = info.speaker.nombre;
-    cell.Subtitulo.text = info.tipoEvento;
+    cell.Subtitulo.text = info.speaker.nombre;
+    cell.Actividad.text = info.tipoEvento;
     cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
-    
-    //cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];;
-    // cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];;
-    // cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
-    // NSLog(@"nombre del lugar ==> %@" ,info.lugarEnQueMeDesarrollo.nombreLugar);
-    // cell.Subtitulo.text = info.speaker.nombre;
-    
-    
-    
     return cell;
 }
 
@@ -336,8 +328,6 @@
 
 -(NSArray*)CargarEventosDelSimposio
 {
-    
-    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
@@ -358,13 +348,11 @@
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
     NSRange RangoReemplazo = {20,5};
-    
     NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0300"];
     return  [dateFormatter dateFromString:remplaso];
 }
 
 -(NSString*)DateToString:(NSDate*)Date{
-    
     
     NSDateFormatter *formateadorFecha = [[NSDateFormatter alloc] init];
     [formateadorFecha setDateFormat:@"H:mm"];
