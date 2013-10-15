@@ -34,8 +34,9 @@
       forControlEvents:UIControlEventValueChanged];
     
     [self.PushTableview addSubview:refresh];
-    
     self.refresh = refresh;
+    
+    
 }
 
 #pragma -mark Tableview datasource
@@ -46,25 +47,25 @@
 }
 
 -(void)viewWillAppear:(BOOL)animated{
-   
+    
     [self refresh];
 }
 
 -(void)llamarNotifi{
-
+    
     NSError*error;
     NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegue.managedObjectContext];
     NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
     [fetiche setEntity:entidad];
-    _arrayNotificaciones = [_delegue.managedObjectContext executeFetchRequest:fetiche error:&error];    
+    _arrayNotificaciones = [_delegue.managedObjectContext executeFetchRequest:fetiche error:&error];
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
-  
+    
     UIView *ColorSelecion = [[UIView alloc] init];
     
-       ColorSelecion.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"label_notificaciones"]];
-       
+    ColorSelecion.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"label_notificaciones"]];
+    
     return ColorSelecion;
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
@@ -73,7 +74,7 @@
 }
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
- 
+    
     return [_arrayNotificaciones count];
 }
 
@@ -84,24 +85,47 @@
     if (cell == nil) {
         cell = [[mMenuCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-      UIView *ColorSelecion = [[UIView alloc] init];
+    UIView *ColorSelecion = [[UIView alloc] init];
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(189/255.0) green:(189/255.0) blue:(189/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
-
+    
     Notificacion *noti = [_arrayNotificaciones objectAtIndex:indexPath.row];
     
     cell.Contenido.text = noti.contenidoNoti;
-        
+    
     return cell;
 }
 
+
+
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-       return 73.0f;
+    return 73.0f;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    NSString *cellIdentifier = @"PushCell";
+    
+    mMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[mMenuCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
+    }
+    UIView *ColorSelecion = [[UIView alloc] init];
+    ColorSelecion.backgroundColor = [UIColor colorWithRed:(189/255.0) green:(189/255.0) blue:(189/255.0) alpha:1.0f];
+    cell.selectedBackgroundView = ColorSelecion;
+    
+    Notificacion *noti = [_arrayNotificaciones objectAtIndex:indexPath.row];
+    
+    cell.Contenido.text = noti.urlNotificacion;
+    if (!(noti.urlNotificacion = nil)) {
+        [[UIApplication sharedApplication] openURL:[NSURL URLWithString:cell.Contenido.text]];
+    }
+    else{
+        NSLog(@"si  esta vacia %@",[NSString stringWithFormat:@"%@",cell.Contenido.text]);
+        
+        [self refresh];
+    }
     id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     
     [trackingMenu sendEventWithCategory:@"uiAction"
@@ -109,19 +133,18 @@
                               withLabel:@"Tap Realizado"
                               withValue:nil];
     [self.slidingViewController anchorTopViewOffScreenTo:100 animations:nil onComplete:^{
-    [self.slidingViewController resetTopView];
-
+        [self.slidingViewController resetTopView];
+        
         if ([_arrayNotificaciones count]>0) {
-        NSLog(@"hay notis");
-    
-            [self refresh];
-}}];
+            NSLog(@"hay notis");
+            
+        }}];
 }
 
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
-
+    
 }
 
 - (void)beginRefreshing {
@@ -130,7 +153,7 @@
 }
 
 -(void)refreshView:(UIRefreshControl *)refresh {
-
+    
     [self llamarNotifi];
     [self.PushTableview reloadData];
     [self.refresh endRefreshing];
