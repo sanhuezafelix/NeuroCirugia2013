@@ -10,6 +10,7 @@
 #import "mSpeakerCloseViewController.h"
 #import "NSDataAdditions.h"
 #import "GAI.h"
+#import "Eventopadre.h"
 
 
 @interface mSpeakersViewController ()
@@ -118,14 +119,13 @@
         
         [fetchRequest setPredicate:predicadoSpeaker];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (cargo CONTAINS[cd] %@)) AND(nombre >%@)", text,text,text,text,@""];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (cargo CONTAINS[cd] %@) OR (eventoParticipo.tituloEP CONTAINS[cd] %@)) AND(nombre >%@)", text,text,text,text,text,@""];
         
       [fetchRequest setPredicate:predicate];
         searching = YES;
     }
     else
     {
-		
 		[self.view insertSubview:ovController.view aboveSubview:self.parentViewController.view];
          self.SpeakerTableview.scrollEnabled = NO;
         searching = NO;
@@ -198,7 +198,6 @@
     Persona *info = [self.ResultadosCoreData objectAtIndex:indexPath.row];
     
     NSString *cellIdentifier = @"SpeakerCell";
-    
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
     if (cell == nil)
