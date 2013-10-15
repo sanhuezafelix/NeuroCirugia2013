@@ -39,7 +39,7 @@
     self.Lugar.text = self.LugarCelda;
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
-    
+    NSLog(@"Titulo Celda ==> %@",self.tituloCelda);
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] <6.0f)
     {
