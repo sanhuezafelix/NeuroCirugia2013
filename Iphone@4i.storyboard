@@ -262,7 +262,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="speaker" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZ9-Fq-HsK">
-                                                    <rect key="frame" x="49" y="52" width="143" height="15"/>
+                                                    <rect key="frame" x="43" y="51" width="98" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -293,7 +293,7 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Tipo de actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npb-i8-SEO">
-                                                    <rect key="frame" x="49" y="39" width="246" height="15"/>
+                                                    <rect key="frame" x="154" y="53" width="97" height="15"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -305,7 +305,7 @@
                                         <connections>
                                             <outlet property="Actividad" destination="npb-i8-SEO" id="q2n-pR-m9q"/>
                                             <outlet property="Hora" destination="ZzR-Vy-643" id="vbO-pS-DGB"/>
-                                            <outlet property="Subtitulo" destination="jZ9-Fq-HsK" id="WRe-TW-apM"/>
+                                            <outlet property="Subtitulo" destination="jZ9-Fq-HsK" id="N4c-rX-Hxf"/>
                                             <outlet property="Titulo" destination="CTW-ib-deY" id="1B8-Uq-CPA"/>
                                             <outlet property="horaInicio" destination="WvP-bE-SZl" id="82s-aa-8g3"/>
                                             <outlet property="texto" destination="0F8-JZ-vIV" id="abS-gS-8Qp"/>
@@ -1000,7 +1000,7 @@
                                                     <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </label>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Institucion" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1bD-QX-nk8">
-                                                    <rect key="frame" x="10" y="32" width="198" height="20"/>
+                                                    <rect key="frame" x="10" y="28" width="198" height="20"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2346,38 +2346,14 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
-        <image name="barraMenu.png" width="205" height="2"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>

@@ -118,7 +118,7 @@
         
         [fetchRequest setPredicate:predicadoSpeaker];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.ciudad CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@)) AND(nombre >%@)", text, text,text,@""];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@)) AND(nombre >%@)", text,text,text,@""];
         
       [fetchRequest setPredicate:predicate];
         searching = YES;
@@ -213,7 +213,7 @@
      NSData *dataObj    = [NSData dataWithBase64EncodedString:info.fotoPersona.binarioImagen];
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
-    cell.texto.text     =   info.lugarDondeProvengo.ciudad;
+    cell.texto.text     =   info.cargo;
     cell.Imagen.image   =   [UIImage imageWithData:dataObj];
     
     

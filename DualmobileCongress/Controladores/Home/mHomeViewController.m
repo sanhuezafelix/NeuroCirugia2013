@@ -212,16 +212,14 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         UIView *ColorSelecion = [[UIView alloc] init];
         ColorSelecion.backgroundColor = [UIColor colorWithRed:(246/255.0) green:(146/255.0) blue:(28/255.0) alpha:1.0f];
         cell.selectedBackgroundView = ColorSelecion;
-        cell.contentView.backgroundColor    =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"eem.png"]];
-        cell.Titulo.text = info.titulo;
-        cell.Subtitulo.text = info.speaker.nombre;
+        cell.contentView.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"eem.png"]];
+        cell.Subtitulo.text = info.titulo;
+        cell.Titulo.text = info.speaker.nombre;
         cell.Imagen.image = beforeImage;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
         cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
         cell.Actividad.text = info.tipoEvento;
-        
-        
     }
 
         else
@@ -236,8 +234,8 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
         UIImage *beforeImage = [UIImage imageWithData:dataObj];
         cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"paa.png"]];
-        cell.Titulo.text = info.titulo;
-        cell.Subtitulo.text = info.speaker.nombre;
+        cell.Titulo.text = info.speaker.nombre;
+        cell.Subtitulo.text = info.titulo;
         cell.Imagen.image = beforeImage;
         cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
         cell.Actividad.text = info.tipoEvento;
