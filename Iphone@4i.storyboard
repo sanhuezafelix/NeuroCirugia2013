@@ -2346,14 +2346,38 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
@@ -2363,18 +2387,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-<<<<<<< HEAD
-<<<<<<< HEAD
-<<<<<<< HEAD
-        <segue reference="EMG-95-6gg"/>
-=======
         <segue reference="82c-rv-EFy"/>
->>>>>>> 96414fbd6a380a9a6dd5c2916ba14ead1eeae018
-=======
-        <segue reference="82c-rv-EFy"/>
->>>>>>> bea50e7cf119df5968c7f6c7bcb6e09967dc37b4
-=======
-        <segue reference="82c-rv-EFy"/>
->>>>>>> bea50e7cf119df5968c7f6c7bcb6e09967dc37b4
     </inferredMetricsTieBreakers>
 </document>

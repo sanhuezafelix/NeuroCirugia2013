@@ -12,7 +12,6 @@
 #import "Lugar.h"
 #import "GAI.h"
 #import "Evento.h"
-#import "Persona.h"
 
 @interface mViewController ()
 
