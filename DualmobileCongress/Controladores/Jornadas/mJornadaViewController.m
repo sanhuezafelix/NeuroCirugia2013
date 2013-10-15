@@ -8,7 +8,7 @@
 
 #import "mJornadaViewController.h"
 #import "mAppDelegate.h"
-#import "mDetalleViewController.h"
+#import "mSimposioDetViewController.h"
 #import "NSDataAdditions.h"
 #import "GAI.h"
 
@@ -254,7 +254,7 @@
         if (indexPath.section == 0)
         {
             Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
-            mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+            mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
             
             
             destino.tituloCelda = info.tituloEP;
@@ -271,12 +271,12 @@
         }
         else{
             Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
-            mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+           mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
             NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
             UIImage *beforeImage = [UIImage imageWithData:dataObj];
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
-            destino.ContenidoCelda =info.tematica;
+            destino.ContenidoeventoHijoCelda =info.tematica;
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
             destino.NombreImagen = beforeImage;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
