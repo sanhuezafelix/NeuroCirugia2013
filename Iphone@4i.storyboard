@@ -2365,10 +2365,14 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     <inferredMetricsTieBreakers>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
         <segue reference="EMG-95-6gg"/>
 =======
         <segue reference="82c-rv-EFy"/>
 >>>>>>> 96414fbd6a380a9a6dd5c2916ba14ead1eeae018
+=======
+        <segue reference="82c-rv-EFy"/>
+>>>>>>> bea50e7cf119df5968c7f6c7bcb6e09967dc37b4
 =======
         <segue reference="82c-rv-EFy"/>
 >>>>>>> bea50e7cf119df5968c7f6c7bcb6e09967dc37b4
