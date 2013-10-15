@@ -210,7 +210,7 @@
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
         destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
-        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.pais;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
         destino.DateFin = [self StringToDate:info.horaFin];
