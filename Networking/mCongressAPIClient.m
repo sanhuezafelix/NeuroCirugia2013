@@ -150,7 +150,42 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     
     else if([entity.name isEqualToString:@"Persona"])
     {
+<<<<<<< HEAD
         NSString *Representacion1 = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDondeProvengo_id"]];
+=======
+        
+        NSString *representacionPaLugarOrigen = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDondeProvengo_id"]];
+        
+        if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
+            diccionarioPaLasRelaciones = @{ @"lugarDondeProvengo" : @{@"id" : representacionPaLugarOrigen }
+                                            
+                                            };
+            
+        }
+        
+        NSString *representacionNotifiDelHuea = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"notificacionSobreMi_id"]];
+        
+        if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
+            diccionarioPaLasRelaciones = @{ @"notificacionSobreMi" : @{@"id" : representacionNotifiDelHuea }
+                                            
+                                            };
+        }
+        
+        NSString *representacionPaInstitucionPatrocinante = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionQueMePatrocina_id"]];
+        if (![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"]) {
+            diccionarioPaLasRelaciones = @{
+                                           @"institucionQueMePatrocina" : @{@"id" : representacionPaInstitucionPatrocinante}
+                                           };
+        }
+        
+        NSString *representacionParticipacion = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoParticipo_id"]];
+        if (![representacionParticipacion isEqualToString:@"(null)"]) {
+            diccionarioPaLasRelaciones = @{
+                                           @"eventoParticipo" : @{@"id" : representacionParticipacion}
+                                           };
+        }
+        
+>>>>>>> parent of cfcba81... Sacando pais
         
         NSString *Representacion2= [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"notificacionSobreMi_id"]];
         
