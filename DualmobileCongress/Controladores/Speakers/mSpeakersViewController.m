@@ -272,6 +272,11 @@
         [self CerrarTeclado];
     
     [self.slidingViewController anchorTopViewTo:ECRight];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
+                                       withAction:@"Revelar Menu Lateral"
+                                        withLabel:@"Revelo desde Speaker"
+                                        withValue:nil];
    
 }
 -(void)notifica {
@@ -293,6 +298,11 @@
     else
         [self CerrarTeclado];
     [self.slidingViewController anchorTopViewTo:ECLeft];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Speaker"
+                                                withValue:nil];
     [self notifica];
     
 }

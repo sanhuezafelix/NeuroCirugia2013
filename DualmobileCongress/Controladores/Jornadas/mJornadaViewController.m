@@ -291,6 +291,12 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Jornada"
+                                                withValue:nil];
+
 }
 - (void)viewWillAppear:(BOOL)animated {
     

@@ -66,20 +66,20 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
     
     
-    id eventoMenuLateralDesdeAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [eventoMenuLateralDesdeAbout sendEventWithCategory:@"uiAction"
-                                            withAction:@"DespliegueMenuLateral"
-                                             withLabel:@"Abrío el menu lateral desde Socio"
-                                             withValue:nil];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
+                                       withAction:@"Revelar Menu Lateral"
+                                        withLabel:@"Revelo desde Hazte Socio"
+                                        withValue:nil];
 }
 
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [eventoNotificacionesDesdeAbout sendEventWithCategory:@"uiAction"
-                                               withAction:@"DespliegueMenuLateral"
-                                                withLabel:@"Abrió Notificaciones desde Socio"
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Hazte Socio"
                                                 withValue:nil];
 }
 
@@ -118,6 +118,7 @@
             break;
         case MFMailComposeResultSent:
             NSLog(@"Mail sent");
+            [self GaMail];
             break;
         case MFMailComposeResultFailed:
             NSLog(@"Mail sent failure: %@", [error localizedDescription]);
@@ -129,6 +130,15 @@
     // Close the Mail Interface
     [self dismissViewControllerAnimated:YES completion:NULL];
     
+}
+
+-(void)GaMail{
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Envio E-Mail"
+                                                withLabel:@"Eviado desde Hazte Socio"
+                                                withValue:nil];
 }
 
 @end

@@ -95,10 +95,21 @@
 
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
+                                       withAction:@"Revelar Menu Lateral"
+                                        withLabel:@"Revelo desde Selecion Jornada"
+                                        withValue:nil];
 }
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Selecion Jornada"
+                                                withValue:nil];
+
 }
 - (void)viewDidUnload {
     [self setBotonMenu:nil];

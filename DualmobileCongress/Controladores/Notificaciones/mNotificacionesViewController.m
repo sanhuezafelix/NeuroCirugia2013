@@ -9,6 +9,7 @@
 #import "mNotificacionesViewController.h"
 #import "Notificacion.h"
 #import "mAppDelegate.h"
+#import "GAI.h"
 
 
 @interface mNotificacionesViewController ()
@@ -101,6 +102,12 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
+    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    
+    [trackingMenu sendEventWithCategory:@"uiAction"
+                             withAction:@"Tap Celda Notificacion"
+                              withLabel:@"Tap Realizado"
+                              withValue:nil];
     [self.slidingViewController anchorTopViewOffScreenTo:100 animations:nil onComplete:^{
     [self.slidingViewController resetTopView];
 

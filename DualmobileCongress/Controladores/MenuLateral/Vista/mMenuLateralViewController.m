@@ -70,6 +70,13 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSString *identifier = [NSString stringWithFormat:@"%@", [self.MenuItems objectAtIndex:indexPath.row]];
+    NSString *label = [[NSString alloc]initWithFormat:@"Tap Opcion %@",identifier];
+    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    
+    [trackingMenu sendEventWithCategory:@"uiAction"
+                             withAction:@"Tap Menu Lateral"
+                              withLabel:label
+                              withValue:nil];
     
     UIViewController *newTopViewController = [self.storyboard instantiateViewControllerWithIdentifier:identifier];
     

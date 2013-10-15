@@ -86,6 +86,11 @@
 {
     [self notifica];
     [self.slidingViewController anchorTopViewTo:ECLeft];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Detalle Speaker"
+                                                withValue:nil];
 }
 
 

@@ -458,9 +458,9 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     
     id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
-                               withAction:@"DespliegueMenuLateral"
-                                withLabel:@"Abrió el menu lateral desde ahora"
-                                withValue:nil];
+                                       withAction:@"Revelar Menu Lateral"
+                                        withLabel:@"Revelo desde Ahora"
+                                        withValue:nil];
     }
 
 -(void)notifica {
@@ -478,10 +478,11 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 {
     [self.slidingViewController anchorTopViewTo:ECLeft];
 
+    
     id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
-                                               withAction:@"DespliegueMenuLateral"
-                                                withLabel:@"Abrió Notificaciones desde Ahora"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Ahora"
                                                 withValue:nil];
     [self notifica];
 }
