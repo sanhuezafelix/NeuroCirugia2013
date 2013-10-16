@@ -78,6 +78,20 @@
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
+    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self              action:@selector(imageTapped:)];
+    self.animationImageView.userInteractionEnabled = YES;
+    [self.animationImageView addGestureRecognizer:tap];
+}
+
+- (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
+{
+    NSLog(@"tap imagen");
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [TokeImagenTracking sendEventWithCategory:@"uiAction"
+                                   withAction:@"Tap Publicidad"
+                                    withLabel:@"Tap Branding Principal"
+                                    withValue:nil];
+    
 }
 
 
