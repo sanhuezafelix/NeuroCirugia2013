@@ -54,9 +54,11 @@
 -(void)IniciarPageView{
     REPagedScrollView *scrollView = [[REPagedScrollView alloc] initWithFrame:self.view.bounds];
     [self.view addSubview:scrollView];
-    mZoomMapas *zoom = [[mZoomMapas alloc]initWithImageMapName:@"salonriesco_nivel1.jpg" atLocation:CGPointMake(5, 5)];
+    mZoomMapas *zoom = [[mZoomMapas alloc]initWithImageMapName:@"lobby.png" atLocation:CGPointMake(5, 5)];
     [scrollView addPage:zoom];
-    zoom = [[mZoomMapas alloc]initWithImageMapName:@"salonriesco_nivel2.jpg" atLocation:CGPointMake(5, 5)];
+    zoom = [[mZoomMapas alloc]initWithImageMapName:@"piso_2.png" atLocation:CGPointMake(5, 5)];
+    [scrollView addPage:zoom];
+    zoom = [[mZoomMapas alloc]initWithImageMapName:@"zocalo.png" atLocation:CGPointMake(5, 5)];
     [scrollView addPage:zoom];
 
 }

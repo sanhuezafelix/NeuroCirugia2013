@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -469,8 +469,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-K4-75f">
-                                <rect key="frame" x="117" y="172" width="188" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-K4-75f">
+                                <rect key="frame" x="117" y="193" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="FgT-gV-A8k"/>
@@ -480,19 +480,15 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-Df-OzE">
-                                <rect key="frame" x="13" y="217" width="295" height="213"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-Df-OzE">
+                                <rect key="frame" x="13" y="217" width="290" height="230"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="213" id="J6z-E9-RWq"/>
-                                    <constraint firstAttribute="width" constant="295" id="sjK-K5-bYG"/>
-                                </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt8-QO-9QR">
-                                <rect key="frame" x="20" y="445" width="45" height="40"/>
+                                <rect key="frame" x="20" y="453" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="0Zj-on-FCl"/>
@@ -511,7 +507,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hNa-fb-QJG">
-                                <rect key="frame" x="61" y="445" width="45" height="40"/>
+                                <rect key="frame" x="61" y="453" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="45" id="39G-c0-ADc"/>
@@ -529,8 +525,8 @@
                                     <action selector="PublicaEnTwiter:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="UE1-BP-buF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-ll-9fO">
-                                <rect key="frame" x="13" y="172" width="170" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-ll-9fO">
+                                <rect key="frame" x="20" y="193" width="157" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="Lhb-p8-m6J"/>
@@ -540,18 +536,18 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-Ow-eHc">
-                                <rect key="frame" x="13" y="12" width="293" height="51"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FxO-Ow-eHc">
+                                <rect key="frame" x="13" y="76" width="293" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="1OU-Pi-0va"/>
                                     <constraint firstAttribute="height" constant="51" id="6IJ-9o-yer"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0fP-Xk-zqd">
-                                <rect key="frame" x="247" y="445" width="40" height="40"/>
+                                <rect key="frame" x="247" y="453" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="kkE-XZ-wdW"/>
@@ -570,7 +566,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCi-HT-zIx">
-                                <rect key="frame" x="206" y="445" width="40" height="40"/>
+                                <rect key="frame" x="206" y="453" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="40" id="F4f-tH-pbD"/>
@@ -588,8 +584,8 @@
                                     <action selector="GuardarCalendario:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="Xi7-Zp-Io5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
-                                <rect key="frame" x="20" y="68" width="285" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
+                                <rect key="frame" x="20" y="132" width="285" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="285" id="LvX-Db-5Hk"/>
@@ -599,8 +595,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
-                                <rect key="frame" x="13" y="96" width="293" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
+                                <rect key="frame" x="13" y="158" width="293" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="7vv-hq-AwV"/>
@@ -628,28 +624,30 @@
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="8ko-g2-Nic" secondAttribute="bottom" id="6Q1-hK-Bf0"/>
                             <constraint firstItem="ncC-K4-75f" firstAttribute="top" secondItem="It4-KN-Mjc" secondAttribute="bottom" constant="39" id="7Zl-sZ-Bb4"/>
-                            <constraint firstAttribute="bottom" secondItem="Zt8-QO-9QR" secondAttribute="bottom" constant="83" id="8vS-gS-NjJ"/>
+                            <constraint firstItem="Cey-Df-OzE" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="13" id="Cv6-af-dAJ"/>
                             <constraint firstAttribute="centerX" secondItem="8S8-lZ-Ab3" secondAttribute="centerX" id="E0r-Lb-KTM"/>
                             <constraint firstItem="Daq-nx-AoS" firstAttribute="top" secondItem="It4-KN-Mjc" secondAttribute="bottom" constant="4" id="EW6-hl-Hxg"/>
+                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Cey-Df-OzE" secondAttribute="bottom" constant="121" id="HED-HG-9iB"/>
                             <constraint firstItem="Daq-nx-AoS" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="13" id="J1j-2w-5cq"/>
-                            <constraint firstAttribute="bottom" secondItem="0fP-Xk-zqd" secondAttribute="bottom" constant="83" id="M5m-BT-Tin"/>
-                            <constraint firstAttribute="bottom" secondItem="gCi-HT-zIx" secondAttribute="bottom" constant="83" id="MuQ-4M-6UP"/>
                             <constraint firstItem="It4-KN-Mjc" firstAttribute="top" secondItem="FxO-Ow-eHc" secondAttribute="bottom" constant="5" id="OXG-3I-v14"/>
+                            <constraint firstAttribute="bottom" secondItem="hNa-fb-QJG" secondAttribute="bottom" constant="75" id="Pga-sZ-Jn0"/>
                             <constraint firstItem="Zt8-QO-9QR" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="20" id="QHq-1R-p45"/>
-                            <constraint firstAttribute="bottom" secondItem="hNa-fb-QJG" secondAttribute="bottom" constant="83" id="RSJ-P5-3Bf"/>
                             <constraint firstAttribute="centerX" secondItem="8ko-g2-Nic" secondAttribute="centerX" id="RsY-50-7gJ"/>
                             <constraint firstItem="FxO-Ow-eHc" firstAttribute="top" secondItem="eiV-lw-MSD" secondAttribute="bottom" constant="12" id="SRG-1Z-g1m"/>
+                            <constraint firstAttribute="trailing" secondItem="Cey-Df-OzE" secondAttribute="trailing" constant="17" id="UuH-Xt-saA"/>
                             <constraint firstItem="hNa-fb-QJG" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="61" id="VdK-5k-CVr"/>
                             <constraint firstItem="It4-KN-Mjc" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="20" id="Wa4-MA-VFN"/>
+                            <constraint firstAttribute="bottom" secondItem="Zt8-QO-9QR" secondAttribute="bottom" constant="75" id="Xa5-sw-vWH"/>
+                            <constraint firstAttribute="bottom" secondItem="0fP-Xk-zqd" secondAttribute="bottom" constant="75" id="Ysn-pi-6RI"/>
                             <constraint firstAttribute="bottom" secondItem="8S8-lZ-Ab3" secondAttribute="bottom" constant="5" id="b8m-pQ-2Mi"/>
-                            <constraint firstItem="Cey-Df-OzE" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="13" id="d1V-RB-YkF"/>
-                            <constraint firstItem="gCi-HT-zIx" firstAttribute="top" secondItem="Cey-Df-OzE" secondAttribute="bottom" constant="15" id="ehI-88-JPH"/>
                             <constraint firstItem="0fP-Xk-zqd" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="247" id="h5h-l7-sNY"/>
                             <constraint firstItem="ncC-K4-75f" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="117" id="i7o-15-JdU"/>
                             <constraint firstItem="gCi-HT-zIx" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="206" id="jCN-8b-4iE"/>
                             <constraint firstItem="FxO-Ow-eHc" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="13" id="mKo-DX-St2"/>
+                            <constraint firstItem="Cey-Df-OzE" firstAttribute="top" secondItem="di4-ll-9fO" secondAttribute="bottom" constant="3" id="oy4-jK-ITl"/>
                             <constraint firstItem="di4-ll-9fO" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="20" id="sQX-4O-KWi"/>
                             <constraint firstItem="di4-ll-9fO" firstAttribute="top" secondItem="It4-KN-Mjc" secondAttribute="bottom" constant="39" id="vbs-EW-RQj"/>
+                            <constraint firstAttribute="bottom" secondItem="gCi-HT-zIx" secondAttribute="bottom" constant="75" id="yKu-xV-0Hc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="brD-8M-vg3">
@@ -1559,21 +1557,21 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <!--M Mapa Conferencia View Controller-->
         <scene sceneID="MfS-IM-Pxu">
             <objects>
-                <viewController id="kFj-mK-wTP" customClass="mMapaConferenciaViewController" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="kFj-mK-wTP" customClass="mMapaConferenciaViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="mfv-ws-6R5"/>
                         <viewControllerLayoutGuide type="bottom" id="dNt-de-J1o"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9Js-4V-RJr">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="yVd-eK-Hdq" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="0.0" y="503" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="439" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-UI-nMg" customClass="AnimatedImagesView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-UI-nMg" customClass="AnimatedImagesView">
                                 <rect key="frame" x="70" y="508" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.39607843139999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -1591,6 +1589,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             <constraint firstAttribute="centerX" secondItem="yVd-eK-Hdq" secondAttribute="centerX" id="qG9-ky-zuD"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="Dpd-Dz-zew"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -1858,7 +1857,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-ki-6UC" colorLabel="IBBuiltInLabel-Green">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-ki-6UC" colorLabel="IBBuiltInLabel-Green">
                                 <rect key="frame" x="0.0" y="504" width="320" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
@@ -1992,12 +1991,14 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TPV-ki-6UC" secondAttribute="bottom" id="AmR-Ze-KMN"/>
                             <constraint firstItem="8HT-Jg-9J4" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" id="Fvx-av-YO9"/>
                             <constraint firstAttribute="bottom" secondItem="LZZ-me-MbK" secondAttribute="bottom" constant="5" id="IuG-if-1QU"/>
                             <constraint firstItem="vNS-QV-gWb" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="20" id="LjO-1j-cqp"/>
                             <constraint firstItem="8HT-Jg-9J4" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="218" id="Mxg-Rc-Qmd"/>
                             <constraint firstItem="vNS-QV-gWb" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="177" id="Td2-hJ-Pgc"/>
                             <constraint firstAttribute="centerX" secondItem="LZZ-me-MbK" secondAttribute="centerX" id="ULx-X5-y5O"/>
+                            <constraint firstItem="TPV-ki-6UC" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" id="WDu-N3-KXG"/>
                             <constraint firstItem="g1L-Hm-3hN" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="12" id="YQZ-0K-cR6"/>
                             <constraint firstItem="fe1-oT-AQe" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="132" id="qzI-bd-Nd6"/>
                             <constraint firstItem="g1L-Hm-3hN" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="74" id="rAs-bN-cyK"/>
@@ -2666,14 +2667,47 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
@@ -2684,6 +2718,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="82c-rv-EFy"/>
-        <segue reference="SL0-h1-TQs"/>
+        <segue reference="BU0-Ka-ose"/>
     </inferredMetricsTieBreakers>
 </document>
