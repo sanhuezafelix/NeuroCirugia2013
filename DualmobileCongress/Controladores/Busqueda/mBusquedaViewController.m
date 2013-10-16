@@ -114,7 +114,7 @@
     cell.texto.text   = info.lugarEnQueMeDesarrollo.ciudad;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-    cell.Actividad.text = info.descripcionEvento;
+    cell.Actividad.text = info.tipoEvento;
    
     return cell;
 }
