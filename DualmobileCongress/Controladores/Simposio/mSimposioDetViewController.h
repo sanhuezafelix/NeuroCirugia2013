@@ -14,6 +14,8 @@
 #import <EventKit/EventKit.h>
 #import <EventKitUI/EventKitUI.h>
 #import "AnimatedImagesView.h"
+#import "mJornadaViewController.h"
+
 
 
 
@@ -26,20 +28,20 @@
 #import "Eventopadre.h"
 
 @interface mSimposioDetViewController : UIViewController
+@property (weak, nonatomic) IBOutlet UITextView *Titulo;
+@property (weak, nonatomic) IBOutlet UILabel *Actividad;
 
 @property (strong, nonatomic) IBOutlet UITableView *DetailTableview;
 @property (strong, nonatomic) IBOutlet UITextView *ContenidoEventoHijo;
+@property (weak, nonatomic) IBOutlet UITextView *Expositor;
+@property (weak, nonatomic) IBOutlet UILabel *Lugar;
+@property (weak, nonatomic) IBOutlet UILabel *Hora;
 
-@property (strong, nonatomic) IBOutlet UILabel *Lugar;
 @property (strong, nonatomic) IBOutlet UILabel *TipoEventoPadre;
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
-@property (strong, nonatomic) IBOutlet UITextView *Titulo;
-@property (strong, nonatomic) IBOutlet UILabel *Hora;
-@property (strong, nonatomic) IBOutlet UITextView *Expositor;
 @property (strong, nonatomic) IBOutlet UIButton *BotonCalendario;
 @property (strong, nonatomic) IBOutlet UIButton *BotonMapas;
-@property (strong, nonatomic) IBOutlet UILabel *Actividad;
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicacionTwet;
 @property (strong, nonatomic) IBOutlet UIButton *botonDeTalleSpeaker;
 @property (strong, nonatomic) IBOutlet UIButton *botonImagenExpositor;
@@ -51,6 +53,7 @@
 
 
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
+@property(nonatomic,strong)UIImage  *Coordinador;
 
 @property(nonatomic,strong)UIImage  *imagenEX;
 @property(nonatomic,strong)NSString *tituloCelda;

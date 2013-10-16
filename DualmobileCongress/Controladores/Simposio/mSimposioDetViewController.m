@@ -39,7 +39,7 @@
     self.imagen.image = self.imagenEX;
     self.Lugar.text = self.LugarCelda;
     self.imagen.image = self.NombreImagen;
-    self.Actividad.text = self.ActividadSpeaker;
+    self.Actividad.text = self.ContenidoeventoHijoCelda;
     self.ContenidoEventoHijo.text = self.ContenidoeventoHijoCelda;
    
     
