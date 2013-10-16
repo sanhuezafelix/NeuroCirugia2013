@@ -161,7 +161,7 @@
     {
         Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
         cell.Titulo.text = info.tituloEP;
-        cell.Subtitulo.text = info.participantes;
+        cell.Subtitulo.text = info.participantes.nombre;
 
         cell.Actividad.text = info.tipoEP;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
@@ -270,11 +270,12 @@
         {
             Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
             mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
-            destino.Coordinador = info.participantes;
+            destino.ExpositorCelda = info.participantes.nombre;
 
-            
+            destino.LugarCelda = info.eventoHijo;
+
             destino.tituloCelda = info.tituloEP;
-            destino.ContenidoCelda =info.tipoEP;
+            destino.ContenidoeventoHijoCelda =info.tipoEP;
             
             
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicioEP]]];

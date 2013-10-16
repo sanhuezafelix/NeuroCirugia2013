@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSSet *eventoHijo;
 @property (nonatomic, retain) Imagen *imagenEventoPadre;
 @property (nonatomic, retain) Institucion *institucionPatrocinante;
-@property (nonatomic, retain) NSSet *participantes;
+@property (nonatomic, retain) Persona *participantes;
 @end
 
 @interface Eventopadre (CoreDataGeneratedAccessors)
@@ -33,9 +33,5 @@
 - (void)addEventoHijo:(NSSet *)values;
 - (void)removeEventoHijo:(NSSet *)values;
 
-- (void)addParticipantesObject:(Persona *)value;
-- (void)removeParticipantesObject:(Persona *)value;
-- (void)addParticipantes:(NSSet *)values;
-- (void)removeParticipantes:(NSSet *)values;
 
 @end

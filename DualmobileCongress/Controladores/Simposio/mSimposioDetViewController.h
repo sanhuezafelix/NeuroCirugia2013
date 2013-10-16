@@ -53,7 +53,7 @@
 
 
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
-@property(nonatomic,strong)UIImage  *Coordinador;
+@property(nonatomic,strong)NSString *Coordinador;
 
 @property(nonatomic,strong)UIImage  *imagenEX;
 @property(nonatomic,strong)NSString *tituloCelda;
