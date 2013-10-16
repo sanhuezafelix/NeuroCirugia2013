@@ -28,18 +28,18 @@
     [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
     [defaults synchronize];
     
-    NSLog(@"valor de autorizador   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
+    NSLog(@"valor de autorizador Jornada  %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
 }
 
--(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-    [defaults synchronize];
-    
-    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-}
+//-(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    
+//    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
+//    [defaults synchronize];
+//    
+//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
+//}
 
 
 - (void)viewDidLoad
@@ -311,7 +311,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
+//    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
     
     if (estadoAutorizador == YES) {
@@ -320,11 +320,11 @@
         [self AnularActualizaEstadoAutorizadorSincronizacion];
         
     }
-    if (estadoAutorizadorImagen == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-    }
+//    if (estadoAutorizadorImagen == YES) {
+//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
+//        
+//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
+//    }
     
     [super viewWillAppear:animated];
     

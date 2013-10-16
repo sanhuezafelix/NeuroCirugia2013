@@ -34,7 +34,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setBool:YES forKey:@"kCanceladorInicioTimer"];
     [defaults synchronize];
-    NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
+    NSLog(@"valor de cancelador  %c", [defaults boolForKey:@"kCanceladorInicioTimer"]);
 }
 
 
@@ -50,15 +50,15 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     
 }
 
--(void)actualizaEstadoAutorizadorSincronizacionImagen{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:YES forKey:@"kAutorizadorSincronizacionImagen"];
-    [defaults synchronize];
-    
-    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-}
+//-(void)actualizaEstadoAutorizadorSincronizacionImagen{
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    
+//    [defaults setBool:YES forKey:@"kAutorizadorSincronizacionImagen"];
+//    [defaults synchronize];
+//    
+//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
+//}
 
 -(void)AnularActualizaEstadoAutorizadorSincronizacion{
     
@@ -72,15 +72,15 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     
 }
 
--(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-    [defaults synchronize];
-    
-    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-    
-}
+//-(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
+//    [defaults synchronize];
+//    
+//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
+//    
+//}
 
 //***********************-----> FIN DE 4 METODOS QUE TENEMOS QUE REFACTORIZAR <-------*******************
 
@@ -111,7 +111,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
    
 
     NSTimeInterval interval = [defaults floatForKey:@"kIntervaloHora"];
-    NSTimeInterval intervalImagen = [defaults floatForKey:@"kIntervaloHoraImagen"];
+  //  NSTimeInterval intervalImagen = [defaults floatForKey:@"kIntervaloHoraImagen"];
 
     if (estadoCanceladorTimer == NO) {
 
@@ -125,12 +125,12 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                                  repeats:YES];
         
 
-            self.timerImagen = [NSTimer scheduledTimerWithTimeInterval:intervalImagen
-                                                      target:self
-                                                    selector:@selector(actualizaEstadoAutorizadorSincronizacionImagen)
-                                                    userInfo:nil
-                                                     repeats:YES];
-
+//            self.timerImagen = [NSTimer scheduledTimerWithTimeInterval:intervalImagen
+//                                                      target:self
+//                                                    selector:@selector(actualizaEstadoAutorizadorSincronizacionImagen)
+//                                                    userInfo:nil
+//                                                     repeats:YES];
+//
     }
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
@@ -513,6 +513,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     [self.HomeTableview reloadData];
     [self.refresh endRefreshing];
     
+    //**********poner aqui sincronizador
 }
 
 
@@ -526,7 +527,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
    
     BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
+  //  BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
     BOOL estadoCanceladorTimer = [defaults boolForKey:@"kCanceladorInicioTimer"];
      
@@ -543,12 +544,12 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         [self AnularActualizaEstadoAutorizadorSincronizacion];
 
     }
-    if (estadoAutorizadorImagen == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-        
-    }
+//    if (estadoAutorizadorImagen == YES) {
+//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
+//        
+//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
+//        
+//    }
     
     [super viewWillAppear:animated];
 }

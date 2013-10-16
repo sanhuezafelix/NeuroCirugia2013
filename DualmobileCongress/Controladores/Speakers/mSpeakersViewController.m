@@ -27,7 +27,7 @@
     [defaults synchronize];
     // <---NSLog
     
-    NSLog(@"valor de autorizador   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
+    NSLog(@"valor de autorizador speaker   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
     
     // NSLog--->
 }
@@ -316,7 +316,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
     BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
+//    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
     
     
@@ -326,11 +326,11 @@
         [self AnularActualizaEstadoAutorizadorSincronizacion];
         
     }
-    if (estadoAutorizadorImagen == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-}
+//    if (estadoAutorizadorImagen == YES) {
+//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
+//        
+//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
+//}
     [super viewWillAppear:animated];
     
 }
