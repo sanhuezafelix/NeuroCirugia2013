@@ -124,14 +124,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                                 userInfo:nil
                                                  repeats:YES];
         
-
-//            self.timerImagen = [NSTimer scheduledTimerWithTimeInterval:intervalImagen
-//                                                      target:self
-//                                                    selector:@selector(actualizaEstadoAutorizadorSincronizacionImagen)
-//                                                    userInfo:nil
-//                                                     repeats:YES];
-//
-    }
+ }
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -180,38 +173,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-//    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
-//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-//    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
-//    
-//    
-//    NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-//    NSRange remplazoFecha = {0, 7};
-//    
-//    NSDate *HoraActual2 = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
-//    
-//    NSString *strDate2 = [dateFormatter stringFromDate:horaDispocitivo];
-//    NSLog(@"%@",strDate2);
-//    
-//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-//    
-//    // Defineself.navigationItem.hidesBackButton = YES; the entity we are looking for
-//    NSEntityDescription *entity = [NSEntityDescription
-//                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
-//    [fetchRequest setEntity:entity];
-//    
-//    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio CONTAINS[cd] %@)",strDate2];
-//    [fetchRequest setPredicate:Predicado];
-//    // Define how we want our entities to be sorted
-//    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-//                                        initWithKey:@"horaInicio" ascending:YES];
-//    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-//    [fetchRequest setSortDescriptors:sortDescriptors];
-//    
-//    NSError *error = nil;
-//
-//    NSArray *efff= [_delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-//    NSLog(@"%lu",(unsigned long)[efff count]);
     int rows;
     if (section == 0) {
         rows = [self.EnesteMomento count];
@@ -444,7 +405,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSArray*)CargarProximasActividades{
     
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:10800];
+    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:5400];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];
     
@@ -461,7 +422,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                        entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
         [fetchRequest setEntity:entity];
         
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaFin < %@) AND (horaInicio < %@)",strDate2,strDate2];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio > %@)",strDate2];
         [fetchRequest setPredicate:Predicado];
     [fetchRequest setFetchLimit:6];
 
