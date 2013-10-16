@@ -76,7 +76,7 @@
 
 - (IBAction)PublicaEnFaceBook:(id)sender;
 - (IBAction)PublicaEnTwiter:(id)sender;
-- (IBAction)RevelarMenuLateral:(id)sender;
+- (IBAction)RevelarNotificaciones:(id)sender;
 - (IBAction)GuardarCalendario:(id)sender;
 
 @end

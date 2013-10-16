@@ -48,6 +48,7 @@
 
 
 
+
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 @property(nonatomic,strong)UIImage  *imagenEX;
