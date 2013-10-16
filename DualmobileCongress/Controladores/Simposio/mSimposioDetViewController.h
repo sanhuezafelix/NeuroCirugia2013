@@ -56,7 +56,6 @@
 @property(nonatomic,strong)NSString *tituloCelda;
 
 @property(nonatomic,strong)UIImage  *imagenEX;
-@property(nonatomic,strong)NSString *tituloCelda;
 @property(nonatomic,strong)NSString *ContenidoeventoHijoCelda;
 @property(nonatomic,strong)NSString *horacelda;
 @property(nonatomic,strong)NSString *ExpositorCelda;
