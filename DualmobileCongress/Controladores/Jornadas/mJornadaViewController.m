@@ -161,7 +161,7 @@
     {
         Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
         cell.Titulo.text = info.tituloEP;
-        cell.Subtitulo.text = info.participantes.;
+        cell.Subtitulo.text = info.participantes;
 
         cell.Actividad.text = info.tipoEP;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
