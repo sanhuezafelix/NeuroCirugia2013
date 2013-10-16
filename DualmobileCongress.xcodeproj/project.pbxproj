@@ -769,6 +769,7 @@
 		89F524CA17450E1A00802855 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				89F524F717450E1A00802855 /* Speakers */,
 				AACA7579176834A1006E3520 /* MapaConferencia */,
 				AA49D4D8175F94720082E9A8 /* Busqueda */,
 				8957F7A3175EC35800C59973 /* Jornadas */,
@@ -782,7 +783,6 @@
 				89F524E817450E1A00802855 /* MenuLateral */,
 				89F524F117450E1A00802855 /* Navegacion */,
 				89F524F417450E1A00802855 /* Notificaciones */,
-				89F524F717450E1A00802855 /* Speakers */,
 				7893C766180890360055D0D7 /* Simposio */,
 				7893C7671808903D0055D0D7 /* Socio */,
 			);

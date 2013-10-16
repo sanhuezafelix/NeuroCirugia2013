@@ -41,6 +41,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
 //    self.estadoAutorizadorSincronizacionImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
     if (self.estadoAutorizadorSincronizacion == YES) {
+        
         if ([fetchRequest.entityName isEqualToString:@"Evento"]) {
             mutableURLRequest = [self requestWithMethod:@"GET" path:@"eventos" parameters:nil];
             

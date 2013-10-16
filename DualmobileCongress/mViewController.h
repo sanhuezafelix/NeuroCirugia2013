@@ -14,6 +14,7 @@
 @property (strong, nonatomic) IBOutlet UITextField *UserSpecialty;
 @property (strong, nonatomic) IBOutlet UITextField *UserMail;
 @property (nonatomic, strong) NSArray *nombresEntidad;
+
 @property (strong, nonatomic) IBOutlet UIButton *comenzarBoton;
 @property (nonatomic, strong) UIActivityIndicatorView *ActividadServidor;
 
