@@ -162,7 +162,7 @@
         Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
         cell.Titulo.text = info.tituloEP;
         cell.Actividad.text = info.tipoEP;
-        cell.Subtitulo.text = info.patrocinioEP;
+        
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFinEP]];
     }
