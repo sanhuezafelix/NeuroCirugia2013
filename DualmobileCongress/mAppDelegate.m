@@ -181,7 +181,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 - (NSURL *)applicationDocumentsDirectory
 {
     return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
-}
+}//
 
 #pragma -mark Notificaciones delegados
 
