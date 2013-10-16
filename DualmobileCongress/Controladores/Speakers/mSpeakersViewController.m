@@ -230,6 +230,7 @@
     cell.texto.text     =   info.lugarDondeProvengo.nombreLugar; //tratandi de sacar pais a la vista speaker
     cell.Imagen.image   =   [UIImage imageWithData:dataObj];
     
+    
     return cell;
 }
 

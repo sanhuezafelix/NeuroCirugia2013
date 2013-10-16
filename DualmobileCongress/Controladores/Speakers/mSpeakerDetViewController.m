@@ -144,8 +144,9 @@
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];;
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];;
     cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
-    NSLog(@"nombre del lugar ==> %@" ,info.lugarEnQueMeDesarrollo.nombreLugar);
+    NSLog(@"nombre del speaker ==> %@" ,self.Nombrecelda);
     cell.Subtitulo.text = info.speaker.nombre;
+    
 
 
     
@@ -163,7 +164,7 @@
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"speaker.nombre = %@ ",self.ReferenciaSpeaker];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"speaker.nombre = %@ ",self.Nombrecelda];
     [fetchRequest setPredicate:Predicado];
     
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
@@ -210,8 +211,7 @@
     
     if ([segue.identifier isEqualToString:@"DetalleEvento"])
     {
-        Evento *info = [_fetchedResultsController
-                        objectAtIndexPath:[self.DetailSpeakerTableview indexPathForSelectedRow]];
+        Evento *info = [self.EventoQueParticipo objectAtIndex:[self.DetailSpeakerTableview indexPathForSelectedRow].row];
         mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
         NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
         UIImage *beforeImage = [UIImage imageWithData:dataObj];
