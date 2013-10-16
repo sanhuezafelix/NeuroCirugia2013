@@ -32,6 +32,12 @@
 		7893C765180890300055D0D7 /* mSocioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7893C764180890300055D0D7 /* mSocioViewController.m */; };
 		78A99C60180A3BE40062865B /* AnimatedImagesView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99C5D180A3BE40062865B /* AnimatedImagesView.m */; };
 		78A99C61180A3BE40062865B /* LTransitionImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 78A99C5F180A3BE40062865B /* LTransitionImageView.m */; };
+		78D8635D180E0B2100D1C3C3 /* piso_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D8635A180E0B2100D1C3C3 /* piso_2@2x.png */; };
+		78D8635E180E0B2100D1C3C3 /* zocalo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D8635B180E0B2100D1C3C3 /* zocalo@2x.png */; };
+		78D8635F180E0B2100D1C3C3 /* lobby@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D8635C180E0B2100D1C3C3 /* lobby@2x.png */; };
+		78D86363180E0B2800D1C3C3 /* lobby.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D86360180E0B2800D1C3C3 /* lobby.png */; };
+		78D86364180E0B2800D1C3C3 /* zocalo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D86361180E0B2800D1C3C3 /* zocalo.png */; };
+		78D86365180E0B2800D1C3C3 /* piso_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D86362180E0B2800D1C3C3 /* piso_2.png */; };
 		892D70F4174504FE00DC5B08 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F3174504FE00DC5B08 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F51745050400DC5B08 /* MessageUI.framework */; };
 		8957F7A8175EC35800C59973 /* mJornadaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957F7A5175EC35800C59973 /* mJornadaViewController.m */; };
@@ -178,10 +184,6 @@
 		C3D38893180BB0B0001C9317 /* no_hay_activ@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3880D180BB0B0001C9317 /* no_hay_activ@2x.png */; };
 		C3D38894180BB0B0001C9317 /* no_hay_activ_1136.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3880E180BB0B0001C9317 /* no_hay_activ_1136.png */; };
 		C3D38895180BB0B0001C9317 /* no_hay_activ_1136@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3880F180BB0B0001C9317 /* no_hay_activ_1136@2x.png */; };
-		C3D3889C180BB0B0001C9317 /* salonriesco_nivel1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3D38816180BB0B0001C9317 /* salonriesco_nivel1.jpg */; };
-		C3D3889D180BB0B0001C9317 /* salonriesco_nivel1@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3D38817180BB0B0001C9317 /* salonriesco_nivel1@2x.jpg */; };
-		C3D3889E180BB0B0001C9317 /* salonriesco_nivel2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3D38818180BB0B0001C9317 /* salonriesco_nivel2.jpg */; };
-		C3D3889F180BB0B0001C9317 /* salonriesco_nivel2@2x.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3D38819180BB0B0001C9317 /* salonriesco_nivel2@2x.jpg */; };
 		C3D388A0180BB0B0001C9317 /* shareonface.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3881A180BB0B0001C9317 /* shareonface.png */; };
 		C3D388A1180BB0B0001C9317 /* shareonface@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3881B180BB0B0001C9317 /* shareonface@2x.png */; };
 		C3D388A2180BB0B0001C9317 /* shareontwit.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3881C180BB0B0001C9317 /* shareontwit.png */; };
@@ -337,6 +339,12 @@
 		78A99C5D180A3BE40062865B /* AnimatedImagesView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimatedImagesView.m; sourceTree = "<group>"; };
 		78A99C5E180A3BE40062865B /* LTransitionImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LTransitionImageView.h; sourceTree = "<group>"; };
 		78A99C5F180A3BE40062865B /* LTransitionImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LTransitionImageView.m; sourceTree = "<group>"; };
+		78D8635A180E0B2100D1C3C3 /* piso_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "piso_2@2x.png"; sourceTree = "<group>"; };
+		78D8635B180E0B2100D1C3C3 /* zocalo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "zocalo@2x.png"; sourceTree = "<group>"; };
+		78D8635C180E0B2100D1C3C3 /* lobby@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lobby@2x.png"; sourceTree = "<group>"; };
+		78D86360180E0B2800D1C3C3 /* lobby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lobby.png; sourceTree = "<group>"; };
+		78D86361180E0B2800D1C3C3 /* zocalo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zocalo.png; sourceTree = "<group>"; };
+		78D86362180E0B2800D1C3C3 /* piso_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piso_2.png; sourceTree = "<group>"; };
 		892D70F3174504FE00DC5B08 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		892D70F51745050400DC5B08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8957F7A4175EC35800C59973 /* mJornadaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mJornadaViewController.h; sourceTree = "<group>"; };
@@ -593,10 +601,6 @@
 		C3D3880D180BB0B0001C9317 /* no_hay_activ@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_hay_activ@2x.png"; sourceTree = "<group>"; };
 		C3D3880E180BB0B0001C9317 /* no_hay_activ_1136.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_hay_activ_1136.png; sourceTree = "<group>"; };
 		C3D3880F180BB0B0001C9317 /* no_hay_activ_1136@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "no_hay_activ_1136@2x.png"; sourceTree = "<group>"; };
-		C3D38816180BB0B0001C9317 /* salonriesco_nivel1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = salonriesco_nivel1.jpg; sourceTree = "<group>"; };
-		C3D38817180BB0B0001C9317 /* salonriesco_nivel1@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "salonriesco_nivel1@2x.jpg"; sourceTree = "<group>"; };
-		C3D38818180BB0B0001C9317 /* salonriesco_nivel2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = salonriesco_nivel2.jpg; sourceTree = "<group>"; };
-		C3D38819180BB0B0001C9317 /* salonriesco_nivel2@2x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "salonriesco_nivel2@2x.jpg"; sourceTree = "<group>"; };
 		C3D3881A180BB0B0001C9317 /* shareonface.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareonface.png; sourceTree = "<group>"; };
 		C3D3881B180BB0B0001C9317 /* shareonface@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "shareonface@2x.png"; sourceTree = "<group>"; };
 		C3D3881C180BB0B0001C9317 /* shareontwit.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shareontwit.png; sourceTree = "<group>"; };
@@ -769,6 +773,7 @@
 		89F524CA17450E1A00802855 /* Controladores */ = {
 			isa = PBXGroup;
 			children = (
+				89F524F717450E1A00802855 /* Speakers */,
 				AACA7579176834A1006E3520 /* MapaConferencia */,
 				AA49D4D8175F94720082E9A8 /* Busqueda */,
 				8957F7A3175EC35800C59973 /* Jornadas */,
@@ -782,7 +787,6 @@
 				89F524E817450E1A00802855 /* MenuLateral */,
 				89F524F117450E1A00802855 /* Navegacion */,
 				89F524F417450E1A00802855 /* Notificaciones */,
-				89F524F717450E1A00802855 /* Speakers */,
 				7893C766180890360055D0D7 /* Simposio */,
 				7893C7671808903D0055D0D7 /* Socio */,
 			);
@@ -1461,10 +1465,6 @@
 				786C2706180CE5F7005A55CC /* publi_bot_2@2x.png */,
 				786C2707180CE5F7005A55CC /* publi_bot_3.png */,
 				786C2708180CE5F7005A55CC /* publi_bot_3@2x.png */,
-				C3D38816180BB0B0001C9317 /* salonriesco_nivel1.jpg */,
-				C3D38817180BB0B0001C9317 /* salonriesco_nivel1@2x.jpg */,
-				C3D38818180BB0B0001C9317 /* salonriesco_nivel2.jpg */,
-				C3D38819180BB0B0001C9317 /* salonriesco_nivel2@2x.jpg */,
 				C3D3881A180BB0B0001C9317 /* shareonface.png */,
 				C3D3881B180BB0B0001C9317 /* shareonface@2x.png */,
 				C3D3881C180BB0B0001C9317 /* shareontwit.png */,
@@ -1530,6 +1530,12 @@
 				C3D38840180BB0B0001C9317 /* map@2x.png */,
 				C3D38841180BB0B0001C9317 /* pinRed.png */,
 				C3D38842180BB0B0001C9317 /* pinRed@2x.png */,
+				78D8635A180E0B2100D1C3C3 /* piso_2@2x.png */,
+				78D8635B180E0B2100D1C3C3 /* zocalo@2x.png */,
+				78D8635C180E0B2100D1C3C3 /* lobby@2x.png */,
+				78D86360180E0B2800D1C3C3 /* lobby.png */,
+				78D86361180E0B2800D1C3C3 /* zocalo.png */,
+				78D86362180E0B2800D1C3C3 /* piso_2.png */,
 			);
 			path = Mapas;
 			sourceTree = "<group>";
@@ -1731,7 +1737,6 @@
 			files = (
 				C3D38868180BB0B0001C9317 /* fondo_about.png in Resources */,
 				C3D388CA180BB0B0001C9317 /* ButtonAbout@2x.png in Resources */,
-				C3D3889E180BB0B0001C9317 /* salonriesco_nivel2.jpg in Resources */,
 				786C270B180CE5F7005A55CC /* publi_bot_2.png in Resources */,
 				C3D388B3180BB0B0001C9317 /* LabelJornada.png in Resources */,
 				C3D388B1180BB0B0001C9317 /* celdas_actividades_jornada@2x.png in Resources */,
@@ -1748,6 +1753,7 @@
 				C3D388A8180BB0B0001C9317 /* paa.png in Resources */,
 				AAC02D1A1738ABAD000AF765 /* Default.png in Resources */,
 				AAC02D1C1738ABAD000AF765 /* Default@2x.png in Resources */,
+				78D8635D180E0B2100D1C3C3 /* piso_2@2x.png in Resources */,
 				C3D388DE180BB0B0001C9317 /* celdaSpeaker@2x.png in Resources */,
 				C3D388E4180BB0B0001C9317 /* fondo_inicio_1136@2x.png in Resources */,
 				AAC02D1E1738ABAD000AF765 /* Default-568h@2x.png in Resources */,
@@ -1768,6 +1774,7 @@
 				C3D38879180BB0B0001C9317 /* fondo_inicio@2x.jpg in Resources */,
 				C3D388C7180BB0B0001C9317 /* butonhome.png in Resources */,
 				C3D388B8180BB0B0001C9317 /* celda_mapa@2x.png in Resources */,
+				78D86364180E0B2800D1C3C3 /* zocalo.png in Resources */,
 				C395341F174C5DCC0048543B /* LICENSE in Resources */,
 				C3D388A4180BB0B0001C9317 /* eem.png in Resources */,
 				C3D388C0180BB0B0001C9317 /* lavelMapa@2x.png in Resources */,
@@ -1791,6 +1798,7 @@
 				C3D388AA180BB0B0001C9317 /* icon_sopnia_114.png in Resources */,
 				C3D388A1180BB0B0001C9317 /* shareonface@2x.png in Resources */,
 				C3D38884180BB0B0001C9317 /* btnmenu.png in Resources */,
+				78D8635E180E0B2100D1C3C3 /* zocalo@2x.png in Resources */,
 				C3D388E0180BB0B0001C9317 /* flechaSpeaker@2x.png in Resources */,
 				C3953422174C5DCC0048543B /* Pods-acknowledgements.markdown in Resources */,
 				786C26F0180CE5C3005A55CC /* sopnia_mail.png in Resources */,
@@ -1812,7 +1820,6 @@
 				C3D3888E180BB0B0001C9317 /* logo_facebook.png in Resources */,
 				C3953427174C5DCC0048543B /* LICENSE in Resources */,
 				C3D3887B180BB0B0001C9317 /* aimagos.png in Resources */,
-				C3D3889D180BB0B0001C9317 /* salonriesco_nivel1@2x.jpg in Resources */,
 				786C2711180CE656005A55CC /* buttonSopnia.png in Resources */,
 				C3D388B4180BB0B0001C9317 /* LabelJornada@2x.png in Resources */,
 				C3953428174C5DCC0048543B /* README.md in Resources */,
@@ -1836,13 +1843,13 @@
 				C3D388B7180BB0B0001C9317 /* celda_mapa.png in Resources */,
 				786C2700180CE5DB005A55CC /* publi_side_2@2x.png in Resources */,
 				C3D388CB180BB0B0001C9317 /* ButtonBusqueda.png in Resources */,
-				C3D3889F180BB0B0001C9317 /* salonriesco_nivel2@2x.jpg in Resources */,
 				C3D388CE180BB0B0001C9317 /* buttonhoteleria@2x.png in Resources */,
 				AA49D4B6175F93370082E9A8 /* touchSpeaker.xib in Resources */,
 				AA49D4E0175F94720082E9A8 /* TouchBusqueda.xib in Resources */,
 				C3D3887C180BB0B0001C9317 /* boton_calendario.png in Resources */,
 				C3D38867180BB0B0001C9317 /* aimagos_web@2x.png in Resources */,
 				C3D388A6180BB0B0001C9317 /* labeleem.png in Resources */,
+				78D8635F180E0B2100D1C3C3 /* lobby@2x.png in Resources */,
 				C3D388CF180BB0B0001C9317 /* ButtonJornada.png in Resources */,
 				786C2717180CE6FC005A55CC /* Default.png in Resources */,
 				C3D388D4180BB0B0001C9317 /* ButtonNotificaciones@2x.png in Resources */,
@@ -1858,7 +1865,6 @@
 				C3D3888C180BB0B0001C9317 /* logo.png in Resources */,
 				C3D38872180BB0B0001C9317 /* navbar_about@2x.png in Resources */,
 				C3D3886B180BB0B0001C9317 /* fondo_about_1136@2x.png in Resources */,
-				C3D3889C180BB0B0001C9317 /* salonriesco_nivel1.jpg in Resources */,
 				C3D3888F180BB0B0001C9317 /* navbar.png in Resources */,
 				C3D38894180BB0B0001C9317 /* no_hay_activ_1136.png in Resources */,
 				C3D388AC180BB0B0001C9317 /* icon_sopnia_29.png in Resources */,
@@ -1866,6 +1872,7 @@
 				C3D388B5180BB0B0001C9317 /* boton_mapa.png in Resources */,
 				C3D388BB180BB0B0001C9317 /* iconoEdificio.png in Resources */,
 				786C270E180CE5F7005A55CC /* publi_bot_3@2x.png in Resources */,
+				78D86365180E0B2800D1C3C3 /* piso_2.png in Resources */,
 				C3D388C6180BB0B0001C9317 /* barraMenu@2x.png in Resources */,
 				C3D3888B180BB0B0001C9317 /* label_notificaciones@2x.png in Resources */,
 				7849982B17E019190019D7BB /* Iphone@4i.storyboard in Resources */,
@@ -1874,6 +1881,7 @@
 				C3D388AF180BB0B0001C9317 /* icon_sopnia_80.png in Resources */,
 				786C2701180CE5DB005A55CC /* publi_side_3.png in Resources */,
 				C3D388BA180BB0B0001C9317 /* flecha_mapa@2x.png in Resources */,
+				78D86363180E0B2800D1C3C3 /* lobby.png in Resources */,
 				C3D38883180BB0B0001C9317 /* boton_volver@2x.png in Resources */,
 				786C2718180CE6FC005A55CC /* Default@2x.png in Resources */,
 				C3D388BC180BB0B0001C9317 /* iconoEdificio@2x.png in Resources */,

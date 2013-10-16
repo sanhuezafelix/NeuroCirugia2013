@@ -12,6 +12,10 @@
 #import "Lugar.h"
 #import "GAI.h"
 #import "Evento.h"
+#import "Persona.h"
+#import "Notificacion.h"
+#import "Eventopadre.h"
+
 
 @interface mViewController ()
 
@@ -25,28 +29,38 @@
 -(void)awakeFromNib{
 }
 
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
+
+    self.delegate = [[UIApplication sharedApplication] delegate];
+    
+    [self CargadorBaseDatosNoImagenes];
+
+
+//    NSArray *nombresEntidad = [[NSArray alloc] init];
+//    nombresEntidad = [NSArray arrayWithObjects:@"Evento", @"Persona", @"Lugar",@"Eventopadre",@"Notificacion",@"Institucion", nil];
+    
     [self activaInicioTimer];
-	self.delegate = [[UIApplication sharedApplication] delegate];
+    
+	
+    
+    
+    self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
+
 
     if ([[NSFileManager defaultManager]fileExistsAtPath:[self Ruta]] == TRUE) {
         self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
         
-        [self CargadorBaseDatosNoImagenes:_nombresEntidad];
-    }
-    else{
-        [self CargadorBaseDatosNoImagenes:_nombresEntidad];
-
-      self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
         
     }
 }
 
 - (IBAction)comenzarAccion:(id)sender {
     
-    [self CargadorBaseDatosNoImagenes:_nombresEntidad];
+    [self CargadorBaseDatosNoImagenes];
 
 
     id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
@@ -59,7 +73,7 @@
 
 - (IBAction)IniciarSesion:(id)sender
 {
-    [self CargadorBaseDatosImagenes:@"Imagen"];
+    //[self CargadorBaseDatosImagenes:@"Imagen"];
     [self Guardar];
     
     if ([self.UserMail.text length]>0 && [self.UserName.text length] >0  && [self.UserSpecialty.text length]>0 )
@@ -89,44 +103,89 @@
 
 #pragma mark - Carga base datos
 
--(void)CargadorBaseDatosImagenes:(NSString*)entidadImagen;
+//-(void)CargadorBaseDatosImagenes:(NSString*)entidadImagen;
+//{
+//    
+//        
+//        [self.ActividadServidor startAnimating];
+//        NSFetchRequest *fetchRequestImagen = [[NSFetchRequest alloc] init];
+//        // asignamos el nombre de la entidad a utilizar
+//        NSEntityDescription *entidad = [NSEntityDescription entityForName:entidadImagen
+//                                                   inManagedObjectContext:self.delegate.managedObjectContext];
+//        [fetchRequestImagen setEntity:entidad];
+//        NSError *error;
+//        NSArray *fetchedObjectsImagen = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestImagen
+//                                                                           error:&error];
+//        [self.ActividadServidor stopAnimating];
+//
+//    // <---NSLog
+//    
+//    NSLog(@"IMAGENES %@", [fetchRequestImagen description]);
+//    
+//    // NSLog--->
+//}
+    
+-(void)CargadorBaseDatosNoImagenes
 {
     
-        
-        [self.ActividadServidor startAnimating];
-        NSFetchRequest *fetchRequestImagen = [[NSFetchRequest alloc] init];
-        // asignamos el nombre de la entidad a utilizar
-        NSEntityDescription *entidad = [NSEntityDescription entityForName:entidadImagen
-                                                   inManagedObjectContext:self.delegate.managedObjectContext];
-        [fetchRequestImagen setEntity:entidad];
-        NSError *error;
-        NSArray *fetchedObjectsImagen = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestImagen
-                                                                           error:&error];
-        [self.ActividadServidor stopAnimating];
-
+    
+    NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
+    // asignamos el nombre de la entidad a utilizar
+    NSEntityDescription *entidadLugar = [NSEntityDescription entityForName:@"Lugar"
+                                               inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestLugar setEntity:entidadLugar];
+    NSError *errorLugar;
+    NSArray *fetchedObjectsLugar = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
+    
     // <---NSLog
+    //
+    NSLog(@"Objetos %@", [fetchedObjectsLugar objectEnumerator]);
     
-    NSLog(@"IMAGENES %@", [fetchRequestImagen description]);
     
-    // NSLog--->
-}
     
--(void)CargadorBaseDatosNoImagenes:(NSArray*)nombresEntidad
-{
+    NSFetchRequest *fetchRequestEvento = [[NSFetchRequest alloc] init];
+    // asignamos el nombre de la entidad a utilizar
+    NSEntityDescription *entidadEvento = [NSEntityDescription entityForName:@"Evento"
+                                               inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestEvento setEntity:entidadEvento];
+    NSError *errorEvento;
+    NSArray *fetchedObjectsEvento = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEvento error:&errorEvento];
     
-    nombresEntidad = [NSArray arrayWithObjects:@"Evento", @"Persona", @"Lugar",@"Eventopadre",@"Notificacion",@"Institucion", nil];
+    // <---NSLog
+    //
+    NSLog(@"Objetos %@", [fetchedObjectsEvento objectEnumerator]);
     
-for (NSString *unaEntidad in nombresEntidad)
-    {
-        NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-        // asignamos el nombre de la entidad a utilizar
-        NSEntityDescription *entidad = [NSEntityDescription entityForName:unaEntidad
-                                                   inManagedObjectContext:self.delegate.managedObjectContext];
-        [fetchRequest setEntity:entidad];
-        NSError *error;
-        NSArray *fetchedObjects = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest
-  error:&error];
-    }
+    
+    
+    NSFetchRequest *fetchRequestPersona = [[NSFetchRequest alloc] init];
+    // asignamos el nombre de la entidad a utilizar
+    NSEntityDescription *entidadPersona = [NSEntityDescription entityForName:@"Persona"
+                                               inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestPersona setEntity:entidadPersona];
+    NSError *errorPersona;
+    NSArray *fetchedObjectsPersona = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
+    
+    // <---NSLog
+    //
+    NSLog(@"Objetos %@", [fetchedObjectsPersona objectEnumerator]);
+    
+    
+    
+    NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
+    // asignamos el nombre de la entidad a utilizar
+    NSEntityDescription *entidadInstitucion = [NSEntityDescription entityForName:@"Institucion"
+                                               inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestInstitucion setEntity:entidadInstitucion];
+    NSError *errorInstitucion;
+    NSArray *fetchedObjectsInstitucion = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
+    
+    // <---NSLog
+    //
+    NSLog(@"Objetos %@", [fetchedObjectsInstitucion objectEnumerator]);
+    
+    
+
+    
 }
 
 -(void)activaInicioTimer{

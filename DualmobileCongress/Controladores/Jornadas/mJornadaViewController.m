@@ -8,7 +8,7 @@
 
 #import "mJornadaViewController.h"
 #import "mAppDelegate.h"
-#import "mDetalleViewController.h"
+#import "mSimposioDetViewController.h"
 #import "NSDataAdditions.h"
 #import "GAI.h"
 
@@ -28,18 +28,18 @@
     [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
     [defaults synchronize];
     
-    NSLog(@"valor de autorizador   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
+    NSLog(@"valor de autorizador Jornada  %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
 }
 
--(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-    [defaults synchronize];
-    
-    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-}
+//-(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
+//    
+//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+//    
+//    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
+//    [defaults synchronize];
+//    
+//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
+//}
 
 
 - (void)viewDidLoad
@@ -254,7 +254,7 @@
         if (indexPath.section == 0)
         {
             Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
-            mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+            mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
             
             
             destino.tituloCelda = info.tituloEP;
@@ -271,12 +271,12 @@
         }
         else{
             Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
-            mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
+           mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
             NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
             UIImage *beforeImage = [UIImage imageWithData:dataObj];
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
-            destino.ContenidoCelda =info.tematica;
+            destino.ContenidoeventoHijoCelda =info.tematica;
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
             destino.NombreImagen = beforeImage;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
@@ -311,7 +311,7 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
+//    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
     
     if (estadoAutorizador == YES) {
@@ -320,11 +320,11 @@
         [self AnularActualizaEstadoAutorizadorSincronizacion];
         
     }
-    if (estadoAutorizadorImagen == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-    }
+//    if (estadoAutorizadorImagen == YES) {
+//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
+//        
+//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
+//    }
     
     [super viewWillAppear:animated];
     

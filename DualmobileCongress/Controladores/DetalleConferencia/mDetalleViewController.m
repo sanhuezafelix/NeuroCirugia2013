@@ -30,7 +30,7 @@
     [super viewDidLoad];
     //trackenado GA
     id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [trackerDetalleConferencia sendView:@"Conferencia"];
+    [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
     self.Hora.text = self.horacelda;
     self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
     self.Titulo.text = self.tituloCelda;
@@ -39,7 +39,8 @@
     self.Lugar.text = self.LugarCelda;
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
-    NSLog(@"Titulo Celda ==> %@",self.tituloCelda);
+   // NSLog(@"Titulo Celda ==> %@",self.tituloCelda);
+      NSLog(@"Contenido Celda expocicion ==> %@",self.ContenidoCelda);
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] <6.0f)
     {
@@ -51,20 +52,19 @@
         [self.botonDeTalleSpeaker setHidden:YES];
     }
     if (!self.EsSimposio) {
-        NSLog( @"es un evento ");
-        self.DetailTableview.hidden = true;
+              self.DetailTableview.hidden = true;
         self.labelSimposio.hidden = true;
     }
     self.delegate = [[UIApplication sharedApplication]delegate];
     
-    self.EventosDelSimposio = [[NSMutableArray alloc]initWithArray:[self CargarEventosDelSimposio]];
+   
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
                                         forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     self.title = @" ";
-    NSLog(@" este es un%@n", self.tituloCelda);
+  
     
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
@@ -180,17 +180,6 @@
 {
     // Comprobamos si el identificador es el adecuado
     
-    if ([segue.identifier isEqualToString:@"det"])
-    {
-        // Obtenemos el controlador destino
-        mSpeakerDetViewController  *destino = (mSpeakerDetViewController *)segue.destinationViewController;
-        destino.Nombrecelda = self.ExpositorCelda;
-        destino.Institucioncelda = self.InstitucionSpeaker;
-        destino.BiografiaCelda = self.BiografiaSpeaker;
-        destino.Paiscelda = self.PaisSpeaker;
-        destino.ImagenDelSpeaker = self.NombreImagen;
-        destino.ReferenciaSpeaker  =  self.Referencia;
-    }
     if ([segue.identifier isEqualToString:@"MapSpeaker"])
     {
         mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
@@ -265,8 +254,8 @@
     
     id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [gaiBotonCalendario sendEventWithCategory:@"uiAction"
-                                   withAction:@"buttonPress"
-                                    withLabel:@"Abrio el calendario"
+                                   withAction:@"Revelar Calendario"
+                                    withLabel:@"Revelo el calendario"
                                     withValue:nil];
 }
 
@@ -290,83 +279,8 @@
     [self setBotonDeTalleSpeaker:nil];
     [super viewDidUnload];
 }
-#pragma tableview
 
 
-#pragma -mark Tableview datasource y delegate
 
--(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    //NSLog(@"Cantidad de eventos que participo ==> %d",[self.EventoQueParticipo count]);
-    return [self.EventosDelSimposio count];
-    
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    Evento *info = [self.EventosDelSimposio objectAtIndex:indexPath.row];
-    NSString *cellIdentifier = @"CharlasCell";
-    mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
-    if (cell == nil)
-    {
-        cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
-        
-    }
-    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
-  
-    
-    cell.Titulo.text = info.titulo;
-    cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
-    cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-    cell.Subtitulo.text = info.speaker.nombre;
-    cell.Actividad.text = info.tipoEvento;
-    cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
-    return cell;
-}
-
-
-#pragma mark - Fetchs Coredata
-
--(NSArray*)CargarEventosDelSimposio
-{
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"eventoPadre.tituloEP = %@ ",self.tituloCelda];
-    [fetchRequest setPredicate:Predicado];
-    
-    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"horaInicio" ascending:YES];
-    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:sortDescriptors];
-    NSError *error = nil;
-    
-    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-}
--(NSDate*)StringToDate:(NSString*)hora{
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
-    NSRange RangoReemplazo = {20,5};
-    NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0300"];
-    return  [dateFormatter dateFromString:remplaso];
-}
-
--(NSString*)DateToString:(NSDate*)Date{
-    
-    NSDateFormatter *formateadorFecha = [[NSDateFormatter alloc] init];
-    [formateadorFecha setDateFormat:@"H:mm"];
-    return  [formateadorFecha stringFromDate:Date];
-    
-}
-
-
-#pragma -mark Alto de la cada celda
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
-{
-    
-    return 73.0f;
-}
 
 @end

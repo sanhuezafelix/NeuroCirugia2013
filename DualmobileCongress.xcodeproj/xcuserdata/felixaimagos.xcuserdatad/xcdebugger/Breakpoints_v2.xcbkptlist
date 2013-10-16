@@ -10,12 +10,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DualMobileCongress/mViewController.m"
-            timestampString = "403513020.2405"
+            timestampString = "403575496.190054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "98"
-            endingLineNumber = "98"
-            landmarkName = "-CargadorBaseDatosImagenes:"
+            startingLineNumber = "142"
+            endingLineNumber = "142"
+            landmarkName = "-CargadorBaseDatosNoImagenes"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,12 +26,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "DualMobileCongress/mViewController.m"
-            timestampString = "403513027.60796"
+            timestampString = "403575496.190054"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "101"
-            endingLineNumber = "101"
-            landmarkName = "-CargadorBaseDatosImagenes:"
+            startingLineNumber = "156"
+            endingLineNumber = "156"
+            landmarkName = "-CargadorBaseDatosNoImagenes"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DualMobileCongress/mViewController.m"
+            timestampString = "403575496.190054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "170"
+            endingLineNumber = "170"
+            landmarkName = "-CargadorBaseDatosNoImagenes"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DualMobileCongress/mViewController.m"
+            timestampString = "403575496.190054"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "184"
+            endingLineNumber = "184"
+            landmarkName = "-CargadorBaseDatosNoImagenes"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
