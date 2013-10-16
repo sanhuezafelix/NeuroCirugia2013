@@ -231,7 +231,7 @@
    }
 
 
-- (IBAction)RevelarMenuLateral:(id)sender {
+- (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
     id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [eventoMenuLateral sendEventWithCategory:@"uiAction"
