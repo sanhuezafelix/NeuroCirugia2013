@@ -164,10 +164,7 @@
         cell.Subtitulo.text = info.participantes.nombre;
 
         cell.Actividad.text = info.tipoEP;
-<<<<<<< HEAD
-=======
-        
->>>>>>> origin/DesarrolloChile-luis
+
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFinEP]];
     }
