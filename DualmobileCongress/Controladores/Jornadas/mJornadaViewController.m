@@ -272,7 +272,7 @@
             mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
             destino.ExpositorCelda = info.participantes.nombre;
 
-            destino.LugarCelda = info.eventoHijo;
+            destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
 
             destino.tituloCelda = info.tituloEP;
             destino.ContenidoeventoHijoCelda =info.tipoEP;

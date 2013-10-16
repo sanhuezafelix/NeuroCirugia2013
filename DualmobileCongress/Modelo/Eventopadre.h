@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <CoreData/CoreData.h>
 
-@class Evento, Imagen, Institucion, Persona;
+@class Evento, Imagen, Lugar, Institucion, Persona;
 
 @interface Eventopadre : NSManagedObject
 
@@ -24,6 +24,8 @@
 @property (nonatomic, retain) Imagen *imagenEventoPadre;
 @property (nonatomic, retain) Institucion *institucionPatrocinante;
 @property (nonatomic, retain) Persona *participantes;
+@property (nonatomic, retain) Lugar *lugarEnQueMeDesarrollo;
+
 @end
 
 @interface Eventopadre (CoreDataGeneratedAccessors)

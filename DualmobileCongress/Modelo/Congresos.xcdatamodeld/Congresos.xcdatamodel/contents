@@ -27,6 +27,7 @@
         <relationship name="eventoHijo" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="eventoPadre" inverseEntity="Evento" syncable="YES"/>
         <relationship name="imagenEventoPadre" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Imagen" inverseName="eventoPadreQueGrafico" inverseEntity="Imagen" syncable="YES"/>
         <relationship name="institucionPatrocinante" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institucion" inverseName="eventoPadreQuePatrocino" inverseEntity="Institucion" syncable="YES"/>
+        <relationship name="lugarEnQueMeDesarrollo" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Lugar" inverseName="eventoPadreLugar" inverseEntity="Lugar" syncable="YES"/>
         <relationship name="participantes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Persona" inverseName="eventoParticipo" inverseEntity="Persona" syncable="YES"/>
     </entity>
     <entity name="Imagen" representedClassName="Imagen" syncable="YES">
@@ -50,6 +51,7 @@
         <attribute name="nombreLugar" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="pais" optional="YES" attributeType="String" syncable="YES"/>
         <relationship name="eventoLugar" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Evento" inverseName="lugarEnQueMeDesarrollo" inverseEntity="Evento" syncable="YES"/>
+        <relationship name="eventoPadreLugar" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Eventopadre" inverseName="lugarEnQueMeDesarrollo" inverseEntity="Eventopadre" syncable="YES"/>
         <relationship name="institucionAqui" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Institucion" inverseName="lugarEnqueEstoy" inverseEntity="Institucion" syncable="YES"/>
         <relationship name="personaDelQueSoyProcedencia" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Persona" inverseName="lugarDondeProvengo" inverseEntity="Persona" syncable="YES"/>
     </entity>
@@ -76,12 +78,12 @@
         <relationship name="notificacionSobreMi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notificacion" inverseName="personaAsociada" inverseEntity="Notificacion" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Evento" positionX="0" positionY="0" width="128" height="255"/>
-        <element name="Eventopadre" positionX="-225" positionY="144" width="128" height="208"/>
-        <element name="Imagen" positionX="160" positionY="285" width="128" height="120"/>
-        <element name="Institucion" positionX="340" positionY="57" width="128" height="150"/>
-        <element name="Lugar" positionX="43" positionY="-171" width="128" height="135"/>
-        <element name="Notificacion" positionX="-263" positionY="-198" width="128" height="150"/>
+        <element name="Evento" positionX="99" positionY="-297" width="128" height="255"/>
+        <element name="Eventopadre" positionX="-522" positionY="-304" width="128" height="223"/>
+        <element name="Imagen" positionX="-180" positionY="180" width="128" height="120"/>
+        <element name="Institucion" positionX="205" positionY="135" width="128" height="150"/>
+        <element name="Lugar" positionX="-155" positionY="-342" width="128" height="148"/>
+        <element name="Notificacion" positionX="-297" positionY="-63" width="128" height="150"/>
         <element name="Persona" positionX="-558" positionY="69" width="128" height="208"/>
     </elements>
 </model>
