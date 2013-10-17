@@ -488,7 +488,7 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-K4-75f">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-K4-75f">
                                 <rect key="frame" x="112" y="315" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -537,7 +537,7 @@
                                     <action selector="PublicaEnTwiter:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="UE1-BP-buF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-ll-9fO">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-ll-9fO">
                                 <rect key="frame" x="21" y="315" width="157" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -586,7 +586,7 @@
                                     <action selector="GuardarCalendario:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="Xi7-Zp-Io5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
                                 <rect key="frame" x="21" y="285" width="285" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -658,10 +658,10 @@
                                     <constraint firstAttribute="width" constant="293" id="tl0-hV-Hfi"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-Xt-Atp">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-Xt-Atp">
                                 <rect key="frame" x="12" y="77" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -671,7 +671,7 @@
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-8n-Fn1">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-8n-Fn1">
                                 <rect key="frame" x="12" y="9" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -683,7 +683,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPp-eC-Icj">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPp-eC-Icj">
                                 <rect key="frame" x="117" y="116" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -694,7 +694,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USV-gp-cP8">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USV-gp-cP8">
                                 <rect key="frame" x="20" y="115" width="157" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -708,20 +708,34 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4p5-8n-Fn1" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="12" id="3By-AZ-P3n"/>
                             <constraint firstItem="aew-DU-85m" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="60" id="3Ib-x7-0oQ"/>
                             <constraint firstAttribute="trailing" secondItem="aew-DU-85m" secondAttribute="trailing" constant="20" id="4Z3-k7-fPe"/>
                             <constraint firstAttribute="bottom" secondItem="0fP-Xk-zqd" secondAttribute="bottom" constant="76" id="53H-PL-ux6"/>
                             <constraint firstAttribute="bottom" secondItem="8ko-g2-Nic" secondAttribute="bottom" id="6Q1-hK-Bf0"/>
+                            <constraint firstItem="di4-ll-9fO" firstAttribute="leading" secondItem="It4-KN-Mjc" secondAttribute="leading" id="7ar-sY-Oc7"/>
                             <constraint firstItem="Daq-nx-AoS" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="11" id="95g-fT-DDk"/>
                             <constraint firstItem="fNn-Rg-sEm" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="176" id="Cc8-jy-FEt"/>
                             <constraint firstAttribute="centerX" secondItem="8S8-lZ-Ab3" secondAttribute="centerX" id="E0r-Lb-KTM"/>
+                            <constraint firstItem="hNa-fb-QJG" firstAttribute="top" secondItem="di4-ll-9fO" secondAttribute="bottom" constant="53" id="JEe-pe-lu4"/>
+                            <constraint firstItem="OPB-Xt-Atp" firstAttribute="top" secondItem="4p5-8n-Fn1" secondAttribute="bottom" constant="8" symbolic="YES" id="JjQ-56-5Q5"/>
                             <constraint firstAttribute="centerX" secondItem="8ko-g2-Nic" secondAttribute="centerX" id="RsY-50-7gJ"/>
+                            <constraint firstItem="jty-do-rui" firstAttribute="top" secondItem="ZPp-eC-Icj" secondAttribute="bottom" constant="1" id="T7C-QB-iMf"/>
                             <constraint firstItem="Zt8-QO-9QR" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="20" id="TcK-gE-8Y2"/>
                             <constraint firstAttribute="bottom" secondItem="Zt8-QO-9QR" secondAttribute="bottom" constant="76" id="VNv-6d-Y13"/>
+                            <constraint firstItem="4p5-8n-Fn1" firstAttribute="leading" secondItem="OPB-Xt-Atp" secondAttribute="leading" id="Xxe-4f-Mfk"/>
+                            <constraint firstItem="USV-gp-cP8" firstAttribute="top" secondItem="OPB-Xt-Atp" secondAttribute="bottom" constant="8" symbolic="YES" id="aji-qL-Jco"/>
                             <constraint firstAttribute="bottom" secondItem="8S8-lZ-Ab3" secondAttribute="bottom" constant="5" id="b8m-pQ-2Mi"/>
+                            <constraint firstItem="4p5-8n-Fn1" firstAttribute="top" secondItem="eiV-lw-MSD" secondAttribute="bottom" constant="9" id="bAQ-sc-83n"/>
+                            <constraint firstItem="4p5-8n-Fn1" firstAttribute="trailing" secondItem="ZPp-eC-Icj" secondAttribute="trailing" id="cVB-e2-MyF"/>
+                            <constraint firstItem="di4-ll-9fO" firstAttribute="baseline" secondItem="ncC-K4-75f" secondAttribute="baseline" id="dJ5-sJ-V1G"/>
                             <constraint firstItem="jty-do-rui" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="137" id="djH-zM-LD9"/>
+                            <constraint firstItem="USV-gp-cP8" firstAttribute="leading" secondItem="Zt8-QO-9QR" secondAttribute="leading" id="gnU-nx-T3J"/>
                             <constraint firstAttribute="trailing" secondItem="0fP-Xk-zqd" secondAttribute="trailing" constant="33" id="jVD-G3-MKa"/>
+                            <constraint firstItem="di4-ll-9fO" firstAttribute="top" secondItem="It4-KN-Mjc" secondAttribute="bottom" constant="8" symbolic="YES" id="kx1-qY-b7g"/>
                             <constraint firstItem="jty-do-rui" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" id="l5B-bk-crh"/>
+                            <constraint firstItem="di4-ll-9fO" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="21" id="lkY-TK-pfd"/>
+                            <constraint firstItem="ncC-K4-75f" firstAttribute="trailing" secondItem="aew-DU-85m" secondAttribute="trailing" id="lol-dP-6A0"/>
                             <constraint firstAttribute="bottom" secondItem="gCi-HT-zIx" secondAttribute="bottom" constant="76" id="nWJ-2d-HVz"/>
                             <constraint firstItem="Daq-nx-AoS" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="239" id="nvf-8k-2TI"/>
                             <constraint firstItem="hNa-fb-QJG" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="61" id="p5X-H4-ka9"/>
@@ -746,6 +760,7 @@
                         <outlet property="BotonPublicacionTwet" destination="hNa-fb-QJG" id="mTp-ci-0hQ"/>
                         <outlet property="BotonPublicarFacebook" destination="Zt8-QO-9QR" id="TVE-iO-FPq"/>
                         <outlet property="BotonSimposio" destination="aew-DU-85m" id="QGw-Sd-S6f"/>
+                        <outlet property="ContenidoExposicion" destination="fNn-Rg-sEm" id="2vI-lJ-LqA"/>
                         <outlet property="CoordinadorEP" destination="OPB-Xt-Atp" id="K7L-qT-6Jw"/>
                         <outlet property="Expositor" destination="Daq-nx-AoS" id="SSJ-YG-Vsv"/>
                         <outlet property="Hora" destination="ncC-K4-75f" id="Gac-qQ-3a5"/>
@@ -759,7 +774,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eVY-Yo-zXP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3544" y="-2681"/>
+            <point key="canvasLocation" x="3594" y="-3421"/>
         </scene>
         <!--M Navigation Master View Controller-->
         <scene sceneID="kf0-BN-hHP">
@@ -879,7 +894,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2TF-AN-IXO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2151" y="-3121"/>
+            <point key="canvasLocation" x="2111" y="-3057"/>
         </scene>
         <!--M Jornada View Controller-->
         <scene sceneID="BDV-MM-gKo">
@@ -1040,7 +1055,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q7F-HY-cb0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1628" y="-3121"/>
+            <point key="canvasLocation" x="1612" y="-3065"/>
         </scene>
         <!--M Speakers View Controller-->
         <scene sceneID="ntS-Zr-mYw">
@@ -1684,7 +1699,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mrk-Y6-o2O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5453" y="-2649"/>
+            <point key="canvasLocation" x="5437" y="-3033"/>
         </scene>
         <!--M Detalle View Controller-->
         <scene sceneID="8t6-dv-vcN">
@@ -1968,7 +1983,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYZ-GB-WaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4881" y="-3409"/>
+            <point key="canvasLocation" x="4793" y="-3545"/>
         </scene>
         <!--M Speaker Det View Controller-->
         <scene sceneID="UT5-Vt-zZ0">
@@ -2264,7 +2279,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QQV-81-Mww" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5970" y="-3014"/>
+            <point key="canvasLocation" x="4826" y="-2462"/>
         </scene>
         <!--M Navigation Master View Controller-->
         <scene sceneID="OIc-J1-wbD">
@@ -2604,7 +2619,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJN-3Q-iWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4108" y="-3434"/>
+            <point key="canvasLocation" x="4120" y="-2771"/>
         </scene>
     </scenes>
     <resources>
@@ -2626,8 +2641,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="BU0-Ka-ose"/>
         <segue reference="TXI-jL-fCN"/>
         <segue reference="01W-ez-D7f"/>
-        <segue reference="SL0-h1-TQs"/>
     </inferredMetricsTieBreakers>
 </document>

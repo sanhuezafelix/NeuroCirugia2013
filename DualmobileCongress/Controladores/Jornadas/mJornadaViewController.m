@@ -288,17 +288,17 @@
         else{
             Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
            mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
-            NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
-            UIImage *beforeImage = [UIImage imageWithData:dataObj];
+           // NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
+           // UIImage *beforeImage = [UIImage imageWithData:dataObj];
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
+            destino.describe = info.descripcionEvento;
             destino.ContenidoeventoHijoCelda =info.tipoEvento;
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
-            destino.NombreImagen = beforeImage;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
             destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
-            destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+            destino.PaisSpeaker = info.speaker.lugarDondeProvengo.pais;
             destino.BiografiaSpeaker = info.speaker.bio;
             destino.Referencia  = info.speaker.tratamiento;
             destino.DateFin = [self StringToDate:info.horaFin];

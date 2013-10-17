@@ -33,9 +33,9 @@
     id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerDetalleConferencia sendView:@"Conferencia"];
     self.Hora.text = self.horacelda;
-    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.tituloCelda];
+    self.Expositor.text = self.ExpositorCelda;
     self.Titulo.text = self.tituloCelda;
-    self.ContenidoExposicion.text = self.ContenidoCelda;
+    self.ContenidoExposicion.text = self.describe;
     self.imagen.image = self.imagenEX;
    
     self.imagen.image = self.NombreImagen;
@@ -216,7 +216,7 @@
        Evento *info = [self.EventosDelSimposio objectAtIndex:[self.DetailTableview indexPathForSelectedRow].row];
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
-        destino.ContenidoCelda =info.descripcionEvento;
+        destino.descEP2 = info.descripcionEvento;
         destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
 
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
@@ -243,6 +243,7 @@
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
         destino.ContenidoCelda =info.descripcionEvento;
+        destino.descEP2 = info.descripcionEvento;
         destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
         
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];

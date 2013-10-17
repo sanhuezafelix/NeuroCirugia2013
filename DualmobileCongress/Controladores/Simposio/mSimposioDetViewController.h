@@ -54,7 +54,7 @@
 
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 @property(nonatomic,strong)NSString *tituloCelda;
-
+@property(nonatomic,strong)NSString *describe;
 @property(nonatomic,strong)UIImage  *imagenEX;
 @property(nonatomic,strong)NSString *ContenidoeventoHijoCelda;
 @property(nonatomic,strong)NSString *horacelda;

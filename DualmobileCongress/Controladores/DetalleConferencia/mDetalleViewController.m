@@ -32,9 +32,9 @@
     id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
     self.Hora.text = self.horacelda;
-    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.tituloCelda];
-    self.Titulo.text = self.tituloCelda;
-    self.ContenidoExposicion.text = self.ContenidoCelda;
+    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ContenidoCelda];
+    self.Titulo.text = self.ContenidoCelda;
+    self.ContenidoExposicion.text = self.descEP2;
     if (self.LugarCelda != NULL) {
         self.Lugar.text = self.LugarCelda;
     }
@@ -46,13 +46,14 @@
     if (!self.EsSimposio) {
         self.BotonSimposio.hidden = true;
     }
-    self.CoordinadorEP.text = self.nombreParticipanteEP;
+    self.CoordinadorEP.text = self.ExpositorCelda;
 
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
-    self.TituloEP.text = self.NombreSimposioPadre;
+    self.TituloEP.text = self.tituloCelda;
+    self.Titulo.text =
     self.TipoEventoPadre.text = self.tipoEventoPadre2;
-    self.infoEP.text = self.tituloCelda;
+    self.infoEP.text = self.tituloEP2;
     self.LugarEP.text = self.LugarsimposioPadre;
     self.HoraEP.text = self.horaEPstr;
     self.ActividadEP.text = self.ActividadEPfs;
