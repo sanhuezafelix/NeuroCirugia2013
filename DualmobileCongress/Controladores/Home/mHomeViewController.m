@@ -502,16 +502,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                         withValue:nil];
     }
 
--(void)notifica {
-    
-    NSError *error;
-    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
-    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
-    [fet setEntity:ent];
-    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
-    NSLog(@"%@",ar);
-}
-
 
 - (IBAction)RevelarNotificaciones:(id)sender
 {
@@ -523,7 +513,19 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Ahora"
                                                 withValue:nil];
-    [self notifica];
+    
+    NSError*error;
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSArray*ar=[[NSArray alloc] init];
+    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
+    [fetiche setEntity:entidad];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
+    ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
+    [fetiche setPredicate:canuto];
+    ar = [_delegate.managedObjectContext executeFetchRequest:fetiche error:&error];
+    NSLog(@"%@",ar);
+    
+
 }
 
 #pragma mark - PullToRefresh delegate

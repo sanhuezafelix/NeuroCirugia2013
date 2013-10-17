@@ -57,7 +57,11 @@
     NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegue.managedObjectContext];
     NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
     [fetiche setEntity:entidad];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
+    _arrayNotificaciones = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
+    [fetiche setPredicate:canuto];
     _arrayNotificaciones = [_delegue.managedObjectContext executeFetchRequest:fetiche error:&error];
+
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -75,6 +79,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     
+
     return [_arrayNotificaciones count];
 }
 
@@ -89,10 +94,14 @@
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(189/255.0) green:(189/255.0) blue:(189/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
     
+    
+    
     Notificacion *noti = [_arrayNotificaciones objectAtIndex:indexPath.row];
-    
+
     cell.Contenido.text = noti.contenidoNoti;
-    
+    if (cell.Contenido.text == nil) {
+        cell.Contenido.text = @"deslice el dedal hacia abajo para recicbir información sobre el congreso";
+    }
     return cell;
 }
 

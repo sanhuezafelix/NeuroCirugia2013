@@ -84,12 +84,19 @@ float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
 -(void)notifica {
     
     _dele = [[UIApplication sharedApplication] delegate];
-    NSError *error;
-    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_dele.managedObjectContext];
-    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
-    [fet setEntity:ent];
-    NSArray *ar = [_dele.managedObjectContext executeFetchRequest:fet error:&error];
+    
+    NSError*error;
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_dele.managedObjectContext];
+    NSArray*ar=[[NSArray alloc] init];
+    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
+    [fetiche setEntity:entidad];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
+   ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
+    [fetiche setPredicate:canuto];
+    ar = [_dele.managedObjectContext executeFetchRequest:fetiche error:&error];
     NSLog(@"%@",ar);
+
+
 }
 
 

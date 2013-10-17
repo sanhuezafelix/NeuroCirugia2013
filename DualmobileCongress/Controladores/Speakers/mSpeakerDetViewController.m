@@ -97,13 +97,24 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender
 {
-    [self notifica];
+   // [self notifica];
     [self.slidingViewController anchorTopViewTo:ECLeft];
     id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Detalle Speaker"
                                                 withValue:nil];
+    
+    NSError*error;
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSArray*ar=[[NSArray alloc] init];
+    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
+    [fetiche setEntity:entidad];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
+    ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
+    [fetiche setPredicate:canuto];
+    ar = [_delegate.managedObjectContext executeFetchRequest:fetiche error:&error];
+    NSLog(@"%@",ar);
 }
 
 

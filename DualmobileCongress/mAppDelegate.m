@@ -37,7 +37,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:15.0], @"kIntervaloHora",
+                                       [NSNumber numberWithFloat:1.0], @"kIntervaloHora",
 //                                       [NSNumber numberWithFloat:300.0], @"kIntervaloHoraImagen",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
 //                                       [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacionImagen",
@@ -219,11 +219,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     UIApplicationState estadus = [application applicationState];
     if (estadus == UIApplicationStateActive) {
         
-        [eventoComenzar sendEventWithCategory:@"uiAction"
-                                   withAction:@"push"
-                                    withLabel:@"Recibido"
-                                    withValue:nil];
-        NSString *titulengue = @"OK";
+               NSString *titulengue = @"OK";
         NSString *texto = [[userInfo valueForKey:@"aps"] valueForKey:@"alert"];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Te informamos que:"
                                                             message:texto

@@ -312,7 +312,7 @@
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Speaker"
                                                 withValue:nil];
-    [self notifica];
+  //  [self notifica];
     
 }
 

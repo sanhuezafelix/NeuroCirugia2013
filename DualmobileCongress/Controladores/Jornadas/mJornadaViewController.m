@@ -320,7 +320,16 @@
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Jornada"
                                                 withValue:nil];
-    
+    NSError*error;
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSArray*ar=[[NSArray alloc] init];
+    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
+    [fetiche setEntity:entidad];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
+    ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
+    [fetiche setPredicate:canuto];
+    ar = [_delegate.managedObjectContext executeFetchRequest:fetiche error:&error];
+    NSLog(@"%@",ar);
 }
 - (void)viewWillAppear:(BOOL)animated {
     
