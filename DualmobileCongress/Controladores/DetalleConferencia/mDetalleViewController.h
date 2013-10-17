@@ -34,6 +34,11 @@
 @property (strong, nonatomic) IBOutlet UILabel *Lugar;
 @property (strong, nonatomic) IBOutlet UIButton *BotonSimposio;
 @property (strong, nonatomic) IBOutlet UIButton *BotonMapa;
+@property (weak, nonatomic) IBOutlet UILabel *ActividadEP;
+@property (weak, nonatomic) IBOutlet UILabel *HoraEP;
+@property (weak, nonatomic) IBOutlet UITextView *CoordinadorEP;
+@property (weak, nonatomic) IBOutlet UITextView *TituloEP;
+@property (weak, nonatomic) IBOutlet UILabel *LugarEP;
 
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
@@ -55,6 +60,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *horaEP;
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
+@property(nonatomic,strong)NSString *horaEPstr;
+@property(nonatomic,strong)NSString *nombreParticipanteEP;
+
+@property(nonatomic,strong)NSString *ActividadEPfs;
 
 @property(nonatomic,strong)NSString *tituloEP2;
 @property(nonatomic,strong)NSString *tipoEventoPadre2;
