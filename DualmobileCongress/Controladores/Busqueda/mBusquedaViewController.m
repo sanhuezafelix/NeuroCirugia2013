@@ -157,14 +157,25 @@
         destino.tituloCelda = info.titulo;
         destino.ContenidoCelda =info.tematica;
         destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
-        destino.ActividadSpeaker = info.descripcionEvento;
+        destino.ActividadSpeaker = info.tipoEvento;
         destino.NombreImagen = beforeImage;
+        
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
         destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
         destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
+        destino.ActividadEPfs  = info.eventoPadre.jornadaEP;
+        destino.nombreParticipanteEP  = info.eventoPadre.participantes.nombre;
+        NSString *HoraExposicionEP = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
+        destino.horaEPstr = [HoraExposicionEP stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
+        destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+        destino.LugarsimposioPadre = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+
+
+
+        
         if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
         {
             destino.EsSimposio = true;

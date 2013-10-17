@@ -488,8 +488,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-K4-75f">
-                                <rect key="frame" x="117" y="115" width="188" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ncC-K4-75f">
+                                <rect key="frame" x="112" y="315" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="FgT-gV-A8k"/>
@@ -499,13 +499,6 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-Df-OzE">
-                                <rect key="frame" x="12" y="171" width="290" height="212"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zt8-QO-9QR">
                                 <rect key="frame" x="20" y="388" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -544,8 +537,8 @@
                                     <action selector="PublicaEnTwiter:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="UE1-BP-buF"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-ll-9fO">
-                                <rect key="frame" x="19" y="115" width="157" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="di4-ll-9fO">
+                                <rect key="frame" x="21" y="315" width="157" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="Lhb-p8-m6J"/>
@@ -593,8 +586,8 @@
                                     <action selector="GuardarCalendario:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="Xi7-Zp-Io5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
-                                <rect key="frame" x="19" y="97" width="285" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="It4-KN-Mjc">
+                                <rect key="frame" x="21" y="285" width="285" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="285" id="LvX-Db-5Hk"/>
@@ -604,8 +597,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
-                                <rect key="frame" x="11" y="71" width="293" height="30"/>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
+                                <rect key="frame" x="13" y="240" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="7vv-hq-AwV"/>
@@ -640,8 +633,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aew-DU-85m">
-                                <rect key="frame" x="219" y="71" width="81" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aew-DU-85m">
+                                <rect key="frame" x="219" y="52" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6L6-YL-wEi"/>
@@ -656,8 +649,8 @@
                                     <segue destination="OHU-yc-bci" kind="push" identifier="DetSimposio" id="01W-ez-D7f"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Rg-sEm">
-                                <rect key="frame" x="11" y="8" width="293" height="60"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Rg-sEm">
+                                <rect key="frame" x="13" y="177" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -668,37 +661,71 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-Xt-Atp">
+                                <rect key="frame" x="12" y="77" width="293" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="293" id="Ld5-Hc-pD2"/>
+                                    <constraint firstAttribute="height" constant="30" id="SJ2-lO-Cpc"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-8n-Fn1">
+                                <rect key="frame" x="12" y="9" width="293" height="60"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Zuf-ek-pIM"/>
+                                    <constraint firstAttribute="width" constant="293" id="xnp-cp-2SB"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZPp-eC-Icj">
+                                <rect key="frame" x="117" y="116" width="188" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="kYn-a7-Rq1"/>
+                                    <constraint firstAttribute="height" constant="20" id="qaH-bW-ZHm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="USV-gp-cP8">
+                                <rect key="frame" x="20" y="115" width="157" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="4gd-uj-fOu"/>
+                                    <constraint firstAttribute="width" constant="157" id="QTf-Nh-dan"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="aew-DU-85m" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="71" id="3Ib-x7-0oQ"/>
+                            <constraint firstItem="aew-DU-85m" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="60" id="3Ib-x7-0oQ"/>
                             <constraint firstAttribute="trailing" secondItem="aew-DU-85m" secondAttribute="trailing" constant="20" id="4Z3-k7-fPe"/>
                             <constraint firstAttribute="bottom" secondItem="0fP-Xk-zqd" secondAttribute="bottom" constant="76" id="53H-PL-ux6"/>
                             <constraint firstAttribute="bottom" secondItem="8ko-g2-Nic" secondAttribute="bottom" id="6Q1-hK-Bf0"/>
-                            <constraint firstItem="It4-KN-Mjc" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="97" id="7ib-Bw-UbT"/>
                             <constraint firstItem="Daq-nx-AoS" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="11" id="95g-fT-DDk"/>
-                            <constraint firstItem="fNn-Rg-sEm" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="8" id="Cc8-jy-FEt"/>
+                            <constraint firstItem="fNn-Rg-sEm" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="176" id="Cc8-jy-FEt"/>
                             <constraint firstAttribute="centerX" secondItem="8S8-lZ-Ab3" secondAttribute="centerX" id="E0r-Lb-KTM"/>
-                            <constraint firstAttribute="bottom" relation="lessThanOrEqual" secondItem="Cey-Df-OzE" secondAttribute="bottom" constant="121" id="HED-HG-9iB"/>
-                            <constraint firstItem="It4-KN-Mjc" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="19" id="IHW-9i-W00"/>
-                            <constraint firstAttribute="trailing" secondItem="ncC-K4-75f" secondAttribute="trailing" constant="15" id="J5q-wg-W7F"/>
-                            <constraint firstItem="Cey-Df-OzE" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="12" id="K0l-9v-fZd"/>
                             <constraint firstAttribute="centerX" secondItem="8ko-g2-Nic" secondAttribute="centerX" id="RsY-50-7gJ"/>
-                            <constraint firstItem="di4-ll-9fO" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="19" id="Sd9-oF-F67"/>
                             <constraint firstItem="Zt8-QO-9QR" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="20" id="TcK-gE-8Y2"/>
                             <constraint firstAttribute="bottom" secondItem="Zt8-QO-9QR" secondAttribute="bottom" constant="76" id="VNv-6d-Y13"/>
-                            <constraint firstItem="ncC-K4-75f" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="115" id="VlJ-vC-bEk"/>
                             <constraint firstAttribute="bottom" secondItem="8S8-lZ-Ab3" secondAttribute="bottom" constant="5" id="b8m-pQ-2Mi"/>
                             <constraint firstItem="jty-do-rui" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="137" id="djH-zM-LD9"/>
                             <constraint firstAttribute="trailing" secondItem="0fP-Xk-zqd" secondAttribute="trailing" constant="33" id="jVD-G3-MKa"/>
                             <constraint firstItem="jty-do-rui" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" id="l5B-bk-crh"/>
-                            <constraint firstItem="Cey-Df-OzE" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="171" id="nHf-RX-shF"/>
                             <constraint firstAttribute="bottom" secondItem="gCi-HT-zIx" secondAttribute="bottom" constant="76" id="nWJ-2d-HVz"/>
-                            <constraint firstItem="Daq-nx-AoS" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="71" id="nvf-8k-2TI"/>
+                            <constraint firstItem="Daq-nx-AoS" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="239" id="nvf-8k-2TI"/>
                             <constraint firstItem="hNa-fb-QJG" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="61" id="p5X-H4-ka9"/>
-                            <constraint firstAttribute="trailing" secondItem="Cey-Df-OzE" secondAttribute="trailing" constant="18" id="qtz-B6-4qp"/>
                             <constraint firstItem="fNn-Rg-sEm" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="11" id="smC-qf-cvj"/>
-                            <constraint firstItem="di4-ll-9fO" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="115" id="yFy-hj-9dd"/>
                             <constraint firstAttribute="trailing" secondItem="gCi-HT-zIx" secondAttribute="trailing" constant="74" id="zDo-Ho-EXl"/>
                             <constraint firstAttribute="bottom" secondItem="hNa-fb-QJG" secondAttribute="bottom" constant="76" id="zOa-oK-dk2"/>
                         </constraints>
@@ -719,11 +746,14 @@
                         <outlet property="BotonPublicacionTwet" destination="hNa-fb-QJG" id="mTp-ci-0hQ"/>
                         <outlet property="BotonPublicarFacebook" destination="Zt8-QO-9QR" id="TVE-iO-FPq"/>
                         <outlet property="BotonSimposio" destination="aew-DU-85m" id="QGw-Sd-S6f"/>
-                        <outlet property="ContenidoExposicion" destination="Cey-Df-OzE" id="wkj-bY-vp4"/>
+                        <outlet property="CoordinadorEP" destination="OPB-Xt-Atp" id="K7L-qT-6Jw"/>
                         <outlet property="Expositor" destination="Daq-nx-AoS" id="SSJ-YG-Vsv"/>
                         <outlet property="Hora" destination="ncC-K4-75f" id="Gac-qQ-3a5"/>
+                        <outlet property="HoraEP" destination="ZPp-eC-Icj" id="h03-Le-sVy"/>
                         <outlet property="Lugar" destination="di4-ll-9fO" id="VHN-QV-Fm6"/>
+                        <outlet property="LugarEP" destination="USV-gp-cP8" id="bzg-uu-3E6"/>
                         <outlet property="Titulo" destination="fNn-Rg-sEm" id="5lW-Qx-dhj"/>
+                        <outlet property="TituloEP" destination="4p5-8n-Fn1" id="8tW-J9-Nj3"/>
                         <outlet property="animationImageView" destination="8S8-lZ-Ab3" id="ZP9-d9-cTM"/>
                     </connections>
                 </viewController>
@@ -2579,14 +2609,42 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
@@ -2596,8 +2654,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="82c-rv-EFy"/>
+        <segue reference="TXI-jL-fCN"/>
         <segue reference="01W-ez-D7f"/>
-        <segue reference="JxW-KU-d9G"/>
+        <segue reference="SL0-h1-TQs"/>
     </inferredMetricsTieBreakers>
 </document>

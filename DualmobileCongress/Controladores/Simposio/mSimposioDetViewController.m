@@ -33,7 +33,7 @@
     id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerDetalleConferencia sendView:@"Conferencia"];
     self.Hora.text = self.horacelda;
-    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
+    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.tituloCelda];
     self.Titulo.text = self.tituloCelda;
     self.ContenidoExposicion.text = self.ContenidoCelda;
     self.imagen.image = self.imagenEX;
@@ -256,7 +256,7 @@
         destino.ActividadSpeaker = info.tipoEvento;
         destino.tituloEP2 = self.Titulo.text;
         destino.tipoEventoPadre2 = self.Actividad.text;
-        destino.descEP2 = self.Expositor.text;
+        destino.descEP2 = info.eventoPadre.participantes.nombre;
         destino.horaEP2 = self.Hora.text;
         destino.lugarEP2 = self.Lugar.text;
         destino.DateInicio =[self StringToDate:info.horaInicio];
