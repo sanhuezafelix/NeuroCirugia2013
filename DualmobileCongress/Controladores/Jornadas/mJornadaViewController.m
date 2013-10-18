@@ -162,7 +162,6 @@
         Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
         cell.Titulo.text = info.tituloEP;
         cell.Subtitulo.text = info.participantes.nombre;
-
         cell.Actividad.text = info.tipoEP;
 
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
@@ -272,9 +271,7 @@
             Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
             mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
             destino.ExpositorCelda = info.participantes.nombre;
-
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
-
             destino.tituloCelda = info.tituloEP;
             destino.ContenidoeventoHijoCelda =info.tipoEP;
             

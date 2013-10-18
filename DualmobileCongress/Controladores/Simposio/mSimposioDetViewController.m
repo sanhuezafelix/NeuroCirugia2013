@@ -214,6 +214,7 @@
         destino.tituloCelda = info.titulo;
         destino.descEP2 = info.descripcionEvento;
         destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
+        destino.lugarEP.text = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
 
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -241,6 +242,7 @@
         destino.ContenidoCelda =info.descripcionEvento;
         destino.descEP2 = info.descripcionEvento;
         destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
+        destino.lugarEP.text = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
         
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -255,7 +257,7 @@
         destino.tipoEventoPadre2 = self.Actividad.text;
         destino.descEP2 = info.eventoPadre.participantes.nombre;
         destino.horaEP2 = self.Hora.text;
-        destino.lugarEP2 = self.Lugar.text;
+       // destino.lugarEP2 = self.Lugar.text;
         destino.DateInicio =[self StringToDate:info.horaInicio];
         destino.DateFin = [self StringToDate:info.horaFin];
         
@@ -305,7 +307,7 @@
     if (self.LugarCelda != NULL) {
         evento.location = self.LugarCelda;
         evento.notes =self.ContenidoCelda;
-        if (self.tituloCelda != NULL&& self.ContenidoCelda != NULL) {
+        if (self.tituloCelda != NULL&& self.ExpositorCelda != NULL) {
             NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
             titulo = [titulo stringByAppendingString:self.ExpositorCelda];
             evento.title     = titulo;

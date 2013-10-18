@@ -54,7 +54,7 @@
     self.Titulo.text =
     self.TipoEventoPadre.text = self.tipoEventoPadre2;
     self.infoEP.text = self.tituloEP2;
-    self.LugarEP.text = self.LugarsimposioPadre;
+    self.lugarEP.text = self.LugarCelda;
     self.HoraEP.text = self.horaEPstr;
     self.ActividadEP.text = self.ActividadEPfs;
     self.lugarEP.text = self.LugarsimposioPadre;
