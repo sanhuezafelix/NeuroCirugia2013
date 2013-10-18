@@ -16,7 +16,6 @@
 #import "Notificacion.h"
 #import "Eventopadre.h"
 
-
 @interface mViewController ()
 
 @property (nonatomic,strong) mAppDelegate *delegate;
@@ -44,9 +43,6 @@
 //    nombresEntidad = [NSArray arrayWithObjects:@"Evento", @"Persona", @"Lugar",@"Eventopadre",@"Notificacion",@"Institucion", nil];
     
     [self activaInicioTimer];
-    
-	
-    
     
     self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
 
@@ -182,9 +178,6 @@
     // <---NSLog
     //
     NSLog(@"Objetos %@", [fetchedObjectsInstitucion objectEnumerator]);
-    
-    
-
     
 }
 

@@ -12,6 +12,8 @@
 #import "mJornadaViewController.h"
 #import "GAITrackedViewController.h"
 #import "AnimatedImagesView.h"
+#import "Evento.h"
+#import "Eventopadre.h"
 
 @interface mSeleccionJornadaViewController : UIViewController<UITableViewDataSource,UITableViewDelegate>
 

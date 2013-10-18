@@ -31,17 +31,6 @@
     NSLog(@"valor de autorizador Jornada  %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
 }
 
-//-(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    
-//    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-//    [defaults synchronize];
-//    
-//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-//}
-
-
 - (void)viewDidLoad
 {
     
@@ -56,7 +45,6 @@
     self.TituloJornada.text = self.Titulo;
     
     self.title = @" ";
-    
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
@@ -84,8 +72,6 @@
                                     withValue:nil];
     
 }
-
-
 
 - (void)didReceiveMemoryWarning
 {
@@ -152,9 +138,7 @@
         cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
         cell.opaque = YES;
         cell.Imagen.opaque = YES;
-      
-        
-    }
+      }
     cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdas_actividades_jornada.png"]];
     
     if (indexPath.section == 0)
@@ -163,7 +147,7 @@
         cell.Titulo.text = info.tituloEP;
         cell.Subtitulo.text = info.participantes.nombre;
         cell.Actividad.text = info.tipoEP;
-
+        cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicioEP]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFinEP]];
     }
@@ -231,10 +215,8 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath;
 {
-    
     return 73.0f;
 }
-
 
 -(NSDate*)StringToDate:(NSString*)hora{
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
@@ -274,8 +256,6 @@
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
             destino.tituloCelda = info.tituloEP;
             destino.ContenidoeventoHijoCelda =info.tipoEP;
-            
-            
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicioEP]]];
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFinEP]]];
             destino.EsSimposio = true;
@@ -283,10 +263,9 @@
             
         }
         else{
+            
             Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
            mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
-           // NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
-           // UIImage *beforeImage = [UIImage imageWithData:dataObj];
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
             destino.describe = info.descripcionEvento;

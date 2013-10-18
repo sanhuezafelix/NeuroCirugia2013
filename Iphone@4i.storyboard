@@ -597,8 +597,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
-                                <rect key="frame" x="13" y="240" width="293" height="30"/>
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Daq-nx-AoS">
+                                <rect key="frame" x="11" y="239" width="293" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="7vv-hq-AwV"/>
@@ -633,8 +633,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aew-DU-85m">
-                                <rect key="frame" x="219" y="52" width="81" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aew-DU-85m">
+                                <rect key="frame" x="219" y="60" width="81" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="81" id="6L6-YL-wEi"/>
@@ -649,8 +649,8 @@
                                     <segue destination="OHU-yc-bci" kind="push" identifier="DetSimposio" id="01W-ez-D7f"/>
                                 </connections>
                             </button>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Rg-sEm">
-                                <rect key="frame" x="13" y="177" width="293" height="60"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Rg-sEm">
+                                <rect key="frame" x="11" y="176" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2641,8 +2641,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="vUT-qo-6lO"/>
         <segue reference="82c-rv-EFy"/>
         <segue reference="BU0-Ka-ose"/>
-        <segue reference="01W-ez-D7f"/>
     </inferredMetricsTieBreakers>
 </document>

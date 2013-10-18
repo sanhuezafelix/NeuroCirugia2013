@@ -22,8 +22,7 @@
 }
 
 - (void)viewDidLoad
-{
-    [super viewDidLoad];
+{    [super viewDidLoad];
     //trackenado GA
     
     id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
@@ -64,6 +63,7 @@
 #pragma -mark Tableview datasource y delegate
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+
     return [self.Jornadas count];
 }
 
@@ -79,7 +79,7 @@
     cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
     
     cell.Titulo.text = [self.Jornadas objectAtIndex:indexPath.row];
-    
+
     return cell;
 }
 

@@ -37,7 +37,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:1.0], @"kIntervaloHora",
+                                       [NSNumber numberWithFloat:12.0], @"kIntervaloHora",
 //                                       [NSNumber numberWithFloat:300.0], @"kIntervaloHoraImagen",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
 //                                       [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacionImagen",

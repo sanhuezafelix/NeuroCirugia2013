@@ -120,8 +120,7 @@
     [fetchRequest setSortDescriptors:NombreSpeaker];
     // If we are searching for anything...
     
-    
-    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(rol != %@)",@"Coordinadora"];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(rol !=% @) AND (rol != %@)",@"Coordinadora",@"Coordinador"];
     
     NSPredicate *predicadoSpeaker = [NSPredicate predicateWithFormat:@"(nombre >%@) AND (nombre != %@)AND (nombre != %@)",@"",@"Almuerzo",@"Café"];
     [fetchRequest setPredicate:predicadoSpeaker];
@@ -135,7 +134,7 @@
         
         [fetchRequest setPredicate:predicadoSpeaker];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (cargo CONTAINS[cd] %@)) AND(nombre >%@) AND (rol !=%@)", text,text,text,text,@"",@"Coordinadora"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (cargo CONTAINS[cd] %@)) AND(nombre >%@) AND (rol CONTAINS[cd] %@)", text,text,text,text,@"",@"Coordinadora"];
         
       [fetchRequest setPredicate:predicate];
         searching = YES;
@@ -154,6 +153,7 @@
     self.ResultadosCoreData= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     self.DysplayItems= [[NSMutableArray alloc] initWithArray:self.ResultadosCoreData];
     [self.DysplayItems filteredArrayUsingPredicate:canuto];
+    
     [self.SpeakerTableview reloadData];
 }
 
