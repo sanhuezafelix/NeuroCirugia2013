@@ -82,6 +82,21 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self              action:@selector(imageTapped:)];
     self.animationImageView.userInteractionEnabled = YES;
     [self.animationImageView addGestureRecognizer:tap];
+    
+    [self llamarPersonasEntrada];
+}
+
+-(void)llamarPersonasEntrada {
+
+    NSError*erro;
+    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Persona" inManagedObjectContext:_delegate.managedObjectContext];
+    [fetch setEntity:entidad];
+
+    
+    NSArray*arraya = [_delegate.managedObjectContext executeFetchRequest:fetch error:&erro];
+
+    NSLog(@"DATOS DE SALIDA DE LOS LA SARTA DE HEUAS QUE ESTAN EN PERSONAS ===== %@",arraya);
 }
 
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
@@ -252,11 +267,8 @@
         NSArray *arrayete = [_delegate.managedObjectContext executeFetchRequest:fetch error:&error];
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
         Eventopadre *info = [arrayete objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
-        destino.Nombrecelda = info.participantes.nombre;
-        
-        //como se saco la entidad pai deje el pais celda como ciudad del hueón, por mientras.
-
-        destino.Paiscelda = info.tipoEP;
+        destino.Nombrecelda = info.tipoEP;
+        destino.Paiscelda = info.participantes.lugarDondeProvengo;
         destino.ReferenciaSpeaker = info.participantes.tratamiento;
         destino.BiografiaCelda = info.participantes.nombre;
         destino.Institucioncelda = info.tituloEP;
