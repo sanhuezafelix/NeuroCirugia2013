@@ -343,6 +343,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.DateInicio = [self StringToDate:info.horaInicio];
             destino.ActividadSpeaker = info.tipoEvento;
             destino.nombreBarra = @"Detalle de la Actividad";
+            destino.textoLabelSimposio = @"Actividad";
             if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
             {
                 destino.EsSimposio = true;
@@ -351,6 +352,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                 destino.tipoEventoPadre2 =info.eventoPadre.tipoEP;
                 destino.descEP2 = info.eventoPadre.descripcionEP;
                 destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+                destino.textoLabelSimposio = @"Simposio";
               
                 
                 
@@ -385,6 +387,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.DateInicio = [self StringToDate:info.horaInicio];
             destino.ActividadSpeaker = info.tipoEvento;
             destino.nombreBarra = @"Detalle de la Actividad";
+            destino.textoLabelSimposio = @"Actividad";
             if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
             {
                 destino.EsSimposio = true;
@@ -393,6 +396,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                 destino.tipoEventoPadre2 =info.eventoPadre.tipoEP;
                 destino.descEP2 = info.eventoPadre.descripcionEP;
                 destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+                destino.textoLabelSimposio = @"Simposio";
                 
                 
                 NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];

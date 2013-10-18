@@ -54,7 +54,6 @@
 @property (weak, nonatomic) IBOutlet UITextView *ContenidoExposicion;
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicarFacebook;
 @property (strong, nonatomic) IBOutlet UIImageView*imagen;
-@property (strong, nonatomic) IBOutlet UILabel *labelSimposio;
 @property (strong, nonatomic) IBOutlet UITextView *tituloEP;
 @property (strong, nonatomic) IBOutlet UILabel *TipoEventoPadre;
 @property (strong, nonatomic) IBOutlet UITextView *infoEP;
@@ -97,6 +96,9 @@
 
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
 @property(nonatomic,strong)NSMutableArray *EventosPadre;
+
+@property (strong, nonatomic) IBOutlet UILabel *labelsimposio;
+@property(nonatomic,strong)NSString *textoLabelSimposio;
 
 
 

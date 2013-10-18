@@ -73,6 +73,9 @@
 @property(nonatomic,strong)UIImage  *NombreImagen;
 @property(nonatomic)BOOL  *EsSimposio;
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
+@property (strong, nonatomic) IBOutlet UILabel *labelsimposio;
+@property(nonatomic,strong)NSString *textoLabelSimposio;
+
 
 - (IBAction)PublicaEnFaceBook:(id)sender;
 - (IBAction)PublicaEnTwiter:(id)sender;

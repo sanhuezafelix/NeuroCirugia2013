@@ -57,6 +57,7 @@
         self.labelBarra.text = self.nombreBarra;
         self.BotonSimposio.hidden = false;
         self.ContenidoExposicion.hidden = true;
+        self.labelsimposio.text = self.textoLabelSimposio;
         
         
     }else{
@@ -75,6 +76,7 @@
         self.labelBarra.text = self.nombreBarra;
         self.BotonSimposio.hidden = true;
         self.ContenidoExposicion.hidden = false;
+        self.labelsimposio.text = self.textoLabelSimposio;
 
     }
     

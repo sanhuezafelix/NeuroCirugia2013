@@ -724,6 +724,18 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Actividades del Simposio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="laT-7X-JnN">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18688034110000001" green="0.3099459739" blue="0.621871014" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="cEd-EN-1Oc"/>
+                                    <constraint firstAttribute="height" constant="21" id="sVu-Er-NRT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -794,6 +806,7 @@
                         <outlet property="TituloEP" destination="4p5-8n-Fn1" id="8tW-J9-Nj3"/>
                         <outlet property="animationImageView" destination="8S8-lZ-Ab3" id="ZP9-d9-cTM"/>
                         <outlet property="labelBarra" destination="jty-do-rui" id="vVt-kE-HjM"/>
+                        <outlet property="labelsimposio" destination="laT-7X-JnN" id="twQ-GW-cQe"/>
                         <outlet property="lugarEP" destination="USV-gp-cP8" id="1HL-ti-ZU4"/>
                     </connections>
                 </viewController>
@@ -2441,6 +2454,18 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Actividades del Simposio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-BG-Ht4">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18688034110000001" green="0.3099459739" blue="0.621871014" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="PNU-G4-Bhe"/>
+                                    <constraint firstAttribute="width" constant="320" id="hIn-FG-cza"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0z-L4-peI">
                                 <rect key="frame" x="20" y="388" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -2641,6 +2666,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <outlet property="Titulo" destination="vPC-XQ-xix" id="Ydj-rt-F44"/>
                         <outlet property="animationImageView" destination="JUF-XO-TgG" id="gRZ-eG-oih"/>
                         <outlet property="labelSimposio" destination="kdd-KQ-30Z" id="nWC-4d-04x"/>
+                        <outlet property="labelsimposio" destination="vAg-BG-Ht4" id="0zl-Cg-qXC"/>
+                        <outlet property="textoLabelSimposio" destination="vAg-BG-Ht4" id="cHu-RP-SWo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJN-3Q-iWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2650,42 +2677,14 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
-        <image name="barraMenu.png" width="205" height="2"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
