@@ -124,7 +124,7 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
     NSRange RangoReemplazo = {20, 5};
     
-    NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0400"];
+    NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0300"];
     return  [dateFormatter dateFromString:remplaso];
 }
 
