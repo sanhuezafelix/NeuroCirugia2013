@@ -39,6 +39,9 @@
 
 @property(nonatomic,strong)NSArray *ResultadosCoreData;
 
+@property(nonatomic,strong)NSArray*arrayete;
+
+
 @property (strong, nonatomic) IBOutlet UISearchBar *buscar;
 
 @property (strong, nonatomic) IBOutlet UITableView *SpeakerTableview;

@@ -19,34 +19,6 @@
 
 @implementation mSpeakersViewController
 
--(void)AnularActualizaEstadoAutorizadorSincronizacion{
-    
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
-    [defaults synchronize];
-    // <---NSLog
-    
-    NSLog(@"valor de autorizador speaker   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
-    
-    // NSLog--->
-}
-
--(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-    
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-    [defaults synchronize];
-    // <---NSLog
-    
-    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-    
-    // NSLog--->
-}
-
 
 - (void)viewDidLoad
 {
@@ -90,13 +62,15 @@
 
     NSError*erro;
     NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Persona" inManagedObjectContext:_delegate.managedObjectContext];
+    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Eventopadre" inManagedObjectContext:_delegate.managedObjectContext];
+    NSPredicate *predicador = [NSPredicate predicateWithFormat:@"participantes.nombre.length >0"];
     [fetch setEntity:entidad];
+    [fetch setPredicate:predicador];
 
     
-    NSArray*arraya = [_delegate.managedObjectContext executeFetchRequest:fetch error:&erro];
+    _arrayete = [_delegate.managedObjectContext executeFetchRequest:fetch error:&erro];
 
-    NSLog(@"DATOS DE SALIDA DE LOS LA SARTA DE HEUAS QUE ESTAN EN PERSONAS ===== %@",arraya);
+    NSLog(@"DATOS DE SALIDA DE LOS LA SARTA DE HEUAS QUE ESTAN EN PERSONAS ===== %@ ========= %lu",_arrayete,(unsigned long)_arrayete.count);
 }
 
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
@@ -222,9 +196,7 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
     Persona *info = [self.ResultadosCoreData objectAtIndex:indexPath.row];
-    
     NSString *cellIdentifier = @"SpeakerCell";
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -232,15 +204,14 @@
     {
         cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
-    
     cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
     UIView *ColorSelecion = [[UIView alloc] init];
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(76/255.0) green:(124/255.0) blue:(255/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
-    cell.texto.text     =   info.lugarDondeProvengo.nombreLugar; //tratandi de sacar pais a la vista speaker
-
+    cell.texto.text     =   info.lugarDondeProvengo.nombreLugar;
+    
     if (info.institucionQueMePatrocina.nombreInstitucion == nil) {
         
         cell.Subtitulo.text = info.rol;
@@ -261,17 +232,17 @@
     {
         NSError *error;
         NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Eventopadre" inManagedObjectContext:_delegate.managedObjectContext];
+        NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Persona" inManagedObjectContext:_delegate.managedObjectContext];
         [fetch setEntity:entidad];
         
         NSArray *arrayete = [_delegate.managedObjectContext executeFetchRequest:fetch error:&error];
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
-        Eventopadre *info = [arrayete objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
-        destino.Nombrecelda = info.tipoEP;
-        destino.Paiscelda = info.participantes.lugarDondeProvengo;
-        destino.ReferenciaSpeaker = info.participantes.tratamiento;
-        destino.BiografiaCelda = info.participantes.nombre;
-        destino.Institucioncelda = info.tituloEP;
+        Persona *info = [arrayete objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
+        destino.Nombrecelda = info.eventoParticipo.participantes.nombre;
+        destino.Paiscelda = info.lugarDondeProvengo.pais;
+        destino.ReferenciaSpeaker = info.eventoParticipo.participantes.nombre;
+        destino.BiografiaCelda = info.nombre;
+        destino.Institucioncelda = info.eventoParticipo.tituloEP;
     }
 }
 
@@ -344,25 +315,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-//    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
-    
-    
-    
-    if (estadoAutorizador == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacion];
-        
-    }
-//    if (estadoAutorizadorImagen == YES) {
-//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-//        
-//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-//}
-    [super viewWillAppear:animated];
+        [super viewWillAppear:animated];
     
 }
 @end
