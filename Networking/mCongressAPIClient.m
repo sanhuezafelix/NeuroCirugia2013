@@ -113,24 +113,6 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     return responseObject;
 }
 
-//- (NSDictionary *)attributesForRepresentation:(NSDictionary *)representation
-//                                     ofEntity:(NSEntityDescription *)entity
-//                                 fromResponse:(NSHTTPURLResponse *)response
-//
-//{
-//    
-//    NSMutableDictionary *mutablePropertyValues = [[super attributesForRepresentation:representation ofEntity:entity fromResponse:response] mutableCopy];
-//    if ([entity.name isEqualToString:@"Lugar"]) {
-//        
-//        NSString *RepresentacionBinarioImagen = [NSString stringWithFormat:@"%@", [representation valueForKey:@"pais"]];
-//        [mutablePropertyValues setValue:RepresentacionBinarioImagen forKey:@"pais"];
-//        
-//    }
-//    ///pa cambiar una heua no más
-//    
-//    return mutablePropertyValues;
-//}
-
 - (NSDictionary *)representationsForRelationshipsFromRepresentation:(NSDictionary *)representation
                                                            ofEntity:(NSEntityDescription *)entity
                                                        fromResponse:(NSHTTPURLResponse *)response
@@ -182,66 +164,18 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                             ,@"institucionQueMePatrocina" : @{@"id" : Representacion3}  ,
                                             @"eventoParticipo" : @{@"id" : Representacion4 }};
     }
-//
-//        NSString *representacionPaLugarOrigen = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDondeProvengo_id"]];
-//        
-//        if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
-//            diccionarioPaLasRelaciones = @{ @"lugarDondeProvengo" : @{@"id" : representacionPaLugarOrigen }
-//                                            
-//                                            };
-//            
-//        }
-//        
-//        NSString *representacionNotifiDelHuea = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"notificacionSobreMi_id"]];
-//        
-//        if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
-//            diccionarioPaLasRelaciones = @{ @"notificacionSobreMi" : @{@"id" : representacionNotifiDelHuea }
-//                                            
-//                                            };
-//        }
-//        
-//        NSString *representacionPaInstitucionPatrocinante = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionQueMePatrocina_id"]];
-//        if (![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"]) {
-//            diccionarioPaLasRelaciones = @{
-//                                           @"institucionQueMePatrocina" : @{@"id" : representacionPaInstitucionPatrocinante}
-//                                           };
-//        }
-//        
-//        NSString *representacionParticipacion = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoParticipo_id"]];
-//        if (![representacionParticipacion isEqualToString:@"(null)"]) {
-//            diccionarioPaLasRelaciones = @{
-//                                           @"eventoParticipo" : @{@"id" : representacionParticipacion}
-//                                           };
-//        }
-    
-        
     
     
     else if([entity.name isEqualToString:@"Lugar"])
     {
         
-        NSString *eventID = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"personaDelQueSoyProcedencia_id"]];
+        NSString *eventID = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionAqui_id"]];
         if (![eventID isEqualToString:@"(null)"]) {
             diccionarioPaLasRelaciones = @{
-                                           @"personaDelQueSoyProcedencia" : @{@"id" : eventID}
+                                           @"institucionAqui" : @{@"id" : eventID}
                                            };
             
         }
-        //        NSString *representacionPaInstitucionAqui = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"ciudad"]];
-        //
-        //        if (![representacionPaInstitucionAqui isEqualToString:@"(null)"]) {
-        //            diccionarioPaLasRelaciones = @{
-        //                                           @"ciudad" : @{@"id" : representacionPaInstitucionAqui}
-        //                                           };
-        //
-        //        }
-        //        NSString *representacionPaPaisEnQueEstoy = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"nombreLugar"]];
-        //
-        //        if (![representacionPaPaisEnQueEstoy isEqualToString:@"(null)"]  && ![representacionPaPaisEnQueEstoy isEqualToString:@"<null>"]) {
-        //            diccionarioPaLasRelaciones = @{
-        //                                           @"nombreLugar" : @{@"id" : representacionPaPaisEnQueEstoy}
-        //                                           };
-        //        }
     }
     
     else if([entity.name isEqualToString:@"Institucion"])
