@@ -70,9 +70,7 @@
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
                                     withValue:nil];
-    
 }
-
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];
