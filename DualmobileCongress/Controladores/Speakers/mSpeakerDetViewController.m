@@ -236,7 +236,7 @@
         if (![info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
         {
             destino.EsSimposio = false;
-        }
+        }////
         else
         {
             destino.EsSimposio = true;
