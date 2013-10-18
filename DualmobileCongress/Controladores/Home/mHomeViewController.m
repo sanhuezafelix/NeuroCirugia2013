@@ -329,13 +329,10 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         if (indexPath.section == 0)
         {
             Evento *info = [self.EnesteMomento objectAtIndex:indexPath.row];
-            NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
-            UIImage *beforeImage = [UIImage imageWithData:dataObj];
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
             destino.ContenidoCelda =info.descripcionEvento;
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
-            destino.NombreImagen = beforeImage;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
             destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;

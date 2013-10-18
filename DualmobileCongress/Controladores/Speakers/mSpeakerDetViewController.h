@@ -31,6 +31,11 @@
 @property(nonatomic, retain)NSString*BiografiaCelda;
 @property(nonatomic, retain)NSString*ReferenciaSpeaker;
 @property(nonatomic, retain)UIImage*ImagenDelSpeaker;
+@property(nonatomic,retain)NSString*texto1;
+@property(nonatomic,retain)NSString*texto2;
+@property(nonatomic,retain)NSString*texto3;
+@property(nonatomic,retain)NSString*texto4;
+@property(nonatomic,retain)NSString*texto5;
 @property (strong, nonatomic) IBOutlet UITextView *Biografia;
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 @property(nonatomic, retain)NSMutableArray *EventoQueParticipo;

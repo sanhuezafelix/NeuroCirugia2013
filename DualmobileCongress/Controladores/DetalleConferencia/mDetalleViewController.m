@@ -51,16 +51,13 @@
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
     self.TituloEP.text = self.tituloCelda;
-    self.Titulo.text =
+//    self.Titulo.text =
     self.TipoEventoPadre.text = self.tipoEventoPadre2;
     self.infoEP.text = self.tituloEP2;
     self.lugarEP.text = self.LugarCelda;
     self.HoraEP.text = self.horaEPstr;
     self.ActividadEP.text = self.ActividadEPfs;
     self.lugarEP.text = self.LugarsimposioPadre;
-
-
-    
     
         NSLog(@"Contenido Nombre simposio==> %@",self.NombreSimposioPadre);
     

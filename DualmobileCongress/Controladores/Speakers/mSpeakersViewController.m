@@ -55,22 +55,6 @@
     self.animationImageView.userInteractionEnabled = YES;
     [self.animationImageView addGestureRecognizer:tap];
     
-    [self llamarPersonasEntrada];
-}
-
--(void)llamarPersonasEntrada {
-
-    NSError*erro;
-    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Eventopadre" inManagedObjectContext:_delegate.managedObjectContext];
-    NSPredicate *predicador = [NSPredicate predicateWithFormat:@"participantes.nombre.length >0"];
-    [fetch setEntity:entidad];
-    [fetch setPredicate:predicador];
-
-    
-    _arrayete = [_delegate.managedObjectContext executeFetchRequest:fetch error:&erro];
-
-    NSLog(@"DATOS DE SALIDA DE LOS LA SARTA DE HEUAS QUE ESTAN EN PERSONAS ===== %@ ========= %lu",_arrayete,(unsigned long)_arrayete.count);
 }
 
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
@@ -230,19 +214,28 @@
 
     if ([segue.identifier isEqualToString:@"SpeakerDet"])
     {
-        NSError *error;
-        NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-        NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Persona" inManagedObjectContext:_delegate.managedObjectContext];
-        [fetch setEntity:entidad];
-        
-        NSArray *arrayete = [_delegate.managedObjectContext executeFetchRequest:fetch error:&error];
+       
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
-        Persona *info = [arrayete objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
-        destino.Nombrecelda = info.eventoParticipo.participantes.nombre;
-        destino.Paiscelda = info.lugarDondeProvengo.pais;
-        destino.ReferenciaSpeaker = info.eventoParticipo.participantes.nombre;
-        destino.BiografiaCelda = info.nombre;
-        destino.Institucioncelda = info.eventoParticipo.tituloEP;
+        Persona *info = [self.ResultadosCoreData objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
+        NSArray *ar = [NSArray arrayWithObjects:info.eventoQueDicto, nil];
+        
+        NSSet *eventis = [NSSet setWithSet:info.eventoQueDicto];
+        for (Persona *eventi in eventis) {
+            
+            destino.BiografiaCelda = [eventis valueForKey:@"descripcionEvento"];
+        }
+        NSLog(@"%@",ar);
+        destino.Nombrecelda = info.nombre;
+        destino.Tituloscelda = info.lugarDondeProvengo.pais;
+        destino.ReferenciaSpeaker = info.rol;
+        destino.BiografiaCelda = info.bio;
+        destino.Institucioncelda = info.rol;
+        destino.texto1 = [eventis valueForKey:@"titulo"];
+        destino.texto2 = [NSString stringWithFormat:@"%@  %@", info.tratamiento,info.nombre];
+        destino.texto3 = info.bio;
+        destino.texto4 = info.cargo;
+        destino.texto5 = info.lugarDondeProvengo.pais;
+
     }
 }
 
