@@ -11,6 +11,7 @@
 #import "NSDataAdditions.h"
 #import "GAI.h"
 #import "Eventopadre.h"
+#import "Persona.h"
 
 @interface mSpeakersViewController ()
 @property(nonatomic,strong)mAppDelegate *delegate;
@@ -120,8 +121,6 @@
     [fetchRequest setSortDescriptors:NombreSpeaker];
     // If we are searching for anything...
     
-    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(rol = %@) AND (rol != %@)",@"Coordinadora",@"Coordinador"];
-    
     NSPredicate *predicadoSpeaker = [NSPredicate predicateWithFormat:@"(nombre >%@) AND (nombre != %@)AND (nombre != %@)",@"",@"Almuerzo",@"Café"];
     [fetchRequest setPredicate:predicadoSpeaker];
     if(text.length > 0)
@@ -134,7 +133,7 @@
         
         [fetchRequest setPredicate:predicadoSpeaker];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (eventoParticipo.tituloEP CONTAINS[cd] %@)) AND(nombre >%@) AND NOT(rol CONTAINS[cd] %@)", text,text,text,text,@"",@"Coordinador"];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (rol CONTAINS[cd] %@)) AND(nombre >%@)", text,text,text,text,@""];
         
       [fetchRequest setPredicate:predicate];
         searching = YES;
@@ -151,7 +150,6 @@
     
     // Finally, perform the load
     self.ResultadosCoreData= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    [self.ResultadosCoreData filteredArrayUsingPredicate:canuto];
     self.DysplayItems= [[NSMutableArray alloc] initWithArray:self.ResultadosCoreData];
     
     [self.SpeakerTableview reloadData];
@@ -224,12 +222,14 @@
     UIView *ColorSelecion = [[UIView alloc] init];
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(76/255.0) green:(124/255.0) blue:(255/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
-     NSData *dataObj    = [NSData dataWithBase64EncodedString:info.fotoPersona.binarioImagen];
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
     cell.texto.text     =   info.lugarDondeProvengo.nombreLugar; //tratandi de sacar pais a la vista speaker
-    cell.Imagen.image   =   [UIImage imageWithData:dataObj];
-    
+
+    if (info.institucionQueMePatrocina.nombreInstitucion == nil) {
+        
+        cell.Subtitulo.text = info.rol;
+    }
     
     return cell;
 }
@@ -244,18 +244,22 @@
 
     if ([segue.identifier isEqualToString:@"SpeakerDet"])
     {
+        NSError *error;
+        NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+        NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Eventopadre" inManagedObjectContext:_delegate.managedObjectContext];
+        [fetch setEntity:entidad];
+        
+        NSArray *arrayete = [_delegate.managedObjectContext executeFetchRequest:fetch error:&error];
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
-        Persona *info = [self.ResultadosCoreData objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
-         NSData *dataObj = [NSData dataWithBase64EncodedString:info.fotoPersona.binarioImagen];
-        destino.Nombrecelda = info.nombre;
+        Eventopadre *info = [arrayete objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
+        destino.Nombrecelda = info.participantes.nombre;
         
         //como se saco la entidad pai deje el pais celda como ciudad del hueón, por mientras.
 
-        destino.Paiscelda = info.lugarDondeProvengo.nombreLugar;
-        destino.ImagenDelSpeaker = [UIImage imageWithData:dataObj];
-        destino.ReferenciaSpeaker = info.tratamiento;
-        destino.BiografiaCelda = info.bio;
-        destino.Institucioncelda = info.institucionQueMePatrocina.nombreInstitucion;
+        destino.Paiscelda = info.tipoEP;
+        destino.ReferenciaSpeaker = info.participantes.tratamiento;
+        destino.BiografiaCelda = info.participantes.nombre;
+        destino.Institucioncelda = info.tituloEP;
     }
 }
 
