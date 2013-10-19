@@ -235,10 +235,11 @@
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
     id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [eventoMenuLateral sendEventWithCategory:@"uiAction"
-                                  withAction:@"buttonPress"
-                                   withLabel:@"Interactúo con Menú Lateral"
-                                   withValue:nil];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Vista Detalle"
+                                                withValue:nil];
 }
 
 - (IBAction)GuardarCalendario:(id)sender

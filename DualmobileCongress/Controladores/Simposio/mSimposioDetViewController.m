@@ -259,11 +259,11 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [eventoMenuLateral sendEventWithCategory:@"uiAction"
-                                  withAction:@"buttonPress"
-                                   withLabel:@"Interactúo con Menú Lateral"
-                                   withValue:nil];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Notificaciones"
+                                                withLabel:@"Revelo desde Detalle SImposio"
+                                                withValue:nil];
 }
 
 - (IBAction)GuardarCalendario:(id)sender
@@ -329,11 +329,11 @@
     [self presentModalViewController:controlador animated:YES];
     controlador.editViewDelegate = self;
     
-    id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [gaiBotonCalendario sendEventWithCategory:@"uiAction"
-                                   withAction:@"buttonPress"
-                                    withLabel:@"Abrio el calendario"
-                                    withValue:nil];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
+                                               withAction:@"Revelar Calendario"
+                                                withLabel:@"Revelo desde Detalle Simposio"
+                                                withValue:nil];
 }
 
 -(void)eventEditViewController:(EKEventEditViewController *)controller didCompleteWithAction:(EKEventEditViewAction)action
