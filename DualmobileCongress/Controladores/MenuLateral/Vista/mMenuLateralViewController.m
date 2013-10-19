@@ -8,8 +8,15 @@
 
 #import "mMenuLateralViewController.h"
 #import "GAI.h"
-#import "Evento.h"
 #import "mAppDelegate.h"
+
+#import "Eventopadre.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Evento.h"
+#import "Institucion.h"
+#import "Notificacion.h"
+#import "mCongressAPIClient.h"
 
 @interface mMenuLateralViewController ()
 

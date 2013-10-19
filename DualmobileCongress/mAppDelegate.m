@@ -54,7 +54,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
                                        
                                        [NSNumber numberWithFloat:30.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
-                                       [NSNumber numberWithBool:YES], @"kPrimeraSincro",
+                                       [NSNumber numberWithBool:NO], @"kPrimeraSincro",
                                        
                                        
                                        [NSNumber numberWithBool:YES], @"kValoresGuardados",

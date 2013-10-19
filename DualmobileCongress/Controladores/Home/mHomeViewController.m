@@ -33,14 +33,6 @@
 }
 
 
--(void)noEsPrimeraSincro{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    [defaults setBool:NO forKey:@"kPrimeraSincro"];
-    [defaults synchronize];
-}
 
 - (void)viewDidLoad
 {
@@ -48,10 +40,7 @@
     
     self.delegate = [[UIApplication sharedApplication]delegate];
     
-    self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
-    self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
-    
-
+   
     // refresh
     
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
@@ -113,6 +102,11 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+    
+    self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
+    self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
+    
+
     int rows;
     if (section == 0) {
         rows = [self.EnesteMomento count];
@@ -497,15 +491,9 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    [super viewWillDisappear:animated];
+    [super viewWillAppear:animated];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
-    
-    if (primeraSincro == YES) {
-       // [self noEsPrimeraSincro];
-    }
+  
 }
 
 - (void)viewDidUnload

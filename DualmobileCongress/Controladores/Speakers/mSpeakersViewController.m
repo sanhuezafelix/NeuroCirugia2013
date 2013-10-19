@@ -25,14 +25,7 @@
 @implementation mSpeakersViewController
 
 
--(void)noEsPrimeraSincro{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    [defaults setBool:NO forKey:@"kPrimeraSincro"];
-    [defaults synchronize];
-}
+
 
 - (void)viewDidLoad
 {
@@ -41,7 +34,6 @@
     
     self.delegate = [[UIApplication sharedApplication]delegate];
     
-    [self CargarSpeaker];
     self.SpeakerTableview.scrollEnabled = YES;
     
     
@@ -210,10 +202,7 @@
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
     cell.texto.text     =   info.lugarDondeProvengo.nombreLugar;
     
-//    if (info.institucionQueMePatrocina.nombreInstitucion == nil) {
-//        
-//        cell.Subtitulo.text = info.rol;
-//    }
+
     
     return cell;
 }
@@ -305,34 +294,13 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    [super viewWillDisappear:animated];
+    [super viewWillAppear:animated];
 
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-
-    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
-    
-    if (primeraSincro == YES) {
-      //  [self noEsPrimeraSincro];
     }
-}
 
 -(NSArray*)CargarSpeaker{
     
-    NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entidadLugar = [NSEntityDescription entityForName:@"Lugar"
-                                                    inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequestLugar setEntity:entidadLugar];
-    NSError *errorLugar;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
     
-    
-    NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entidadInstitucion = [NSEntityDescription entityForName:@"Institucion"
-                                                          inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequestInstitucion setEntity:entidadInstitucion];
-    NSError *errorInstitucion;
-   [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
-
     // Create our fetch request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     

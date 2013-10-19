@@ -21,14 +21,6 @@
 
 
 
--(void)noEsPrimeraSincro{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    
-    [defaults setBool:NO forKey:@"kPrimeraSincro"];
-    [defaults synchronize];
-}
 
 - (void)viewDidLoad
 {
@@ -316,13 +308,7 @@
     
     [super viewWillAppear:animated];
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
-    
-    if (primeraSincro == YES) {
-        [self noEsPrimeraSincro];
-    }
+   
 }
 
 - (void)viewDidUnload {
