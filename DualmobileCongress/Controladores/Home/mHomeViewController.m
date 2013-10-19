@@ -41,6 +41,12 @@
 {
     [super viewDidLoad];
     
+    self.delegate = [[UIApplication sharedApplication]delegate];
+    
+    self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
+    self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
+    
+
     // refresh
     
     UIRefreshControl *refresh = [[UIRefreshControl alloc] init];
