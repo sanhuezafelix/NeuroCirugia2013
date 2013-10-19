@@ -78,7 +78,7 @@
         <relationship name="notificacionSobreMi" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Notificacion" inverseName="personaAsociada" inverseEntity="Notificacion" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Evento" positionX="99" positionY="-297" width="128" height="255"/>
+        <element name="Evento" positionX="99" positionY="-297" width="128" height="253"/>
         <element name="Eventopadre" positionX="-522" positionY="-304" width="128" height="223"/>
         <element name="Imagen" positionX="-180" positionY="180" width="128" height="120"/>
         <element name="Institucion" positionX="205" positionY="135" width="128" height="150"/>

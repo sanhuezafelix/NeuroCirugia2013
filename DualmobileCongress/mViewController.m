@@ -8,13 +8,14 @@
 
 #import "mViewController.h"
 #import "mAppDelegate.h"
-#import "Institucion.h"
-#import "Lugar.h"
-#import "GAI.h"
-#import "Evento.h"
-#import "Persona.h"
-#import "Notificacion.h"
 #import "Eventopadre.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Evento.h"
+#import "Institucion.h"
+#import "Notificacion.h"
+#import "mCongressAPIClient.h"
+#import "GAI.h"
 
 
 @interface mViewController ()
@@ -35,9 +36,12 @@
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
+
     
     NSTimeInterval intervalIniciaSincro = [defaults floatForKey:@"kIntervaloHoraSincro"];
     
+    [defaults setBool:YES forKey:@"kPrimeraSincro"];
+
     [defaults setBool:YES forKey:@"kAutorizadorSincronizacion"];
     [defaults synchronize];
     
@@ -60,6 +64,8 @@
     
     NSTimeInterval intervalParaSincro = [defaults floatForKey:@"kIntervaloHoraNoSincro"];
     
+    [defaults setBool:YES forKey:@"kPrimeraSincro"];
+
     [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
     [defaults synchronize];
     
@@ -82,7 +88,7 @@
     
     [self CargaInicialDatos];
     
-    [self IniciarSincro];
+    [self PararSincro];
     
     self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
     
@@ -138,17 +144,15 @@
                                                      inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestEvento setEntity:entidadEvento];
     NSError *errorEvento;
-    NSArray *arrayEvento =     [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEvento error:&errorEvento];
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEvento error:&errorEvento];
     
-    [arrayEvento description];
     
     NSFetchRequest *fetchRequestPersona = [[NSFetchRequest alloc] init];
     NSEntityDescription *entidadPersona = [NSEntityDescription entityForName:@"Persona"
                                                       inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestPersona setEntity:entidadPersona];
     NSError *errorPersona;
-    NSArray *arrayPersona = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
-    [arrayPersona description];
+   [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
 
    
     NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
@@ -156,8 +160,7 @@
                                                 inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestLugar setEntity:entidadLugar];
     NSError *errorLugar;
-    NSArray *arrayLugar = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
-    [arrayLugar description];
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
 
    
     NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
@@ -165,8 +168,7 @@
                                                           inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestInstitucion setEntity:entidadInstitucion];
     NSError *errorInstitucion;
-     NSArray *arrayInstitucion = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
-    [arrayInstitucion description];
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
 
     
    
@@ -175,16 +177,7 @@
                                                           inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestEventopadre setEntity:entidadEventopadre];
     NSError *errorEventopadre;
-    NSArray *arrayEventopadre =[self.delegate.managedObjectContext executeFetchRequest:fetchRequestEventopadre error:&errorEventopadre];
-    [arrayEventopadre description];
-
-
-    Evento *eventito;
-    [eventito.lugarEnQueMeDesarrollo.nombreLugar description];
-    [eventito.speaker.nombre description];
-    [eventito.speaker.lugarDondeProvengo.nombreLugar description];
-    [eventito.eventoPadre.tituloEP description];
-    [eventito.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar description];
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEventopadre error:&errorEventopadre];
     
     
 }

@@ -15,8 +15,6 @@
 #import "mCustomCell.h"
 #import "mAppDelegate.h"
 #import "Evento.h"
-#import "Persona.h"
-#import "Lugar.h"
 #import "Institucion.h"
 #import "AnimatedImagesView.h"
 #import "Notificacion.h"

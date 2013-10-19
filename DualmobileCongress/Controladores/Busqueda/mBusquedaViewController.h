@@ -12,11 +12,13 @@
 #import "mAppDelegate.h"
 #import "ECSlidingViewController.h"
 #import "mCustomCell.h"
-#import "Evento.h"
+#import "Eventopadre.h"
 #import "Persona.h"
 #import "Lugar.h"
-#import "Imagen.h"
+#import "Evento.h"
 #import "Institucion.h"
+#import "Notificacion.h"
+#import "mCongressAPIClient.h"
 #import "AnimatedImagesView.h"
 
 @class mBusquedaCloseViewController;

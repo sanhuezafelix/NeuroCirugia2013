@@ -11,6 +11,13 @@
 #import "mSimposioDetViewController.h"
 #import "NSDataAdditions.h"
 #import "GAI.h"
+#import "Eventopadre.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Evento.h"
+#import "Institucion.h"
+#import "Notificacion.h"
+#import "mCongressAPIClient.h"
 
 @interface mJornadaViewController ()
 
@@ -305,7 +312,7 @@
     BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
     
     if (primeraSincro == YES) {
-        [self noEsPrimeraSincro];
+       // [self noEsPrimeraSincro];
     }
 }
 

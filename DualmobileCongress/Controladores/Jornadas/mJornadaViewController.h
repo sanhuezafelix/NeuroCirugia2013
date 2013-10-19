@@ -17,6 +17,7 @@
 #import "GAITrackedViewController.h"
 #import "AnimatedImagesView.h"
 #import "Eventopadre.h"
+#import "Notificacion.h"
 
 
 @interface mJornadaViewController : UIViewController<UITableViewDataSource,UITableViewDelegate ,NSFetchedResultsControllerDelegate>

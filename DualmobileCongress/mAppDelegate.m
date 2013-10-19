@@ -12,6 +12,13 @@
 #import "mConexionRed.h"
 #import "Orbiter.h"
 #import "GAI.h"
+#import "Eventopadre.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Evento.h"
+#import "Institucion.h"
+#import "Notificacion.h"
+#import "mCongressAPIClient.h"
 
 static NSString *const kStoreName = @"Congresos.sqlite";
 
@@ -24,6 +31,12 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    
+    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:4 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
+    [NSURLCache setSharedURLCache:URLCache];
+    
+    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
+    
     //Creamos un NSUSerDefault para soportar el control de la sincronización por intervalos de tiempo
     [self NotificacionLocal];
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -37,9 +50,9 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:60.0], @"kIntervaloHoraSincro",
+                                       [NSNumber numberWithFloat:7.0], @"kIntervaloHoraSincro",
                                        
-                                       [NSNumber numberWithFloat:60.0], @"kIntervaloHoraNoSincro",
+                                       [NSNumber numberWithFloat:30.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
                                        [NSNumber numberWithBool:YES], @"kPrimeraSincro",
                                        
@@ -63,13 +76,8 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     
     NSLog(@"%@",tracker);
     
-    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     
-    NSURLCache *URLCache = [[NSURLCache alloc] initWithMemoryCapacity:8 * 1024 * 1024 diskCapacity:20 * 1024 * 1024 diskPath:nil];
-   
-    [NSURLCache setSharedURLCache:URLCache];
     
-    [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     return YES;
     
@@ -146,7 +154,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 // Si el coordinador no existe, se crea y la App lo añade.
 
 - (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
-    if (_persistentStoreCoordinator) {
+    if (_persistentStoreCoordinator != nil) {
         return _persistentStoreCoordinator;
     }
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -156,14 +164,14 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kStoreName];
     
-//    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-//        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Congresos2" ofType:@"sqlite"]];
-//        NSError* err = nil;
-//        
-//        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
-//            NSLog(@"Oops, could copy preloaded data");
-//    }
-//}
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Congresos2" ofType:@"sqlite"]];
+        NSError* err = nil;
+        
+        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
+            NSLog(@"Oops, could copy preloaded data");
+    }
+}
     NSDictionary *options = @{
                               NSInferMappingModelAutomaticallyOption : @(YES),
                               NSMigratePersistentStoresAutomaticallyOption: @(YES)

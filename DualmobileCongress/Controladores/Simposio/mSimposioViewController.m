@@ -11,6 +11,14 @@
 #import "NSDataAdditions.h"
 #import "GAI.h"
 
+#import "Eventopadre.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Evento.h"
+#import "Institucion.h"
+#import "Notificacion.h"
+#import "mCongressAPIClient.h"
+
 @interface mSimposioViewController ()
 
 @end

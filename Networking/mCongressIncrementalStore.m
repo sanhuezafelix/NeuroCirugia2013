@@ -1,5 +1,11 @@
 #import "mCongressIncrementalStore.h"
 #import "mCongressAPIClient.h"
+#import "Eventopadre.h"
+#import "Persona.h"
+#import "Lugar.h"
+#import "Evento.h"
+#import "Institucion.h"
+#import "Notificacion.h"
 
 @implementation mCongressIncrementalStore
 
