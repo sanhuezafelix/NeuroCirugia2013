@@ -53,11 +53,12 @@
         self.lugarEP.text = self.lugarEP2;
         self.HoraEP.text = self.horaEP2;
         self.ActividadEP.text = self.tipoEventoPadre2;
-        self.lugarEP.text = self.LugarsimposioPadre;
         self.labelBarra.text = self.nombreBarra;
         self.BotonSimposio.hidden = false;
         self.ContenidoExposicion.hidden = true;
         self.labelsimposio.text = self.textoLabelSimposio;
+        self.ActividadEP.hidden = true;
+        self.LugarEP.hidden = true;
         
         
     }else{
@@ -226,6 +227,7 @@
         destino.LugarCelda = self.lugarEP2;
         destino.tituloCelda = self.tituloEP2;
         destino.ContenidoeventoHijoCelda =self.tipoEventoPadre2;
+        destino.horacelda = self.horaEP2;
         destino.EsSimposio = true;
     }
     

@@ -18,6 +18,7 @@
 #import "Institucion.h"
 #import "Notificacion.h"
 #import "mCongressAPIClient.h"
+#import "Eventopadre.h"
 
 @interface mJornadaViewController ()
 
@@ -249,8 +250,8 @@
         {
             Eventopadre *info = [self.EventosPadre objectAtIndex:indexPath.row];
             mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
-            destino.ExpositorCelda = info.participantes.nombre;
-            destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
+            destino.ExpositorCelda = info.descripcionEP;
+            destino.lugarEP2 = info.lugarEnQueMeDesarrollo.nombreLugar;
             destino.tituloCelda = info.tituloEP;
             destino.ContenidoeventoHijoCelda =info.tipoEP;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicioEP]]];

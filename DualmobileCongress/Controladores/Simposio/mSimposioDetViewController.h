@@ -76,6 +76,7 @@
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
 @property (strong, nonatomic) IBOutlet UILabel *labelsimposio;
 @property(nonatomic,strong)NSString *textoLabelSimposio;
+@property(nonatomic,strong)NSString *lugarEP2;
 
 
 - (IBAction)PublicaEnFaceBook:(id)sender;

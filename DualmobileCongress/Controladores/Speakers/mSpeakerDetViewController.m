@@ -39,10 +39,9 @@
     self.delegate = [[UIApplication sharedApplication]delegate];
     self.NombreSpeaker.text = [self.ReferenciaSpeaker stringByAppendingFormat:@" %@",self.texto2];
     
-    self.NombreSpeaker.text = self.texto3;
+    self.InstitucionSpeaker.text = self.texto3;
     self.PaisSpeaker.text = self.texto5;
     self.TitulosSpeaker.text =self.texto3;
-    self.InstitucionSpeaker.text = self.texto2;
     if (self.Institucioncelda== nil) {
         NSLog(@"es nulo");
        
@@ -148,7 +147,7 @@
         cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
     
-    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
+    cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdas_actividades_jornada.png"]];
     
     cell.Titulo.text = info.titulo;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];;

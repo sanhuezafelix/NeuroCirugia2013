@@ -41,6 +41,8 @@
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
     self.ContenidoEventoHijo.text = self.describe;
+    self.ContenidoExposicion.hidden = true;
+    self.Lugar.text = self.lugarEP2;
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] <6.0f)
     {
@@ -57,18 +59,18 @@
         self.DetailTableview.hidden = true;
        
         self.BotonCalendario.hidden = false;
-        self.ContenidoEventoHijo.hidden = false;
+        self.ContenidoExposicion.hidden = false;
         self.BotonPublicacionTwet.hidden = false;
         self.BotonPublicarFacebook.hidden=false;
-        if (self.LugarCelda != NULL) {
-           self.Lugar.text = self.LugarCelda;
-            self.BotonMapas.hidden = false;
-            NSLog( @"lugar =====> %@",self.LugarCelda);
-        }
-        else{
-            self.Lugar.text = @"";
-        }
-      
+//        if (self.LugarCelda != NULL) {
+//           self.Lugar.text = self.LugarCelda;
+//            self.BotonMapas.hidden = false;
+//            NSLog( @"lugar =====> %@",self.LugarCelda);
+//        }
+//        else{
+//            self.Lugar.text = @"";
+//        }
+//      
         
 
     }
