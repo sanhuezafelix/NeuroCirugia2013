@@ -8,7 +8,7 @@
 
 #import "ECSlidingViewController.h"
 
-@interface mViewController : ECSlidingViewController 
+@interface mViewController : ECSlidingViewController
 
 @property (strong, nonatomic) IBOutlet UITextField *UserName;
 @property (strong, nonatomic) IBOutlet UITextField *UserSpecialty;
@@ -20,6 +20,8 @@
 
 @property BOOL desautorizadoSincro;
 
+@property   NSTimer     *timerPermiteSincro;
+@property   NSTimer     *timerParaSincro;
 
 - (IBAction)IniciarSesion:(id)sender;
 - (IBAction)CerrarTeclado:(id)sender;

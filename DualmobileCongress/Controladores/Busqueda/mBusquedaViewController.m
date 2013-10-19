@@ -19,25 +19,16 @@
 
 #pragma -mark Metodos De Inicializacion
 
--(void)AnularActualizaEstadoAutorizadorSincronizacion{
+
+
+-(void)noEsPrimeraSincro{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
+    
+    
+    [defaults setBool:NO forKey:@"kPrimeraSincro"];
     [defaults synchronize];
-    
-    NSLog(@"valor de autorizador Busqueda   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
-    
 }
-
-//-(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-//    [defaults synchronize];
-//    
-//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-//    
-//}
 
 - (void)viewDidLoad
 {
@@ -54,7 +45,6 @@
                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.title = @" ";
 	self.delegate = [[UIApplication sharedApplication]delegate];
-    [self filter:@""];
   
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -89,12 +79,12 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-   return [self.ResultadosCoreData count];
-}
+    [self CargarCoreDataBusqueda];
+    return [self.ResultadosCoreDataBusqueda count];}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Evento *info = [self.ResultadosCoreData objectAtIndex:indexPath.row];
+    Evento *info = [self.ResultadosCoreDataBusqueda objectAtIndex:indexPath.row];
     NSString *cellIdentifier = @"SearchCell";
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -149,7 +139,7 @@
     
     if ([segue.identifier isEqualToString:@"SearchDet"])
     {
-        Evento *info = [self.ResultadosCoreData objectAtIndex:[self.SearchTableview indexPathForSelectedRow].row];
+        Evento *info = [self.ResultadosCoreDataBusqueda objectAtIndex:[self.SearchTableview indexPathForSelectedRow].row];
         mDetalleViewController *destino = (mDetalleViewController *)segue.destinationViewController;
         NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
         UIImage *beforeImage = [UIImage imageWithData:dataObj];
@@ -206,7 +196,6 @@
 
 -(void)filter:(NSString*)text
 {
-    self.DysplayItems = [[NSMutableArray alloc] init];
     
     // creamos nuestro fetch request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -247,8 +236,8 @@
     
     // Acá se caga
     
-    self.ResultadosCoreData= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    self.DysplayItems= [[NSMutableArray alloc] initWithArray:self.ResultadosCoreData];
+    self.ResultadosCoreDataBusqueda= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+
     
     [self.SearchTableview reloadData];
 }
@@ -325,27 +314,15 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-//    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
-    
-    if (estadoAutorizador == YES) {
-
-// Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacion];
-        
-    }
-//    if (estadoAutorizadorImagen == YES) {
-//
-//// Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-//        
-//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-//        
-//    }
-    
     [super viewWillAppear:animated];
     
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
+    
+    if (primeraSincro == YES) {
+        [self noEsPrimeraSincro];
+    }
 }
 
 - (void)viewDidUnload {
@@ -353,6 +330,21 @@
     [self setBarraBusqeuda:nil];
     [self setSearchTableview:nil];
     [super viewDidUnload];
+}
+
+-(NSArray*)CargarCoreDataBusqueda
+{
+    
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSError *error = nil;
+    
+    self.ResultadosCoreDataBusqueda = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    return self.ResultadosCoreDataBusqueda;
 }
 
 

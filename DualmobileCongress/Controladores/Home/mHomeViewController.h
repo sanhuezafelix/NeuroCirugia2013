@@ -35,8 +35,6 @@
 @property (strong, nonatomic) UIRefreshControl *refresh;
 
 @property NSUInteger *numeroObjetos;
-@property   NSTimer     *timer;
-@property   NSTimer     *timerImagen;
 
 @property(nonatomic,strong)NSMutableArray *ProximasActividades;
 @property(nonatomic,strong)NSMutableArray *EnesteMomento;

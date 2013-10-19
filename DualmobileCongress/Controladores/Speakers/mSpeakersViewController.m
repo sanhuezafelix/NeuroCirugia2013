@@ -20,6 +20,15 @@
 @implementation mSpeakersViewController
 
 
+-(void)noEsPrimeraSincro{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    [defaults setBool:NO forKey:@"kPrimeraSincro"];
+    [defaults synchronize];
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -36,7 +45,6 @@
                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.title = @" ";
 	self.delegate = [[UIApplication sharedApplication]delegate];
-    [self filter:@""];
     
         UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -77,7 +85,6 @@
 
 -(void)filter:(NSString*)text
 {
-    self.DysplayItems = [[NSMutableArray alloc] init];
     
     // Create our fetch request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -121,9 +128,8 @@
     
     NSError *error;
     
-    // Finally, perform the load
-    self.ResultadosCoreData= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    self.DysplayItems= [[NSMutableArray alloc] initWithArray:self.ResultadosCoreData];
+    self.coredatinos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
     
     [self.SpeakerTableview reloadData];
 }
@@ -175,12 +181,13 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [self.ResultadosCoreData count];
-}
+    [self CargarSpeaker];
+    
+    return [self.coredatinos count];}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Persona *info = [self.ResultadosCoreData objectAtIndex:indexPath.row];
+    Persona *info = [self.coredatinos objectAtIndex:indexPath.row];
     NSString *cellIdentifier = @"SpeakerCell";
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -217,7 +224,7 @@
        
         
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
-        Persona *info = [self.ResultadosCoreData objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
+        Persona *info = [self.coredatinos objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
         NSArray *ar = [NSArray arrayWithObjects:info.eventoQueDicto, nil];
         
         NSSet *eventis = [NSSet setWithSet:info.eventoQueDicto];
@@ -269,15 +276,7 @@
                                         withValue:nil];
    
 }
--(void)notifica {
-    
-    NSError *error;
-    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
-    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
-    [fet setEntity:ent];
-    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
-    NSLog(@"%@",ar);
-}
+
 
 
 - (IBAction)RevelarNotificaciones:(id)sender
@@ -293,7 +292,6 @@
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Speaker"
                                                 withValue:nil];
-  //  [self notifica];
     
 }
 
@@ -308,8 +306,40 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     
+    [super viewWillDisappear:animated];
+
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+
+    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
     
-        [super viewWillAppear:animated];
+    if (primeraSincro == YES) {
+        [self noEsPrimeraSincro];
+    }
+}
+
+-(NSArray*)CargarSpeaker{
+    
+    
+    // Create our fetch request
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    // Define the entity we are looking for
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Persona" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Define how we want our entities to be sorted
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"nombre" ascending:YES];
+    NSArray* NombreSpeaker = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:NombreSpeaker];
+    // If we are searching for anything...
+    
+    NSError *error;
+    
+    self.coredatinos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    
+    return self.coredatinos;
     
 }
 @end

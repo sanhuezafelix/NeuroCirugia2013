@@ -39,8 +39,8 @@
 
 @property(nonatomic,strong)NSArray *ResultadosCoreData;
 
-@property(nonatomic,strong)NSArray*arrayete;
 
+@property(nonatomic,strong) NSArray * coredatinos;
 
 @property (strong, nonatomic) IBOutlet UISearchBar *buscar;
 

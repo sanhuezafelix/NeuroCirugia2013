@@ -6,6 +6,7 @@
 + (mCongressAPIClient *)sharedClient;
 
 @property BOOL estadoAutorizadorSincronizacion;
-@property BOOL estadoAutorizadorSincronizacionImagen;
+@property BOOL estadoAutorizadorUnaVezSync;
+
 
 @end

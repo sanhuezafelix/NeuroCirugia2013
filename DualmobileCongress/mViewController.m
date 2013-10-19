@@ -16,6 +16,7 @@
 #import "Notificacion.h"
 #import "Eventopadre.h"
 
+
 @interface mViewController ()
 
 @property (nonatomic,strong) mAppDelegate *delegate;
@@ -30,40 +31,70 @@
 
 
 
+-(void)IniciarSincro{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
+    
+    NSTimeInterval intervalIniciaSincro = [defaults floatForKey:@"kIntervaloHoraSincro"];
+    
+    [defaults setBool:YES forKey:@"kAutorizadorSincronizacion"];
+    [defaults synchronize];
+    
+    self.timerPermiteSincro = [NSTimer scheduledTimerWithTimeInterval:intervalIniciaSincro
+                                                               target:self
+                                                             selector:@selector(PararSincro)
+                                                             userInfo:nil
+                                                              repeats:NO];
+    NSLog(@" *************** INICIA la Sincro ******************* %d", estadoAutorizador);
+    
+    
+    
+}
+
+-(void)PararSincro{
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
+    
+    
+    NSTimeInterval intervalParaSincro = [defaults floatForKey:@"kIntervaloHoraNoSincro"];
+    
+    [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
+    [defaults synchronize];
+    
+    self.timerParaSincro = [NSTimer scheduledTimerWithTimeInterval:intervalParaSincro
+                                                            target:self
+                                                          selector:@selector(IniciarSincro)
+                                                          userInfo:nil
+                                                           repeats:NO];
+    
+    
+    NSLog(@"**************** PARA sincro *********************** %d", estadoAutorizador);
+    
+}
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-
+    
     self.delegate = [[UIApplication sharedApplication] delegate];
     
-    [self CargadorBaseDatosNoImagenes];
-
-
-//    NSArray *nombresEntidad = [[NSArray alloc] init];
-//    nombresEntidad = [NSArray arrayWithObjects:@"Evento", @"Persona", @"Lugar",@"Eventopadre",@"Notificacion",@"Institucion", nil];
+    [self CargaInicialDatos];
     
-    [self activaInicioTimer];
+    [self IniciarSincro];
     
     self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
-
-
-    if ([[NSFileManager defaultManager]fileExistsAtPath:[self Ruta]] == TRUE) {
-        self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
-        
-        
-    }
+    
+    
 }
 
 - (IBAction)comenzarAccion:(id)sender {
-    
-    [self CargadorBaseDatosNoImagenes];
-
-
     id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [eventoComenzar sendEventWithCategory:@"uiAction"
-                        withAction:@"buttonPress"
-                         withLabel:@"Presionó botón Comenzar"
-                         withValue:nil];
+                               withAction:@"buttonPress"
+                                withLabel:@"Presionó botón Comenzar"
+                                withValue:nil];
 }
 
 
@@ -75,7 +106,7 @@
     if ([self.UserMail.text length]>0 && [self.UserName.text length] >0  && [self.UserSpecialty.text length]>0 )
     {
         NSLog(@"textfield con datos");
-        }
+    }
 }
 
 
@@ -91,105 +122,62 @@
 -(BOOL)VerificarMail:(NSString*)UserMail
 {
     
-        NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
-        NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
-        return [emailTest evaluateWithObject:UserMail];
+    NSString *emailRegex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}";
+    NSPredicate *emailTest = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", emailRegex];
+    return [emailTest evaluateWithObject:UserMail];
     
 }
 
 #pragma mark - Carga base datos
 
-//-(void)CargadorBaseDatosImagenes:(NSString*)entidadImagen;
-//{
-//    
-//        
-//        [self.ActividadServidor startAnimating];
-//        NSFetchRequest *fetchRequestImagen = [[NSFetchRequest alloc] init];
-//        // asignamos el nombre de la entidad a utilizar
-//        NSEntityDescription *entidad = [NSEntityDescription entityForName:entidadImagen
-//                                                   inManagedObjectContext:self.delegate.managedObjectContext];
-//        [fetchRequestImagen setEntity:entidad];
-//        NSError *error;
-//        NSArray *fetchedObjectsImagen = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestImagen
-//                                                                           error:&error];
-//        [self.ActividadServidor stopAnimating];
-//
-//    // <---NSLog
-//    
-//    NSLog(@"IMAGENES %@", [fetchRequestImagen description]);
-//    
-//    // NSLog--->
-//}
-    
--(void)CargadorBaseDatosNoImagenes
+
+-(void)CargaInicialDatos
 {
+    NSFetchRequest *fetchRequestEvento = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entidadEvento = [NSEntityDescription entityForName:@"Evento"
+                                                     inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestEvento setEntity:entidadEvento];
+    NSError *errorEvento;
+    NSArray *arrayEvento =     [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEvento error:&errorEvento];
+
+//    Evento *eventito = [arrayEvento ]
+    
+    NSFetchRequest *fetchRequestPersona = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entidadPersona = [NSEntityDescription entityForName:@"Persona"
+                                                      inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestPersona setEntity:entidadPersona];
+    NSError *errorPersona;
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
+    
     
     
     NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
-    // asignamos el nombre de la entidad a utilizar
     NSEntityDescription *entidadLugar = [NSEntityDescription entityForName:@"Lugar"
-                                               inManagedObjectContext:self.delegate.managedObjectContext];
+                                                    inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestLugar setEntity:entidadLugar];
     NSError *errorLugar;
-    NSArray *fetchedObjectsLugar = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
-    
-    // <---NSLog
-    //
-    NSLog(@"Objetos %@", [fetchedObjectsLugar objectEnumerator]);
-    
-    
-    
-    NSFetchRequest *fetchRequestEvento = [[NSFetchRequest alloc] init];
-    // asignamos el nombre de la entidad a utilizar
-    NSEntityDescription *entidadEvento = [NSEntityDescription entityForName:@"Evento"
-                                               inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequestEvento setEntity:entidadEvento];
-    NSError *errorEvento;
-    NSArray *fetchedObjectsEvento = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEvento error:&errorEvento];
-    
-    // <---NSLog
-    //
-    NSLog(@"Objetos %@", [fetchedObjectsEvento objectEnumerator]);
-    
-    
-    
-    NSFetchRequest *fetchRequestPersona = [[NSFetchRequest alloc] init];
-    // asignamos el nombre de la entidad a utilizar
-    NSEntityDescription *entidadPersona = [NSEntityDescription entityForName:@"Persona"
-                                               inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequestPersona setEntity:entidadPersona];
-    NSError *errorPersona;
-    NSArray *fetchedObjectsPersona = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
-    
-    // <---NSLog
-    //
-    NSLog(@"Objetos %@", [fetchedObjectsPersona objectEnumerator]);
-    
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
     
     
     NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
-    // asignamos el nombre de la entidad a utilizar
     NSEntityDescription *entidadInstitucion = [NSEntityDescription entityForName:@"Institucion"
-                                               inManagedObjectContext:self.delegate.managedObjectContext];
+                                                          inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestInstitucion setEntity:entidadInstitucion];
     NSError *errorInstitucion;
-    NSArray *fetchedObjectsInstitucion = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
     
-    // <---NSLog
-    //
-    NSLog(@"Objetos %@", [fetchedObjectsInstitucion objectEnumerator]);
+    
+    NSFetchRequest *fetchRequestEventopadre = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entidadEventopadre = [NSEntityDescription entityForName:@"Eventopadre"
+                                                          inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestEventopadre setEntity:entidadEventopadre];
+    NSError *errorEventopadre;
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEventopadre error:&errorEventopadre];
+    
+    
     
 }
 
--(void)activaInicioTimer{
-    
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:NO forKey:@"kCanceladorInicioTimer"];
-    
-    [defaults synchronize];
-}
 
 
 #pragma mark - Plist Metodos
@@ -198,7 +186,7 @@
     
     NSLog(@"guardando...");
     
-       NSDictionary *diccionario = [[NSDictionary alloc]initWithObjectsAndKeys:self.UserName.text,@"Nombre",self.UserMail.text ,@"Mail",self.UserSpecialty.text,@"Especialidad", nil];
+    NSDictionary *diccionario = [[NSDictionary alloc]initWithObjectsAndKeys:self.UserName.text,@"Nombre",self.UserMail.text ,@"Mail",self.UserSpecialty.text,@"Especialidad", nil];
     
     [diccionario writeToFile:[self Ruta] atomically:YES];
     self.topViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Ahora"];
@@ -230,8 +218,9 @@
 
 - (void)viewWillDisappear:(BOOL)animated {
     
-    [self activaInicioTimer];
     [super viewWillDisappear:animated];
+    
+    
 }
 
 - (void)viewDidUnload {

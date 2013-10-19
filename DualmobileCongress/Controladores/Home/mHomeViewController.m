@@ -27,62 +27,15 @@
 
 }
 
-//***********************-----> INICIO DE 4 METODOS QUE TENEMOS QUE REFACTORIZAR <-------*******************
 
--(void)cancelaInicioTimer{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    [defaults setBool:YES forKey:@"kCanceladorInicioTimer"];
-    [defaults synchronize];
-    NSLog(@"valor de cancelador  %c", [defaults boolForKey:@"kCanceladorInicioTimer"]);
-}
-
-
--(void)actualizaEstadoAutorizadorSincronizacion{
-    
+-(void)noEsPrimeraSincro{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    [defaults setBool:YES forKey:@"kAutorizadorSincronizacion"];
+    
+    [defaults setBool:NO forKey:@"kPrimeraSincro"];
     [defaults synchronize];
-
-NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
-    
 }
-
-//-(void)actualizaEstadoAutorizadorSincronizacionImagen{
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    
-//    [defaults setBool:YES forKey:@"kAutorizadorSincronizacionImagen"];
-//    [defaults synchronize];
-//    
-//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-//}
-
--(void)AnularActualizaEstadoAutorizadorSincronizacion{
-    
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
-    [defaults synchronize];
-    
-    NSLog(@"valor de autorizador   %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
-    
-}
-
-//-(void)AnularActualizaEstadoAutorizadorSincronizacionImagen{
-//    
-//    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-//    [defaults setBool:NO forKey:@"kAutorizadorSincronizacionImagen"];
-//    [defaults synchronize];
-//    
-//    NSLog(@"valor de autorizador IMAGEN %c", [defaults boolForKey:@"kAutorizadorSincronizacionImagen"]);
-//    
-//}
-
-//***********************-----> FIN DE 4 METODOS QUE TENEMOS QUE REFACTORIZAR <-------*******************
 
 - (void)viewDidLoad
 {
@@ -102,29 +55,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     id trackerAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerAhora sendView:@"Ahora"];
     
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
- 
-    BOOL estadoCanceladorTimer = [defaults boolForKey:@"kCanceladorInicioTimer"];
-
-
-   
-
-    NSTimeInterval interval = [defaults floatForKey:@"kIntervaloHora"];
-  //  NSTimeInterval intervalImagen = [defaults floatForKey:@"kIntervaloHoraImagen"];
-
-    if (estadoCanceladorTimer == NO) {
-
-    
-
-    // ponemos el timer en funcionamiento y se actualizará cada "interval" segundos
-    self.timer = [NSTimer scheduledTimerWithTimeInterval:interval
-                                                  target:self
-                                                selector:@selector(actualizaEstadoAutorizadorSincronizacion)
-                                                userInfo:nil
-                                                 repeats:YES];
-        
- }
+  
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -138,8 +69,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     self.delegate = [[UIApplication sharedApplication]delegate];
 
     self.title = @" ";
-    self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
-    self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
     EstadoDeLaconexion = [UIDevice estaConectado];
     self.refresh = refresh;
     
@@ -212,15 +141,13 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         if (indexPath.section == 0)
     {
         Evento *info = [self.EnesteMomento objectAtIndex:indexPath.row];
-        NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
-        UIImage *beforeImage = [UIImage imageWithData:dataObj];
+
         UIView *ColorSelecion = [[UIView alloc] init];
         ColorSelecion.backgroundColor = [UIColor colorWithRed:(246/255.0) green:(146/255.0) blue:(28/255.0) alpha:1.0f];
         cell.selectedBackgroundView = ColorSelecion;
         cell.contentView.backgroundColor = [UIColor colorWithPatternImage: [UIImage imageNamed: @"eem.png"]];
         cell.Subtitulo.text = info.speaker.nombre;
         cell.Titulo.text = info.titulo;
-        cell.Imagen.image = beforeImage;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
         cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
@@ -236,12 +163,9 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         cell.selectedBackgroundView = ColorSelecion;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-        NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
-        UIImage *beforeImage = [UIImage imageWithData:dataObj];
         cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"paa.png"]];
         cell.Titulo.text = info.titulo;
         cell.Subtitulo.text = info.speaker.nombre;
-        cell.Imagen.image = beforeImage;
         cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
         cell.Actividad.text = info.tipoEvento;
     
@@ -518,16 +442,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                                 withLabel:@"Revelo desde Ahora"
                                                 withValue:nil];
     
-    NSError*error;
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
-    NSArray*ar=[[NSArray alloc] init];
-    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
-    [fetiche setEntity:entidad];
-    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
-    ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
-    [fetiche setPredicate:canuto];
-    ar = [_delegate.managedObjectContext executeFetchRequest:fetiche error:&error];
-    NSLog(@"%@",ar);
+  
     
 
 }
@@ -570,42 +485,22 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 }
 
 - (void)viewWillAppear:(BOOL)animated {
-	   
+    
+    [super viewWillDisappear:animated];
+    
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-   
-    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-  //  BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
-    BOOL estadoCanceladorTimer = [defaults boolForKey:@"kCanceladorInicioTimer"];
-     
-     
-     if (estadoCanceladorTimer == NO) {
-         
-         [self cancelaInicioTimer];
-         
-     }    
-
-    if (estadoAutorizador == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-                
-        [self AnularActualizaEstadoAutorizadorSincronizacion];
-
+    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
+    
+    if (primeraSincro == YES) {
+        //[self noEsPrimeraSincro];
     }
-//    if (estadoAutorizadorImagen == YES) {
-//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-//        
-//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-//        
-//    }
-    
-    [super viewWillAppear:animated];
 }
 
 - (void)viewDidUnload
 {
     [self setBotonMenu:nil];
     [self setBotonNotificaciones:nil];
-    [self setHomeTableview:nil];
     [self setHomeTableview:nil];
     [super viewDidUnload];
 }

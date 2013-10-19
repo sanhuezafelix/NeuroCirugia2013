@@ -29,17 +29,14 @@
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 4.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-    [self notifica];
 
     
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[mMenuLateralViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuLateral"];
-        [self evento];
     }
     
     if (![self.slidingViewController.underRightViewController isKindOfClass:[mNotificacionesViewController class]]) {
         self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Notificaciones"];
-        [self notifica];
     }
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
@@ -70,34 +67,7 @@ float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
     }
 }
 
--(void)evento {
-    
-    _dele = [[UIApplication sharedApplication] delegate];
-    NSError *error;
-    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Evento" inManagedObjectContext:_dele.managedObjectContext];
-    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
-    [fet setEntity:ent];
-    NSArray *ar = [_dele.managedObjectContext executeFetchRequest:fet error:&error];
-    NSLog(@"%@",ar);
-}
 
--(void)notifica {
-    
-    _dele = [[UIApplication sharedApplication] delegate];
-    
-    NSError*error;
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_dele.managedObjectContext];
-    NSArray*ar=[[NSArray alloc] init];
-    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
-    [fetiche setEntity:entidad];
-    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
-   ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
-    [fetiche setPredicate:canuto];
-    ar = [_dele.managedObjectContext executeFetchRequest:fetiche error:&error];
-    NSLog(@"%@",ar);
-
-
-}
 
 
 @end

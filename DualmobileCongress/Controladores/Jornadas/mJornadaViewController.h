@@ -31,8 +31,8 @@
 @property (strong, nonatomic) NSFetchedResultsController *fetchedResultsController;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
-@property(nonatomic,strong)NSMutableArray *EventosPadre;
-@property(nonatomic,strong)NSMutableArray *EventosHijos;
+@property(nonatomic,strong)NSArray *EventosPadre;
+@property(nonatomic,strong)NSArray *EventosHijos;
 
 
 

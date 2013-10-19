@@ -37,16 +37,21 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:12.0], @"kIntervaloHora",
-//                                       [NSNumber numberWithFloat:300.0], @"kIntervaloHoraImagen",
+                                       [NSNumber numberWithFloat:5.0], @"kIntervaloHoraSincro",
+                                       
+                                       [NSNumber numberWithFloat:15.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
-//                                       [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacionImagen",
-                                       [NSNumber numberWithBool:YES], @"kCanceladorInicioTimer",
+                                       [NSNumber numberWithBool:YES], @"kPrimeraSincro",
+                                       
+                                       
                                        [NSNumber numberWithBool:YES], @"kValoresGuardados",
                                        nil];
         
         [defaults registerDefaults:defaultValues];
     }
+    
+    
+    
     // Opcional: envia automáticamente excepciones no controladas de nuestra app a Google.
     [GAI sharedInstance].trackUncaughtExceptions = YES;
     // Opcional: establece 20 segundos como intervalo para comunicar con Google.

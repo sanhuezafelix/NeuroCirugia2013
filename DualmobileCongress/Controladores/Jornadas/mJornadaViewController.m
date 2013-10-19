@@ -20,17 +20,14 @@
 
 @implementation mJornadaViewController
 
-
--(void)AnularActualizaEstadoAutorizadorSincronizacion{
+-(void)noEsPrimeraSincro{
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
-    [defaults synchronize];
     
-    NSLog(@"valor de autorizador Jornada  %c", [defaults boolForKey:@"kAutorizadorSincronizacion"]);
+    [defaults setBool:NO forKey:@"kPrimeraSincro"];
+    [defaults synchronize];
 }
-
 - (void)viewDidLoad
 {
     
@@ -97,6 +94,8 @@
 
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
     
+    [self CargarEventos];
+    [self CargarSimposios];
     return 2;
 }
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section
@@ -184,8 +183,9 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     NSError *error = nil;
     
-    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.EventosPadre = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
+    return self.EventosPadre;
 }
 
 -(NSArray*)CargarEventos
@@ -204,8 +204,8 @@
     [fetchRequest setSortDescriptors:sortDescriptors];
     NSError *error = nil;
     
-    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
+    self.EventosHijos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    return self.EventosHijos;
 }
 
 
@@ -294,39 +294,19 @@
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Jornada"
                                                 withValue:nil];
-    NSError*error;
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
-    NSArray*ar=[[NSArray alloc] init];
-    NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
-    [fetiche setEntity:entidad];
-    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
-    ar = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:NO];
-    [fetiche setPredicate:canuto];
-    ar = [_delegate.managedObjectContext executeFetchRequest:fetiche error:&error];
-    NSLog(@"%@",ar);
+   
 }
 - (void)viewWillAppear:(BOOL)animated {
     
+    [super viewWillDisappear:animated];
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-//    BOOL estadoAutorizadorImagen = [defaults boolForKey:@"kAutorizadorSincronizacionImagen"];
     
+    BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
     
-    if (estadoAutorizador == YES) {
-        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-        
-        [self AnularActualizaEstadoAutorizadorSincronizacion];
-        
+    if (primeraSincro == YES) {
+        [self noEsPrimeraSincro];
     }
-//    if (estadoAutorizadorImagen == YES) {
-//        // Cargamos el valor de la hora. Usaremos un timer para actualizar la hora cada x tiempo
-//        
-//        [self AnularActualizaEstadoAutorizadorSincronizacionImagen];
-//    }
-    
-    [super viewWillAppear:animated];
-    
 }
 
 

@@ -32,8 +32,7 @@
 @property (nonatomic, strong) IBOutlet UISearchBar *BarraBusqeuda;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *BotonMenu;
 @property (nonatomic, strong) IBOutlet UIBarButtonItem *BotonNotificaciones;
-@property (nonatomic, strong) NSArray *ResultadosCoreData;
-@property (nonatomic, strong) NSMutableArray * DysplayItems;
+@property (nonatomic, strong) NSArray *ResultadosCoreDataBusqueda;
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 #pragma -mark Eventos
