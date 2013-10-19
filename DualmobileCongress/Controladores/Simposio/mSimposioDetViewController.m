@@ -39,8 +39,8 @@
     self.imagen.image = self.imagenEX;
    
     self.imagen.image = self.NombreImagen;
-    self.Actividad.text = self.ContenidoeventoHijoCelda;
-    self.ContenidoEventoHijo.text = self.ContenidoeventoHijoCelda;
+    self.Actividad.text = self.ActividadSpeaker;
+    self.ContenidoEventoHijo.text = self.describe;
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] <6.0f)
     {
@@ -52,11 +52,12 @@
         [self.botonDeTalleSpeaker setHidden:YES];
     }
     if (!self.EsSimposio) {
-      
+       self.labelSimposio.text = @"Actividad";
+        self.Labelsimposio2.text = @"Detalle Actividad";
         self.DetailTableview.hidden = true;
-        self.labelSimposio.hidden = true;
+       
         self.BotonCalendario.hidden = false;
-        
+        self.ContenidoEventoHijo.hidden = false;
         self.BotonPublicacionTwet.hidden = false;
         self.BotonPublicarFacebook.hidden=false;
         if (self.LugarCelda != NULL) {

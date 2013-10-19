@@ -267,7 +267,7 @@
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
             destino.describe = info.descripcionEvento;
-            destino.ContenidoeventoHijoCelda =info.tipoEvento;
+            destino.ContenidoeventoHijoCelda =info.descripcionEvento;
             destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -277,7 +277,7 @@
             destino.Referencia  = info.speaker.tratamiento;
             destino.DateFin = [self StringToDate:info.horaFin];
             destino.DateInicio = [self StringToDate:info.horaInicio];
-            destino.ActividadSpeaker = info.descripcionEvento;
+            destino.ActividadSpeaker = info.tipoEvento;
             destino.EsSimposio = FALSE;
             
         }

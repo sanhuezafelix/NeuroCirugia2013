@@ -49,6 +49,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicarFacebook;
 @property (strong, nonatomic) IBOutlet UIImageView*imagen;
 @property (strong, nonatomic) IBOutlet UILabel *labelSimposio;
+@property (strong, nonatomic) IBOutlet UILabel *Labelsimposio2;
 
 
 

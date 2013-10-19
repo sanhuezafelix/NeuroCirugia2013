@@ -215,6 +215,7 @@
     if ([segue.identifier isEqualToString:@"SpeakerDet"])
     {
        
+        
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
         Persona *info = [self.ResultadosCoreData objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
         NSArray *ar = [NSArray arrayWithObjects:info.eventoQueDicto, nil];

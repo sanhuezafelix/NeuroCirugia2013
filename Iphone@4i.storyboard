@@ -2610,7 +2610,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-XQ-xix">
                                 <rect key="frame" x="11" y="8" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="DyO-IO-xnV"/>
                                     <constraint firstAttribute="height" constant="60" id="ffb-TY-wfg"/>
@@ -2676,12 +2675,11 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <outlet property="DetailTableview" destination="AyV-1g-LGo" id="Tjm-sj-3oR"/>
                         <outlet property="Expositor" destination="FMy-jg-a0R" id="f2n-F9-tUH"/>
                         <outlet property="Hora" destination="dSY-yO-RUB" id="nur-Bp-RZl"/>
+                        <outlet property="Labelsimposio2" destination="kdd-KQ-30Z" id="ePL-7T-irU"/>
                         <outlet property="Lugar" destination="rOY-or-0cv" id="1q8-dX-WMS"/>
                         <outlet property="Titulo" destination="vPC-XQ-xix" id="Ydj-rt-F44"/>
                         <outlet property="animationImageView" destination="JUF-XO-TgG" id="gRZ-eG-oih"/>
-                        <outlet property="labelSimposio" destination="kdd-KQ-30Z" id="nWC-4d-04x"/>
-                        <outlet property="labelsimposio" destination="vAg-BG-Ht4" id="0zl-Cg-qXC"/>
-                        <outlet property="textoLabelSimposio" destination="vAg-BG-Ht4" id="cHu-RP-SWo"/>
+                        <outlet property="labelSimposio" destination="vAg-BG-Ht4" id="v0i-JG-Wvq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dJN-3Q-iWD" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2691,14 +2689,42 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
@@ -2708,8 +2734,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
+        <segue reference="01W-ez-D7f"/>
         <segue reference="82c-rv-EFy"/>
-        <segue reference="JxW-KU-d9G"/>
-        <segue reference="vUT-qo-6lO"/>
+        <segue reference="SL0-h1-TQs"/>
     </inferredMetricsTieBreakers>
 </document>
