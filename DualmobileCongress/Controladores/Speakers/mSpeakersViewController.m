@@ -33,26 +33,23 @@
 {
     [super viewDidLoad];
     
-     //trackenado GA
-        
-    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [trackerSpeaker sendView:@"Speaker"];
     
-
+    self.delegate = [[UIApplication sharedApplication]delegate];
+    
+    self.SpeakerTableview.scrollEnabled = YES;
+    
+    
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonMenu setBackgroundImage:barButtonImage
                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.title = @" ";
-	self.delegate = [[UIApplication sharedApplication]delegate];
-    
-        UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
+    UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
-                              forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
-   
-    self.title = @" ";
-    self.SpeakerTableview.scrollEnabled = YES;
+                                        forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
+    
+    
     
     NSArray *arr = [NSArray arrayWithObjects:
                     @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
@@ -62,6 +59,9 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self              action:@selector(imageTapped:)];
     self.animationImageView.userInteractionEnabled = YES;
     [self.animationImageView addGestureRecognizer:tap];
+    
+    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [trackerSpeaker sendView:@"Speaker"];
     
 }
 
@@ -199,6 +199,7 @@
     UIView *ColorSelecion = [[UIView alloc] init];
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(76/255.0) green:(124/255.0) blue:(255/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
+    
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
     cell.texto.text     =   info.lugarDondeProvengo.nombreLugar;
@@ -225,20 +226,12 @@
         
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
         Persona *info = [self.coredatinos objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
-        NSArray *ar = [NSArray arrayWithObjects:info.eventoQueDicto, nil];
-        
-        NSSet *eventis = [NSSet setWithSet:info.eventoQueDicto];
-        for (Persona *eventi in eventis) {
-            
-            destino.BiografiaCelda = [eventis valueForKey:@"descripcionEvento"];
-        }
-        NSLog(@"%@",ar);
         destino.Nombrecelda = info.nombre;
         destino.Tituloscelda = info.lugarDondeProvengo.pais;
         destino.ReferenciaSpeaker = info.rol;
         destino.BiografiaCelda = info.bio;
         destino.Institucioncelda = info.rol;
-        destino.texto1 = [eventis valueForKey:@"titulo"];
+        destino.texto1 = info.nombre;
         destino.texto2 = [NSString stringWithFormat:@"%@  %@", info.tratamiento,info.nombre];
         destino.texto3 = info.bio;
         destino.texto4 = info.cargo;

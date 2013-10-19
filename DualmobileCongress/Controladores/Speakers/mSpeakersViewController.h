@@ -35,12 +35,10 @@
 
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonMenu;
 
-@property(nonatomic,strong) NSMutableArray * DysplayItems;
-
-@property(nonatomic,strong)NSArray *ResultadosCoreData;
 
 
-@property(nonatomic,strong) NSArray * coredatinos;
+
+@property(nonatomic,strong) NSArray *coredatinos;
 
 @property (strong, nonatomic) IBOutlet UISearchBar *buscar;
 
