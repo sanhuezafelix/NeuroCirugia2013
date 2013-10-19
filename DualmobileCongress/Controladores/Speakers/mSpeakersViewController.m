@@ -203,10 +203,10 @@
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
     cell.texto.text     =   info.lugarDondeProvengo.nombreLugar;
     
-    if (info.institucionQueMePatrocina.nombreInstitucion == nil) {
-        
-        cell.Subtitulo.text = info.rol;
-    }
+//    if (info.institucionQueMePatrocina.nombreInstitucion == nil) {
+//        
+//        cell.Subtitulo.text = info.rol;
+//    }
     
     return cell;
 }
@@ -313,7 +313,7 @@
     BOOL primeraSincro = [defaults boolForKey:@"kPrimeraSincro"];
     
     if (primeraSincro == YES) {
-        [self noEsPrimeraSincro];
+        //[self noEsPrimeraSincro];
     }
 }
 

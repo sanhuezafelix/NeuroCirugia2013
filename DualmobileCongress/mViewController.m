@@ -139,41 +139,52 @@
     [fetchRequestEvento setEntity:entidadEvento];
     NSError *errorEvento;
     NSArray *arrayEvento =     [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEvento error:&errorEvento];
-
-//    Evento *eventito = [arrayEvento ]
+    
+    [arrayEvento description];
     
     NSFetchRequest *fetchRequestPersona = [[NSFetchRequest alloc] init];
     NSEntityDescription *entidadPersona = [NSEntityDescription entityForName:@"Persona"
                                                       inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestPersona setEntity:entidadPersona];
     NSError *errorPersona;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
-    
-    
-    
+    NSArray *arrayPersona = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestPersona error:&errorPersona];
+    [arrayPersona description];
+
+   
     NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
     NSEntityDescription *entidadLugar = [NSEntityDescription entityForName:@"Lugar"
-                                                    inManagedObjectContext:self.delegate.managedObjectContext];
+                                                inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestLugar setEntity:entidadLugar];
     NSError *errorLugar;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
-    
-    
+    NSArray *arrayLugar = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
+    [arrayLugar description];
+
+   
     NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
     NSEntityDescription *entidadInstitucion = [NSEntityDescription entityForName:@"Institucion"
                                                           inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestInstitucion setEntity:entidadInstitucion];
     NSError *errorInstitucion;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
+     NSArray *arrayInstitucion = [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
+    [arrayInstitucion description];
+
     
-    
+   
     NSFetchRequest *fetchRequestEventopadre = [[NSFetchRequest alloc] init];
     NSEntityDescription *entidadEventopadre = [NSEntityDescription entityForName:@"Eventopadre"
                                                           inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequestEventopadre setEntity:entidadEventopadre];
     NSError *errorEventopadre;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestEventopadre error:&errorEventopadre];
-    
+    NSArray *arrayEventopadre =[self.delegate.managedObjectContext executeFetchRequest:fetchRequestEventopadre error:&errorEventopadre];
+    [arrayEventopadre description];
+
+
+    Evento *eventito;
+    [eventito.lugarEnQueMeDesarrollo.nombreLugar description];
+    [eventito.speaker.nombre description];
+    [eventito.speaker.lugarDondeProvengo.nombreLugar description];
+    [eventito.eventoPadre.tituloEP description];
+    [eventito.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar description];
     
     
 }
