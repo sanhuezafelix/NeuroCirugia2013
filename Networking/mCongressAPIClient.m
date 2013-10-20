@@ -122,14 +122,33 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
         if([entity.name isEqualToString:@"Evento"]){
 
         NSString *RepresentacionPalSpeaker = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"speaker_id"]];
-        
+            if ((![RepresentacionPalSpeaker isEqualToString:@"<null>)"]) && (![RepresentacionPalSpeaker isEqualToString:@"(null)"])){
+                
+                diccionarioPaLasRelaciones = @{ @"speaker" : @{@"id" : RepresentacionPalSpeaker }
+
+                                                };
+            }
+            
+            
         NSString *RepresentacionPalTipoDeEvento = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoPadre_id"]];
+            if ((![RepresentacionPalTipoDeEvento isEqualToString:@"<null>)"]) && (![RepresentacionPalTipoDeEvento isEqualToString:@"(null)"])){
+                
+                diccionarioPaLasRelaciones = @{ @"eventoPadre" : @{@"id" : RepresentacionPalTipoDeEvento }
+                                                
+                                                };
+            }
+
         
         NSString *RepresentacionPallugarEnQueMeDesarrollo = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarEnQueMeDesarrollo_id"]];
+            
+            if ((![RepresentacionPallugarEnQueMeDesarrollo isEqualToString:@"<null>)"]) && (![RepresentacionPalTipoDeEvento isEqualToString:@"(null)"])){
+                
+                diccionarioPaLasRelaciones = @{ @"lugarEnQueMeDesarrollo" : @{@"id" : RepresentacionPallugarEnQueMeDesarrollo }
+                                                
+                                                };
+            }
         
-        diccionarioPaLasRelaciones = @{ @"speaker" : @{@"id" : RepresentacionPalSpeaker },
-                                        @"eventoPadre" : @{@"id" : RepresentacionPalTipoDeEvento }
-                                        ,@"lugarEnQueMeDesarrollo" : @{@"id" : RepresentacionPallugarEnQueMeDesarrollo}  };
+       
     }
     
     else if([entity.name isEqualToString:@"Persona"])
@@ -137,7 +156,8 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
         
         NSString *representacionPaLugarOrigen = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDondeProvengo_id"]];
         
-        if (!([representacionPaLugarOrigen isEqualToString:@"(null)"])) {
+        
+        if ((![representacionPaLugarOrigen isEqualToString:@"(null)"])  && (![representacionPaLugarOrigen isEqualToString:@"<null>"])) {
             diccionarioPaLasRelaciones = @{ @"lugarDondeProvengo" : @{@"id" : representacionPaLugarOrigen }
                                             
                                             };
@@ -146,22 +166,21 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     
         NSString *representacionNotifiDelHuea = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"notificacionSobreMi_id"]];
         
-        if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
+        if ((![representacionNotifiDelHuea isEqualToString:@"(null)"])  && (![representacionNotifiDelHuea isEqualToString:@"<null>"])) {
             diccionarioPaLasRelaciones = @{ @"notificacionSobreMi" : @{@"id" : representacionNotifiDelHuea }
                                             
                                             };
         }
         
         NSString *representacionPaInstitucionPatrocinante = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionQueMePatrocina_id"]];
-        if (![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"]) {
-            diccionarioPaLasRelaciones = @{
+        
+        if ((![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"])  && (![representacionPaInstitucionPatrocinante isEqualToString:@"<null>"])) {            diccionarioPaLasRelaciones = @{
                                            @"institucionQueMePatrocina" : @{@"id" : representacionPaInstitucionPatrocinante}
                                            };
         }
         
         NSString *representacionParticipacion = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoParticipo_id"]];
-        if (![representacionParticipacion isEqualToString:@"(null)"]) {
-            diccionarioPaLasRelaciones = @{
+   if ((![representacionParticipacion isEqualToString:@"(null)"])  && (![representacionParticipacion isEqualToString:@"<null>"])) {                     diccionarioPaLasRelaciones = @{
                                            @"eventoParticipo" : @{@"id" : representacionParticipacion}
                                            };
         }
