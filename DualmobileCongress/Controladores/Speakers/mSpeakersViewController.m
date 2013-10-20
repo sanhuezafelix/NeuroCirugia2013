@@ -34,10 +34,9 @@
     
     self.delegate = [[UIApplication sharedApplication]delegate];
     
-    [self CargarSpeaker];
+    self.coredatinos = [[NSArray alloc]initWithArray:[self CargarSpeaker]];
     
     self.SpeakerTableview.scrollEnabled = YES;
-    
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -181,32 +180,15 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [self CargarSpeaker];
-    
+    self.coredatinos = [[NSArray alloc]initWithArray:[self CargarSpeaker]];
     return [self.coredatinos count];}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-   // [self CargarSpeaker];
     
-    // Create our fetch request
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
-    // Define the entity we are looking for
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Persona" inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Define how we want our entities to be sorted
-    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"nombre" ascending:YES];
-    NSArray* NombreSpeaker = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:NombreSpeaker];
-    // If we are searching for anything...
-    
-    NSError *error;
-    
-    self.coredatinos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.coredatinos = [[NSArray alloc]initWithArray:[self CargarSpeaker]];
+
 
     Persona *info = [self.coredatinos objectAtIndex:indexPath.row];
     NSString *cellIdentifier = @"SpeakerCell";
@@ -228,6 +210,7 @@
 
     
     return cell;
+   // [self.SpeakerTableview reloadData];
 }
 
 -(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -325,7 +308,21 @@
 
 -(NSArray*)CargarSpeaker{
     
+    NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entidadInstitucion = [NSEntityDescription entityForName:@"Institucion"
+                                                          inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestInstitucion setEntity:entidadInstitucion];
+    NSError *errorInstitucion;
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
     
+    
+    NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entidadLugar = [NSEntityDescription entityForName:@"Lugar"inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequestLugar setEntity:entidadLugar];
+    NSError *errorLugar;
+    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
+    
+
     // Create our fetch request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
@@ -343,9 +340,8 @@
     
     NSError *error;
     
-    self.coredatinos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+   return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
-    return self.coredatinos;
     
 }
 @end
