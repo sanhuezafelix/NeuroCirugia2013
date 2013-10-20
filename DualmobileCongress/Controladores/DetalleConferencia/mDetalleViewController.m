@@ -267,7 +267,7 @@
     if (self.LugarCelda != NULL) {
         evento.location = self.LugarCelda;
         evento.notes =self.ContenidoCelda;
-        if (self.tituloCelda != NULL&& self.ContenidoCelda != NULL) {
+        if (self.tituloCelda != NULL&& self.ContenidoCelda != NULL&& self.ExpositorCelda !=NULL) {
             NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
             titulo = [titulo stringByAppendingString:self.ExpositorCelda];
             evento.title     = titulo;
