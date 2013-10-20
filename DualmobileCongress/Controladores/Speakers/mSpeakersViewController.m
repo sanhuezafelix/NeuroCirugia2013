@@ -191,16 +191,20 @@ if (searching)
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     
     if ([segue.identifier isEqualToString:@"SpeakerDet"])
-    {
-        mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
+    { mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
         Persona *info = [self.coredatinos objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
         destino.Nombrecelda = info.nombre;
-        
-        
-        destino.Paiscelda = info.lugarDondeProvengo.pais;
-        destino.ReferenciaSpeaker = info.tratamiento;
+        destino.Tituloscelda = info.lugarDondeProvengo.pais;
+        destino.ReferenciaSpeaker = info.rol;
         destino.BiografiaCelda = info.bio;
-        destino.Institucioncelda = info.institucionQueMePatrocina.nombreInstitucion;
+        destino.Institucioncelda = info.rol;
+        destino.texto1 = info.nombre;
+        destino.texto2 = [NSString stringWithFormat:@"%@  %@", info.tratamiento,info.nombre];
+        destino.texto4 = info.cargo;
+        destino.texto5 = info.lugarDondeProvengo.pais;
+        destino.texto3 = info.institucionQueMePatrocina.nombreInstitucion;
+        destino.informacionS = info.bio;
+
     }
 }
 
