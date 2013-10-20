@@ -57,8 +57,8 @@
     NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegue.managedObjectContext];
     NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
     [fetiche setEntity:entidad];
-    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)"];
-    _arrayNotificaciones = [NSSortDescriptor sortDescriptorWithKey:@"fechaPublicacion" ascending:YES];
+    NSPredicate *canuto = [NSPredicate predicateWithFormat:@"(contenidoNoti.length > 0)AND(almacenado>0)"];
+    _arrayNotificaciones = [NSSortDescriptor sortDescriptorWithKey:@"id" ascending:YES];
     [fetiche setPredicate:canuto];
     _arrayNotificaciones = [_delegue.managedObjectContext executeFetchRequest:fetiche error:&error];
 
