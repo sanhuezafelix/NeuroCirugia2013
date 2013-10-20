@@ -71,7 +71,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [self CargarCoreDataBusqueda];
+   // [self CargarCoreDataBusqueda];
     return [self.ResultadosCoreDataBusqueda count];}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -213,7 +213,7 @@
         // define cuantas entidades queremos que se filtren
         //hice unas hueas reparches en la busqueda hay que arreglarlas de ahí
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(titulo CONTAINS[cd] %@) OR (speaker.nombre CONTAINS[cd] %@) OR (speaker.bio CONTAINS[cd] %@) OR (lugarEnQueMeDesarrollo.ciudad CONTAINS[cd] %@)", text, text,text,text];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"(titulo CONTAINS[cd] %@) OR (speaker.nombre CONTAINS[cd] %@) OR (speaker.bio CONTAINS[cd] %@) OR (lugarEnQueMeDesarrollo.pais CONTAINS[cd] %@)", text, text,text,text];
         [fetchRequest setPredicate:predicate];
     }
     else
