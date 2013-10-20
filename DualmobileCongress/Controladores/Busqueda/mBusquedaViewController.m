@@ -89,10 +89,8 @@
     UIView *ColorSelecion = [[UIView alloc] init];
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(76/255.0) green:(124/255.0) blue:(255/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
-      NSData *dataObj = [NSData dataWithBase64EncodedString:info.speaker.fotoPersona.binarioImagen];
     cell.Titulo.text = info.titulo;
     cell.Subtitulo.text = info.speaker.nombre;
-    cell.Imagen.image = [UIImage imageWithData:dataObj];
     cell.texto.text   = info.lugarEnQueMeDesarrollo.ciudad;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
