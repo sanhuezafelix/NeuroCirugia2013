@@ -32,53 +32,6 @@
 
 }
 
--(void)IniciarSincro{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-    
-    
-    NSTimeInterval intervalIniciaSincro = [defaults floatForKey:@"kIntervaloHoraSincro"];
-    
-    [defaults setBool:YES forKey:@"kPrimeraSincro"];
-    
-    [defaults setBool:YES forKey:@"kAutorizadorSincronizacion"];
-    [defaults synchronize];
-    
-    self.timerPermiteSincro = [NSTimer scheduledTimerWithTimeInterval:intervalIniciaSincro
-                                                               target:self
-                                                             selector:@selector(PararSincro)
-                                                             userInfo:nil
-                                                              repeats:NO];
-    NSLog(@" *************** INICIA la Sincro ******************* %d", estadoAutorizador);
-    
-    
-    
-}
-
--(void)PararSincro{
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    BOOL estadoAutorizador = [defaults boolForKey:@"kAutorizadorSincronizacion"];
-    
-    
-    NSTimeInterval intervalParaSincro = [defaults floatForKey:@"kIntervaloHoraNoSincro"];
-    
-    [defaults setBool:YES forKey:@"kPrimeraSincro"];
-    
-    [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
-    [defaults synchronize];
-    
-    self.timerParaSincro = [NSTimer scheduledTimerWithTimeInterval:intervalParaSincro
-                                                            target:self
-                                                          selector:@selector(IniciarSincro)
-                                                          userInfo:nil
-                                                           repeats:NO];
-    
-    
-    NSLog(@"**************** PARA sincro *********************** %d", estadoAutorizador);
-    
-}
 
 
 - (void)viewDidLoad
@@ -285,6 +238,8 @@
     }
     return altotitulo;
 }
+
+
 
 
 #pragma -mark enviamos datos de la celda selecionadas a la vista de detalle
@@ -537,8 +492,7 @@
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    [self IniciarSincro];
-
+    
   
 }
 

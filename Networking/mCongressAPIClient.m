@@ -44,7 +44,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     
     self.estadoAutorizadorSincronizacion = [defaults boolForKey:@"kAutorizadorSincronizacion"];
     
-    if (!(self.estadoAutorizadorSincronizacion == NO)) {
+    if (self.estadoAutorizadorSincronizacion == YES) {
         if ([fetchRequest.entityName isEqualToString:@"Evento"]) {
             mutableURLRequest = [self requestWithMethod:@"GET" path:@"eventos" parameters:nil];
             
@@ -117,7 +117,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     
     self.estadoAutorizadorUnaVezSync = [defaults boolForKey:@"kPrimeraSincro"];
     
-    if (!(self.estadoAutorizadorUnaVezSync == NO)) {
+    if (self.estadoAutorizadorUnaVezSync == YES) {
         
         NSString *RepresentacionPalSpeaker = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"speaker_id"]];
         
