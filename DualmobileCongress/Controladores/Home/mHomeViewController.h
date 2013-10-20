@@ -36,6 +36,9 @@
 
 @property NSUInteger *numeroObjetos;
 
+@property   NSTimer     *timerPermiteSincro;
+@property   NSTimer     *timerParaSincro;
+
 @property(nonatomic,strong)NSMutableArray *ProximasActividades;
 @property(nonatomic,strong)NSMutableArray *EnesteMomento;
 @property(nonatomic,strong)NSArray *ResultadosCoreData;

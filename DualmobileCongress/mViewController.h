@@ -20,8 +20,7 @@
 
 @property BOOL desautorizadoSincro;
 
-@property   NSTimer     *timerPermiteSincro;
-@property   NSTimer     *timerParaSincro;
+
 
 - (IBAction)IniciarSesion:(id)sender;
 - (IBAction)CerrarTeclado:(id)sender;
