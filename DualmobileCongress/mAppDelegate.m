@@ -50,11 +50,11 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:5.0], @"kIntervaloHoraSincro",
+                                       [NSNumber numberWithFloat:10.0], @"kIntervaloHoraSincro",
                                        
-                                       [NSNumber numberWithFloat:10.0], @"kIntervaloHoraNoSincro",
+                                       [NSNumber numberWithFloat:5.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
-                                       [NSNumber numberWithBool:NO], @"kPrimeraSincro",
+                                       [NSNumber numberWithBool:YES], @"kPrimeraSincro",
                                        
                                        
                                        [NSNumber numberWithBool:YES], @"kValoresGuardados",

@@ -63,7 +63,7 @@
     
     NSTimeInterval intervalParaSincro = [defaults floatForKey:@"kIntervaloHoraNoSincro"];
     
-    [defaults setBool:YES forKey:@"kPrimeraSincro"];
+    [defaults setBool:NO forKey:@"kPrimeraSincro"];
     
     [defaults setBool:NO forKey:@"kAutorizadorSincronizacion"];
     [defaults synchronize];
@@ -87,7 +87,7 @@
     
     self.delegate = [[UIApplication sharedApplication] delegate];
     
-    [self CargaInicialDatos];
+   [self CargaInicialDatos];
     
     [self IniciarSincro];
 
