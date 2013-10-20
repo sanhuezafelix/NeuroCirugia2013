@@ -24,7 +24,6 @@
 {
     [super viewDidLoad];
     
-    //trackenado GA
     
     id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerSpeaker sendView:@"Speaker"];
@@ -106,7 +105,6 @@
     
     NSError *error;
     
-    // Finally, perform the load
     self.coredatinos= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     self.hueasQueSeDepliegan= [[NSMutableArray alloc] initWithArray:self.coredatinos];
     
@@ -128,7 +126,6 @@ if (searching)
 	if(ovController == nil)
 		ovController = [[mSpeakerCloseViewController alloc] initWithNibName:@"touchSpeaker" bundle:[NSBundle mainBundle]];
 	
-    
 	CGFloat width = self.view.frame.size.width;
 	CGFloat height = self.view.frame.size.height;
 	CGFloat yaxis = self.buscar.frame.size.height;
@@ -142,7 +139,6 @@ if (searching)
 	
 	[self.view insertSubview:ovController.view aboveSubview:self.parentViewController.view];
     searching =YES;
-    
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar{
@@ -177,8 +173,10 @@ if (searching)
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
     cell.texto.text     =   info.rol;
-    cell.textLabel.text = info.lugarDondeProvengo.nombreLugar;
-    
+    if (cell.Subtitulo.text==nil) {
+        cell.Subtitulo.text = info.lugarDondeProvengo.nombreLugar;
+
+    }
     return cell;
 }
 
@@ -204,8 +202,7 @@ if (searching)
         destino.texto5 = info.lugarDondeProvengo.pais;
         destino.texto3 = info.institucionQueMePatrocina.nombreInstitucion;
         destino.informacionS = info.bio;
-
-    }
+}
 }
 
 #pragma -mark Alto de la cada celda
@@ -235,22 +232,10 @@ if (searching)
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Speaker"
                                         withValue:nil];
-    
 }
--(void)notifica {
-    
-    NSError *error;
-    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
-    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
-    [fet setEntity:ent];
-    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
-    NSLog(@"%@",ar);
-}
-
 
 - (IBAction)RevelarNotificaciones:(id)sender
 {
-    
     if(ovController == nil)
         [self.buscar resignFirstResponder];
     else
@@ -261,8 +246,6 @@ if (searching)
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Speaker"
                                                 withValue:nil];
-    [self notifica];
-    
 }
 
 -(void)CerrarTeclado{
@@ -276,8 +259,6 @@ if (searching)
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    
        [super viewWillAppear:animated];
-    
 }
 @end
