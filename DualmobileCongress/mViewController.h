@@ -18,6 +18,11 @@
 @property (strong, nonatomic) IBOutlet UIButton *comenzarBoton;
 @property (nonatomic, strong) UIActivityIndicatorView *ActividadServidor;
 
+
+@property   NSTimer     *timerPermiteSincro;
+@property   NSTimer     *timerParaSincro;
+
+
 @property BOOL desautorizadoSincro;
 
 

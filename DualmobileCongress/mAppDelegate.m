@@ -52,7 +52,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
                                        [NSNumber numberWithFloat:5.0], @"kIntervaloHoraSincro",
                                        
-                                       [NSNumber numberWithFloat:60.0], @"kIntervaloHoraNoSincro",
+                                       [NSNumber numberWithFloat:10.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
                                        [NSNumber numberWithBool:NO], @"kPrimeraSincro",
                                        

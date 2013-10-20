@@ -902,10 +902,10 @@
 			children = (
 				AA49D4B2175F93370082E9A8 /* mSpeakerCloseViewController.h */,
 				AA49D4B3175F93370082E9A8 /* mSpeakerCloseViewController.m */,
-				AA49D4B4175F93370082E9A8 /* touchSpeaker.xib */,
 				89F524F817450E1A00802855 /* mSpeakersViewController.h */,
 				89F524F917450E1A00802855 /* mSpeakersViewController.m */,
 				AA05964717593FA7003D0B96 /* mSpeakerDetViewController.h */,
+				AA49D4B4175F93370082E9A8 /* touchSpeaker.xib */,
 				AA05964817593FA7003D0B96 /* mSpeakerDetViewController.m */,
 			);
 			path = Speakers;

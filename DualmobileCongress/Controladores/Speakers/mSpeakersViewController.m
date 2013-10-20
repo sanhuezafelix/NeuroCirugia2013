@@ -34,7 +34,7 @@
     
     self.delegate = [[UIApplication sharedApplication]delegate];
     
-    self.coredatinos = [[NSArray alloc]initWithArray:[self CargarSpeaker]];
+    self.coredatinos = [[NSMutableArray alloc]initWithArray:[self CargarSpeaker]];
     
     self.SpeakerTableview.scrollEnabled = YES;
     
@@ -187,7 +187,7 @@
 {
     
     
-    self.coredatinos = [[NSArray alloc]initWithArray:[self CargarSpeaker]];
+    self.coredatinos = [[NSMutableArray alloc]initWithArray:[self CargarSpeaker]];
 
 
     Persona *info = [self.coredatinos objectAtIndex:indexPath.row];

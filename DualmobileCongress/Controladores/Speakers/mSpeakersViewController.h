@@ -34,9 +34,7 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonMenu;
 
 
-
-
-@property(nonatomic,strong) NSArray *coredatinos;
+@property(nonatomic,strong) NSMutableArray *coredatinos;
 
 @property (strong, nonatomic) IBOutlet UISearchBar *buscar;
 
