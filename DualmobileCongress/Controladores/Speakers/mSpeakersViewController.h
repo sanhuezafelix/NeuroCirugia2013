@@ -15,6 +15,7 @@
 #import "mCustomCell.h"
 #import "mAppDelegate.h"
 #import "Evento.h"
+#import "Lugar.h"
 #import "Institucion.h"
 #import "AnimatedImagesView.h"
 #import "Notificacion.h"
@@ -34,7 +35,9 @@
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonMenu;
 
 
-@property(nonatomic,strong) NSMutableArray *coredatinos;
+@property(nonatomic,strong) NSArray *coredatinos;
+@property(nonatomic,strong) NSMutableArray *hueasQueSeDepliegan;
+
 
 @property (strong, nonatomic) IBOutlet UISearchBar *buscar;
 

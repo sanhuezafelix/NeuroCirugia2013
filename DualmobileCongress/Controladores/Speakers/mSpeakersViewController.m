@@ -11,12 +11,7 @@
 #import "NSDataAdditions.h"
 #import "GAI.h"
 #import "Eventopadre.h"
-#import "Persona.h"
-#import "Lugar.h"
-#import "Evento.h"
-#import "Institucion.h"
-#import "Notificacion.h"
-#import "mCongressAPIClient.h"
+
 
 @interface mSpeakersViewController ()
 @property(nonatomic,strong)mAppDelegate *delegate;
@@ -25,54 +20,37 @@
 @implementation mSpeakersViewController
 
 
-
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
+    //trackenado GA
     
-    self.delegate = [[UIApplication sharedApplication]delegate];
+    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    [trackerSpeaker sendView:@"Speaker"];
     
-    self.coredatinos = [[NSMutableArray alloc]initWithArray:[self CargarSpeaker]];
-    
-    self.SpeakerTableview.scrollEnabled = YES;
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonMenu setBackgroundImage:barButtonImage
                               forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     self.title = @" ";
+	self.delegate = [[UIApplication sharedApplication]delegate];
+    [self filter:@""];
+    
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
     [self.BotonNotificaciones setBackgroundImage:NotButtonImage
                                         forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
-    
+    self.title = @" ";
+    self.SpeakerTableview.scrollEnabled = YES;
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_3.png",@"publi_bot_1.png",@"publi_bot_2.png", nil];
+                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
-    UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self              action:@selector(imageTapped:)];
-    self.animationImageView.userInteractionEnabled = YES;
-    [self.animationImageView addGestureRecognizer:tap];
-    
-    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [trackerSpeaker sendView:@"Speaker"];
-    
-}
-
-- (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
-{
-    NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    [TokeImagenTracking sendEventWithCategory:@"uiAction"
-                                   withAction:@"Tap Publicidad"
-                                    withLabel:@"Tap Branding Principal"
-                                    withValue:nil];
-    
 }
 
 
@@ -84,6 +62,7 @@
 
 -(void)filter:(NSString*)text
 {
+    self.hueasQueSeDepliegan = [[NSMutableArray alloc] init];
     
     // Create our fetch request
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -92,8 +71,8 @@
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Persona" inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
-    // Define how we want our entities to be sorted
     
+    // Define how we want our entities to be sorted
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
                                         initWithKey:@"nombre" ascending:YES];
     NSArray* NombreSpeaker = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
@@ -112,24 +91,24 @@
         
         [fetchRequest setPredicate:predicadoSpeaker];
         
-        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (rol CONTAINS[cd] %@)) AND(nombre >%@)", text,text,text,text,@""];
+        NSPredicate *predicate = [NSPredicate predicateWithFormat:@"((lugarDondeProvengo.pais CONTAINS[cd] %@) OR (nombre CONTAINS[cd] %@)OR (institucionQueMePatrocina.nombreInstitucion CONTAINS[cd] %@) OR (rol CONTAINS[cd] %@) OR (eventoParticipo.tituloEP CONTAINS[cd] %@)) AND(nombre >%@)", text,text,text,text,text,@""];
         
-      [fetchRequest setPredicate:predicate];
+        [fetchRequest setPredicate:predicate];
         searching = YES;
     }
     else
     {
-        [self.view insertSubview:ovController.view aboveSubview:self.parentViewController.view];
-         self.SpeakerTableview.scrollEnabled = NO;
+		[self.view insertSubview:ovController.view aboveSubview:self.parentViewController.view];
+        self.SpeakerTableview.scrollEnabled = NO;
         searching = NO;
 	}
-
+    
     
     NSError *error;
     
-    NSArray *filtroSpeaker = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
-    self.coredatinos = [[NSMutableArray alloc]initWithArray:filtroSpeaker];
+    // Finally, perform the load
+    self.coredatinos= [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    self.hueasQueSeDepliegan= [[NSMutableArray alloc] initWithArray:self.coredatinos];
     
     [self.SpeakerTableview reloadData];
 }
@@ -141,20 +120,15 @@
 
 -(void)searchBarTextDidBeginEditing:(UISearchBar *)ThesearchBar{
     
-    /*
-     * Este Metodo implementa una vista blanco  al tableview cuando la barra de busqueda
-     * a sido selecionada y no contiene ningun caracter al presionar sobre ella
-     * el teclado se esconde
-     */
-    if (searching)
+if (searching)
     {
         return;
     }
-
+    
 	if(ovController == nil)
 		ovController = [[mSpeakerCloseViewController alloc] initWithNibName:@"touchSpeaker" bundle:[NSBundle mainBundle]];
 	
-
+    
 	CGFloat width = self.view.frame.size.width;
 	CGFloat height = self.view.frame.size.height;
 	CGFloat yaxis = self.buscar.frame.size.height;
@@ -168,7 +142,7 @@
 	
 	[self.view insertSubview:ovController.view aboveSubview:self.parentViewController.view];
     searching =YES;
-
+    
 }
 
 -(void)searchBarSearchButtonClicked:(UISearchBar *)aSearchBar{
@@ -177,21 +151,17 @@
 
 #pragma -mark Tableview datasource y delegate
 
-// Delegados  y datasource tableview (speakertableview
-
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    self.coredatinos = [[NSMutableArray alloc]initWithArray:[self CargarSpeaker]];
-    return [self.coredatinos count];}
+    return [self.coredatinos count];
+}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    
-    self.coredatinos = [[NSMutableArray alloc]initWithArray:[self CargarSpeaker]];
-
-
     Persona *info = [self.coredatinos objectAtIndex:indexPath.row];
+    
     NSString *cellIdentifier = @"SpeakerCell";
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
     
@@ -199,19 +169,17 @@
     {
         cell = [[mCustomCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:cellIdentifier];
     }
+    
     cell.contentView.backgroundColor   =   [UIColor colorWithPatternImage: [UIImage imageNamed: @"celdaSpeaker.png"]];
     UIView *ColorSelecion = [[UIView alloc] init];
     ColorSelecion.backgroundColor = [UIColor colorWithRed:(76/255.0) green:(124/255.0) blue:(255/255.0) alpha:1.0f];
     cell.selectedBackgroundView = ColorSelecion;
-    
     cell.Titulo.text    =   info.nombre;
     cell.Subtitulo.text =   info.institucionQueMePatrocina.nombreInstitucion;
-    cell.texto.text     =   info.lugarDondeProvengo.nombreLugar;
-    
-
+    cell.texto.text     =   info.rol;
+    cell.textLabel.text = info.lugarDondeProvengo.nombreLugar;
     
     return cell;
-    [self.SpeakerTableview reloadData];
 }
 
 -(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -221,27 +189,18 @@
 #pragma -mark enviamos datos de la celda selecionadas a la vista de detalle
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-
-    [self CargarSpeaker];
     
     if ([segue.identifier isEqualToString:@"SpeakerDet"])
     {
-       
-        
         mSpeakerDetViewController *destino = (mSpeakerDetViewController *)segue.destinationViewController;
         Persona *info = [self.coredatinos objectAtIndex:[self.SpeakerTableview indexPathForSelectedRow].row];
         destino.Nombrecelda = info.nombre;
-        destino.Tituloscelda = info.lugarDondeProvengo.pais;
-        destino.ReferenciaSpeaker = info.rol;
+        
+        
+        destino.Paiscelda = info.lugarDondeProvengo.pais;
+        destino.ReferenciaSpeaker = info.tratamiento;
         destino.BiografiaCelda = info.bio;
-        destino.Institucioncelda = info.rol;
-        destino.texto1 = info.nombre;
-        destino.texto2 = [NSString stringWithFormat:@"%@  %@", info.tratamiento,info.nombre];
-        destino.texto4 = info.cargo;
-        destino.texto5 = info.lugarDondeProvengo.pais;
-        destino.texto3 = info.institucionQueMePatrocina.nombreInstitucion;
-        destino.informacionS = info.bio;
-
+        destino.Institucioncelda = info.institucionQueMePatrocina.nombreInstitucion;
     }
 }
 
@@ -263,7 +222,7 @@
 {
     if(ovController == nil)
         [self.buscar resignFirstResponder];
-   else
+    else
         [self CerrarTeclado];
     
     [self.slidingViewController anchorTopViewTo:ECRight];
@@ -272,9 +231,17 @@
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Speaker"
                                         withValue:nil];
-   
+    
 }
-
+-(void)notifica {
+    
+    NSError *error;
+    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
+    [fet setEntity:ent];
+    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
+    NSLog(@"%@",ar);
+}
 
 
 - (IBAction)RevelarNotificaciones:(id)sender
@@ -290,6 +257,7 @@
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Speaker"
                                                 withValue:nil];
+    [self notifica];
     
 }
 
@@ -297,53 +265,15 @@
     [self.buscar resignFirstResponder];
     [ovController.view removeFromSuperview];
 	ovController = nil;
-	 self.SpeakerTableview.scrollEnabled = YES;
+    self.SpeakerTableview.scrollEnabled = YES;
 	[self.SpeakerTableview reloadData];
     searching = NO;
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
-    [super viewWillAppear:animated];
-
-    }
-
--(NSArray*)CargarSpeaker{
     
-    NSFetchRequest *fetchRequestInstitucion = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entidadInstitucion = [NSEntityDescription entityForName:@"Institucion"
-                                                          inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequestInstitucion setEntity:entidadInstitucion];
-    NSError *errorInstitucion;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestInstitucion error:&errorInstitucion];
-    
-    
-    NSFetchRequest *fetchRequestLugar = [[NSFetchRequest alloc] init];
-    NSEntityDescription *entidadLugar = [NSEntityDescription entityForName:@"Lugar"inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequestLugar setEntity:entidadLugar];
-    NSError *errorLugar;
-    [self.delegate.managedObjectContext executeFetchRequest:fetchRequestLugar error:&errorLugar];
-    
-
-    // Create our fetch request
-    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-    
-    // Define the entity we are looking for
-    NSEntityDescription *entity = [NSEntityDescription
-                                   entityForName:@"Persona" inManagedObjectContext:self.delegate.managedObjectContext];
-    [fetchRequest setEntity:entity];
-    
-    // Define how we want our entities to be sorted
-    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-                                        initWithKey:@"nombre" ascending:YES];
-    NSArray* NombreSpeaker = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-    [fetchRequest setSortDescriptors:NombreSpeaker];
-    // If we are searching for anything...
-    
-    NSError *error;
-    
-   return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-    
+       [super viewWillAppear:animated];
     
 }
 @end
