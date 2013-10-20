@@ -119,6 +119,8 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     
     if (!(self.estadoAutorizadorUnaVezSync == NO)) {
         
+        if([entity.name isEqualToString:@"Evento"]){
+
         NSString *RepresentacionPalSpeaker = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"speaker_id"]];
         
         NSString *RepresentacionPalTipoDeEvento = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoPadre_id"]];
@@ -135,13 +137,13 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
         
         NSString *representacionPaLugarOrigen = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDondeProvengo_id"]];
         
-        if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
+        if (!([representacionPaLugarOrigen isEqualToString:@"(null)"])) {
             diccionarioPaLasRelaciones = @{ @"lugarDondeProvengo" : @{@"id" : representacionPaLugarOrigen }
                                             
                                             };
             
         }
-        
+    
         NSString *representacionNotifiDelHuea = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"notificacionSobreMi_id"]];
         
         if (![representacionPaLugarOrigen isEqualToString:@"(null)"]  && ![representacionPaLugarOrigen isEqualToString:@"<null>"]) {
@@ -205,7 +207,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                            @"institucionPatrocinante" : @{@"id" : eventID}
                                            };
         }
-    }
+    
     NSString *eventID2 = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDesarrolloEP_id"]];
     if (![eventID2 isEqualToString:@"(null)"]) {
         diccionarioPaLasRelaciones = @{
@@ -214,7 +216,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
     }
     
     
-    
+    }
     else if([entity.name isEqualToString:@"Notificacion"])
     {
         NSString *representacionRelsTipoEvento= [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoAsociado_id"]];
@@ -243,9 +245,10 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                            };
         }
     }
-    return diccionarioPaLasRelaciones;
 }
+    return diccionarioPaLasRelaciones;
 
+}
 
 - (BOOL)shouldFetchRemoteAttributeValuesForObjectWithID:(NSManagedObjectID *)objectID
                                  inManagedObjectContext:(NSManagedObjectContext *)context

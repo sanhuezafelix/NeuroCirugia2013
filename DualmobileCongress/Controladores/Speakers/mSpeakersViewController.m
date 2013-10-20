@@ -127,8 +127,9 @@
     
     NSError *error;
     
-    self.coredatinos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    NSArray *filtroSpeaker = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
     
+    self.coredatinos = [[NSMutableArray alloc]initWithArray:filtroSpeaker];
     
     [self.SpeakerTableview reloadData];
 }
@@ -180,7 +181,7 @@
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    self.coredatinos = [[NSArray alloc]initWithArray:[self CargarSpeaker]];
+    self.coredatinos = [[NSMutableArray alloc]initWithArray:[self CargarSpeaker]];
     return [self.coredatinos count];}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -210,7 +211,7 @@
 
     
     return cell;
-   // [self.SpeakerTableview reloadData];
+    [self.SpeakerTableview reloadData];
 }
 
 -(void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
