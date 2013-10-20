@@ -51,7 +51,7 @@
     
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_3.png",@"publi_bot_1.png",@"publi_bot_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -237,9 +237,10 @@
         destino.Institucioncelda = info.rol;
         destino.texto1 = info.nombre;
         destino.texto2 = [NSString stringWithFormat:@"%@  %@", info.tratamiento,info.nombre];
-        destino.texto3 = info.bio;
         destino.texto4 = info.cargo;
         destino.texto5 = info.lugarDondeProvengo.pais;
+        destino.texto3 = info.institucionQueMePatrocina.nombreInstitucion;
+        destino.informacionS = info.bio;
 
     }
 }

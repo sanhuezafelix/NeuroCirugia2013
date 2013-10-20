@@ -22,8 +22,10 @@
 
 @property (strong, nonatomic) IBOutlet UITextView *NombreSpeaker;
 @property (strong, nonatomic) IBOutlet UILabel *PaisSpeaker;
-@property (strong, nonatomic) IBOutlet UITextView *InstitucionSpeaker;
+@property (strong, nonatomic) IBOutlet UILabel *InstitucionSpeaker;
 @property (strong, nonatomic) IBOutlet UITextView *TitulosSpeaker;
+@property (strong, nonatomic) IBOutlet UITextView *infoSpeaker;
+@property(nonatomic, retain)NSString*informacionS;
 @property(nonatomic, retain)NSString*Nombrecelda;
 @property(nonatomic, retain)NSString*Paiscelda;
 @property(nonatomic, retain)NSString*Institucioncelda;

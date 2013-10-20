@@ -50,7 +50,7 @@
         self.TituloEP.text = self.tituloEP2;
         self.TipoEventoPadre.text = self.tipoEventoPadre2;
         self.infoEP.text = self.descEP2;
-        self.lugarEP.text = self.lugarEP2;
+        self.LugarEP.text = self.lugarEP2;
         self.HoraEP.text = self.horaEP2;
         self.ActividadEP.text = self.tipoEventoPadre2;
         self.labelBarra.text = self.nombreBarra;
@@ -71,7 +71,7 @@
         self.TituloEP.text = self.tituloCelda;
         self.TipoEventoPadre.text = self.ActividadSpeaker;
         self.infoEP.text = self.ContenidoCelda;
-        self.lugarEP.text = self.LugarCelda;
+        self.LugarEP.text = self.LugarCelda;
         self.HoraEP.text = self.horacelda;
         self.ActividadEP.text = self.ActividadSpeaker;
         self.labelBarra.text = self.nombreBarra;

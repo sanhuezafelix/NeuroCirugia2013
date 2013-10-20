@@ -37,11 +37,12 @@
     NSLog(@"el nombre es ==> %@",self.Nombrecelda);
     self.title = @" ";
     self.delegate = [[UIApplication sharedApplication]delegate];
-    self.NombreSpeaker.text = [self.ReferenciaSpeaker stringByAppendingFormat:@" %@",self.texto2];
+    self.NombreSpeaker.text = self.texto2;
     
     self.InstitucionSpeaker.text = self.texto3;
     self.PaisSpeaker.text = self.texto5;
     self.TitulosSpeaker.text =self.texto3;
+    self.infoSpeaker.text = self.informacionS;
     if (self.Institucioncelda== nil) {
         NSLog(@"es nulo");
        
@@ -152,9 +153,10 @@
     cell.Titulo.text = info.titulo;
     cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];;
     cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];;
-    cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+    cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
     NSLog(@"nombre del speaker ==> %@" ,self.Nombrecelda);
     cell.Subtitulo.text = info.speaker.nombre;
+    cell.Actividad.text = info.tipoEvento;
 
     return cell;
 }
@@ -245,6 +247,9 @@
             destino.descEP2 = info.eventoPadre.descripcionEP;
             destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
             destino.textoLabelSimposio = @"Simposio";
+            
+            NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
+            destino.horaEP2 = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
         }
         else
         {

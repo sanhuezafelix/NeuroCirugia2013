@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -654,29 +654,29 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNn-Rg-sEm">
-                                <rect key="frame" x="11" y="167" width="293" height="60"/>
+                                <rect key="frame" x="11" y="162" width="293" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="Cg5-JX-ys5"/>
                                     <constraint firstAttribute="width" constant="293" id="SMe-kH-JDX"/>
-                                    <constraint firstAttribute="height" constant="60" id="ycO-X7-Tbp"/>
                                 </constraints>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPB-Xt-Atp">
-                                <rect key="frame" x="11" y="85" width="173" height="50"/>
+                                <rect key="frame" x="11" y="82" width="173" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="6mo-8R-0AU"/>
                                     <constraint firstAttribute="width" constant="173" id="obC-kd-aEM"/>
+                                    <constraint firstAttribute="height" constant="60" id="yyv-Hs-HOi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4p5-8n-Fn1">
-                                <rect key="frame" x="11" y="24" width="293" height="60"/>
+                                <rect key="frame" x="11" y="21" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -709,7 +709,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5Uy-9G-y18">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Uy-9G-y18">
                                 <rect key="frame" x="11" y="167" width="293" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -755,14 +755,13 @@
                             <constraint firstItem="aew-DU-85m" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="211" id="4zy-WT-cFx"/>
                             <constraint firstAttribute="bottom" secondItem="gCi-HT-zIx" secondAttribute="bottom" constant="76" id="6JA-Cq-iaT"/>
                             <constraint firstItem="FK0-Os-6ST" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="99" id="D2c-5j-qBg"/>
-                            <constraint firstItem="fNn-Rg-sEm" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="167" id="EHb-7u-4uO"/>
                             <constraint firstItem="ZPp-eC-Icj" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="116" id="Eu9-db-txD"/>
                             <constraint firstItem="jty-do-rui" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="136" id="HQL-ZS-d6g"/>
-                            <constraint firstItem="4p5-8n-Fn1" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="24" id="Jhr-Rl-YwE"/>
                             <constraint firstItem="It4-KN-Mjc" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="137" id="KuU-DS-ZPa"/>
                             <constraint firstItem="laT-7X-JnN" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" id="LB3-jf-34a"/>
                             <constraint firstItem="Daq-nx-AoS" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="230" id="NUX-aa-Ya8"/>
                             <constraint firstAttribute="bottom" secondItem="8ko-g2-Nic" secondAttribute="bottom" id="OOp-jC-ZXI"/>
+                            <constraint firstItem="4p5-8n-Fn1" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="21" id="Odc-JI-3Y8"/>
                             <constraint firstItem="OPB-Xt-Atp" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="11" id="Pmm-5O-QYx"/>
                             <constraint firstItem="8S8-lZ-Ab3" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="70" id="Q4F-6J-9VS"/>
                             <constraint firstItem="5Uy-9G-y18" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="167" id="R5x-En-gsN"/>
@@ -783,8 +782,9 @@
                             <constraint firstItem="jty-do-rui" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" id="nAB-Dv-k4e"/>
                             <constraint firstItem="4p5-8n-Fn1" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" constant="11" id="nb5-Kg-YKb"/>
                             <constraint firstItem="It4-KN-Mjc" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="228" id="ntL-PU-nRE"/>
-                            <constraint firstItem="OPB-Xt-Atp" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="85" id="nz8-8k-9e6"/>
                             <constraint firstItem="8ko-g2-Nic" firstAttribute="leading" secondItem="UQo-BA-Mz7" secondAttribute="leading" id="ojM-Nf-XvF"/>
+                            <constraint firstItem="OPB-Xt-Atp" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="82" id="qSi-W4-Eez"/>
+                            <constraint firstItem="fNn-Rg-sEm" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="162" id="tGg-CJ-MIe"/>
                             <constraint firstItem="ZPp-eC-Icj" firstAttribute="top" secondItem="UQo-BA-Mz7" secondAttribute="top" constant="115" id="xlR-WU-Esq"/>
                             <constraint firstAttribute="bottom" secondItem="hNa-fb-QJG" secondAttribute="bottom" constant="76" id="yEs-fa-57U"/>
                             <constraint firstAttribute="trailing" secondItem="5Uy-9G-y18" secondAttribute="trailing" constant="16" id="zeE-E1-lz0"/>
@@ -1879,11 +1879,11 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" translatesAutoresizingMaskIntoConstraints="NO" id="VDC-V0-M0G">
-                                <rect key="frame" x="11" y="167" width="293" height="60"/>
+                                <rect key="frame" x="11" y="162" width="293" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="F80-lW-gTs"/>
                                     <constraint firstAttribute="width" constant="293" id="pI9-aF-YeR"/>
+                                    <constraint firstAttribute="height" constant="65" id="tt1-0N-Zxr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -1933,17 +1933,17 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-ui-tzP">
-                                <rect key="frame" x="11" y="85" width="173" height="50"/>
+                                <rect key="frame" x="11" y="82" width="173" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="T0g-a8-6OC"/>
+                                    <constraint firstAttribute="height" constant="60" id="9VV-mn-ePE"/>
                                     <constraint firstAttribute="width" constant="173" id="c5r-Je-6g2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="doC-v1-gLf">
-                                <rect key="frame" x="11" y="24" width="293" height="60"/>
+                                <rect key="frame" x="11" y="21" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1969,27 +1969,27 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="VDC-V0-M0G" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="167" id="0QO-3f-dh9"/>
                             <constraint firstItem="5Si-ty-ayE" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="115" id="0wk-9z-LKu"/>
                             <constraint firstItem="aKQ-7g-Go9" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" id="1Ld-5k-Cee"/>
                             <constraint firstItem="eSt-38-Gaw" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="11" id="1ZP-pc-1rj"/>
+                            <constraint firstItem="eRm-ui-tzP" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="82" id="2Si-kc-Do2"/>
                             <constraint firstItem="sgL-D2-IQD" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="175" id="38M-JR-maL"/>
                             <constraint firstAttribute="bottom" secondItem="UWx-G3-CqU" secondAttribute="bottom" constant="76" id="5nG-lP-lA7"/>
                             <constraint firstItem="eRm-ui-tzP" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="11" id="Brr-eR-vYL"/>
                             <constraint firstAttribute="bottom" secondItem="JPP-Dg-oiR" secondAttribute="bottom" constant="76" id="D3C-sh-bE7"/>
+                            <constraint firstItem="VDC-V0-M0G" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="162" id="FLh-23-ypN"/>
                             <constraint firstItem="1fA-P3-BGl" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="117" id="IPc-DB-qfA"/>
                             <constraint firstItem="JPP-Dg-oiR" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="20" id="JoM-Yx-AxO"/>
                             <constraint firstItem="aKQ-7g-Go9" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" id="Juj-UG-SiE"/>
                             <constraint firstItem="Suh-bA-sMY" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="260" id="LPK-Y7-h2B"/>
+                            <constraint firstItem="doC-v1-gLf" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="21" id="NpR-DU-JtK"/>
                             <constraint firstItem="wLZ-DP-Ruq" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" id="Q0j-Ic-09c"/>
                             <constraint firstAttribute="bottom" secondItem="Suh-bA-sMY" secondAttribute="bottom" constant="76" id="QRm-6y-PKl"/>
                             <constraint firstItem="tfJ-40-HIM" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="228" id="RRK-sf-tzK"/>
-                            <constraint firstItem="doC-v1-gLf" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="24" id="Zyp-i6-g2H"/>
                             <constraint firstItem="sgL-D2-IQD" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="242" id="bo3-Y1-Zy8"/>
                             <constraint firstItem="tfJ-40-HIM" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="137" id="bxg-WU-npz"/>
                             <constraint firstItem="1pN-QX-CSK" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" id="cPc-5U-rLE"/>
                             <constraint firstItem="mVP-4w-I6H" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="70" id="eUv-3l-LC9"/>
-                            <constraint firstItem="eRm-ui-tzP" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="85" id="efq-vC-ogg"/>
                             <constraint firstItem="1fA-P3-BGl" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="257" id="emZ-t9-T91"/>
                             <constraint firstAttribute="bottom" secondItem="HcW-GO-url" secondAttribute="bottom" constant="76" id="fRP-Mb-mpo"/>
                             <constraint firstItem="doC-v1-gLf" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="11" id="gc0-JD-nxd"/>
@@ -2005,11 +2005,18 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" id="F7x-YU-ZQ4"/>
+                    <navigationItem key="navigationItem" id="F7x-YU-ZQ4">
+                        <barButtonItem key="rightBarButtonItem" title=" " id="9jI-D1-7eu">
+                            <connections>
+                                <action selector="RevelarMenuLateral:" destination="QuJ-Xg-rCm" id="FCj-KN-ahl"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Actividad" destination="tfJ-40-HIM" id="cp2-g1-wN2"/>
+                        <outlet property="BotonNotificaciones" destination="9jI-D1-7eu" id="LAj-4W-3GG"/>
                         <outlet property="CoordinadorEP" destination="eRm-ui-tzP" id="wGQ-ce-hoh"/>
                         <outlet property="Expositor" destination="eSt-38-Gaw" id="OqK-tT-hgY"/>
                         <outlet property="Hora" destination="1fA-P3-BGl" id="XGk-tI-RAn"/>
@@ -2057,39 +2064,50 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Pais" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="208" translatesAutoresizingMaskIntoConstraints="NO" id="vNS-QV-gWb">
-                                <rect key="frame" x="15" y="115" width="208" height="17"/>
+                                <rect key="frame" x="17" y="41" width="208" height="17"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="208" id="cYW-Q1-eEn"/>
-                                    <constraint firstAttribute="height" constant="17" id="jSC-Oc-WyO"/>
+                                    <constraint firstAttribute="height" constant="17" id="Tj3-40-7TS"/>
+                                    <constraint firstAttribute="width" constant="208" id="gkT-kK-NrB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Institucion" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="294" translatesAutoresizingMaskIntoConstraints="NO" id="zLg-XX-nHJ">
+                                <rect key="frame" x="17" y="58" width="294" height="17"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="294" id="nqR-U6-uGZ"/>
+                                    <constraint firstAttribute="height" constant="17" id="oiQ-0W-VWz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Nombre" translatesAutoresizingMaskIntoConstraints="NO" id="g1L-Hm-3hN">
-                                <rect key="frame" x="12" y="4" width="294" height="55"/>
+                                <rect key="frame" x="12" y="10" width="294" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="294" id="LNL-00-n9r"/>
-                                    <constraint firstAttribute="height" constant="55" id="Qm2-Qn-aJh"/>
+                                    <constraint firstAttribute="width" constant="294" id="ROg-eI-RLp"/>
+                                    <constraint firstAttribute="height" constant="30" id="bKp-V8-agC"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Institucion" translatesAutoresizingMaskIntoConstraints="NO" id="fe1-oT-AQe">
-                                <rect key="frame" x="12" y="67" width="294" height="48"/>
+                                <rect key="frame" x="12" y="77" width="294" height="106"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="48" id="EVh-Jj-ixZ"/>
-                                    <constraint firstAttribute="width" constant="294" id="ZXm-CF-5eI"/>
+                                    <constraint firstAttribute="height" constant="106" id="IFn-NQ-LLk"/>
+                                    <constraint firstAttribute="width" constant="294" id="wBe-B1-C21"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="13"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="73" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="8HT-Jg-9J4">
-                                <rect key="frame" x="0.0" y="154" width="320" height="228"/>
+                                <rect key="frame" x="0.0" y="211" width="320" height="228"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -2164,7 +2182,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 </connections>
                             </tableView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividades del Expositor" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RK8-l7-Cqx">
-                                <rect key="frame" x="0.0" y="134" width="320" height="20"/>
+                                <rect key="frame" x="0.0" y="191" width="320" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18688034110000001" green="0.3099459739" blue="0.621871014" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2178,22 +2196,24 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="fe1-oT-AQe" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="12" id="1x4-4Q-SLo"/>
                             <constraint firstItem="TPV-ki-6UC" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" id="2Mi-1z-scK"/>
-                            <constraint firstItem="vNS-QV-gWb" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="115" id="5ON-QK-o3N"/>
-                            <constraint firstAttribute="bottom" secondItem="8HT-Jg-9J4" secondAttribute="bottom" constant="122" id="8BT-Ue-tJD"/>
+                            <constraint firstItem="8HT-Jg-9J4" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="211" id="2Nj-6U-W9S"/>
+                            <constraint firstAttribute="bottom" secondItem="8HT-Jg-9J4" secondAttribute="bottom" constant="65" id="3kP-ag-ntA"/>
+                            <constraint firstItem="g1L-Hm-3hN" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="10" id="5Ri-Uv-gL5"/>
+                            <constraint firstItem="vNS-QV-gWb" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="41" id="6dM-ma-wVv"/>
                             <constraint firstItem="RK8-l7-Cqx" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" id="9hE-LL-VjG"/>
                             <constraint firstItem="8HT-Jg-9J4" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" id="CFF-be-MwX"/>
                             <constraint firstItem="g1L-Hm-3hN" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="12" id="FB5-df-W8d"/>
-                            <constraint firstItem="RK8-l7-Cqx" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="134" id="UZ6-ZC-Ga0"/>
+                            <constraint firstItem="zLg-XX-nHJ" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="18" id="Hg0-7r-OCZ"/>
                             <constraint firstAttribute="trailing" secondItem="8HT-Jg-9J4" secondAttribute="trailing" id="WHQ-Wb-uZp"/>
-                            <constraint firstItem="g1L-Hm-3hN" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="4" id="Ysz-3C-i6i"/>
-                            <constraint firstItem="fe1-oT-AQe" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="12" id="grh-Yy-DWg"/>
+                            <constraint firstItem="vNS-QV-gWb" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="17" id="XCG-8o-syU"/>
+                            <constraint firstItem="RK8-l7-Cqx" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="191" id="i7Y-v1-7pC"/>
                             <constraint firstAttribute="bottom" secondItem="LZZ-me-MbK" secondAttribute="bottom" constant="5" id="kEX-Y7-uDd"/>
-                            <constraint firstItem="8HT-Jg-9J4" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="154" id="p1r-xL-Afl"/>
-                            <constraint firstItem="fe1-oT-AQe" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="67" id="qme-U4-hrg"/>
+                            <constraint firstItem="fe1-oT-AQe" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="77" id="pf9-Ru-49g"/>
+                            <constraint firstItem="zLg-XX-nHJ" firstAttribute="top" secondItem="JVY-4O-AVs" secondAttribute="top" constant="58" id="r5S-bm-qg3"/>
                             <constraint firstItem="LZZ-me-MbK" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="70" id="sPG-9b-0Ke"/>
                             <constraint firstAttribute="bottom" secondItem="TPV-ki-6UC" secondAttribute="bottom" id="xdK-pV-XzL"/>
-                            <constraint firstItem="vNS-QV-gWb" firstAttribute="leading" secondItem="JVY-4O-AVs" secondAttribute="leading" constant="15" id="yzl-gq-L8I"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
@@ -2209,10 +2229,11 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                     <connections>
                         <outlet property="BotonNotificaciones" destination="TOz-WF-4Bd" id="T7d-UN-mgI"/>
                         <outlet property="DetailSpeakerTableview" destination="8HT-Jg-9J4" id="Dpf-vz-vll"/>
-                        <outlet property="InstitucionSpeaker" destination="fe1-oT-AQe" id="8zb-2s-bVe"/>
+                        <outlet property="InstitucionSpeaker" destination="zLg-XX-nHJ" id="FWK-4h-SuT"/>
                         <outlet property="NombreSpeaker" destination="g1L-Hm-3hN" id="WGk-ey-OhD"/>
                         <outlet property="PaisSpeaker" destination="vNS-QV-gWb" id="iAX-9g-v9K"/>
                         <outlet property="animationImageView" destination="LZZ-me-MbK" id="shB-6J-Hdx"/>
+                        <outlet property="infoSpeaker" destination="fe1-oT-AQe" id="oTx-3x-ebG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s8y-s2-7Iw" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2461,7 +2482,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividades del Simposio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-BG-Ht4">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Simposio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAg-BG-Ht4">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.18688034110000001" green="0.3099459739" blue="0.621871014" alpha="1" colorSpace="calibratedRGB"/>
@@ -2582,18 +2603,18 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="FMy-jg-a0R">
-                                <rect key="frame" x="11" y="85" width="173" height="50"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" editable="NO" text="Expositor" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FMy-jg-a0R">
+                                <rect key="frame" x="11" y="82" width="173" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="GUQ-ru-cgt"/>
-                                    <constraint firstAttribute="width" constant="173" id="t1e-Cu-H7G"/>
+                                    <constraint firstAttribute="height" constant="60" id="JKM-Vd-lkT"/>
+                                    <constraint firstAttribute="width" constant="173" id="PWs-Fd-t0J"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vPC-XQ-xix">
-                                <rect key="frame" x="11" y="24" width="293" height="60"/>
+                                <rect key="frame" x="11" y="21" width="293" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="6Ol-2N-V6U"/>
@@ -2603,7 +2624,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5NV-G8-Mwg">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5NV-G8-Mwg">
                                 <rect key="frame" x="11" y="167" width="293" height="204"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -2618,7 +2639,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="X4P-Ax-Jcx" secondAttribute="bottom" constant="76" id="2uW-4n-ym6"/>
-                            <constraint firstItem="FMy-jg-a0R" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="85" id="5J3-Uh-AUS"/>
                             <constraint firstAttribute="trailing" secondItem="X4P-Ax-Jcx" secondAttribute="trailing" constant="20" id="6PK-p8-gCf"/>
                             <constraint firstAttribute="bottom" secondItem="sGe-Fm-opM" secondAttribute="bottom" constant="76" id="7nl-oG-yUz"/>
                             <constraint firstItem="0jl-bv-8IQ" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" id="92X-xs-gk4"/>
@@ -2634,13 +2654,14 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             <constraint firstItem="vPC-XQ-xix" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="11" id="S03-St-En6"/>
                             <constraint firstItem="dSY-yO-RUB" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="116" id="TLp-ZA-xpR"/>
                             <constraint firstItem="5NV-G8-Mwg" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="11" id="Vls-1g-MB0"/>
-                            <constraint firstItem="vPC-XQ-xix" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="24" id="Vum-m2-Sz4"/>
                             <constraint firstItem="mLo-Ha-UyD" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="137" id="Vvh-zb-Ktb"/>
+                            <constraint firstItem="vPC-XQ-xix" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="21" id="WYV-Rt-fya"/>
                             <constraint firstAttribute="bottom" secondItem="5NV-G8-Mwg" secondAttribute="bottom" constant="133" id="ZTi-qK-yxh"/>
                             <constraint firstItem="5NV-G8-Mwg" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="167" id="ZiK-Hv-L5X"/>
                             <constraint firstAttribute="centerX" secondItem="JUF-XO-TgG" secondAttribute="centerX" id="f7p-uz-pWu"/>
                             <constraint firstItem="kdd-KQ-30Z" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="137" id="fwc-hD-I3U"/>
                             <constraint firstAttribute="bottom" secondItem="w0z-L4-peI" secondAttribute="bottom" constant="76" id="he8-zM-pIB"/>
+                            <constraint firstItem="FMy-jg-a0R" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="82" id="kbJ-Wh-Grx"/>
                             <constraint firstAttribute="bottom" secondItem="Vht-Fj-Qaq" secondAttribute="bottom" constant="76" id="mzZ-Ah-hxl"/>
                             <constraint firstAttribute="trailing" secondItem="Vht-Fj-Qaq" secondAttribute="trailing" constant="61" id="nUf-3R-2if"/>
                             <constraint firstItem="FMy-jg-a0R" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="11" id="sTt-yr-55Z"/>
@@ -2731,8 +2752,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KqV-2t-pIY"/>
+        <segue reference="JxW-KU-d9G"/>
         <segue reference="01W-ez-D7f"/>
-        <segue reference="BU0-Ka-ose"/>
+        <segue reference="82c-rv-EFy"/>
     </inferredMetricsTieBreakers>
 </document>

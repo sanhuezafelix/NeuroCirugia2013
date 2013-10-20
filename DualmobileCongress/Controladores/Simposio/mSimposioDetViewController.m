@@ -57,20 +57,21 @@
        self.labelSimposio.text = @"Actividad";
         self.Labelsimposio2.text = @"Detalle Actividad";
         self.DetailTableview.hidden = true;
+        self.Lugar.text = self.LugarCelda;
        
         self.BotonCalendario.hidden = false;
         self.ContenidoExposicion.hidden = false;
         self.BotonPublicacionTwet.hidden = false;
         self.BotonPublicarFacebook.hidden=false;
-//        if (self.LugarCelda != NULL) {
-//           self.Lugar.text = self.LugarCelda;
-//            self.BotonMapas.hidden = false;
-//            NSLog( @"lugar =====> %@",self.LugarCelda);
-//        }
-//        else{
-//            self.Lugar.text = @"";
-//        }
-//      
+        if (self.LugarCelda != NULL) {
+           self.Lugar.text = self.LugarCelda;
+            self.BotonMapas.hidden = false;
+            NSLog( @"lugar =====> %@",self.LugarCelda);
+        }
+        else{
+            self.Lugar.text = @"";
+        }
+      
         
 
     }
@@ -86,7 +87,7 @@
     NSLog(@" este es un%@n", self.tituloCelda);
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_2.png",@"publi_bot_1.png",@"publi_bot_3.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
