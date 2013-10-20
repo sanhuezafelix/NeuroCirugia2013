@@ -374,7 +374,7 @@
 
 -(NSArray*)CargarProximasActividades{
     
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
+    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:5400];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];
     
