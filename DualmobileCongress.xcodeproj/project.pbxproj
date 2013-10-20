@@ -2088,8 +2088,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A96B3F0664D24CA99A8DE5D1 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Felix Luna (YWNZA7PU67)";
+				CODE_SIGN_IDENTITY = "iPhone Developer: felix Sanhueza (8VUS7DX5T6)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: felix Sanhueza (8VUS7DX5T6)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
