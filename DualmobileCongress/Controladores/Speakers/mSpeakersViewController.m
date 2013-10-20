@@ -34,6 +34,8 @@
     
     self.delegate = [[UIApplication sharedApplication]delegate];
     
+    [self CargarSpeaker];
+    
     self.SpeakerTableview.scrollEnabled = YES;
     
     
@@ -185,6 +187,27 @@
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
+   // [self CargarSpeaker];
+    
+    // Create our fetch request
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+    
+    // Define the entity we are looking for
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Persona" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    // Define how we want our entities to be sorted
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"nombre" ascending:YES];
+    NSArray* NombreSpeaker = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:NombreSpeaker];
+    // If we are searching for anything...
+    
+    NSError *error;
+    
+    self.coredatinos = [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+
     Persona *info = [self.coredatinos objectAtIndex:indexPath.row];
     NSString *cellIdentifier = @"SpeakerCell";
     mCustomCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
@@ -215,6 +238,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
+    [self CargarSpeaker];
+    
     if ([segue.identifier isEqualToString:@"SpeakerDet"])
     {
        
