@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4FD355AC1814DE910067AD61 /* Congresos2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4FD355AB1814DE910067AD61 /* Congresos2.sqlite */; };
 		7849982B17E019190019D7BB /* Iphone@4i.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7849982917E019190019D7BB /* Iphone@4i.storyboard */; };
 		786C26C6180CCCD3005A55CC /* mSimposioDetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 786C26C5180CCCD3005A55CC /* mSimposioDetViewController.m */; };
 		786C26F0180CE5C3005A55CC /* sopnia_mail.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C26EE180CE5C3005A55CC /* sopnia_mail.png */; };
@@ -112,6 +111,8 @@
 		C344742417F6264000B1126E /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C344741917F6264000B1126E /* AFURLConnectionOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C344742517F6264000B1126E /* AFXMLRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = C344741B17F6264000B1126E /* AFXMLRequestOperation.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C344742617F6264000B1126E /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = C344741D17F6264000B1126E /* UIImageView+AFNetworking.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
+		C34D72651778F05900A56577 /* Congresos2.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = C34D72641778F05900A56577 /* Congresos2.sqlite */; };
+		C34D72661778F06000A56577 /* Congresos2.sqlite in CopyFiles */ = {isa = PBXBuildFile; fileRef = C34D72641778F05900A56577 /* Congresos2.sqlite */; };
 		C37C09211818483900456F48 /* Lugar.m in Sources */ = {isa = PBXBuildFile; fileRef = C37C09201818483900456F48 /* Lugar.m */; };
 		C37C09241818483900456F48 /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = C37C09231818483900456F48 /* Persona.m */; };
 		C37C09271818483900456F48 /* Imagen.m in Sources */ = {isa = PBXBuildFile; fileRef = C37C09261818483900456F48 /* Imagen.m */; };
@@ -301,13 +302,13 @@
 			dstPath = "";
 			dstSubfolderSpec = 16;
 			files = (
+				C34D72661778F06000A56577 /* Congresos2.sqlite in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4FD355AB1814DE910067AD61 /* Congresos2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Congresos2.sqlite; sourceTree = "<group>"; };
 		4FDDBEA3C2F846D79A2536B9 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		7849982917E019190019D7BB /* Iphone@4i.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = "Iphone@4i.storyboard"; sourceTree = "<group>"; };
 		786C26C4180CCCD3005A55CC /* mSimposioDetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mSimposioDetViewController.h; path = Simposio/mSimposioDetViewController.h; sourceTree = "<group>"; };
@@ -472,6 +473,7 @@
 		C344741B17F6264000B1126E /* AFXMLRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFXMLRequestOperation.m; sourceTree = "<group>"; };
 		C344741C17F6264000B1126E /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
 		C344741D17F6264000B1126E /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		C34D72641778F05900A56577 /* Congresos2.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = Congresos2.sqlite; sourceTree = "<group>"; };
 		C37C091F1818483900456F48 /* Lugar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lugar.h; sourceTree = "<group>"; };
 		C37C09201818483900456F48 /* Lugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lugar.m; sourceTree = "<group>"; };
 		C37C09221818483900456F48 /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
@@ -1601,8 +1603,8 @@
 			children = (
 				C3D387DB180BB0B0001C9317 /* Img */,
 				7849982917E019190019D7BB /* Iphone@4i.storyboard */,
+				C34D72641778F05900A56577 /* Congresos2.sqlite */,
 				A96B3F0664D24CA99A8DE5D1 /* Pods.xcconfig */,
-				4FD355AB1814DE910067AD61 /* Congresos2.sqlite */,
 			);
 			name = recursos;
 			sourceTree = "<group>";
@@ -1862,6 +1864,7 @@
 				C3D388E2180BB0B0001C9317 /* fondo_inicio@2x.png in Resources */,
 				C3D38870180BB0B0001C9317 /* navbar128_about@2x.png in Resources */,
 				C3D3886C180BB0B0001C9317 /* logo_About.png in Resources */,
+				C34D72651778F05900A56577 /* Congresos2.sqlite in Resources */,
 				C3D3888C180BB0B0001C9317 /* logo.png in Resources */,
 				C3D38872180BB0B0001C9317 /* navbar_about@2x.png in Resources */,
 				C3D3886B180BB0B0001C9317 /* fondo_about_1136@2x.png in Resources */,
@@ -1886,7 +1889,6 @@
 				78C774241819677C00C632E2 /* logoSopnia.png in Resources */,
 				786C2718180CE6FC005A55CC /* Default@2x.png in Resources */,
 				C3D388BC180BB0B0001C9317 /* iconoEdificio@2x.png in Resources */,
-				4FD355AC1814DE910067AD61 /* Congresos2.sqlite in Resources */,
 				C3D388B0180BB0B0001C9317 /* celdas_actividades_jornada.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -2086,8 +2088,8 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A96B3F0664D24CA99A8DE5D1 /* Pods.xcconfig */;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Felix Luna (YWNZA7PU67)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)\"",
