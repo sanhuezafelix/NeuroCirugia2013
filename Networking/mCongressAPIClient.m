@@ -122,13 +122,8 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
         if([entity.name isEqualToString:@"Evento"]){
             
             
-            NSString *RepresentacionPalSpeaker = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"speaker_id"]];
-            if ((![RepresentacionPalSpeaker isEqualToString:@"<null>)"]) && (![RepresentacionPalSpeaker isEqualToString:@"(null)"])){
-                
-                diccionarioPaLasRelaciones = @{ @"speaker" : @{@"id" : RepresentacionPalSpeaker }
-                                                
-                                                };
-            }
+            
+            
             
             
             NSString *RepresentacionPalTipoDeEvento = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoPadre_id"]];
@@ -138,22 +133,35 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                                 
                                                 };
             }
-            
-            
             NSString *RepresentacionPallugarEnQueMeDesarrollo = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarEnQueMeDesarrollo_id"]];
             
-            if ((![RepresentacionPallugarEnQueMeDesarrollo isEqualToString:@"<null>)"]) && (![RepresentacionPalTipoDeEvento isEqualToString:@"(null)"])){
+            if ((![RepresentacionPallugarEnQueMeDesarrollo isEqualToString:@"<null>)"]) && (![RepresentacionPallugarEnQueMeDesarrollo isEqualToString:@"(null)"])){
                 
                 diccionarioPaLasRelaciones = @{ @"lugarEnQueMeDesarrollo" : @{@"id" : RepresentacionPallugarEnQueMeDesarrollo }
                                                 
                                                 };
             }
-            
-            
+            NSString *RepresentacionPalSpeaker = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"speaker_id"]];
+            if ((![RepresentacionPalSpeaker isEqualToString:@"<null>)"]) && (![RepresentacionPalSpeaker isEqualToString:@"(null)"])){
+                
+                diccionarioPaLasRelaciones = @{ @"speaker" : @{@"id" : RepresentacionPalSpeaker }
+                                                
+                                                };
+            }
+
         }
         
         else if([entity.name isEqualToString:@"Persona"])
         {
+            
+            
+            NSString *representacionPaInstitucionPatrocinante = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionQueMePatrocina_id"]];
+            
+            if ((![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"])  && (![representacionPaInstitucionPatrocinante isEqualToString:@"<null>"])) {            diccionarioPaLasRelaciones = @{
+                                                                                                                                                                                                               @"institucionQueMePatrocina" : @{@"id" : representacionPaInstitucionPatrocinante}
+                                                                                                                                                                                                               };
+            }
+            
             
             NSString *representacionPaLugarOrigen = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"lugarDondeProvengo_id"]];
             
@@ -164,29 +172,14 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                                 };
                 
             }
+            NSString *repEventoParticipo = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoParticipo_id"]];
             
-            NSString *representacionNotifiDelHuea = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"notificacionSobreMi_id"]];
-            
-            if ((![representacionNotifiDelHuea isEqualToString:@"(null)"])  && (![representacionNotifiDelHuea isEqualToString:@"<null>"])) {
-                diccionarioPaLasRelaciones = @{ @"notificacionSobreMi" : @{@"id" : representacionNotifiDelHuea }
+            if ((![repEventoParticipo isEqualToString:@"(null)"])  && (![repEventoParticipo isEqualToString:@"<null>"])) {
+                diccionarioPaLasRelaciones = @{ @"eventoParticipo" : @{@"id" : repEventoParticipo }
                                                 
                                                 };
             }
-            
-            NSString *representacionPaInstitucionPatrocinante = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"institucionQueMePatrocina_id"]];
-            
-            if ((![representacionPaInstitucionPatrocinante isEqualToString:@"(null)"])  && (![representacionPaInstitucionPatrocinante isEqualToString:@"<null>"])) {            diccionarioPaLasRelaciones = @{
-                                                                                                                                                                                                               @"institucionQueMePatrocina" : @{@"id" : representacionPaInstitucionPatrocinante}
-                                                                                                                                                                                                               };
-            }
-            
-            //        NSString *representacionParticipacion = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"eventoParticipo_id"]];
-            //   if ((![representacionParticipacion isEqualToString:@"(null)"])  && (![representacionParticipacion isEqualToString:@"<null>"])) {                     diccionarioPaLasRelaciones = @{
-            //                                           @"eventoParticipo" : @{@"id" : representacionParticipacion}
-            //                                           };
-            //        }
-            
-            
+
         }
         
         
@@ -204,8 +197,14 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia-2013-cl.her
                                                                                                                                                   @"lugarEnQueMeDesarrollo" : @{@"id" : eventID2}
                                                                                                                                                   };
             }
+            NSString *eventID3 = [NSString stringWithFormat:@"%@", [representation valueForKeyPath:@"participantes_id"]];
+            if ((![eventID3 isEqualToString:@"(null)"])  && (![eventID3 isEqualToString:@"<null>"])) {             diccionarioPaLasRelaciones = @{
+                                                                                                                                                  @"participantes" : @{@"id" : eventID2}
+                                                                                                                                                  };
+            }
+
             
-            
+          
         }
         else if([entity.name isEqualToString:@"Notificacion"])
         {
