@@ -9,58 +9,30 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Networking/mCongressAPIClient.m"
-            timestampString = "404016409.247535"
+            filePath = "DualmobileCongress/Controladores/Speakers/mSpeakersViewController.m"
+            timestampString = "403978971.235935"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "-representationsForRelationshipsFromRepresentation:ofEntity:fromResponse:"
+            startingLineNumber = "191"
+            endingLineNumber = "191"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
             landmarkType = "5">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[mCongressAPIClient representationsForRelationshipsFromRepresentation:ofEntity:fromResponse:]"
-                  moduleName = "DualMobileCongress"
-                  urlString = "file://localhost/Users/felixaimagos/Documents/SOPNIA/Networking/mCongressAPIClient.m"
-                  timestampString = "404016409.546978"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "731">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[mCongressAPIClient representationsForRelationshipsFromRepresentation:ofEntity:fromResponse:]"
-                  moduleName = "DualMobileCongress"
-                  urlString = "file://localhost/Users/felixaimagos/Documents/SOPNIA/Networking/mCongressAPIClient.m"
-                  timestampString = "404016409.547271"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "769">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "-[mCongressAPIClient representationsForRelationshipsFromRepresentation:ofEntity:fromResponse:]"
-                  moduleName = "DualMobileCongress"
-                  urlString = "file://localhost/Users/felixaimagos/Documents/SOPNIA/Networking/mCongressAPIClient.m"
-                  timestampString = "404016409.5475"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "137"
-                  endingLineNumber = "137"
-                  offsetFromSymbolStart = "911">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "DualmobileCongress/Controladores/Speakers/mSpeakersViewController.m"
+            timestampString = "403978972.241454"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "194"
+            endingLineNumber = "194"
+            landmarkName = "-tableView:cellForRowAtIndexPath:"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -70,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Networking/mCongressAPIClient.m"
-            timestampString = "404016409.247535"
+            timestampString = "403979680.205483"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "156"
-            endingLineNumber = "156"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-representationsForRelationshipsFromRepresentation:ofEntity:fromResponse:"
             landmarkType = "5">
          </BreakpointContent>
