@@ -51,7 +51,7 @@
     
     //trackenado GA
 
-    id trackerAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerAhora sendView:@"Ahora"];
     
   
@@ -84,7 +84,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -425,7 +425,7 @@
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
     
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Ahora"
@@ -438,7 +438,7 @@
     [self.slidingViewController anchorTopViewTo:ECLeft];
 
     
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Ahora"

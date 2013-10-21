@@ -53,7 +53,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Lateral"
@@ -91,7 +91,7 @@
 {
     NSString *identifier = [NSString stringWithFormat:@"%@", [self.MenuItems objectAtIndex:indexPath.row]];
     NSString *label = [[NSString alloc]initWithFormat:@"Tap Opcion %@",identifier];
-    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     
     [trackingMenu sendEventWithCategory:@"uiAction"
                              withAction:@"Tap Menu Lateral"

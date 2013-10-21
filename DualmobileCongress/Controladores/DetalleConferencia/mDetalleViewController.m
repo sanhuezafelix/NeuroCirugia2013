@@ -29,7 +29,7 @@
     
     [super viewDidLoad];
     //trackenado GA
-    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
     
     if (self.LugarCelda != NULL) {
@@ -111,7 +111,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -166,7 +166,7 @@
 
 -(void)socialTracking:(NSString*)send:(NSString*)action{
     
-    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [socialTracking sendSocial:send
                     withAction:action
                     withTarget:nil];
@@ -236,8 +236,8 @@
 
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Vista Detalle"
@@ -306,7 +306,7 @@
     [self presentModalViewController:controlador animated:YES];
     controlador.editViewDelegate = self;
     
-    id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [gaiBotonCalendario sendEventWithCategory:@"uiAction"
                                    withAction:@"Revelar Calendario"
                                     withLabel:@"Revelo el calendario"

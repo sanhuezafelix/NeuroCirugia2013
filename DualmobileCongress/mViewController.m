@@ -97,7 +97,7 @@
 }
 
 - (IBAction)comenzarAccion:(id)sender {
-    id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoComenzar sendEventWithCategory:@"uiAction"
                                withAction:@"buttonPress"
                                 withLabel:@"Presionó botón Comenzar"

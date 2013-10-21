@@ -135,7 +135,7 @@
         
         [self refresh];
     }
-    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     
     [trackingMenu sendEventWithCategory:@"uiAction"
                              withAction:@"Tap Celda Notificacion"

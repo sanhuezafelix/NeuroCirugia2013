@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    id trackerAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerAbout sendView:@"Socio"];
     
     
@@ -59,7 +59,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -81,7 +81,7 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
     
     
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Hazte Socio"
@@ -91,7 +91,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Hazte Socio"
@@ -151,7 +151,7 @@
 }
 
 -(void)GaMail{
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Envio E-Mail"

@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     
-    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerSpeaker sendView:@"Speaker"];
     
     
@@ -227,7 +227,7 @@ if (searching)
         [self CerrarTeclado];
     
     [self.slidingViewController anchorTopViewTo:ECRight];
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Speaker"
@@ -241,7 +241,7 @@ if (searching)
     else
         [self CerrarTeclado];
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Speaker"

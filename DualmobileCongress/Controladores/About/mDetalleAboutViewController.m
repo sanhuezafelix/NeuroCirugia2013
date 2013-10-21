@@ -20,7 +20,7 @@
     [super viewDidLoad];
     //trackenado GA
     
-    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerJornada sendView:@"DetalleAbout"];
     NSLog(@"%@",self.weburl);
     NSURL        *url       = [NSURL URLWithString:self.weburl];

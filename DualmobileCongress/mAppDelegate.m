@@ -50,9 +50,9 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:10.0], @"kIntervaloHoraSincro",
+                                       [NSNumber numberWithFloat:5.0], @"kIntervaloHoraSincro",
                                        
-                                       [NSNumber numberWithFloat:5.0], @"kIntervaloHoraNoSincro",
+                                       [NSNumber numberWithFloat:20.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
                                        [NSNumber numberWithBool:YES], @"kPrimeraSincro",
                                        
@@ -72,7 +72,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     // Opcional: activa el modo debug para obtener información adicional.
     [GAI sharedInstance].debug = YES;
     // Creamos la instancia del tracker indicando el ID de seguimiento que hemos obtenido anteriormente.
-    id tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     
     NSLog(@"%@",tracker);
     
@@ -217,7 +217,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoComenzar sendEventWithCategory:@"uiAction"
                                withAction:@"push"
                                 withLabel:@"Recibido"

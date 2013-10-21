@@ -30,7 +30,7 @@
     
     [super viewDidLoad];
     //trackenado GA
-    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerDetalleConferencia sendView:@"Conferencia"];
     self.Hora.text = self.horacelda;
     self.Expositor.text = self.ExpositorCelda;
@@ -99,7 +99,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -148,7 +148,7 @@
 
 -(void)socialTracking:(NSString*)send:(NSString*)action{
     
-    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [socialTracking sendSocial:send
                     withAction:action
                     withTarget:nil];
@@ -271,7 +271,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Detalle SImposio"
@@ -341,7 +341,7 @@
     [self presentModalViewController:controlador animated:YES];
     controlador.editViewDelegate = self;
     
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Calendario"
                                                 withLabel:@"Revelo desde Detalle Simposio"

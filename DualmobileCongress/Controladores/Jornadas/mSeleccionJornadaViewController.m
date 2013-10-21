@@ -25,7 +25,7 @@
 {    [super viewDidLoad];
     //trackenado GA
     
-    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [trackerJornada sendView:@"SeleccionJornada"];
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -53,7 +53,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -109,7 +109,7 @@
 
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Selecion Jornada"
@@ -118,7 +118,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Selecion Jornada"
