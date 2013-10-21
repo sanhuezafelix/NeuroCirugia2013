@@ -200,6 +200,7 @@
     
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
                                         initWithKey:@"horaInicio" ascending:YES];
+//    NSSortDescriptor* sorete = [[NSSortDescriptor alloc]initWithKey:@"titulo" ascending:YES];
     NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
     [fetchRequest setSortDescriptors:sortDescriptors];
     NSError *error = nil;

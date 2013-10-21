@@ -207,7 +207,15 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Comprobamos si el identificador es el adecuado
+    
+    if ([segue.identifier isEqualToString:@"MapSpeaker"])
+    {
+        mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
         
+        destino.salon = self.LugarCelda;
+    }
+
+    
     if ([segue.identifier isEqualToString:@"DetalleActSimpo"])
     {
         // Obtenemos el controlador destino
@@ -249,13 +257,13 @@
             
         }
         
-    if ([segue.identifier isEqualToString:@"MapSpeaker"])
-    {
-        mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
-        
-        destino.salon = self.LugarCelda;
-    }
-
+//    if ([segue.identifier isEqualToString:@"MapSpeaker"])
+//    {
+//        mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
+//        
+//        destino.salon = self.LugarCelda;
+//    }
+//
    }
     
 }
