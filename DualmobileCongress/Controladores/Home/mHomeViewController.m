@@ -444,35 +444,38 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSArray*)CargarProximasActividades{
     
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:5400];
+    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];
     
+    NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
+    [dateFormatter2 setDateFormat:@"yyyy-MM-dd"];
+    
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-    NSRange remplazoFecha = {0, 7};
-    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
-    NSString *strDate2 = [dateFormatter stringFromDate:HoraActual];
+//    NSRange remplazoFecha = {0, 7};
+//    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
+    NSString *strDate2 = [dateFormatter2 stringFromDate:horaDispocitivo];
     
     
-     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
-       
-        // Defineself.navigationItem.hidesBackButton = YES; the entity we are looking for
-        NSEntityDescription *entity = [NSEntityDescription
-                                       entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
-        [fetchRequest setEntity:entity];
-        
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio > %@)",strDate2];
-        [fetchRequest setPredicate:Predicado];
-    [fetchRequest setFetchLimit:6];
-
-        // Define how we want our entities to be sorted
-        NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-                                            initWithKey:@"horaInicio" ascending:YES];
-        NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
-        [fetchRequest setSortDescriptors:sortDescriptors];
+    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     
-        NSError *error = nil;
-        return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+    // Defineself.navigationItem.hidesBackButton = YES; the entity we are looking for
+    NSEntityDescription *entity = [NSEntityDescription
+                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
+    [fetchRequest setEntity:entity];
+    
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio > %@) AND (horaFin CONTAINS[cd] %@)",strDate,strDate2];
+    [fetchRequest setPredicate:Predicado];
+    // [fetchRequest setFetchLimit:20];
+    
+    // Define how we want our entities to be sorted
+    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+                                        initWithKey:@"horaInicio" ascending:YES];
+    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+    [fetchRequest setSortDescriptors:sortDescriptors];
+    
+    NSError *error = nil;
+    return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
 
 }
 
