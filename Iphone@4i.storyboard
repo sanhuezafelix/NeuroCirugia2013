@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -480,8 +480,8 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-Df-OzE">
-                                <rect key="frame" x="13" y="217" width="290" height="230"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-Df-OzE">
+                                <rect key="frame" x="13" y="216" width="290" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
@@ -1571,8 +1571,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-UI-nMg" customClass="AnimatedImagesView">
-                                <rect key="frame" x="70" y="508" width="180" height="55"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fPD-UI-nMg" customClass="AnimatedImagesView">
+                                <rect key="frame" x="70" y="444" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.39607843139999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -1857,8 +1857,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-ki-6UC" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="0.0" y="504" width="320" height="64"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="TPV-ki-6UC" colorLabel="IBBuiltInLabel-Green">
+                                <rect key="frame" x="0.0" y="503" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
@@ -2063,8 +2063,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Nombre" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-2F-QG7">
-                                <rect key="frame" x="13" y="70" width="294" height="56"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Nombre" translatesAutoresizingMaskIntoConstraints="NO" id="PX4-2F-QG7">
+                                <rect key="frame" x="13" y="26" width="294" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="56" id="DGt-xz-Gay"/>
@@ -2073,8 +2073,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Institucion" translatesAutoresizingMaskIntoConstraints="NO" id="4gD-Yk-Ws3">
-                                <rect key="frame" x="13" y="135" width="294" height="31"/>
+                            <textView autoresizesSubviews="NO" clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Institucion" translatesAutoresizingMaskIntoConstraints="NO" id="4gD-Yk-Ws3">
+                                <rect key="frame" x="13" y="91" width="294" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2305,7 +2305,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0z-L4-peI">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w0z-L4-peI">
                                 <rect key="frame" x="19" y="456" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -2324,7 +2324,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <action selector="PublicaEnFaceBook:" destination="OHU-yc-bci" eventType="touchUpInside" id="JQ3-fE-rhM"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-Fm-opM">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sGe-Fm-opM">
                                 <rect key="frame" x="60" y="456" width="45" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -2343,7 +2343,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <action selector="PublicaEnTwiter:" destination="OHU-yc-bci" eventType="touchUpInside" id="u1t-qq-Mb1"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4P-Ax-Jcx">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X4P-Ax-Jcx">
                                 <rect key="frame" x="246" y="456" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -2362,7 +2362,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <segue destination="kFj-mK-wTP" kind="push" identifier="MapSpeaker" id="SL0-h1-TQs"/>
                                 </connections>
                             </button>
-                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vht-Fj-Qaq">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vht-Fj-Qaq">
                                 <rect key="frame" x="205" y="456" width="40" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
@@ -2381,8 +2381,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <action selector="GuardarCalendario:" destination="OHU-yc-bci" eventType="touchUpInside" id="7cr-rL-dmm"/>
                                 </connections>
                             </button>
-                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSh-ts-Pv6">
-                                <rect key="frame" x="5" y="227" width="295" height="213"/>
+                            <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RSh-ts-Pv6">
+                                <rect key="frame" x="95" y="227" width="205" height="213"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
@@ -2396,23 +2396,34 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LXJ-Ma-jdh" firstAttribute="baseline" secondItem="ts2-xt-GKr" secondAttribute="baseline" id="0Ju-DF-HeL"/>
+                            <constraint firstItem="w0z-L4-peI" firstAttribute="top" secondItem="X4P-Ax-Jcx" secondAttribute="top" id="2zT-ih-l5u"/>
+                            <constraint firstItem="sGe-Fm-opM" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="60" id="3DG-dH-ptP"/>
+                            <constraint firstItem="w0z-L4-peI" firstAttribute="top" secondItem="Vht-Fj-Qaq" secondAttribute="top" id="8dO-pQ-O2F"/>
                             <constraint firstItem="0jl-bv-8IQ" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" id="92X-xs-gk4"/>
+                            <constraint firstItem="w0z-L4-peI" firstAttribute="top" secondItem="sGe-Fm-opM" secondAttribute="top" id="DFi-yc-mCQ"/>
                             <constraint firstItem="ts2-xt-GKr" firstAttribute="top" secondItem="IvL-Fm-q12" secondAttribute="bottom" constant="8" symbolic="YES" id="FpO-Qd-2GZ"/>
                             <constraint firstAttribute="trailing" secondItem="PkI-h8-8ef" secondAttribute="trailing" constant="15" id="JCG-UZ-Oea"/>
+                            <constraint firstItem="X4P-Ax-Jcx" firstAttribute="leading" secondItem="Vht-Fj-Qaq" secondAttribute="trailing" constant="1" id="T9r-je-OOC"/>
                             <constraint firstItem="PkI-h8-8ef" firstAttribute="leading" secondItem="IvL-Fm-q12" secondAttribute="leading" id="UNt-pk-byh"/>
                             <constraint firstItem="AyV-1g-LGo" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="228" id="Xg0-SD-Gtx"/>
                             <constraint firstItem="AyV-1g-LGo" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" id="YH6-vu-Fae"/>
+                            <constraint firstAttribute="trailing" secondItem="Vht-Fj-Qaq" secondAttribute="trailing" constant="75" id="YXF-aR-wbs"/>
                             <constraint firstItem="IvL-Fm-q12" firstAttribute="top" secondItem="PkI-h8-8ef" secondAttribute="bottom" constant="8" symbolic="YES" id="bVK-Iq-Miw"/>
+                            <constraint firstItem="RSh-ts-Pv6" firstAttribute="top" secondItem="LXJ-Ma-jdh" secondAttribute="bottom" constant="28" id="bww-rK-4Qw"/>
+                            <constraint firstItem="0jl-bv-8IQ" firstAttribute="top" secondItem="w0z-L4-peI" secondAttribute="bottom" constant="7" id="c9N-j3-89U"/>
                             <constraint firstItem="kdd-KQ-30Z" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" id="dbx-ER-BGy"/>
                             <constraint firstAttribute="centerX" secondItem="JUF-XO-TgG" secondAttribute="centerX" id="f7p-uz-pWu"/>
                             <constraint firstItem="PkI-h8-8ef" firstAttribute="trailing" secondItem="LXJ-Ma-jdh" secondAttribute="trailing" id="geS-Vm-Otj"/>
                             <constraint firstItem="kdd-KQ-30Z" firstAttribute="top" secondItem="HiE-HN-PeB" secondAttribute="top" constant="207" id="kO5-wm-XyO"/>
                             <constraint firstItem="PkI-h8-8ef" firstAttribute="top" secondItem="B3b-BE-xh0" secondAttribute="bottom" constant="5" id="nlJ-kF-pDD"/>
                             <constraint firstAttribute="bottom" secondItem="AyV-1g-LGo" secondAttribute="bottom" constant="64" id="pkR-m0-CBt"/>
+                            <constraint firstItem="w0z-L4-peI" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="19" id="pw0-2O-yTw"/>
                             <constraint firstItem="LXJ-Ma-jdh" firstAttribute="top" secondItem="PkI-h8-8ef" secondAttribute="bottom" constant="59" id="pws-yX-D1j"/>
                             <constraint firstItem="PkI-h8-8ef" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="13" id="qGF-hq-xcH"/>
+                            <constraint firstItem="w0z-L4-peI" firstAttribute="top" secondItem="RSh-ts-Pv6" secondAttribute="bottom" constant="16" id="qJP-ND-1k2"/>
                             <constraint firstItem="PkI-h8-8ef" firstAttribute="leading" secondItem="ts2-xt-GKr" secondAttribute="leading" id="weJ-eC-R3J"/>
                             <constraint firstAttribute="bottom" secondItem="JUF-XO-TgG" secondAttribute="bottom" constant="5" id="xOH-0Q-IDr"/>
+                            <constraint firstAttribute="trailing" secondItem="RSh-ts-Pv6" secondAttribute="trailing" constant="20" symbolic="YES" id="xXW-mo-eXA"/>
                             <constraint firstAttribute="bottom" secondItem="0jl-bv-8IQ" secondAttribute="bottom" id="ylp-Lf-u6S"/>
                         </constraints>
                     </view>
@@ -2457,8 +2468,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MG-Rz-c20">
-                                <rect key="frame" x="117" y="172" width="188" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9MG-Rz-c20">
+                                <rect key="frame" x="117" y="193" width="188" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="JiP-6n-pAf"/>
@@ -2517,8 +2528,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <action selector="PublicaEnTwiter:" destination="2Jq-qe-Uxb" eventType="touchUpInside" id="ysH-49-mK5"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-1O-huO">
-                                <rect key="frame" x="13" y="172" width="170" height="20"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ecC-1O-huO">
+                                <rect key="frame" x="20" y="193" width="157" height="20"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="20" id="nyj-TF-2ay"/>
@@ -2528,8 +2539,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y5-AF-0wQ">
-                                <rect key="frame" x="13" y="12" width="293" height="51"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Y5-AF-0wQ">
+                                <rect key="frame" x="13" y="76" width="293" height="51"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="51" id="6qy-di-kv2"/>
@@ -2576,8 +2587,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <action selector="GuardarCalendario:" destination="2Jq-qe-Uxb" eventType="touchUpInside" id="fj2-Um-VuN"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" misplaced="YES" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST4-z5-1jw">
-                                <rect key="frame" x="20" y="68" width="285" height="22"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ST4-z5-1jw">
+                                <rect key="frame" x="20" y="132" width="285" height="22"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="9fJ-JV-etC"/>
@@ -2587,8 +2598,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="FaL-gS-Yd3">
-                                <rect key="frame" x="13" y="96" width="293" height="30"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="FaL-gS-Yd3">
+                                <rect key="frame" x="13" y="158" width="293" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="AnA-sp-10p"/>
@@ -2668,47 +2679,14 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
-        <image name="barraMenu.png" width="205" height="2"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>

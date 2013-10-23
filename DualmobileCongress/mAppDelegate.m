@@ -195,11 +195,10 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    [[ParseOrbiter parseManagerWithApplicationID:@"3tHWsNt37ozGICJpmxNNWUQJpAVHrCCTtPBz1GUa" RESTAPIKey:@"9R9yz5fzQ8Bun68GOUMAvb2B0d4qgO389JABREvc"]registerDeviceToken:deviceToken withAlias:@"DemoPre" success:^(id responseObject) {
+    [[ParseOrbiter parseManagerWithApplicationID:@"YACUWrIsFNmUe3vLSjp4CAuiwDKzp5LGRtNyG8Fq" RESTAPIKey:@"UX2hpIyQeAbkUGFwhjDe136B4Eg6FhT59XnLBoNO"] registerDeviceToken:deviceToken withAlias:@"Callampa" badge:nil channels:[NSSet setWithArray:[NSArray arrayWithObjects:@"callampon",@"callampin",nil]  ]timeZone:[NSTimeZone defaultTimeZone] success:^(id responseObject) {
         NSLog(@"El Registro (con 'h' el 'ha' ése luchin) ha sido realizado : %@", responseObject);
         
     } failure:^(NSError *error) {
-                
         NSLog(@"Error por : %@", error);
     }];
 }
