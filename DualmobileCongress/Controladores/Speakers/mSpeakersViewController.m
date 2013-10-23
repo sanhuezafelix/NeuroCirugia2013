@@ -271,14 +271,26 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
    
 }
+-(void)notifica {
+    
+    NSError *error;
+    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
+    [fet setEntity:ent];
+    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
+    NSLog(@"%@",ar);
+}
+
 
 - (IBAction)RevelarNotificaciones:(id)sender
 {
+    
     if(ovController == nil)
         [self.buscar resignFirstResponder];
     else
         [self CerrarTeclado];
     [self.slidingViewController anchorTopViewTo:ECLeft];
+    [self notifica];
     
 }
 

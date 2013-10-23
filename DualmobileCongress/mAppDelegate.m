@@ -33,12 +33,12 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     {
         [[NSUserDefaults standardUserDefaults] setBool:YES forKey:@"HasLaunchedOnce"];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        [self GuardarNotificacion:@"Bienvenido, te saluda Aimagos"];
+       // [self GuardarNotificacion:@"Bienvenido, te saluda Aimagos"];
 }
     if (![defaults boolForKey:@"kValoresGuardados"])
     {
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
-                                       [NSNumber numberWithFloat:30.0], @"kIntervaloHora",
+                                       [NSNumber numberWithFloat:5.0], @"kIntervaloHora",
                                        [NSNumber numberWithFloat:300.0], @"kIntervaloHoraImagen",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacionImagen",
@@ -93,7 +93,6 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
     NSRange remplazoFecha = {11,8};
     NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"09:00:00"]];
-
     UILocalNotification *notification = [[UILocalNotification alloc] init];
     NSLog(@"esta es la fecha transformada %@",HoraActual);
     // debe de activarse dentro de 5 segundos
@@ -105,7 +104,6 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     notification.soundName = UILocalNotificationDefaultSoundName;
     // título del botón
     notification.alertAction = @"Ir a la Aplicacion";
-    
     notification.hasAction = YES;
     // activa la notificación
     [[UIApplication sharedApplication] scheduleLocalNotification:notification];
@@ -154,14 +152,14 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kStoreName];
     
-//    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-//        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Congresos2" ofType:@"sqlite"]];
-//        NSError* err = nil;
-//        
-//        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
-//            NSLog(@"Oops, could copy preloaded data");
-//    }
-//}
+    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Congresos2" ofType:@"sqlite"]];
+        NSError* err = nil;
+        
+        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
+            NSLog(@"Oops, could copy preloaded data");
+    }
+}
     NSDictionary *options = @{
                               NSInferMappingModelAutomaticallyOption : @(YES),
                               NSMigratePersistentStoresAutomaticallyOption: @(YES)
@@ -218,8 +216,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     NSDictionary *payload = [userInfo objectForKey:@"aps"];
     NSString *alertMessage = [payload objectForKey:@"alert"];
     
-    [self GuardarNotificacion:alertMessage];
-        
+    
     UIApplicationState estadus = [application applicationState];
     if (estadus == UIApplicationStateActive) {
         
@@ -238,8 +235,6 @@ static NSString *const kStoreName = @"Congresos.sqlite";
         
         
 }
-    else
-    {}
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -253,40 +248,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     }
 }
 
-#pragma mark - Plist Metodos
-
-/*
- * Funcion que Guarda  en un archivo plist la notificacion recibida
- * (NSString*)Ruta - Devuelve el string con la ruta del archivo plist;
- */
-
--(NSString *)Ruta
-{
-    NSString *PathFolder = [NSSearchPathForDirectoriesInDomains(NSDocumentationDirectory, NSUserDomainMask, YES) objectAtIndex:0];
-    NSLog(@"\nruta ==> %@\n\n",[PathFolder stringByAppendingPathExtension:@"Notificaciones.plist"]);
-    return [PathFolder stringByAppendingPathExtension:@"Notificaciones.plist"];
-}
-
--(void)GuardarNotificacion:(NSString*)Notificacion
-{
-    NSLog(@"Comprobando existencia...");
-    
-    if (![[NSFileManager defaultManager]fileExistsAtPath:[self Ruta]])
-    {
-        NSLog(@"No existe fichero , se crea .....");
-        NSMutableArray *DatosPlist = [[NSMutableArray alloc]initWithObjects:Notificacion, nil];
-        [DatosPlist writeToFile:[self Ruta] atomically:YES];
-}
-    else
-{
-        NSLog(@"Fichero existente agregamos nuevo dato");
-        NSMutableArray *DatosPlist = [[NSMutableArray alloc]initWithContentsOfFile:[self Ruta]];
-        [DatosPlist addObject:Notificacion];
-        [DatosPlist writeToFile:[self Ruta] atomically:YES];
-    }
-}
-
- #pragma mark - Eventos generales de la App 
+ #pragma mark - Eventos generales de la App
 
 -(void)applicationWillEnterForeground:(UIApplication *)application{
 

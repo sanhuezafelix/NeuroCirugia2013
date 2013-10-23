@@ -11,6 +11,7 @@
 #import "NSDataAdditions.h"
 #import "GAI.h"
 #import "Evento.h"
+#import "Notificacion.h"
 
 @interface mHomeViewController ()
 
@@ -462,6 +463,17 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                 withValue:nil];
     }
 
+-(void)notifica {
+    
+    NSError *error;
+    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
+    [fet setEntity:ent];
+    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
+    NSLog(@"%@",ar);
+}
+
+
 - (IBAction)RevelarNotificaciones:(id)sender
 {
     [self.slidingViewController anchorTopViewTo:ECLeft];
@@ -471,9 +483,8 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                                withAction:@"DespliegueMenuLateral"
                                                 withLabel:@"Abrió Notificaciones desde Ahora"
                                                 withValue:nil];
-
+    [self notifica];
 }
-
 
 #pragma mark - PullToRefresh delegate
 

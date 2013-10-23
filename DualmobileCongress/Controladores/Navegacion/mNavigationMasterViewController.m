@@ -10,6 +10,7 @@
 #import "mAppDelegate.h"
 #import "Evento.h"
 #import "Persona.h"
+#import "Notificacion.h"
 
 
 @interface mNavigationMasterViewController ()
@@ -28,7 +29,9 @@
     self.view.layer.shadowOpacity = 0.75f;
     self.view.layer.shadowRadius = 4.0f;
     self.view.layer.shadowColor = [UIColor blackColor].CGColor;
-         
+    [self notifica];
+
+    
     if (![self.slidingViewController.underLeftViewController isKindOfClass:[mMenuLateralViewController class]]) {
         self.slidingViewController.underLeftViewController  = [self.storyboard instantiateViewControllerWithIdentifier:@"MenuLateral"];
         [self evento];
@@ -36,19 +39,8 @@
     
     if (![self.slidingViewController.underRightViewController isKindOfClass:[mNotificacionesViewController class]]) {
         self.slidingViewController.underRightViewController = [self.storyboard instantiateViewControllerWithIdentifier:@"Notificaciones"];
-        [self personas];
+        [self notifica];
     }
-    
-//    UIImage *navBackgroundImage = [UIImage imageNamed:@"navbar"];
-    
-//    [[UINavigationBar appearance] setBackgroundImage:navBackgroundImage forBarMetrics:UIBarMetricsDefault];
-
-//    self.navigationItem.hidesBackButton = YES;
-//    self.navigationItem.leftBarButtonItem = nil;
-//    
-//    UIImage *backButtonImage = [[UIImage imageNamed:@"boton_volver"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, 1, 0, 2)];
-//    
-//    [[UIBarButtonItem appearance] setBackButtonBackgroundImage:backButtonImage forState:UIControlStateNormal barMetrics:UIBarMetricsDefault];
     
     [self.view addGestureRecognizer:self.slidingViewController.panGesture];
     
@@ -67,18 +59,6 @@ float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
         
         _dele.window.tintColor = [UIColor lightGrayColor];
         
-//        self.navigationItem.hidesBackButton = YES;
-//        
-//        CGRect frameimgback1 = CGRectMake(0, 0, 60, 35);
-//        UIButton *back = [[UIButton alloc]initWithFrame:frameimgback1];
-//        [back setImage:[UIImage imageNamed:@"boton_volver"] forState:UIControlStateNormal];
-//        [back addTarget:self action:@selector(back) forControlEvents:UIControlEventTouchUpInside];
-//        UIBarButtonItem *btnL = [[UIBarButtonItem alloc]initWithCustomView:back];
-//        
-//        self.navigationItem.leftBarButtonItem = btnL;
-//        
-//        [[UIBarButtonItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor], UITextAttributeTextColor, [UIFont boldSystemFontOfSize:16.0f], UITextAttributeFont, [UIColor darkGrayColor], UITextAttributeTextShadowColor, [NSValue valueWithCGSize:CGSizeMake(0.0,-1.0)], UITextAttributeTextShadowOffset, nil] forState:UIControlStateNormal];
-       
     }
     
     else {
@@ -101,11 +81,11 @@ float sysVer = [[[UIDevice currentDevice] systemVersion] floatValue];
     NSLog(@"%@",ar);
 }
 
--(void)personas {
+-(void)notifica {
     
     _dele = [[UIApplication sharedApplication] delegate];
     NSError *error;
-    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Persona" inManagedObjectContext:_dele.managedObjectContext];
+    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_dele.managedObjectContext];
     NSFetchRequest *fet = [[NSFetchRequest alloc]init];
     [fet setEntity:ent];
     NSArray *ar = [_dele.managedObjectContext executeFetchRequest:fet error:&error];

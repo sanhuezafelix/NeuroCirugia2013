@@ -19,6 +19,7 @@
 #import "Lugar.h"
 #import "Institucion.h"
 #import "AnimatedImagesView.h"
+#import "Notificacion.h"
 
 @class mSpeakerCloseViewController;
 @interface mSpeakersViewController : UIViewController<UITableViewDataSource,UITableViewDelegate , UISearchBarDelegate>{

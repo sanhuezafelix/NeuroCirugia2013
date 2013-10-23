@@ -55,9 +55,7 @@
     NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegue.managedObjectContext];
     NSFetchRequest *fetiche = [[NSFetchRequest alloc] init];
     [fetiche setEntity:entidad];
-    _arrayNotificaciones = [_delegue.managedObjectContext executeFetchRequest:fetiche error:&error];
-   // array = _arrayNotificaciones;
-    
+    _arrayNotificaciones = [_delegue.managedObjectContext executeFetchRequest:fetiche error:&error];    
 }
 
 -(UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
@@ -125,9 +123,8 @@
 }
 
 -(void)refreshView:(UIRefreshControl *)refresh {
-    [self llamarNotifi];
 
-    //[_arrayNotificaciones removeAllObjects];
+    [self llamarNotifi];
     [self.PushTableview reloadData];
     [self.refresh endRefreshing];
     

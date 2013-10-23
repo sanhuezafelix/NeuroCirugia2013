@@ -9,6 +9,7 @@
 #import "mSpeakerDetViewController.h"
 #import "mAppDelegate.h"
 #import "GAI.h"
+#import "Notificacion.h"
 
 @interface mSpeakerDetViewController ()
 @property(nonatomic,strong)mAppDelegate *delegate;
@@ -64,11 +65,21 @@
 {
     [super didReceiveMemoryWarning];
 }
+-(void)notifica {
+    
+    NSError *error;
+    NSEntityDescription *ent = [NSEntityDescription entityForName:@"Notificacion" inManagedObjectContext:_delegate.managedObjectContext];
+    NSFetchRequest *fet = [[NSFetchRequest alloc]init];
+    [fet setEntity:ent];
+    NSArray *ar = [_delegate.managedObjectContext executeFetchRequest:fet error:&error];
+    NSLog(@"%@",ar);
+}
 
 
 
 - (IBAction)RevelarNotificaciones:(id)sender
 {
+    [self notifica];
     [self.slidingViewController anchorTopViewTo:ECLeft];
 }
 
