@@ -146,7 +146,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     self.title = @" ";
     self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
     self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
-  //  self.pullToRefreshView = [[SSPullToRefreshView alloc] initWithScrollView:self.HomeTableview delegate:self];
     EstadoDeLaconexion = [UIDevice estaConectado];
     self.refresh = refresh;
     
@@ -156,18 +155,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
     
-    
-}
-
-
--(void)jaja{
-    
-    NSError *error;
-    NSEntityDescription *entidad = [NSEntityDescription entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
-    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
-    [fetch setEntity:entidad];
-    NSArray *arraya = [self.delegate.managedObjectContext executeFetchRequest:fetch error:&error];
-    NSLog(@"%@",arraya);
     
 }
 
@@ -230,8 +217,8 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         cell.Imagen.image = beforeImage;
         cell.horaInicio.text = [self DateToString:[self StringToDate:info.horaInicio]];
         cell.Hora.text = [self DateToString:[self StringToDate:info.horaFin]];
-        cell.texto.text = info.lugarEnQueMeDesarrollo.ciudad;
-        cell.Actividad.text = info.descripcionEvento;
+        cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+        cell.Actividad.text = info.tipoEvento;
         
         
     }
@@ -251,8 +238,8 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         cell.Titulo.text = info.titulo;
         cell.Subtitulo.text = info.speaker.nombre;
         cell.Imagen.image = beforeImage;
-        cell.texto.text = info.lugarEnQueMeDesarrollo.ciudad;
-        cell.Actividad.text = info.descripcionEvento;
+        cell.texto.text = info.lugarEnQueMeDesarrollo.nombreLugar;
+        cell.Actividad.text = info.tipoEvento;
     
     }
 
@@ -343,7 +330,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
             destino.ContenidoCelda =info.tematica;
-            destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
+            destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
             destino.NombreImagen = beforeImage;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -353,7 +340,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.Referencia  = info.speaker.tratamiento;
             destino.DateFin = [self StringToDate:info.horaFin];
             destino.DateInicio = [self StringToDate:info.horaInicio];
-            destino.ActividadSpeaker = info.descripcionEvento;
+            destino.ActividadSpeaker = info.tipoEvento;
             
             
         }
@@ -365,7 +352,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.ExpositorCelda = info.speaker.nombre;
             destino.tituloCelda = info.titulo;
             destino.ContenidoCelda =info.tematica;
-            destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
+            destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
             destino.NombreImagen = beforeImage;
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
@@ -523,16 +510,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     EstadoDeLaconexion = [UIDevice estaConectado];
     NSLog(@"conexcion ==> %d", EstadoDeLaconexion);
 }
-
-
-
-
-
-
-
-
-
-
 
 - (void)viewWillAppear:(BOOL)animated {
 	   

@@ -14,8 +14,8 @@
 @interface mNotificacionesViewController : UIViewController<UITableViewDataSource,UITableViewDelegate,SSPullToRefreshViewDelegate>
 
 @property (strong, nonatomic) IBOutlet UITableView *PushTableview;
-@property(nonatomic,strong)NSMutableArray *ResultadosNotificaciones;
-//@property(nonatomic , strong)SSPullToRefreshView *pullToRefreshView;
+@property(nonatomic,strong) NSMutableArray *ResultadosNotificaciones;
+@property (nonatomic,strong) NSArray *arrayNotificaciones;
 @property (strong, nonatomic) UIRefreshControl *refresh;
 
 @end

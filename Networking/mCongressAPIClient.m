@@ -73,7 +73,7 @@ static NSString * const kmCongressAPIBaseURLString = @"http://sopnia2013-chile.h
         
             else if ([fetchRequest.entityName isEqualToString:@"Notificacion"]) {
                 
-                mutableURLRequest = [self requestWithMethod:@"GET" path:@"notificaciones" parameters:nil];
+                mutableURLRequest = [self requestWithMethod:@"GET" path:@"notificacions" parameters:nil];
                 
                 NSLog(@"Debería Sincronizar ==> %@", [mutableURLRequest description]);
 }
