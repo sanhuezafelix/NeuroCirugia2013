@@ -66,13 +66,13 @@
 		C31AAA9717C4AD49002B49F2 /* mCongressIncrementalStore.m in Sources */ = {isa = PBXBuildFile; fileRef = C31AAA9517C4AD49002B49F2 /* mCongressIncrementalStore.m */; };
 		C31AAAA017C4AD66002B49F2 /* libGoogleAnalytics.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C31AAA9E17C4AD66002B49F2 /* libGoogleAnalytics.a */; };
 		C31AAAA117C4AD66002B49F2 /* libGoogleAnalytics_debug.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C31AAA9F17C4AD66002B49F2 /* libGoogleAnalytics_debug.a */; };
-		C3293943180C582700B6958A /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293942180C582700B6958A /* Evento.m */; };
 		C3293946180C582800B6958A /* Persona.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293945180C582800B6958A /* Persona.m */; };
 		C3293949180C582800B6958A /* Notificacion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293948180C582800B6958A /* Notificacion.m */; };
 		C329394C180C582800B6958A /* Imagen.m in Sources */ = {isa = PBXBuildFile; fileRef = C329394B180C582800B6958A /* Imagen.m */; };
 		C329394F180C582800B6958A /* Eventopadre.m in Sources */ = {isa = PBXBuildFile; fileRef = C329394E180C582800B6958A /* Eventopadre.m */; };
 		C3293952180C582800B6958A /* Lugar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293951180C582800B6958A /* Lugar.m */; };
 		C3293955180C582800B6958A /* Institucion.m in Sources */ = {isa = PBXBuildFile; fileRef = C3293954180C582800B6958A /* Institucion.m */; };
+		C329395B180C593B00B6958A /* Evento.m in Sources */ = {isa = PBXBuildFile; fileRef = C329395A180C593B00B6958A /* Evento.m */; };
 		C33738E017850F8400BD0FA9 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738DF17850F8400BD0FA9 /* MobileCoreServices.framework */; };
 		C33738E217850F8B00BD0FA9 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738E117850F8B00BD0FA9 /* Security.framework */; };
 		C33738E417850FBF00BD0FA9 /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C33738E317850FBF00BD0FA9 /* libz.1.1.3.dylib */; };
@@ -409,8 +409,6 @@
 		C31AAA9D17C4AD66002B49F2 /* GAITransactionItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAITransactionItem.h; sourceTree = "<group>"; };
 		C31AAA9E17C4AD66002B49F2 /* libGoogleAnalytics.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics.a; sourceTree = "<group>"; };
 		C31AAA9F17C4AD66002B49F2 /* libGoogleAnalytics_debug.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAnalytics_debug.a; sourceTree = "<group>"; };
-		C3293941180C582700B6958A /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
-		C3293942180C582700B6958A /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		C3293944180C582800B6958A /* Persona.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Persona.h; sourceTree = "<group>"; };
 		C3293945180C582800B6958A /* Persona.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Persona.m; sourceTree = "<group>"; };
 		C3293947180C582800B6958A /* Notificacion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Notificacion.h; sourceTree = "<group>"; };
@@ -423,6 +421,8 @@
 		C3293951180C582800B6958A /* Lugar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lugar.m; sourceTree = "<group>"; };
 		C3293953180C582800B6958A /* Institucion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Institucion.h; sourceTree = "<group>"; };
 		C3293954180C582800B6958A /* Institucion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Institucion.m; sourceTree = "<group>"; };
+		C3293959180C593B00B6958A /* Evento.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Evento.h; sourceTree = "<group>"; };
+		C329395A180C593B00B6958A /* Evento.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Evento.m; sourceTree = "<group>"; };
 		C33738DF17850F8400BD0FA9 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		C33738E117850F8B00BD0FA9 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		C33738E317850FBF00BD0FA9 /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
@@ -734,6 +734,8 @@
 			isa = PBXGroup;
 			children = (
 				8986FE4D175EC2100042993F /* Congresos.xcdatamodeld */,
+				C3293959180C593B00B6958A /* Evento.h */,
+				C329395A180C593B00B6958A /* Evento.m */,
 				C3293953180C582800B6958A /* Institucion.h */,
 				C3293954180C582800B6958A /* Institucion.m */,
 				C3293950180C582800B6958A /* Lugar.h */,
@@ -746,8 +748,6 @@
 				C3293948180C582800B6958A /* Notificacion.m */,
 				C3293944180C582800B6958A /* Persona.h */,
 				C3293945180C582800B6958A /* Persona.m */,
-				C3293941180C582700B6958A /* Evento.h */,
-				C3293942180C582700B6958A /* Evento.m */,
 			);
 			name = Modelo;
 			path = DualmobileCongress/Modelo;
@@ -1940,6 +1940,7 @@
 				89F5250417450E1A00802855 /* mMapasViewController.m in Sources */,
 				C344742417F6264000B1126E /* AFURLConnectionOperation.m in Sources */,
 				89F5250517450E1A00802855 /* ECSlidingViewController.m in Sources */,
+				C329395B180C593B00B6958A /* Evento.m in Sources */,
 				89F5250617450E1A00802855 /* UIImage+ImageWithUIView.m in Sources */,
 				78A99C61180A3BE40062865B /* LTransitionImageView.m in Sources */,
 				7893C75D180890260055D0D7 /* mSimposioViewController.m in Sources */,
@@ -1979,7 +1980,6 @@
 				AACA757F176834E9006E3520 /* mMapaConferenciaViewController.m in Sources */,
 				AA1D23AC176FB5180080F649 /* REPagedScrollView.m in Sources */,
 				C31AAA8817C4AD06002B49F2 /* Orbiter.m in Sources */,
-				C3293943180C582700B6958A /* Evento.m in Sources */,
 				C31AAA9017C4AD37002B49F2 /* NSDataAdditions.m in Sources */,
 				C329394F180C582800B6958A /* Eventopadre.m in Sources */,
 				C31AAA9617C4AD49002B49F2 /* mCongressAPIClient.m in Sources */,

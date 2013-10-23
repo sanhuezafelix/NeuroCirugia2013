@@ -264,7 +264,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
     NSRange RangoReemplazo = {20,5};
     
-   NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0400"];
+   NSString *remplaso = [hora stringByReplacingCharactersInRange:RangoReemplazo withString:@"-0300"];
     return  [dateFormatter dateFromString:remplaso];
 }
 
@@ -386,19 +386,21 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSArray*)CargarEnEsteMomento
 {
-    NSDate *horaDispositivo = [[NSDate alloc]initWithTimeIntervalSinceNow:-14400];
+    NSDate *horaDispositivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
  
     NSString *strDate = [dateFormatter stringFromDate:horaDispositivo];
-    NSRange remplazoFecha = {0, 10};
-    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-05-29"]];
+    NSRange remplazoFecha = {0, 7};
+    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
+    NSString *strDate2 = [dateFormatter stringFromDate:HoraActual];
+
    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
     [fetchRequest setEntity:entity];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio <= %@) AND (horaFin > %@)",HoraActual,HoraActual];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio <= %@) AND (horaFin > %@)",strDate2,strDate2];
     [fetchRequest setPredicate:Predicado];
 
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
@@ -413,18 +415,19 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSArray*)CargarProximasActividades{
     
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:-14400];
+    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zz"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
     
     
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-    NSRange remplazoFecha = {0, 10};
+    NSRange remplazoFecha = {0, 7};
     
-    NSDate *HoraActual2 = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-05-29"]];
+    NSDate *HoraActual2 = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
    
+    NSString *strDate2 = [dateFormatter stringFromDate:HoraActual2];
+    NSLog(@"%@",strDate2);
     
-        
      NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
        
         // Defineself.navigationItem.hidesBackButton = YES; the entity we are looking for
@@ -432,7 +435,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                        entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio > %@ ) AND (horaInicio > %@)",HoraActual2];
+        NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio > %@ ) AND (horaInicio > %@)",strDate2];
         [fetchRequest setPredicate:Predicado];
         // Define how we want our entities to be sorted
         NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]

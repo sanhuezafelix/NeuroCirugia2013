@@ -117,9 +117,31 @@
     if (_fetchedResultsController != nil) {
         return _fetchedResultsController;
     }
-    
+//    NSError *er;
+//    NSFetchRequest *fetch = [[NSFetchRequest alloc] init];
+//    NSEntityDescription *entitida = [NSEntityDescription entityForName:@"Evento"
+//                                              inManagedObjectContext:self.delegate.managedObjectContext];
+//    [fetch setEntity:entitida];
+//    NSArray *arraya = [self.delegate.managedObjectContext executeFetchRequest:fetch error:&er];
+//    
+//    
+//    NSArray *fetchHoras = [arraya valueForKey:@"horaInicio"];
+//    NSMutableArray* arrayOfDatesAsStrings = [[NSMutableArray alloc]init];
+//
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
+//    
+//    for (NSString *fetchHora in fetchHoras) {
+//        //get the date next NSDate from the array as: NSDate *dateAsDate...
+//        
+//        NSDate *strDate = [dateFormatter dateFromString:fetchHora];
+//        
+//        [arrayOfDatesAsStrings addObject:strDate];
+//        
+//        NSLog(@"jajajaja::::%@",arrayOfDatesAsStrings);
+//
+//    }
+//    NSArray*arraya2 = arrayOfDatesAsStrings;
     
     NSDate *HoraInicio = [dateFormatter dateFromString:self.InicioJornada];
     NSDate *HoraFin = [dateFormatter dateFromString:self.FinJornada];
@@ -133,7 +155,7 @@
     NSArray *sortDescriptors = @[sortDescriptor];
     
     [fetchRequest setSortDescriptors:sortDescriptors];
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio >= %@) AND (horaInicio < %@)",HoraInicio,HoraFin];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio >= %@) AND (horaFin < %@)",self.InicioJornada,self.FinJornada];
     [fetchRequest setPredicate:Predicado];
     
     NSFetchedResultsController *aFetchedResultsController = [[NSFetchedResultsController alloc]
