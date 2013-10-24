@@ -76,7 +76,6 @@
         self.BotonSimposio.hidden = true;
         self.ContenidoExposicion.hidden = false;
 
-
     }
     
     
@@ -220,15 +219,14 @@
         
         destino.salon = self.LugarCelda;
     }
-    if ([segue.identifier isEqualToString:@"DetSimposio"])
+    if ([segue.identifier isEqualToString:@"DetalleEvento"])
     {
-         mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
-        
-        destino.EsSimposio = TRUE;
-        destino.tituloCelda = self.NombreSimposioPadre;
-        destino.ContenidoeventoHijoCelda = self.TipoSimposioPadre;
-        destino.horacelda = self.HorasimposioPadre;
-        destino.LugarCelda = self.LugarsimposioPadre;
+        mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
+        destino.ExpositorCelda = self.descEP2;
+        destino.LugarCelda = self.lugarEP2;
+        destino.tituloCelda = self.tituloEP2;
+        destino.ContenidoeventoHijoCelda =self.tipoEventoPadre2;
+        destino.EsSimposio = true;
     }
     
 }

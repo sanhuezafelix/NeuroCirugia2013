@@ -96,6 +96,8 @@
 @property(nonatomic,strong)NSString *nombreBarra;
 
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
+@property(nonatomic,strong)NSMutableArray *EventosPadre;
+
 
 
 
