@@ -156,7 +156,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
     
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -168,6 +167,38 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
+//    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
+//    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+//    [dateFormatter setDateFormat:@"yyyy-MM-dd"];
+//    
+//    
+//    NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
+//    NSRange remplazoFecha = {0, 7};
+//    
+//    NSDate *HoraActual2 = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
+//    
+//    NSString *strDate2 = [dateFormatter stringFromDate:horaDispocitivo];
+//    NSLog(@"%@",strDate2);
+//    
+//    NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
+//    
+//    // Defineself.navigationItem.hidesBackButton = YES; the entity we are looking for
+//    NSEntityDescription *entity = [NSEntityDescription
+//                                   entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
+//    [fetchRequest setEntity:entity];
+//    
+//    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio CONTAINS[cd] %@)",strDate2];
+//    [fetchRequest setPredicate:Predicado];
+//    // Define how we want our entities to be sorted
+//    NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
+//                                        initWithKey:@"horaInicio" ascending:YES];
+//    NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
+//    [fetchRequest setSortDescriptors:sortDescriptors];
+//    
+//    NSError *error = nil;
+//
+//    NSArray *efff= [_delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
+//    NSLog(@"%lu",(unsigned long)[efff count]);
     int rows;
     if (section == 0) {
         rows = [self.EnesteMomento count];
@@ -403,16 +434,11 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     
     NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzz"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];
     
     
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-    NSRange remplazoFecha = {0, 7};
-    
-    NSDate *HoraActual2 = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
    
-    NSString *strDate2 = [dateFormatter stringFromDate:HoraActual2];
-    NSLog(@"%@",strDate2);
     
      NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
        
@@ -421,11 +447,11 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                        entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
         [fetchRequest setEntity:entity];
         
-        NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaInicio > %@ ) AND (horaInicio > %@)",strDate2];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaFin CONTAINS[cd] %@)",strDate];
         [fetchRequest setPredicate:Predicado];
         // Define how we want our entities to be sorted
         NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-                                            initWithKey:@"horaInicio" ascending:YES];
+                                            initWithKey:@"horaFin" ascending:YES];
         NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         [fetchRequest setSortDescriptors:sortDescriptors];
         
@@ -433,7 +459,6 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
         return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         
 
-        
     
    
 }
