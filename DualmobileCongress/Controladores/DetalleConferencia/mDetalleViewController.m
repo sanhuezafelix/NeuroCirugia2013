@@ -33,8 +33,9 @@
     [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
     self.Hora.text = self.horacelda;
     self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
-    self.Titulo.text = self.ContenidoCelda;
-    self.ContenidoExposicion.text = self.descEP2;
+    self.Titulo.text = self.tituloCelda;
+    self.ContenidoExposicion.text = self.ContenidoCelda;
+    
     if (self.LugarCelda != NULL) {
         self.Lugar.text = self.LugarCelda;
     }
@@ -45,19 +46,18 @@
     
     if (!self.EsSimposio) {
         self.BotonSimposio.hidden = true;
+        [self.ContenidoExposicion sethidden:=TRUE];
     }
-    self.CoordinadorEP.text = self.ExpositorCelda;
-
-    self.imagen.image = self.NombreImagen;
+    self.CoordinadorEP.text = self.descEP2;
     self.Actividad.text = self.ActividadSpeaker;
-    self.TituloEP.text = self.tituloCelda;
-//    self.Titulo.text =
+    self.TituloEP.text = self.tituloEP2;
     self.TipoEventoPadre.text = self.tipoEventoPadre2;
-    self.infoEP.text = self.tituloEP2;
-    self.lugarEP.text = self.LugarCelda;
-    self.HoraEP.text = self.horaEPstr;
-    self.ActividadEP.text = self.ActividadEPfs;
+    self.infoEP.text = self.descEP2;
+    self.lugarEP.text = self.lugarEP2;
+    self.HoraEP.text = self.horaEP2;
+    self.ActividadEP.text = self.tipoEventoPadre2;
     self.lugarEP.text = self.LugarsimposioPadre;
+    self.labelBarra.text = self.nombreBarra;
     
         NSLog(@"Contenido Nombre simposio==> %@",self.NombreSimposioPadre);
     

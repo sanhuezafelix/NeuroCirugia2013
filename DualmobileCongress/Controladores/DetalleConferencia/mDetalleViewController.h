@@ -40,6 +40,8 @@
 @property (weak, nonatomic) IBOutlet UITextView *TituloEP;
 @property (weak, nonatomic) IBOutlet UILabel *LugarEP;
 
+@property (strong, nonatomic) IBOutlet UILabel *labelBarra;
+
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
 @property (strong, nonatomic) IBOutlet UITextView *Titulo;
@@ -49,7 +51,7 @@
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicacionTwet;
 @property (strong, nonatomic) IBOutlet UIButton *botonDeTalleSpeaker;
 @property (strong, nonatomic) IBOutlet UIButton *botonImagenExpositor;
-@property (strong, nonatomic) IBOutlet UITextView *ContenidoExposicion;
+@property (weak, nonatomic) IBOutlet UITextView *ContenidoExposicion;
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicarFacebook;
 @property (strong, nonatomic) IBOutlet UIImageView*imagen;
 @property (strong, nonatomic) IBOutlet UILabel *labelSimposio;
@@ -91,6 +93,7 @@
 @property(nonatomic,strong)NSString *TipoSimposioPadre;
 @property(nonatomic,strong)NSString *HorasimposioPadre;
 @property(nonatomic,strong)NSString *LugarsimposioPadre;
+@property(nonatomic,strong)NSString *nombreBarra;
 
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
 

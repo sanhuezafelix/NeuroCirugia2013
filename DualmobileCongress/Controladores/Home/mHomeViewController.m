@@ -342,10 +342,15 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.DateFin = [self StringToDate:info.horaFin];
             destino.DateInicio = [self StringToDate:info.horaInicio];
             destino.ActividadSpeaker = info.tipoEvento;
+            destino.nombreBarra = @"Detalle de la Actividad";
             if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
             {
                 destino.EsSimposio = true;
-                destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+                destino.tituloEP2 = info.eventoPadre.tituloEP;
+                destino.nombreBarra = @"Actividad del Simposio";
+                destino.tipoEventoPadre2 =info.eventoPadre.tipoEP;
+                destino.descEP2 = info.eventoPadre.descripcionEP;
+                destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
               
                 
                 
@@ -379,21 +384,19 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.DateFin = [self StringToDate:info.horaFin];
             destino.DateInicio = [self StringToDate:info.horaInicio];
             destino.ActividadSpeaker = info.tipoEvento;
+            destino.nombreBarra = @"Detalle de la Actividad";
             if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
             {
                 destino.EsSimposio = true;
-                destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
-                
-                
-             
-                
-               
-                destino.TipoSimposioPadre =info.eventoPadre.tipoEP;
+                destino.tituloEP2 = info.eventoPadre.tituloEP;
+                destino.nombreBarra = @"Actividad del Simposio";
+                destino.tipoEventoPadre2 =info.eventoPadre.tipoEP;
+                destino.descEP2 = info.eventoPadre.descripcionEP;
+                destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
                 
                 
                 NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
-                destino.HorasimposioPadre = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
-                destino.LugarsimposioPadre = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+                destino.horaEP2 = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
               
                
             }
