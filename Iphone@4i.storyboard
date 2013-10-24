@@ -1960,6 +1960,18 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Simposio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aKQ-7g-Go9">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18688034110000001" green="0.3099459739" blue="0.621871014" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="320" id="H4E-H5-Lg6"/>
+                                    <constraint firstAttribute="height" constant="21" id="NOz-Gd-uiq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -2007,16 +2019,18 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="Actividad" destination="tfJ-40-HIM" id="cp2-g1-wN2"/>
+                        <outlet property="ActividadEP" destination="9ap-xo-h0j" id="SBa-Nf-kqi"/>
+                        <outlet property="CoordinadorEP" destination="eRm-ui-tzP" id="wGQ-ce-hoh"/>
                         <outlet property="Expositor" destination="eSt-38-Gaw" id="OqK-tT-hgY"/>
                         <outlet property="Hora" destination="1fA-P3-BGl" id="XGk-tI-RAn"/>
+                        <outlet property="HoraEP" destination="5Si-ty-ayE" id="A3y-Vk-uzU"/>
                         <outlet property="Lugar" destination="sgL-D2-IQD" id="91J-cR-dUc"/>
-                        <outlet property="TipoEventoPadre" destination="9ap-xo-h0j" id="8EK-Z5-XrU"/>
                         <outlet property="Titulo" destination="VDC-V0-M0G" id="fdz-rk-bpw"/>
+                        <outlet property="TituloEP" destination="doC-v1-gLf" id="of4-Df-ZAg"/>
                         <outlet property="animationImageView" destination="mVP-4w-I6H" id="SFt-pw-WZE"/>
-                        <outlet property="horaEP" destination="5Si-ty-ayE" id="QCw-bo-sFM"/>
-                        <outlet property="infoEP" destination="eRm-ui-tzP" id="8Np-Sg-94H"/>
+                        <outlet property="labelBarra" destination="wLZ-DP-Ruq" id="VyG-XO-3DE"/>
+                        <outlet property="labelsimposio" destination="aKQ-7g-Go9" id="1dB-hV-z61"/>
                         <outlet property="lugarEP" destination="0BK-gp-iBb" id="qgk-YT-LoT"/>
-                        <outlet property="tituloEP" destination="doC-v1-gLf" id="ln9-RM-n6c"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYZ-GB-WaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2677,14 +2691,42 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>

@@ -77,9 +77,7 @@
         self.BotonSimposio.hidden = true;
         self.ContenidoExposicion.hidden = false;
         self.labelsimposio.text = self.textoLabelSimposio;
-
     }
-    
     
         NSLog(@"Contenido Nombre simposio==> %@",self.NombreSimposioPadre);
     

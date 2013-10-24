@@ -41,7 +41,6 @@
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ContenidoeventoHijoCelda;
     self.ContenidoEventoHijo.text = self.ContenidoeventoHijoCelda;
-   
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] <6.0f)
     {
@@ -204,34 +203,7 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     // Comprobamos si el identificador es el adecuado
-    
-    if ([segue.identifier isEqualToString:@"detalleGral"])
-    {
-        // Obtenemos el controlador destino
-        mDetalleViewController  *destino = (mDetalleViewController *)segue.destinationViewController;
-       Evento *info = [self.EventosDelSimposio objectAtIndex:[self.DetailTableview indexPathForSelectedRow].row];
-        destino.ExpositorCelda = info.speaker.nombre;
-        destino.tituloCelda = info.titulo;
-        destino.descEP2 = info.descripcionEvento;
-        destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
-        destino.lugarEP.text = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
-
-        NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
-        destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
-        destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
-        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
-        destino.BiografiaSpeaker = info.speaker.bio;
-        destino.Referencia  = info.speaker.tratamiento;
-        destino.DateFin = [self StringToDate:info.horaFin];
-        destino.DateInicio = [self StringToDate:info.horaInicio];
-        destino.ActividadSpeaker = info.tipoEvento;
-        destino.DateInicio =[self StringToDate:info.horaInicio];
-        destino.DateFin = [self StringToDate:info.horaFin];
-    
-
         
-    }
-    
     if ([segue.identifier isEqualToString:@"DetalleActSimpo"])
     {
         // Obtenemos el controlador destino
@@ -240,10 +212,7 @@
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
         destino.ContenidoCelda =info.descripcionEvento;
-        destino.descEP2 = info.descripcionEvento;
         destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
-        destino.lugarEP.text = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
-        
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
         destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
@@ -253,17 +222,29 @@
         destino.DateFin = [self StringToDate:info.horaFin];
         destino.DateInicio = [self StringToDate:info.horaInicio];
         destino.ActividadSpeaker = info.tipoEvento;
-        destino.tituloEP2 = self.Titulo.text;
-        destino.tipoEventoPadre2 = self.Actividad.text;
-        destino.descEP2 = info.eventoPadre.participantes.nombre;
-        destino.horaEP2 = self.Hora.text;
-       // destino.lugarEP2 = self.Lugar.text;
-        destino.DateInicio =[self StringToDate:info.horaInicio];
-        destino.DateFin = [self StringToDate:info.horaFin];
+        destino.nombreBarra = @"Detalle de la Actividad";
+        destino.textoLabelSimposio = @"Actividad";
+        if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
+        {
+            destino.EsSimposio = true;
+            destino.tituloEP2 = info.eventoPadre.tituloEP;
+            destino.nombreBarra = @"Actividad del Simposio";
+            destino.tipoEventoPadre2 =info.eventoPadre.tipoEP;
+            destino.descEP2 = info.eventoPadre.descripcionEP;
+            destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+            destino.textoLabelSimposio = @"Simposio";
+            
+            
+            NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
+            destino.horaEP2 = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
+            
+        }
+        else
+        {
+            destino.EsSimposio = false;
+            
+        }
         
-    }
-    
-    
     if ([segue.identifier isEqualToString:@"MapSpeaker"])
     {
         mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
@@ -272,6 +253,8 @@
     }
 
    }
+    
+}
 
 
 - (IBAction)RevelarNotificaciones:(id)sender {
@@ -405,7 +388,6 @@
     cell.lugar.text = info.lugarEnQueMeDesarrollo.nombreLugar;
     return cell;
 }
-
 
 #pragma mark - Fetchs Coredata
 
