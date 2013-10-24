@@ -14,6 +14,7 @@
 #import <EventKit/EventKit.h>
 #import <EventKitUI/EventKitUI.h>
 #import "AnimatedImagesView.h"
+#import "mSimposioDetViewController.h"
 
 
 
@@ -31,6 +32,8 @@
 @property (strong, nonatomic) IBOutlet UITableView *DetailTableview;
 
 @property (strong, nonatomic) IBOutlet UILabel *Lugar;
+@property (strong, nonatomic) IBOutlet UIButton *BotonSimposio;
+@property (strong, nonatomic) IBOutlet UIButton *BotonMapa;
 
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
@@ -50,7 +53,6 @@
 @property (strong, nonatomic) IBOutlet UITextView *infoEP;
 @property (strong, nonatomic) IBOutlet UILabel *lugarEP;
 @property (strong, nonatomic) IBOutlet UILabel *horaEP;
-
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
 
@@ -76,7 +78,9 @@
 @property(nonatomic,strong)NSDate   *DateFin;
 @property(nonatomic,strong)UIImage  *NombreImagen;
 @property(nonatomic)BOOL  *EsSimposio;
+@property(nonatomic,strong)NSString *NombreSimposioPadre;
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
+
 
 - (IBAction)PublicaEnFaceBook:(id)sender;
 - (IBAction)PublicaEnTwiter:(id)sender;

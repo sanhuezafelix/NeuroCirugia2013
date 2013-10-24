@@ -229,7 +229,17 @@
         destino.DateFin = [self StringToDate:info.horaFin];
         destino.DateInicio = [self StringToDate:info.horaInicio];
         destino.ActividadSpeaker = info.descripcionEvento;
-        
+        if (![info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
+        {
+            destino.EsSimposio = false;
+        }
+        else
+        {
+            destino.EsSimposio = true;
+            destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+            
+        }
+
     }
 }
 

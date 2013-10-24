@@ -165,6 +165,17 @@
         destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
+        if (![info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
+        {
+            destino.EsSimposio = false;
+        }
+        else
+        {
+            destino.EsSimposio = true;
+            destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+            
+        }
+
     }
 }
 

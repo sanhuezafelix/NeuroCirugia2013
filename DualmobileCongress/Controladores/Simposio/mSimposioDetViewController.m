@@ -37,7 +37,7 @@
     self.Titulo.text = self.tituloCelda;
     self.ContenidoExposicion.text = self.ContenidoCelda;
     self.imagen.image = self.imagenEX;
-    self.Lugar.text = self.LugarCelda;
+   
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ContenidoeventoHijoCelda;
     self.ContenidoEventoHijo.text = self.ContenidoeventoHijoCelda;
@@ -57,9 +57,20 @@
         self.DetailTableview.hidden = true;
         self.labelSimposio.hidden = true;
         self.BotonCalendario.hidden = false;
-        self.BotonMapas.hidden = false;
+        
         self.BotonPublicacionTwet.hidden = false;
         self.BotonPublicarFacebook.hidden=false;
+        if (self.LugarCelda != NULL) {
+           self.Lugar.text = self.LugarCelda;
+            self.BotonMapas.hidden = false;
+            NSLog( @"lugar =====> %@",self.LugarCelda);
+        }
+        else{
+            self.Lugar.text = @"";
+        }
+      
+        
+
     }
     self.delegate = [[UIApplication sharedApplication]delegate];
     
@@ -289,21 +300,30 @@
                 }}];}}
     
     EKEvent *evento  = [EKEvent eventWithEventStore:AlmacenEventos];
-    if ([self.tituloCelda isEqualToString:@"Coffee Break"]==TRUE || [self.tituloCelda isEqualToString:@"Almuerzo"]== TRUE )
-    {
+   
+    if (self.LugarCelda != NULL) {
+        evento.location = self.LugarCelda;
+        evento.notes =self.ContenidoCelda;
+        if (self.tituloCelda != NULL&& self.ContenidoCelda != NULL) {
+            NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
+            titulo = [titulo stringByAppendingString:self.ExpositorCelda];
+            evento.title     = titulo;
+        }
+        else{
+            evento.title     = self.tituloCelda;
+            
+        }
+        
+    }
+    else{
         evento.title     = self.tituloCelda;
+        
     }
-    else
-    {
-        NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
-        titulo = [titulo stringByAppendingString:self.ExpositorCelda];
-        evento.title     = titulo;
-    }
-    evento.location = self.LugarCelda;
+    
     evento.startDate = self.DateInicio;
     evento.endDate   = self.DateFin;
     evento.allDay = NO;
-    evento.notes =self.ContenidoCelda;
+    
     evento.URL = [NSURL URLWithString:@"http://www.aimagos.com/index.php/es/"];
     
     EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];

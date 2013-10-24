@@ -35,8 +35,17 @@
     self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
     self.Titulo.text = self.tituloCelda;
     self.ContenidoExposicion.text = self.ContenidoCelda;
-    self.imagen.image = self.imagenEX;
-    self.Lugar.text = self.LugarCelda;
+    if (self.LugarCelda != NULL) {
+        self.Lugar.text = self.LugarCelda;
+    }
+    else{
+        self.Lugar.text = @"";
+        [self.BotonMapa setHidden:TRUE];
+    }
+    
+    if (!self.EsSimposio) {
+        self.BotonSimposio.hidden = true;
+    }
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
     self.tituloEP.text = self.tituloEP2;
@@ -45,23 +54,14 @@
     self.lugarEP.text = self.lugarEP2;
     self.horaEP.text = self.horaEP2;
     
-   // NSLog(@"Titulo Celda ==> %@",self.tituloCelda);
-      NSLog(@"Contenido Celda expocicion ==> %@",self.ContenidoCelda);
+        NSLog(@"Contenido Nombre simposio==> %@",self.NombreSimposioPadre);
     
     if ([[[UIDevice currentDevice] systemVersion] floatValue] <6.0f)
     {
         [self.BotonPublicarFacebook setHidden:YES];
         [self.BotonPublicacionTwet setHidden:YES];
     }
-    if (([self.Titulo.text isEqualToString:@"Almuerzo"]==TRUE)||([self.Titulo.text isEqualToString:@"Coffee Break"]==TRUE))
-    {
-        [self.botonDeTalleSpeaker setHidden:YES];
-    }
-    if (!self.EsSimposio) {
-              self.DetailTableview.hidden = true;
-        self.labelSimposio.hidden = true;
-    }
-    self.delegate = [[UIApplication sharedApplication]delegate];
+          self.delegate = [[UIApplication sharedApplication]delegate];
     
    
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
@@ -204,6 +204,14 @@
         
         destino.salon = self.LugarCelda;
     }
+    if ([segue.identifier isEqualToString:@"DetSimposio"])
+    {
+         mSimposioDetViewController *destino = (mSimposioDetViewController *)segue.destinationViewController;
+        
+        destino.EsSimposio = TRUE;
+        destino.tituloCelda = self.NombreSimposioPadre;
+    }
+    
 }
 
 
@@ -236,21 +244,29 @@
                 }}];}}
     
     EKEvent *evento  = [EKEvent eventWithEventStore:AlmacenEventos];
-    if ([self.tituloCelda isEqualToString:@"Coffee Break"]==TRUE || [self.tituloCelda isEqualToString:@"Almuerzo"]== TRUE )
-    {
+    if (self.LugarCelda != NULL) {
+        evento.location = self.LugarCelda;
+        evento.notes =self.ContenidoCelda;
+        if (self.tituloCelda != NULL&& self.ContenidoCelda != NULL) {
+            NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
+            titulo = [titulo stringByAppendingString:self.ExpositorCelda];
+            evento.title     = titulo;
+        }
+        else{
+            evento.title     = self.tituloCelda;
+            
+        }
+        
+    }
+    else{
         evento.title     = self.tituloCelda;
+        
     }
-    else
-    {
-        NSString * titulo = [[NSString alloc]initWithFormat:@"%@ - ",self.tituloCelda];
-        titulo = [titulo stringByAppendingString:self.ExpositorCelda];
-        evento.title     = titulo;
-    }
-    evento.location = self.LugarCelda;
+    
     evento.startDate = self.DateInicio;
     evento.endDate   = self.DateFin;
     evento.allDay = NO;
-    evento.notes =self.ContenidoCelda;
+    
     evento.URL = [NSURL URLWithString:@"http://www.aimagos.com/index.php/es/"];
     
     EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];

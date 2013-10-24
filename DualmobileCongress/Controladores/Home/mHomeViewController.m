@@ -345,8 +345,23 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.DateFin = [self StringToDate:info.horaFin];
             destino.DateInicio = [self StringToDate:info.horaInicio];
             destino.ActividadSpeaker = info.tipoEvento;
+            if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
+            {
+                destino.EsSimposio = true;
+                destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+              
+                
+                
+            }
+            else
+            {
+                destino.EsSimposio = false;
+                
+                
+            }
             
-            
+
+
         }
         else
         {
@@ -367,6 +382,18 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             destino.DateFin = [self StringToDate:info.horaFin];
             destino.DateInicio = [self StringToDate:info.horaInicio];
             destino.ActividadSpeaker = info.tipoEvento;
+            if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
+            {
+                destino.EsSimposio = true;
+                destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+               
+            }
+            else
+            {
+                destino.EsSimposio = false;
+               
+                
+            }
             
         }
     }
@@ -434,10 +461,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     
         NSError *error = nil;
         return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
-        
 
-    
-   
 }
 
 #pragma -mark Alto de la cada celda
