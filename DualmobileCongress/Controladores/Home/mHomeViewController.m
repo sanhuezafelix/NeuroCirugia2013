@@ -411,8 +411,7 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
     NSRange remplazoFecha = {0, 7};
     NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
     NSString *strDate2 = [dateFormatter stringFromDate:HoraActual];
-
-   
+    
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
     NSEntityDescription *entity = [NSEntityDescription
                                    entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
@@ -432,13 +431,15 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
 
 -(NSArray*)CargarProximasActividades{
     
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
+    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:10800];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];
     
-    
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-   
+    NSRange remplazoFecha = {0, 7};
+    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
+    NSString *strDate2 = [dateFormatter stringFromDate:HoraActual];
+    
     
      NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
        
@@ -447,14 +448,16 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
                                        entityForName:@"Evento" inManagedObjectContext:self.delegate.managedObjectContext];
         [fetchRequest setEntity:entity];
         
-    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaFin CONTAINS[cd] %@)",strDate];
+    NSPredicate *Predicado = [NSPredicate predicateWithFormat:@" (horaFin < %@) AND (horaInicio < %@)",strDate2,strDate2];
         [fetchRequest setPredicate:Predicado];
+    [fetchRequest setFetchLimit:6];
+
         // Define how we want our entities to be sorted
         NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
-                                            initWithKey:@"horaFin" ascending:YES];
+                                            initWithKey:@"horaInicio" ascending:YES];
         NSArray* sortDescriptors = [[NSArray alloc] initWithObjects:sortDescriptor, nil];
         [fetchRequest setSortDescriptors:sortDescriptors];
-        
+    
         NSError *error = nil;
         return [self.delegate.managedObjectContext executeFetchRequest:fetchRequest error:&error];
         
