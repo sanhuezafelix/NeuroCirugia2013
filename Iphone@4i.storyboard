@@ -382,23 +382,27 @@
                         <viewControllerLayoutGuide type="bottom" id="HXY-HU-uBL"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="YbU-vR-Idy">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="504"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-E1-fzA">
-                                <rect key="frame" x="20" y="83" width="280" height="134"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="Jaf-E1-fzA">
+                                <rect key="frame" x="20" y="19" width="280" height="148"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="148" id="BWe-Lh-GZd"/>
+                                    <constraint firstAttribute="width" constant="280" id="W4B-Hu-4BR"/>
+                                </constraints>
                                 <string key="text">SOPNIA está formada por médicos especialistas y profesionales afines, incorporados a ella como socios regulares mediante el cumplimiento de un Reglamento de Incorporación, que implica, entre otros la aceptación de un trabajo científico original, sometido al escrutinio de una Comisión Evaluadora</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="QXR-Oz-gTB" colorLabel="IBBuiltInLabel-Green">
-                                <rect key="frame" x="0.0" y="503" width="320" height="65"/>
+                                <rect key="frame" x="0.0" y="439" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-Z5-gsG" customClass="AnimatedImagesView">
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cYv-Z5-gsG" customClass="AnimatedImagesView">
                                 <rect key="frame" x="70" y="508" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.15686274510000001" green="0.39607843139999999" blue="0.70980392160000005" alpha="1" colorSpace="calibratedRGB"/>
@@ -408,15 +412,23 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hazte SOCIO o contáctanos" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obH-zi-O9r">
-                                <rect key="frame" x="20" y="320" width="171" height="16"/>
+                                <rect key="frame" x="25" y="226" width="171" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="ZDQ-Hs-I75"/>
+                                    <constraint firstAttribute="width" constant="171" id="fVL-Gk-hIi"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2tS-92-bOg">
-                                <rect key="frame" x="205" y="297" width="64" height="59"/>
+                                <rect key="frame" x="210" y="203" width="64" height="59"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="64" id="Te5-U3-sxA"/>
+                                    <constraint firstAttribute="height" constant="59" id="gFZ-s7-iBC"/>
+                                </constraints>
                                 <state key="normal" image="sopnia_mail.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -428,21 +440,20 @@
                         </subviews>
                         <color key="backgroundColor" red="0.74117647060000003" green="0.74117647060000003" blue="0.74117647060000003" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="2tS-92-bOg" secondAttribute="trailing" constant="51" id="4Ap-Em-ALo"/>
-                            <constraint firstItem="2tS-92-bOg" firstAttribute="leading" secondItem="YbU-vR-Idy" secondAttribute="leading" constant="205" id="5S6-4Q-6FN"/>
-                            <constraint firstItem="Jaf-E1-fzA" firstAttribute="top" secondItem="YbU-vR-Idy" secondAttribute="top" constant="83" id="5ci-UV-PnK"/>
+                            <constraint firstAttribute="trailing" secondItem="2tS-92-bOg" secondAttribute="trailing" constant="46" id="441-wP-uOl"/>
                             <constraint firstAttribute="centerX" secondItem="cYv-Z5-gsG" secondAttribute="centerX" id="Epu-Vf-UIN"/>
-                            <constraint firstItem="QXR-Oz-gTB" firstAttribute="top" relation="lessThanOrEqual" secondItem="2tS-92-bOg" secondAttribute="bottom" constant="148" id="GCL-I9-3dn"/>
-                            <constraint firstItem="obH-zi-O9r" firstAttribute="leading" secondItem="YbU-vR-Idy" secondAttribute="leading" constant="20" id="L2F-ty-B1V"/>
-                            <constraint firstAttribute="bottom" secondItem="obH-zi-O9r" secondAttribute="bottom" constant="232" id="Lsz-ib-zl5"/>
+                            <constraint firstItem="obH-zi-O9r" firstAttribute="leading" secondItem="YbU-vR-Idy" secondAttribute="leading" constant="25" id="LLN-YF-nAY"/>
                             <constraint firstAttribute="centerX" secondItem="QXR-Oz-gTB" secondAttribute="centerX" id="QQo-6O-54Y"/>
+                            <constraint firstItem="2tS-92-bOg" firstAttribute="top" secondItem="YbU-vR-Idy" secondAttribute="top" constant="203" id="Rlf-La-4Nu"/>
+                            <constraint firstItem="Jaf-E1-fzA" firstAttribute="leading" secondItem="YbU-vR-Idy" secondAttribute="leading" constant="20" id="eEN-AF-PXv"/>
                             <constraint firstAttribute="bottom" secondItem="QXR-Oz-gTB" secondAttribute="bottom" id="fhG-56-zSP"/>
+                            <constraint firstItem="obH-zi-O9r" firstAttribute="top" secondItem="YbU-vR-Idy" secondAttribute="top" constant="226" id="leS-LJ-ofb"/>
                             <constraint firstAttribute="centerX" secondItem="QXR-Oz-gTB" secondAttribute="centerX" id="oNZ-aB-aWF"/>
-                            <constraint firstItem="Jaf-E1-fzA" firstAttribute="leading" secondItem="YbU-vR-Idy" secondAttribute="leading" constant="20" id="p68-WD-9vf"/>
+                            <constraint firstItem="Jaf-E1-fzA" firstAttribute="top" secondItem="YbU-vR-Idy" secondAttribute="top" constant="19" id="rak-GP-rY7"/>
                             <constraint firstAttribute="bottom" secondItem="cYv-Z5-gsG" secondAttribute="bottom" constant="5" id="tWA-Ev-Ers"/>
-                            <constraint firstItem="2tS-92-bOg" firstAttribute="top" secondItem="YbU-vR-Idy" secondAttribute="top" constant="297" id="udE-k4-eMl"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="TqY-li-310">
                         <barButtonItem key="leftBarButtonItem" title=" " id="n3N-bj-cUw">
                             <connections>
@@ -2565,14 +2576,42 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
+        <image name="barraMenu.png" width="205" height="2"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
+        <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="boton_mapa.png" width="40" height="40"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
+        <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="flechaSpeaker.png" width="11" height="19"/>
         <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
         <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
+        <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareonface.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
+        <image name="shareontwit.png" width="40" height="40"/>
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
@@ -2582,8 +2621,8 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="82c-rv-EFy"/>
-        <segue reference="vUT-qo-6lO"/>
         <segue reference="SL0-h1-TQs"/>
+        <segue reference="vUT-qo-6lO"/>
+        <segue reference="82c-rv-EFy"/>
     </inferredMetricsTieBreakers>
 </document>
