@@ -31,10 +31,6 @@
     //trackenado GA
     id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
-    self.Hora.text = self.horacelda;
-    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
-    self.Titulo.text = self.tituloCelda;
-    self.ContenidoExposicion.text = self.ContenidoCelda;
     
     if (self.LugarCelda != NULL) {
         self.Lugar.text = self.LugarCelda;
@@ -44,20 +40,45 @@
         [self.BotonMapa setHidden:TRUE];
     }
     
-    if (!self.EsSimposio) {
+    if (self.EsSimposio) {
+        self.Hora.text = self.horacelda;
+        self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
+        self.Titulo.text = self.tituloCelda;
+        self.ContenidoExposicion.text = self.ContenidoCelda;
+        self.CoordinadorEP.text = self.descEP2;
+        self.Actividad.text = self.ActividadSpeaker;
+        self.TituloEP.text = self.tituloEP2;
+        self.TipoEventoPadre.text = self.tipoEventoPadre2;
+        self.infoEP.text = self.descEP2;
+        self.lugarEP.text = self.lugarEP2;
+        self.HoraEP.text = self.horaEP2;
+        self.ActividadEP.text = self.tipoEventoPadre2;
+        self.lugarEP.text = self.LugarsimposioPadre;
+        self.labelBarra.text = self.nombreBarra;
+        self.BotonSimposio.hidden = false;
+        self.ContenidoExposicion.hidden = true;
+        
+        
+    }else{
+        self.Hora.text = self.horacelda;
+        self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
+        self.Titulo.text = self.tituloCelda;
+        self.ContenidoExposicion.text = self.ContenidoCelda;
+        self.CoordinadorEP.text = self.descEP2;
+        self.Actividad.text = self.ActividadSpeaker;
+        self.TituloEP.text = self.tituloCelda;
+        self.TipoEventoPadre.text = self.ActividadSpeaker;
+        self.infoEP.text = self.ContenidoCelda;
+        self.lugarEP.text = self.LugarCelda;
+        self.HoraEP.text = self.horacelda;
+        self.ActividadEP.text = self.ActividadSpeaker;
+        self.labelBarra.text = self.nombreBarra;
         self.BotonSimposio.hidden = true;
-        [self.ContenidoExposicion sethidden:=TRUE];
+        self.ContenidoExposicion.hidden = false;
+
+
     }
-    self.CoordinadorEP.text = self.descEP2;
-    self.Actividad.text = self.ActividadSpeaker;
-    self.TituloEP.text = self.tituloEP2;
-    self.TipoEventoPadre.text = self.tipoEventoPadre2;
-    self.infoEP.text = self.descEP2;
-    self.lugarEP.text = self.lugarEP2;
-    self.HoraEP.text = self.horaEP2;
-    self.ActividadEP.text = self.tipoEventoPadre2;
-    self.lugarEP.text = self.LugarsimposioPadre;
-    self.labelBarra.text = self.nombreBarra;
+    
     
         NSLog(@"Contenido Nombre simposio==> %@",self.NombreSimposioPadre);
     
