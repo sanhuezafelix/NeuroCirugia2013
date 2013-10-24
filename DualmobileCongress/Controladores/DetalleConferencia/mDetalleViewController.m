@@ -181,7 +181,7 @@
         }
         
         twitter.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-        [twitter addImage:[UIImage imageNamed:@"mcongress_icon_120"]];
+        [twitter addImage:[UIImage imageNamed:@"logoSopnia"]];
         [twitter addURL:[NSURL URLWithString:@"http://www.mobicongress.com"]];
         [twitter setInitialText:self.MensajeInicial];
         [twitter setCompletionHandler:completionHandler];
