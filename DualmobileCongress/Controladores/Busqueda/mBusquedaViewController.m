@@ -155,51 +155,44 @@
         UIImage *beforeImage = [UIImage imageWithData:dataObj];
         destino.ExpositorCelda = info.speaker.nombre;
         destino.tituloCelda = info.titulo;
-        destino.ContenidoCelda =info.tematica;
-        destino.LugarCelda = info.lugarEnQueMeDesarrollo.ciudad;
-        destino.ActividadSpeaker = info.tipoEvento;
+        destino.ContenidoCelda =info.descripcionEvento;
+        destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
         destino.NombreImagen = beforeImage;
-        
         NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
         destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
         destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
         destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
         destino.BiografiaSpeaker = info.speaker.bio;
         destino.Referencia  = info.speaker.tratamiento;
-        destino.ActividadEPfs  = info.eventoPadre.jornadaEP;
-        destino.nombreParticipanteEP  = info.eventoPadre.participantes.nombre;
-        NSString *HoraExposicionEP = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
-        destino.horaEPstr = [HoraExposicionEP stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
-        destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
-        destino.LugarsimposioPadre = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
-
-
-
-        
+        destino.DateFin = [self StringToDate:info.horaFin];
+        destino.DateInicio = [self StringToDate:info.horaInicio];
+        destino.ActividadSpeaker = info.tipoEvento;
+        destino.nombreBarra = @"Detalle de la Actividad";
+        destino.textoLabelSimposio = @"Actividad";
         if ([info.eventoPadre.tipoEP isEqualToString:@"Simposio"] )
         {
             destino.EsSimposio = true;
-            destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
-            
-            
-            
-            
-            
-            destino.TipoSimposioPadre =info.eventoPadre.tipoEP;
+            destino.tituloEP2 = info.eventoPadre.tituloEP;
+            destino.nombreBarra = @"Actividad del Simposio";
+            destino.tipoEventoPadre2 =info.eventoPadre.tipoEP;
+            destino.descEP2 = info.eventoPadre.descripcionEP;
+            destino.lugarEP2 = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+            destino.textoLabelSimposio = @"Simposio";
             
             
             NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
-            destino.HorasimposioPadre = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
-            destino.LugarsimposioPadre = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+            destino.horaEP2 = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
+            
+            
         }
         else
         {
             destino.EsSimposio = false;
-          
             
         }
-
+        
     }
+    
 }
 
 #pragma -mark Alto de la cada celda
