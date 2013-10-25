@@ -79,16 +79,16 @@
     }
     else if ([self.salon isEqualToString:@"Salón Sausalito A-B"])
     {
-        Cordenadax = 100;
-        Cordenaday = 110;
+        Cordenadax = 102;
+        Cordenaday = 115;
         self.NombreMapa = @"piso_2.png";
         
     }
     
     else if ([self.salon isEqualToString:@"Salón Sausalito A"])
     {
-        Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenadax = 102;
+        Cordenaday = 115;
         self.NombreMapa = @"piso_2.png";
         
     }
@@ -97,7 +97,7 @@
     else if ([self.salon isEqualToString:@"Salón Sausalito B"])
     {
         Cordenadax = 102;
-        Cordenaday = 120;
+        Cordenaday = 115;
         self.NombreMapa = @"piso_2.png";
         
     }
@@ -106,22 +106,23 @@
     else if ([self.salon isEqualToString:@"Salón Miramar"])
     {
         Cordenadax = 90;
+            // 90 90
         Cordenaday = 90;
-        self.NombreMapa = @"piso_2.png";
+        self.NombreMapa = @"zocalo.png";
         
     }
     
     else if ([self.salon isEqualToString:@"Salón Vergara A"])
     {
-        Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenadax = 150;
+        Cordenaday = 125;
         self.NombreMapa = @"zocalo.png";
         
     }
     
     else if ([self.salon isEqualToString:@"Salón Vergara B"])
     {
-        Cordenadax = 180;
+        Cordenadax = 150;
         Cordenaday = 40;
         self.NombreMapa = @"zocalo.png";
         
@@ -129,15 +130,15 @@
     
     else if ([self.salon isEqualToString:@"Salón Vergara C"])
     {
-        Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenadax = 150;
+        Cordenaday = 30;
         self.NombreMapa = @"zocalo.png";
         
     }
     
     else if ([self.salon isEqualToString:@"Salón Vergara A-B-C"])
     {
-        Cordenadax = 180;
+        Cordenadax = 150;
         Cordenaday = 40;
         self.NombreMapa = @"zocalo.png";
         
@@ -217,7 +218,7 @@
     else if ([self.salon isEqualToString:@"Salón Vergara A"])
     {
         Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenaday = 165;
         self.NombreMapa = @"zocalo.png";
         
     }
@@ -225,7 +226,7 @@
     else if ([self.salon isEqualToString:@"Salón Vergara B"])
     {
         Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenaday = 110;
         self.NombreMapa = @"zocalo.png";
         
     }
@@ -233,7 +234,7 @@
     else if ([self.salon isEqualToString:@"Salón Vergara C"])
     {
         Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenaday = 50;
         self.NombreMapa = @"zocalo.png";
         
     }
@@ -241,7 +242,7 @@
     else if ([self.salon isEqualToString:@"Salón Vergara A-B-C"])
     {
         Cordenadax = 180;
-        Cordenaday = 40;
+        Cordenaday = 110;
         self.NombreMapa = @"zocalo.png";
         
     }
