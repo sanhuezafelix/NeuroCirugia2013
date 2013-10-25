@@ -79,7 +79,12 @@
 @property(nonatomic,strong)UIImage  *NombreImagen;
 @property(nonatomic)BOOL  *EsSimposio;
 @property(nonatomic,strong)NSString *NombreSimposioPadre;
+@property(nonatomic,strong)NSString *TipoSimposioPadre;
+@property(nonatomic,strong)NSString *HorasimposioPadre;
+@property(nonatomic,strong)NSString *LugarsimposioPadre;
+
 @property(nonatomic,strong)NSMutableArray  *EventosDelSimposio;
+
 
 
 - (IBAction)PublicaEnFaceBook:(id)sender;

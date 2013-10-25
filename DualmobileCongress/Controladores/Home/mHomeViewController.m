@@ -386,6 +386,18 @@ NSLog(@"valor de autorizador  %c", [defaults boolForKey:@"kAutorizadorSincroniza
             {
                 destino.EsSimposio = true;
                 destino.NombreSimposioPadre = info.eventoPadre.tituloEP;
+                
+                
+             
+                
+               
+                destino.TipoSimposioPadre =info.eventoPadre.tipoEP;
+                
+                
+                NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.eventoPadre.horaInicioEP]]];
+                destino.HorasimposioPadre = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.eventoPadre.horaFinEP]]];
+                destino.LugarsimposioPadre = info.eventoPadre.lugarEnQueMeDesarrollo.nombreLugar;
+              
                
             }
             else

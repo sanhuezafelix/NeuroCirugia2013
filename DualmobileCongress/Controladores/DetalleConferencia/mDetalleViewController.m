@@ -210,6 +210,9 @@
         
         destino.EsSimposio = TRUE;
         destino.tituloCelda = self.NombreSimposioPadre;
+        destino.ContenidoeventoHijoCelda = self.TipoSimposioPadre;
+        destino.horacelda = self.HorasimposioPadre;
+        destino.LugarCelda = self.LugarsimposioPadre;
     }
     
 }
