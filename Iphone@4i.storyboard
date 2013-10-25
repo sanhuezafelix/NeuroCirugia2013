@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="13A598" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="Z8X-hL-dnM">
     <dependencies>
         <deployment version="1552" defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
@@ -489,7 +489,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cey-Df-OzE">
-
                                 <rect key="frame" x="13" y="216" width="290" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in </string>
@@ -1621,43 +1620,11 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pN-QX-CSK" colorLabel="IBBuiltInLabel-Green">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" ambiguous="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="1pN-QX-CSK" colorLabel="IBBuiltInLabel-Green">
                                 <rect key="frame" x="0.0" y="503" width="320" height="65"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tXc-9g-tEL">
-                                <rect key="frame" x="14" y="73" width="292" height="50"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="szo-iI-qCZ">
-                                <rect key="frame" x="14" y="131" width="205" height="54"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="205" id="oNi-1C-vSa"/>
-                                </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sa-f0-imr">
-                                <rect key="frame" x="16" y="193" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWK-Ce-ZHy">
-                                <rect key="frame" x="266" y="193" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mVP-4w-I6H" customClass="AnimatedImagesView">
                                 <rect key="frame" x="70" y="508" width="180" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -1792,44 +1759,112 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" ambiguous="YES" text="Detalle Actividad del Simposio" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wLZ-DP-Ruq">
+                                <rect key="frame" x="0.0" y="214" width="320" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.18688034110000001" green="0.3099459739" blue="0.621871014" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Cez-jV-XVl"/>
+                                    <constraint firstAttribute="width" constant="320" id="NPb-g9-TRt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Si-ty-ayE">
+                                <rect key="frame" x="117" y="191" width="188" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="188" id="LZt-iG-7ds"/>
+                                    <constraint firstAttribute="height" constant="20" id="hWd-VV-EGG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Lugar" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0BK-gp-iBb">
+                                <rect key="frame" x="20" y="191" width="157" height="20"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="157" id="shN-w4-1Hu"/>
+                                    <constraint firstAttribute="height" constant="20" id="tRB-Z0-v1r"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pgv-Bx-G79">
+                                <rect key="frame" x="13" y="74" width="293" height="51"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="51" id="fsB-ks-5lv"/>
+                                    <constraint firstAttribute="width" constant="293" id="weC-0V-Xms"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ap-xo-h0j">
+                                <rect key="frame" x="20" y="130" width="285" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="A2a-sv-QTT"/>
+                                    <constraint firstAttribute="height" constant="22" id="AN3-2D-CIo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="eRm-ui-tzP">
+                                <rect key="frame" x="13" y="156" width="293" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="2MK-g6-Nou"/>
+                                    <constraint firstAttribute="width" constant="293" id="6JR-bM-giy"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0BK-gp-iBb" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="20" id="1F5-Z8-zMQ"/>
                             <constraint firstItem="Suh-bA-sMY" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="247" id="2Jx-Hs-URP"/>
-                            <constraint firstItem="bWK-Ce-ZHy" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="193" id="4yl-Hn-C8s"/>
                             <constraint firstItem="VDC-V0-M0G" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="14" id="ALP-4P-D8V"/>
                             <constraint firstItem="tfJ-40-HIM" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="21" id="At2-z6-C4V"/>
                             <constraint firstAttribute="bottom" secondItem="UWx-G3-CqU" secondAttribute="bottom" constant="81" id="CCs-ap-rea"/>
                             <constraint firstItem="sgL-D2-IQD" firstAttribute="top" secondItem="tfJ-40-HIM" secondAttribute="bottom" constant="39" id="DUP-OS-3Pu"/>
                             <constraint firstItem="HcW-GO-url" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="61" id="Dgb-AJ-0Z8"/>
                             <constraint firstAttribute="bottom" secondItem="mVP-4w-I6H" secondAttribute="bottom" constant="5" id="DtD-96-5vn"/>
-                            <constraint firstItem="1sa-f0-imr" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="16" id="NOs-EW-hG7"/>
-                            <constraint firstItem="1sa-f0-imr" firstAttribute="top" secondItem="szo-iI-qCZ" secondAttribute="bottom" constant="8" symbolic="YES" id="OOq-zX-9TF"/>
-                            <constraint firstItem="tXc-9g-tEL" firstAttribute="centerX" secondItem="1pN-QX-CSK" secondAttribute="centerX" id="Pss-Mt-nkX"/>
                             <constraint firstAttribute="bottom" secondItem="Suh-bA-sMY" secondAttribute="bottom" constant="81" id="Rsg-nw-DZk"/>
                             <constraint firstItem="eSt-38-Gaw" firstAttribute="top" secondItem="tfJ-40-HIM" secondAttribute="bottom" constant="4" id="T55-yX-KQI"/>
+                            <constraint firstItem="5Si-ty-ayE" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="191" id="T5p-lb-vii"/>
                             <constraint firstItem="eSt-38-Gaw" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="14" id="TbG-eW-prY"/>
-                            <constraint firstItem="tXc-9g-tEL" firstAttribute="trailing" secondItem="1fA-P3-BGl" secondAttribute="trailing" id="XmT-zb-3Pv"/>
+                            <constraint firstItem="5Si-ty-ayE" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="117" id="XdW-bc-MRX"/>
+                            <constraint firstItem="eRm-ui-tzP" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="156" id="a5B-ay-68g"/>
+                            <constraint firstItem="eRm-ui-tzP" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="13" id="b9Y-0b-HNK"/>
                             <constraint firstAttribute="bottom" secondItem="sgL-D2-IQD" secondAttribute="bottom" constant="190" id="bob-Ll-YaH"/>
                             <constraint firstAttribute="bottom" secondItem="1pN-QX-CSK" secondAttribute="bottom" id="c4o-zr-tE3"/>
+                            <constraint firstItem="9ap-xo-h0j" firstAttribute="top" secondItem="pgv-Bx-G79" secondAttribute="bottom" constant="5" id="dpU-EX-Z0a"/>
                             <constraint firstAttribute="bottom" secondItem="JPP-Dg-oiR" secondAttribute="bottom" constant="81" id="e1d-A1-N2W"/>
+                            <constraint firstItem="5Si-ty-ayE" firstAttribute="top" secondItem="9ap-xo-h0j" secondAttribute="bottom" constant="39" id="f0B-2O-yTb"/>
                             <constraint firstAttribute="bottom" secondItem="1fA-P3-BGl" secondAttribute="bottom" constant="190" id="gEG-pL-lb3"/>
-                            <constraint firstItem="tXc-9g-tEL" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="14" id="glu-Hg-N1O"/>
-                            <constraint firstItem="bWK-Ce-ZHy" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="266" id="hBq-al-c26"/>
+                            <constraint firstItem="pgv-Bx-G79" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="74" id="h9w-on-oHU"/>
                             <constraint firstItem="UWx-G3-CqU" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="206" id="hMB-4A-lxO"/>
-                            <constraint firstItem="szo-iI-qCZ" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="131" id="hxS-c7-dBI"/>
-                            <constraint firstItem="szo-iI-qCZ" firstAttribute="top" secondItem="tXc-9g-tEL" secondAttribute="bottom" constant="8" symbolic="YES" id="i8d-Fb-7Eq"/>
+                            <constraint firstItem="9ap-xo-h0j" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="130" id="i2E-Ke-laF"/>
                             <constraint firstItem="1fA-P3-BGl" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="118" id="iuI-Zr-G6v"/>
                             <constraint firstAttribute="centerX" secondItem="mVP-4w-I6H" secondAttribute="centerX" id="k4X-Xw-a3b"/>
+                            <constraint firstItem="wLZ-DP-Ruq" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="214" id="kF2-xZ-MVj"/>
+                            <constraint firstItem="0BK-gp-iBb" firstAttribute="top" secondItem="9ap-xo-h0j" secondAttribute="bottom" constant="39" id="kaD-bL-URf"/>
                             <constraint firstItem="1fA-P3-BGl" firstAttribute="top" secondItem="tfJ-40-HIM" secondAttribute="bottom" constant="39" id="mNa-JL-86W"/>
                             <constraint firstItem="sgL-D2-IQD" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="21" id="noL-Lc-czh"/>
-                            <constraint firstItem="1sa-f0-imr" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="193" id="pRF-Hn-ZfS"/>
+                            <constraint firstItem="0BK-gp-iBb" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="191" id="qDT-v1-Hxw"/>
+                            <constraint firstItem="eRm-ui-tzP" firstAttribute="top" secondItem="9ap-xo-h0j" secondAttribute="bottom" constant="4" id="qcF-CJ-swI"/>
                             <constraint firstAttribute="bottom" secondItem="VDC-V0-M0G" secondAttribute="bottom" constant="279" id="rSn-3c-C2f"/>
-                            <constraint firstItem="tXc-9g-tEL" firstAttribute="top" secondItem="NZW-SJ-qvi" secondAttribute="top" constant="73" id="umH-6N-qFP"/>
+                            <constraint firstItem="9ap-xo-h0j" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="20" id="vUk-Kv-P29"/>
                             <constraint firstAttribute="bottom" secondItem="eSt-38-Gaw" secondAttribute="bottom" constant="210" id="w4u-f9-2XR"/>
+                            <constraint firstItem="pgv-Bx-G79" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="13" id="x3a-1w-geB"/>
                             <constraint firstAttribute="bottom" secondItem="HcW-GO-url" secondAttribute="bottom" constant="81" id="zED-aH-5BZ"/>
                             <constraint firstItem="JPP-Dg-oiR" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="20" id="zJd-mK-st9"/>
-                            <constraint firstItem="szo-iI-qCZ" firstAttribute="leading" secondItem="NZW-SJ-qvi" secondAttribute="leading" constant="14" id="zw6-8l-MCa"/>
                         </constraints>
                     </view>
                     <toolbarItems/>
@@ -1837,8 +1872,17 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
-                        <outlet property="Titulo" destination="tXc-9g-tEL" id="JJ9-kS-qFZ"/>
+                        <outlet property="Actividad" destination="tfJ-40-HIM" id="cp2-g1-wN2"/>
+                        <outlet property="Expositor" destination="eSt-38-Gaw" id="OqK-tT-hgY"/>
+                        <outlet property="Hora" destination="1fA-P3-BGl" id="XGk-tI-RAn"/>
+                        <outlet property="Lugar" destination="sgL-D2-IQD" id="91J-cR-dUc"/>
+                        <outlet property="TipoEventoPadre" destination="9ap-xo-h0j" id="8EK-Z5-XrU"/>
+                        <outlet property="Titulo" destination="VDC-V0-M0G" id="fdz-rk-bpw"/>
                         <outlet property="animationImageView" destination="mVP-4w-I6H" id="SFt-pw-WZE"/>
+                        <outlet property="horaEP" destination="5Si-ty-ayE" id="QCw-bo-sFM"/>
+                        <outlet property="infoEP" destination="eRm-ui-tzP" id="8Np-Sg-94H"/>
+                        <outlet property="lugarEP" destination="0BK-gp-iBb" id="qgk-YT-LoT"/>
+                        <outlet property="tituloEP" destination="pgv-Bx-G79" id="REo-Of-gan"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NYZ-GB-WaX" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2188,11 +2232,11 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <constraint firstAttribute="width" constant="320" id="jCa-gg-uAL"/>
                                 </constraints>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="CharlasCell" rowHeight="70" id="DVk-os-ASK" customClass="mCustomCell">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CharlasCell" rowHeight="70" id="DVk-os-ASK" customClass="mCustomCell">
                                         <rect key="frame" x="0.0" y="22" width="320" height="70"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DVk-os-ASK" id="Ye7-np-C9M">
-                                            <rect key="frame" x="0.0" y="0.0" width="287" height="70"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="42" translatesAutoresizingMaskIntoConstraints="NO" id="wHf-pq-KFj">
@@ -2249,7 +2293,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                             <outlet property="Titulo" destination="uHU-ak-bE9" id="7gP-D8-Zd3"/>
                                             <outlet property="horaInicio" destination="wHf-pq-KFj" id="Ek5-6k-K5o"/>
                                             <outlet property="lugar" destination="otp-4M-osW" id="0RL-Rg-QdK"/>
-                                            <segue destination="QuJ-Xg-rCm" kind="push" identifier="DetalleMixto" id="YPd-ro-7In"/>
+                                            <segue destination="QuJ-Xg-rCm" kind="push" identifier="DetalleActSimpo" id="YPd-ro-7In"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2348,20 +2392,18 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             </button>
                             <textView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RSh-ts-Pv6">
                                 <rect key="frame" x="0.0" y="0.0" width="300" height="224"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="224" id="GUn-YN-Qys"/>
                                     <constraint firstAttribute="width" constant="300" id="uZw-mx-hoB"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HH:MM" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dSY-yO-RUB">
                                 <rect key="frame" x="117" y="187" width="188" height="20"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="188" id="Q6w-Zf-a16"/>
@@ -2377,7 +2419,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                 <constraints>
                                     <constraint firstAttribute="width" constant="157" id="hsF-1H-6OM"/>
                                     <constraint firstAttribute="height" constant="20" id="zt0-KJ-YSo"/>
-
                                 </constraints>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="13"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -2385,7 +2426,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" bounces="NO" scrollEnabled="NO" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" bouncesZoom="NO" editable="NO" text="Titulo" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tby-gr-E8f">
                                 <rect key="frame" x="13" y="70" width="293" height="51"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="QeX-h1-y9p"/>
@@ -2396,7 +2436,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             </textView>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Actividad" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mLo-Ha-UyD">
                                 <rect key="frame" x="20" y="126" width="285" height="22"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="285" id="FXi-98-gbu"/>
@@ -2408,7 +2447,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             </label>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Expositor" translatesAutoresizingMaskIntoConstraints="NO" id="FMy-jg-a0R">
                                 <rect key="frame" x="13" y="152" width="293" height="35"/>
-
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="293" id="JwD-AS-Rn1"/>
@@ -2449,7 +2487,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                             <constraint firstAttribute="bottom" secondItem="JUF-XO-TgG" secondAttribute="bottom" constant="5" id="xOH-0Q-IDr"/>
                             <constraint firstAttribute="bottom" secondItem="0jl-bv-8IQ" secondAttribute="bottom" id="ylp-Lf-u6S"/>
                             <constraint firstItem="dSY-yO-RUB" firstAttribute="leading" secondItem="HiE-HN-PeB" secondAttribute="leading" constant="117" id="zxW-Rh-QYg"/>
-
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="3UT-Jv-1Qt">
@@ -2474,7 +2511,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                         <outlet property="Hora" destination="dSY-yO-RUB" id="nur-Bp-RZl"/>
                         <outlet property="Lugar" destination="rOY-or-0cv" id="1q8-dX-WMS"/>
                         <outlet property="Titulo" destination="tby-gr-E8f" id="hcq-dE-Qdz"/>
-
                         <outlet property="animationImageView" destination="JUF-XO-TgG" id="gRZ-eG-oih"/>
                         <outlet property="labelSimposio" destination="kdd-KQ-30Z" id="nWC-4d-04x"/>
                     </connections>
@@ -2486,43 +2522,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     </scenes>
     <resources>
         <image name="barraMenu.png" width="205" height="2"/>
-        <image name="barraMenu.png" width="205" height="2"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
-        <image name="boton_calendario.png" width="40" height="40"/>
-        <image name="boton_comenzar.png" width="156" height="46"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="boton_mapa.png" width="40" height="40"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="flechaSpeaker.png" width="11" height="19"/>
-        <image name="fondo_inicio_1136.jpg" width="320" height="568"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="logo.png" width="320" height="65"/>
-        <image name="mcongress_web.png" width="58" height="59"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareonface.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
-        <image name="shareontwit.png" width="40" height="40"/>
-=======
         <image name="boton_calendario.png" width="40" height="40"/>
         <image name="boton_comenzar.png" width="156" height="46"/>
         <image name="boton_mapa.png" width="40" height="40"/>
@@ -2531,7 +2530,6 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
         <image name="logo.png" width="320" height="65"/>
         <image name="mcongress_web.png" width="58" height="59"/>
         <image name="shareonface.png" width="40" height="40"/>
->>>>>>> conejus
         <image name="shareontwit.png" width="40" height="40"/>
         <image name="sopnia_mail.png" width="59" height="59"/>
     </resources>
@@ -2543,6 +2541,5 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
     <inferredMetricsTieBreakers>
         <segue reference="SL0-h1-TQs"/>
         <segue reference="TXI-jL-fCN"/>
-
     </inferredMetricsTieBreakers>
 </document>

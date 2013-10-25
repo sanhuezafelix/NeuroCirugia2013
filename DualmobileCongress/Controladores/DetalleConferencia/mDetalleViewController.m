@@ -39,6 +39,12 @@
     self.Lugar.text = self.LugarCelda;
     self.imagen.image = self.NombreImagen;
     self.Actividad.text = self.ActividadSpeaker;
+    self.tituloEP.text = self.tituloEP2;
+    self.TipoEventoPadre.text = self.tipoEventoPadre2;
+    self.infoEP.text = self.descEP2;
+    self.lugarEP.text = self.lugarEP2;
+    self.horaEP.text = self.horaEP2;
+    
    // NSLog(@"Titulo Celda ==> %@",self.tituloCelda);
       NSLog(@"Contenido Celda expocicion ==> %@",self.ContenidoCelda);
     

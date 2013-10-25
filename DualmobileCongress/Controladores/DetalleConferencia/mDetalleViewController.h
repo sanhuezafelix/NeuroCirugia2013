@@ -31,7 +31,7 @@
 @property (strong, nonatomic) IBOutlet UITableView *DetailTableview;
 
 @property (strong, nonatomic) IBOutlet UILabel *Lugar;
-@property (strong, nonatomic) IBOutlet UILabel *TipoEventoPadre;
+
 @property (strong, nonatomic) IBOutlet UILabel *Rol;
 @property (strong, nonatomic) IBOutlet UIBarButtonItem *BotonNotificaciones;
 @property (strong, nonatomic) IBOutlet UITextView *Titulo;
@@ -45,12 +45,20 @@
 @property (strong, nonatomic) IBOutlet UIButton *BotonPublicarFacebook;
 @property (strong, nonatomic) IBOutlet UIImageView*imagen;
 @property (strong, nonatomic) IBOutlet UILabel *labelSimposio;
-
-
-
+@property (strong, nonatomic) IBOutlet UITextView *tituloEP;
+@property (strong, nonatomic) IBOutlet UILabel *TipoEventoPadre;
+@property (strong, nonatomic) IBOutlet UITextView *infoEP;
+@property (strong, nonatomic) IBOutlet UILabel *lugarEP;
+@property (strong, nonatomic) IBOutlet UILabel *horaEP;
 
 @property (nonatomic, strong) IBOutlet AnimatedImagesView *animationImageView;
 
+
+@property(nonatomic,strong)NSString *tituloEP2;
+@property(nonatomic,strong)NSString *tipoEventoPadre2;
+@property(nonatomic,strong)NSString *lugarEP2;
+@property(nonatomic,strong)NSString *horaEP2;
+@property(nonatomic,strong)NSString *descEP2;
 @property(nonatomic,strong)UIImage  *imagenEX;
 @property(nonatomic,strong)NSString *tituloCelda;
 @property(nonatomic,strong)NSString *horacelda;

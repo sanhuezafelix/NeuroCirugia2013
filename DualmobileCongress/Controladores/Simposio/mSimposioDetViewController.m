@@ -221,6 +221,35 @@
 
         
     }
+    
+    if ([segue.identifier isEqualToString:@"DetalleActSimpo"])
+    {
+        // Obtenemos el controlador destino
+        mDetalleViewController  *destino = (mDetalleViewController *)segue.destinationViewController;
+        Evento *info = [self.EventosDelSimposio objectAtIndex:[self.DetailTableview indexPathForSelectedRow].row];
+        destino.ExpositorCelda = info.speaker.nombre;
+        destino.tituloCelda = info.titulo;
+        destino.ContenidoCelda =info.descripcionEvento;
+        destino.LugarCelda = info.lugarEnQueMeDesarrollo.nombreLugar;
+        
+        NSString *HoraExposicion = [[NSString alloc]initWithFormat:@"De %@ ",[self DateToString:[self StringToDate:info.horaInicio]]];
+        destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFin]]];
+        destino.InstitucionSpeaker = info.speaker.institucionQueMePatrocina.nombreInstitucion;
+        destino.PaisSpeaker = info.speaker.lugarDondeProvengo.ciudad;
+        destino.BiografiaSpeaker = info.speaker.bio;
+        destino.Referencia  = info.speaker.tratamiento;
+        destino.DateFin = [self StringToDate:info.horaFin];
+        destino.DateInicio = [self StringToDate:info.horaInicio];
+        destino.ActividadSpeaker = info.tipoEvento;
+        destino.tituloEP2 = self.Titulo.text;
+        destino.tipoEventoPadre2 = self.Actividad.text;
+        destino.descEP2 = self.Expositor.text;
+        destino.horaEP2 = self.Hora.text;
+        destino.lugarEP2 = self.Lugar.text;
+        
+    }
+    
+    
     if ([segue.identifier isEqualToString:@"MapSpeaker"])
     {
         mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;

@@ -283,9 +283,6 @@
             destino.horacelda = [HoraExposicion stringByAppendingFormat:@"a %@ Hrs.",[self DateToString:[self StringToDate:info.horaFinEP]]];
             destino.EsSimposio = true;
             
-            
-            
-            
         }
         else{
             Evento *info = [self.EventosHijos objectAtIndex:indexPath.row];
