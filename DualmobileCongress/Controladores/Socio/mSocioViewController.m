@@ -108,7 +108,7 @@
     // Email Content
     NSString *messageBody = @"Gracias por contactarse con SOPNIA <br> <br>Le solicitamos que llene los siguientes datos: <br><br> Nombre: <br> Apellido: <br> Correo Electronico: <br> Numero de contacto: <br> <br>Gracias.";
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"secretaria@sopnia.cl"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"sopnia@tie.cl"];
     // To bbc
     NSArray *bbc = [NSArray arrayWithObject:@"congreso@mobicongress.com"];
     

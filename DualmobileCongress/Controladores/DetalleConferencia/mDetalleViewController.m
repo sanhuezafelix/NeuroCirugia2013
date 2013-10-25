@@ -32,7 +32,7 @@
     id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-41445507-1"];
     [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
     self.Hora.text = self.horacelda;
-    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ContenidoCelda];
+    self.Expositor.text = [self.Referencia stringByAppendingFormat:@" %@",self.ExpositorCelda];
     self.Titulo.text = self.ContenidoCelda;
     self.ContenidoExposicion.text = self.descEP2;
     if (self.LugarCelda != NULL) {
@@ -130,14 +130,15 @@
         
       
         
-        self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
+       /* self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];*/
+         self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, XXXI Congreso Sopnia ", self.tituloCelda ];
         
        
         
         Facebook.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [Facebook setInitialText:self.MensajeInicial];
-        [Facebook addImage:[UIImage imageNamed:@"mcongress_icon_114"]];
-        [Facebook addURL:[NSURL URLWithString:@"http://www.mobicongress.com"]];
+        [Facebook addImage:[UIImage imageNamed:@"logoSopnia"]];
+        [Facebook addURL:[NSURL URLWithString:@"http://www.sopnia.com"]];
         [Facebook setCompletionHandler:completionHandler];
         [self presentViewController:Facebook animated:YES completion:nil];
     }
@@ -175,19 +176,11 @@
                     break;
             }
         };
-        
-        if (([self.Titulo.text isEqualToString:@"Almuerzo"]==TRUE)||([self.Titulo.text isEqualToString:@"Coffee Break"]==TRUE))
-        {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, desde mCongress", self.tituloCelda  ];
-        }
-        else
-        {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
-        }
+      self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, XXXI Congreso Sopnia ", self.tituloCelda ];
         
         twitter.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [twitter addImage:[UIImage imageNamed:@"logoSopnia"]];
-        [twitter addURL:[NSURL URLWithString:@"http://www.mobicongress.com"]];
+        [twitter addURL:[NSURL URLWithString:@"http://www.sopnia.com"]];
         [twitter setInitialText:self.MensajeInicial];
         [twitter setCompletionHandler:completionHandler];
         
@@ -275,7 +268,7 @@
     evento.endDate   = self.DateFin;
     evento.allDay = NO;
     
-    evento.URL = [NSURL URLWithString:@"http://www.aimagos.com/index.php/es/"];
+    evento.URL = [NSURL URLWithString:@"http://www.sopnia.com"];
     
     EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];
     
