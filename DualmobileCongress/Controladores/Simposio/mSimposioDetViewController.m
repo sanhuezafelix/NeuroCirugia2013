@@ -228,6 +228,8 @@
         destino.DateFin = [self StringToDate:info.horaFin];
         destino.DateInicio = [self StringToDate:info.horaInicio];
         destino.ActividadSpeaker = info.tipoEvento;
+        destino.DateInicio =[self StringToDate:info.horaInicio];
+        destino.DateFin = [self StringToDate:info.horaFin];
     
 
         
@@ -257,6 +259,8 @@
         destino.descEP2 = self.Expositor.text;
         destino.horaEP2 = self.Hora.text;
         destino.lugarEP2 = self.Lugar.text;
+        destino.DateInicio =[self StringToDate:info.horaInicio];
+        destino.DateFin = [self StringToDate:info.horaFin];
         
     }
     
