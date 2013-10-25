@@ -1698,7 +1698,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="PublicaEnFaceBook:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="kpQ-d7-OJU"/>
+                                    <action selector="PublicaEnFaceBook:" destination="QuJ-Xg-rCm" eventType="touchUpInside" id="VXF-rR-GQy"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcW-GO-url">
@@ -1717,7 +1717,7 @@ Llegue efectivamente a su audiencia, a través de Apps para iOS y Android y mida
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="PublicaEnTwiter:" destination="3Sn-vW-Hnt" eventType="touchUpInside" id="Yb6-u6-FCk"/>
+                                    <action selector="PublicaEnTwiter:" destination="QuJ-Xg-rCm" eventType="touchUpInside" id="Wwv-1c-cmZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Suh-bA-sMY">

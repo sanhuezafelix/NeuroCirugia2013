@@ -120,14 +120,11 @@
             
         };
         
-        if (([self.Titulo.text isEqualToString:@"Almuerzo"]==TRUE)||([self.Titulo.text isEqualToString:@"Coffee Break"]==TRUE))
-        {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, desde mCongress", self.tituloCelda  ];
-        }
-        else
-        {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
-        }
+      
+        
+        self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
+        
+       
         
         Facebook.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [Facebook setInitialText:self.MensajeInicial];
