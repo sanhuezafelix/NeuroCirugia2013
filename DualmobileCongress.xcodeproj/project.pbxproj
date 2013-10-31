@@ -15,14 +15,10 @@
 		786C26FE180CE5DB005A55CC /* publi_side_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C26F8180CE5DB005A55CC /* publi_side_1@2x.png */; };
 		786C26FF180CE5DB005A55CC /* publi_side_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C26F9180CE5DB005A55CC /* publi_side_2.png */; };
 		786C2700180CE5DB005A55CC /* publi_side_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C26FA180CE5DB005A55CC /* publi_side_2@2x.png */; };
-		786C2701180CE5DB005A55CC /* publi_side_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C26FB180CE5DB005A55CC /* publi_side_3.png */; };
-		786C2702180CE5DB005A55CC /* publi_side_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C26FC180CE5DB005A55CC /* publi_side_3@2x.png */; };
 		786C2709180CE5F7005A55CC /* publi_bot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2703180CE5F7005A55CC /* publi_bot_1.png */; };
 		786C270A180CE5F7005A55CC /* publi_bot_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2704180CE5F7005A55CC /* publi_bot_1@2x.png */; };
 		786C270B180CE5F7005A55CC /* publi_bot_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2705180CE5F7005A55CC /* publi_bot_2.png */; };
 		786C270C180CE5F7005A55CC /* publi_bot_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2706180CE5F7005A55CC /* publi_bot_2@2x.png */; };
-		786C270D180CE5F7005A55CC /* publi_bot_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2707180CE5F7005A55CC /* publi_bot_3.png */; };
-		786C270E180CE5F7005A55CC /* publi_bot_3@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2708180CE5F7005A55CC /* publi_bot_3@2x.png */; };
 		786C2711180CE656005A55CC /* buttonSopnia.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C270F180CE656005A55CC /* buttonSopnia.png */; };
 		786C2712180CE656005A55CC /* buttonSopnia@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2710180CE656005A55CC /* buttonSopnia@2x.png */; };
 		786C2716180CE6FC005A55CC /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 786C2713180CE6FC005A55CC /* Default-568h@2x.png */; };
@@ -39,6 +35,14 @@
 		78D86363180E0B2800D1C3C3 /* lobby.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D86360180E0B2800D1C3C3 /* lobby.png */; };
 		78D86364180E0B2800D1C3C3 /* zocalo.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D86361180E0B2800D1C3C3 /* zocalo.png */; };
 		78D86365180E0B2800D1C3C3 /* piso_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D86362180E0B2800D1C3C3 /* piso_2.png */; };
+		78D89047182096F400A0F011 /* icon_neurocirugia_29.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D89041182096F400A0F011 /* icon_neurocirugia_29.png */; };
+		78D89048182096F400A0F011 /* icon_neurocirugia_57.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D89042182096F400A0F011 /* icon_neurocirugia_57.png */; };
+		78D89049182096F400A0F011 /* icon_neurocirugia_58.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D89043182096F400A0F011 /* icon_neurocirugia_58.png */; };
+		78D8904A182096F400A0F011 /* icon_neurocirugia_80.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D89044182096F400A0F011 /* icon_neurocirugia_80.png */; };
+		78D8904B182096F400A0F011 /* icon_neurocirugia_114.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D89045182096F400A0F011 /* icon_neurocirugia_114.png */; };
+		78D8904E182097FB00A0F011 /* icon_neurocirugia_120.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D8904D182097FB00A0F011 /* icon_neurocirugia_120.png */; };
+		78D890511820A21900A0F011 /* navbar_about.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D8904F1820A21900A0F011 /* navbar_about.png */; };
+		78D890521820A21900A0F011 /* navbar_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 78D890501820A21900A0F011 /* navbar_about@2x.png */; };
 		892D70F4174504FE00DC5B08 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F3174504FE00DC5B08 /* Social.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		892D70F61745050400DC5B08 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 892D70F51745050400DC5B08 /* MessageUI.framework */; };
 		8957F7A8175EC35800C59973 /* mJornadaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8957F7A5175EC35800C59973 /* mJornadaViewController.m */; };
@@ -151,8 +155,6 @@
 		C3D3886E180BB0B0001C9317 /* mcongress_web.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387E5180BB0B0001C9317 /* mcongress_web.png */; };
 		C3D3886F180BB0B0001C9317 /* mcongress_web@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387E6180BB0B0001C9317 /* mcongress_web@2x.png */; };
 		C3D38870180BB0B0001C9317 /* navbar128_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387E7180BB0B0001C9317 /* navbar128_about@2x.png */; };
-		C3D38871180BB0B0001C9317 /* navbar_about.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387E8180BB0B0001C9317 /* navbar_about.png */; };
-		C3D38872180BB0B0001C9317 /* navbar_about@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387E9180BB0B0001C9317 /* navbar_about@2x.png */; };
 		C3D38876180BB0B0001C9317 /* boton_comenzar.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387EF180BB0B0001C9317 /* boton_comenzar.png */; };
 		C3D38877180BB0B0001C9317 /* boton_comenzar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D387F0180BB0B0001C9317 /* boton_comenzar@2x.png */; };
 		C3D38878180BB0B0001C9317 /* fondo_inicio.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C3D387F1180BB0B0001C9317 /* fondo_inicio.jpg */; };
@@ -195,12 +197,6 @@
 		C3D388A7180BB0B0001C9317 /* labeleem@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38822180BB0B0001C9317 /* labeleem@2x.png */; };
 		C3D388A8180BB0B0001C9317 /* paa.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38823180BB0B0001C9317 /* paa.png */; };
 		C3D388A9180BB0B0001C9317 /* paa@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38824180BB0B0001C9317 /* paa@2x.png */; };
-		C3D388AA180BB0B0001C9317 /* icon_sopnia_114.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38826180BB0B0001C9317 /* icon_sopnia_114.png */; };
-		C3D388AB180BB0B0001C9317 /* icon_sopnia_120.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38827180BB0B0001C9317 /* icon_sopnia_120.png */; };
-		C3D388AC180BB0B0001C9317 /* icon_sopnia_29.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38828180BB0B0001C9317 /* icon_sopnia_29.png */; };
-		C3D388AD180BB0B0001C9317 /* icon_sopnia_57.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D38829180BB0B0001C9317 /* icon_sopnia_57.png */; };
-		C3D388AE180BB0B0001C9317 /* icon_sopnia_58.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3882A180BB0B0001C9317 /* icon_sopnia_58.png */; };
-		C3D388AF180BB0B0001C9317 /* icon_sopnia_80.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3882B180BB0B0001C9317 /* icon_sopnia_80.png */; };
 		C3D388B0180BB0B0001C9317 /* celdas_actividades_jornada.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3882D180BB0B0001C9317 /* celdas_actividades_jornada.png */; };
 		C3D388B1180BB0B0001C9317 /* celdas_actividades_jornada@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3882E180BB0B0001C9317 /* celdas_actividades_jornada@2x.png */; };
 		C3D388B2180BB0B0001C9317 /* dia de la actividad.png in Resources */ = {isa = PBXBuildFile; fileRef = C3D3882F180BB0B0001C9317 /* dia de la actividad.png */; };
@@ -319,14 +315,10 @@
 		786C26F8180CE5DB005A55CC /* publi_side_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publi_side_1@2x.png"; sourceTree = "<group>"; };
 		786C26F9180CE5DB005A55CC /* publi_side_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = publi_side_2.png; sourceTree = "<group>"; };
 		786C26FA180CE5DB005A55CC /* publi_side_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publi_side_2@2x.png"; sourceTree = "<group>"; };
-		786C26FB180CE5DB005A55CC /* publi_side_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = publi_side_3.png; sourceTree = "<group>"; };
-		786C26FC180CE5DB005A55CC /* publi_side_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publi_side_3@2x.png"; sourceTree = "<group>"; };
 		786C2703180CE5F7005A55CC /* publi_bot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = publi_bot_1.png; sourceTree = "<group>"; };
 		786C2704180CE5F7005A55CC /* publi_bot_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publi_bot_1@2x.png"; sourceTree = "<group>"; };
 		786C2705180CE5F7005A55CC /* publi_bot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = publi_bot_2.png; sourceTree = "<group>"; };
 		786C2706180CE5F7005A55CC /* publi_bot_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publi_bot_2@2x.png"; sourceTree = "<group>"; };
-		786C2707180CE5F7005A55CC /* publi_bot_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = publi_bot_3.png; sourceTree = "<group>"; };
-		786C2708180CE5F7005A55CC /* publi_bot_3@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "publi_bot_3@2x.png"; sourceTree = "<group>"; };
 		786C270F180CE656005A55CC /* buttonSopnia.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buttonSopnia.png; sourceTree = "<group>"; };
 		786C2710180CE656005A55CC /* buttonSopnia@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "buttonSopnia@2x.png"; sourceTree = "<group>"; };
 		786C2713180CE6FC005A55CC /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
@@ -347,6 +339,14 @@
 		78D86360180E0B2800D1C3C3 /* lobby.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lobby.png; sourceTree = "<group>"; };
 		78D86361180E0B2800D1C3C3 /* zocalo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zocalo.png; sourceTree = "<group>"; };
 		78D86362180E0B2800D1C3C3 /* piso_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = piso_2.png; sourceTree = "<group>"; };
+		78D89041182096F400A0F011 /* icon_neurocirugia_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neurocirugia_29.png; sourceTree = "<group>"; };
+		78D89042182096F400A0F011 /* icon_neurocirugia_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neurocirugia_57.png; sourceTree = "<group>"; };
+		78D89043182096F400A0F011 /* icon_neurocirugia_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neurocirugia_58.png; sourceTree = "<group>"; };
+		78D89044182096F400A0F011 /* icon_neurocirugia_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neurocirugia_80.png; sourceTree = "<group>"; };
+		78D89045182096F400A0F011 /* icon_neurocirugia_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neurocirugia_114.png; sourceTree = "<group>"; };
+		78D8904D182097FB00A0F011 /* icon_neurocirugia_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_neurocirugia_120.png; sourceTree = "<group>"; };
+		78D8904F1820A21900A0F011 /* navbar_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_about.png; sourceTree = "<group>"; };
+		78D890501820A21900A0F011 /* navbar_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_about@2x.png"; sourceTree = "<group>"; };
 		892D70F3174504FE00DC5B08 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		892D70F51745050400DC5B08 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		8957F7A4175EC35800C59973 /* mJornadaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mJornadaViewController.h; sourceTree = "<group>"; };
@@ -569,8 +569,6 @@
 		C3D387E5180BB0B0001C9317 /* mcongress_web.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mcongress_web.png; sourceTree = "<group>"; };
 		C3D387E6180BB0B0001C9317 /* mcongress_web@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "mcongress_web@2x.png"; sourceTree = "<group>"; };
 		C3D387E7180BB0B0001C9317 /* navbar128_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar128_about@2x.png"; sourceTree = "<group>"; };
-		C3D387E8180BB0B0001C9317 /* navbar_about.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = navbar_about.png; sourceTree = "<group>"; };
-		C3D387E9180BB0B0001C9317 /* navbar_about@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "navbar_about@2x.png"; sourceTree = "<group>"; };
 		C3D387EF180BB0B0001C9317 /* boton_comenzar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = boton_comenzar.png; sourceTree = "<group>"; };
 		C3D387F0180BB0B0001C9317 /* boton_comenzar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "boton_comenzar@2x.png"; sourceTree = "<group>"; };
 		C3D387F1180BB0B0001C9317 /* fondo_inicio.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = fondo_inicio.jpg; sourceTree = "<group>"; };
@@ -613,12 +611,6 @@
 		C3D38822180BB0B0001C9317 /* labeleem@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "labeleem@2x.png"; sourceTree = "<group>"; };
 		C3D38823180BB0B0001C9317 /* paa.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = paa.png; sourceTree = "<group>"; };
 		C3D38824180BB0B0001C9317 /* paa@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "paa@2x.png"; sourceTree = "<group>"; };
-		C3D38826180BB0B0001C9317 /* icon_sopnia_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sopnia_114.png; sourceTree = "<group>"; };
-		C3D38827180BB0B0001C9317 /* icon_sopnia_120.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sopnia_120.png; sourceTree = "<group>"; };
-		C3D38828180BB0B0001C9317 /* icon_sopnia_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sopnia_29.png; sourceTree = "<group>"; };
-		C3D38829180BB0B0001C9317 /* icon_sopnia_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sopnia_57.png; sourceTree = "<group>"; };
-		C3D3882A180BB0B0001C9317 /* icon_sopnia_58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sopnia_58.png; sourceTree = "<group>"; };
-		C3D3882B180BB0B0001C9317 /* icon_sopnia_80.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon_sopnia_80.png; sourceTree = "<group>"; };
 		C3D3882D180BB0B0001C9317 /* celdas_actividades_jornada.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = celdas_actividades_jornada.png; sourceTree = "<group>"; };
 		C3D3882E180BB0B0001C9317 /* celdas_actividades_jornada@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "celdas_actividades_jornada@2x.png"; sourceTree = "<group>"; };
 		C3D3882F180BB0B0001C9317 /* dia de la actividad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "dia de la actividad.png"; sourceTree = "<group>"; };
@@ -1402,9 +1394,9 @@
 				C3D387E4180BB0B0001C9317 /* logo_About@2x.png */,
 				C3D387E5180BB0B0001C9317 /* mcongress_web.png */,
 				C3D387E6180BB0B0001C9317 /* mcongress_web@2x.png */,
+				78D8904F1820A21900A0F011 /* navbar_about.png */,
+				78D890501820A21900A0F011 /* navbar_about@2x.png */,
 				C3D387E7180BB0B0001C9317 /* navbar128_about@2x.png */,
-				C3D387E8180BB0B0001C9317 /* navbar_about.png */,
-				C3D387E9180BB0B0001C9317 /* navbar_about@2x.png */,
 			);
 			path = About;
 			sourceTree = "<group>";
@@ -1466,8 +1458,6 @@
 				786C2704180CE5F7005A55CC /* publi_bot_1@2x.png */,
 				786C2705180CE5F7005A55CC /* publi_bot_2.png */,
 				786C2706180CE5F7005A55CC /* publi_bot_2@2x.png */,
-				786C2707180CE5F7005A55CC /* publi_bot_3.png */,
-				786C2708180CE5F7005A55CC /* publi_bot_3@2x.png */,
 				C3D3881A180BB0B0001C9317 /* shareonface.png */,
 				C3D3881B180BB0B0001C9317 /* shareonface@2x.png */,
 				C3D3881C180BB0B0001C9317 /* shareontwit.png */,
@@ -1492,12 +1482,12 @@
 		C3D38825180BB0B0001C9317 /* Icons */ = {
 			isa = PBXGroup;
 			children = (
-				C3D38826180BB0B0001C9317 /* icon_sopnia_114.png */,
-				C3D38827180BB0B0001C9317 /* icon_sopnia_120.png */,
-				C3D38828180BB0B0001C9317 /* icon_sopnia_29.png */,
-				C3D38829180BB0B0001C9317 /* icon_sopnia_57.png */,
-				C3D3882A180BB0B0001C9317 /* icon_sopnia_58.png */,
-				C3D3882B180BB0B0001C9317 /* icon_sopnia_80.png */,
+				78D89041182096F400A0F011 /* icon_neurocirugia_29.png */,
+				78D89042182096F400A0F011 /* icon_neurocirugia_57.png */,
+				78D89043182096F400A0F011 /* icon_neurocirugia_58.png */,
+				78D89044182096F400A0F011 /* icon_neurocirugia_80.png */,
+				78D89045182096F400A0F011 /* icon_neurocirugia_114.png */,
+				78D8904D182097FB00A0F011 /* icon_neurocirugia_120.png */,
 			);
 			path = Icons;
 			sourceTree = "<group>";
@@ -1568,8 +1558,6 @@
 				786C26F8180CE5DB005A55CC /* publi_side_1@2x.png */,
 				786C26F9180CE5DB005A55CC /* publi_side_2.png */,
 				786C26FA180CE5DB005A55CC /* publi_side_2@2x.png */,
-				786C26FB180CE5DB005A55CC /* publi_side_3.png */,
-				786C26FC180CE5DB005A55CC /* publi_side_3@2x.png */,
 				786C270F180CE656005A55CC /* buttonSopnia.png */,
 				786C2710180CE656005A55CC /* buttonSopnia@2x.png */,
 			);
@@ -1662,7 +1650,7 @@
 				ORGANIZATIONNAME = "Luis Gonzalez";
 				TargetAttributes = {
 					AAC02D021738ABAD000AF765 = {
-						DevelopmentTeam = U5A54XUB2N;
+						DevelopmentTeam = YWNZA7PU67;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -1739,14 +1727,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3D38868180BB0B0001C9317 /* fondo_about.png in Resources */,
+				78D89049182096F400A0F011 /* icon_neurocirugia_58.png in Resources */,
 				C3D388CA180BB0B0001C9317 /* ButtonAbout@2x.png in Resources */,
 				786C270B180CE5F7005A55CC /* publi_bot_2.png in Resources */,
 				C3D388B3180BB0B0001C9317 /* LabelJornada.png in Resources */,
 				C3D388B1180BB0B0001C9317 /* celdas_actividades_jornada@2x.png in Resources */,
-				C3D388AB180BB0B0001C9317 /* icon_sopnia_120.png in Resources */,
 				C3D388DD180BB0B0001C9317 /* celdaSpeaker.png in Resources */,
 				AAC02D121738ABAD000AF765 /* InfoPlist.strings in Resources */,
-				786C2702180CE5DB005A55CC /* publi_side_3@2x.png in Resources */,
 				C3D38892180BB0B0001C9317 /* no_hay_activ.png in Resources */,
 				C3D38882180BB0B0001C9317 /* boton_volver.png in Resources */,
 				C3D388D2180BB0B0001C9317 /* ButtonMapa@2x.png in Resources */,
@@ -1765,7 +1752,7 @@
 				C3D388C5180BB0B0001C9317 /* barraMenu.png in Resources */,
 				C3D3887E180BB0B0001C9317 /* boton_mapa.png in Resources */,
 				786C2716180CE6FC005A55CC /* Default-568h@2x.png in Resources */,
-				786C270D180CE5F7005A55CC /* publi_bot_3.png in Resources */,
+				78D8904E182097FB00A0F011 /* icon_neurocirugia_120.png in Resources */,
 				C3D388A9180BB0B0001C9317 /* paa@2x.png in Resources */,
 				C3D3888A180BB0B0001C9317 /* label_notificaciones.png in Resources */,
 				786C270A180CE5F7005A55CC /* publi_bot_1@2x.png in Resources */,
@@ -1773,6 +1760,7 @@
 				C3D388B9180BB0B0001C9317 /* flecha_mapa.png in Resources */,
 				C3953411174C5DCC0048543B /* README.md in Resources */,
 				C3D388B2180BB0B0001C9317 /* dia de la actividad.png in Resources */,
+				78D890521820A21900A0F011 /* navbar_about@2x.png in Resources */,
 				C3D3887F180BB0B0001C9317 /* boton_mapa@2x.png in Resources */,
 				C3D38879180BB0B0001C9317 /* fondo_inicio@2x.jpg in Resources */,
 				C3D388C7180BB0B0001C9317 /* butonhome.png in Resources */,
@@ -1785,11 +1773,10 @@
 				786C270C180CE5F7005A55CC /* publi_bot_2@2x.png in Resources */,
 				C3953420174C5DCC0048543B /* README.md in Resources */,
 				C3D38869180BB0B0001C9317 /* fondo_about@2x.png in Resources */,
-				C3D388AD180BB0B0001C9317 /* icon_sopnia_57.png in Resources */,
 				C3D38876180BB0B0001C9317 /* boton_comenzar.png in Resources */,
-				C3D388AE180BB0B0001C9317 /* icon_sopnia_58.png in Resources */,
 				C3D388BD180BB0B0001C9317 /* iconoNivel.png in Resources */,
 				C3D388E1180BB0B0001C9317 /* fondo_inicio.png in Resources */,
+				78D890511820A21900A0F011 /* navbar_about.png in Resources */,
 				C3D388CC180BB0B0001C9317 /* ButtonBusqueda@2x.png in Resources */,
 				C3D38891180BB0B0001C9317 /* navbar@2x.png in Resources */,
 				C3D388A3180BB0B0001C9317 /* shareontwit@2x.png in Resources */,
@@ -1798,7 +1785,6 @@
 				C3D38895180BB0B0001C9317 /* no_hay_activ_1136@2x.png in Resources */,
 				C3D38866180BB0B0001C9317 /* aimagos_web.png in Resources */,
 				786C26FD180CE5DB005A55CC /* publi_side_1.png in Resources */,
-				C3D388AA180BB0B0001C9317 /* icon_sopnia_114.png in Resources */,
 				C3D388A1180BB0B0001C9317 /* shareonface@2x.png in Resources */,
 				C3D38884180BB0B0001C9317 /* btnmenu.png in Resources */,
 				78D8635E180E0B2100D1C3C3 /* zocalo@2x.png in Resources */,
@@ -1813,6 +1799,7 @@
 				786C2709180CE5F7005A55CC /* publi_bot_1.png in Resources */,
 				C3D388C2180BB0B0001C9317 /* map@2x.png in Resources */,
 				C3D388B6180BB0B0001C9317 /* boton_mapa@2x.png in Resources */,
+				78D89048182096F400A0F011 /* icon_neurocirugia_57.png in Resources */,
 				C3D388DF180BB0B0001C9317 /* flechaSpeaker.png in Resources */,
 				C3D388D1180BB0B0001C9317 /* ButtonMapa.png in Resources */,
 				C3D388A7180BB0B0001C9317 /* labeleem@2x.png in Resources */,
@@ -1831,7 +1818,6 @@
 				C3D388BE180BB0B0001C9317 /* iconoNivel@2x.png in Resources */,
 				C3D3886E180BB0B0001C9317 /* mcongress_web.png in Resources */,
 				C3D388BF180BB0B0001C9317 /* lavelMapa.png in Resources */,
-				C3D38871180BB0B0001C9317 /* navbar_about.png in Resources */,
 				C3D388D5180BB0B0001C9317 /* ButtonSpeakers.png in Resources */,
 				C3D38880180BB0B0001C9317 /* boton_nota.png in Resources */,
 				C3D38886180BB0B0001C9317 /* fotoSpeaker.png in Resources */,
@@ -1859,6 +1845,7 @@
 				C3D388E3180BB0B0001C9317 /* fondo_inicio_1136.png in Resources */,
 				C3D388A2180BB0B0001C9317 /* shareontwit.png in Resources */,
 				C3D38888180BB0B0001C9317 /* label.png in Resources */,
+				78D8904B182096F400A0F011 /* icon_neurocirugia_114.png in Resources */,
 				C3D38887180BB0B0001C9317 /* fotoSpeaker@2x.png in Resources */,
 				C3D3886A180BB0B0001C9317 /* fondo_about_1136.png in Resources */,
 				C3D388E2180BB0B0001C9317 /* fondo_inicio@2x.png in Resources */,
@@ -1866,23 +1853,19 @@
 				C3D3886C180BB0B0001C9317 /* logo_About.png in Resources */,
 				C34D72651778F05900A56577 /* Congresos2.sqlite in Resources */,
 				C3D3888C180BB0B0001C9317 /* logo.png in Resources */,
-				C3D38872180BB0B0001C9317 /* navbar_about@2x.png in Resources */,
 				C3D3886B180BB0B0001C9317 /* fondo_about_1136@2x.png in Resources */,
 				C3D3888F180BB0B0001C9317 /* navbar.png in Resources */,
 				C3D38894180BB0B0001C9317 /* no_hay_activ_1136.png in Resources */,
-				C3D388AC180BB0B0001C9317 /* icon_sopnia_29.png in Resources */,
 				C3D38877180BB0B0001C9317 /* boton_comenzar@2x.png in Resources */,
 				C3D388B5180BB0B0001C9317 /* boton_mapa.png in Resources */,
 				C3D388BB180BB0B0001C9317 /* iconoEdificio.png in Resources */,
-				786C270E180CE5F7005A55CC /* publi_bot_3@2x.png in Resources */,
 				78D86365180E0B2800D1C3C3 /* piso_2.png in Resources */,
 				C3D388C6180BB0B0001C9317 /* barraMenu@2x.png in Resources */,
 				C3D3888B180BB0B0001C9317 /* label_notificaciones@2x.png in Resources */,
+				78D8904A182096F400A0F011 /* icon_neurocirugia_80.png in Resources */,
 				7849982B17E019190019D7BB /* Iphone@4i.storyboard in Resources */,
 				C3D388C1180BB0B0001C9317 /* map.png in Resources */,
 				786C2712180CE656005A55CC /* buttonSopnia@2x.png in Resources */,
-				C3D388AF180BB0B0001C9317 /* icon_sopnia_80.png in Resources */,
-				786C2701180CE5DB005A55CC /* publi_side_3.png in Resources */,
 				C3D388BA180BB0B0001C9317 /* flecha_mapa@2x.png in Resources */,
 				78D86363180E0B2800D1C3C3 /* lobby.png in Resources */,
 				C3D38883180BB0B0001C9317 /* boton_volver@2x.png in Resources */,
@@ -1890,6 +1873,7 @@
 				786C2718180CE6FC005A55CC /* Default@2x.png in Resources */,
 				C3D388BC180BB0B0001C9317 /* iconoEdificio@2x.png in Resources */,
 				C3D388B0180BB0B0001C9317 /* celdas_actividades_jornada.png in Resources */,
+				78D89047182096F400A0F011 /* icon_neurocirugia_29.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2114,7 +2098,7 @@
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "5F5D9C92-350B-4AE6-B451-AE774930C0AC";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

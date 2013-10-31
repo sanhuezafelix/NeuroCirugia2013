@@ -30,7 +30,7 @@
     
     [super viewDidLoad];
     //trackenado GA
-    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerDetalleConferencia sendView:@"Conferencia"];
     self.Hora.text = self.horacelda;
     self.Expositor.text = self.ExpositorCelda;
@@ -65,11 +65,13 @@
         self.BotonPublicarFacebook.hidden=false;
         if (self.LugarCelda != NULL) {
            self.Lugar.text = self.LugarCelda;
-            self.BotonMapas.hidden = false;
+            self.BotonMapas.hidden = true;
             NSLog( @"lugar =====> %@",self.LugarCelda);
         }
         else{
             self.Lugar.text = @"";
+            self.BotonMapas.hidden = true;
+
         }
       
         
@@ -87,7 +89,7 @@
     NSLog(@" este es un%@n", self.tituloCelda);
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_2.png",@"publi_bot_1.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_2.png",@"publi_bot_1.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -99,7 +101,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -134,11 +136,11 @@
             
         };
         
-       self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, XXXI Congreso Sopnia ", self.tituloCelda ];
+       self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy como oyente en %@ del LVI Congreso de Neurocirugia ", self.tituloCelda ];
         Facebook.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [Facebook setInitialText:self.MensajeInicial];
         [Facebook addImage:[UIImage imageNamed:@"logoSopnia"]];
-        [Facebook addURL:[NSURL URLWithString:@"http://www.sopnia.com"]];
+        [Facebook addURL:[NSURL URLWithString:@"http://www.neurocirugia.cl/"]];
         [Facebook setCompletionHandler:completionHandler];
         [self presentViewController:Facebook animated:YES completion:nil];
     }
@@ -148,7 +150,7 @@
 
 -(void)socialTracking:(NSString*)send:(NSString*)action{
     
-    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [socialTracking sendSocial:send
                     withAction:action
                     withTarget:nil];
@@ -177,22 +179,11 @@
             }
         };
         
-      /*  if (([self.Titulo.text isEqualToString:@"Almuerzo"]==TRUE)||([self.Titulo.text isEqualToString:@"Coffee Break"]==TRUE))
-        {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, desde mCongress", self.tituloCelda  ];
-        }
-        else
-        {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
-        }
-        if (self.ActividadSpeaker == NULL) {
-            self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];
-        }*/
-        self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, XXXI Congreso Sopnia ", self.tituloCelda ];
+        self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy como oyente en %@ del LVI Congreso de Neurocirugia ", self.tituloCelda ];
         
         twitter.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [twitter addImage:[UIImage imageNamed:@"logoSopnia"]];
-        [twitter addURL:[NSURL URLWithString:@"http://www.sopnia.com"]];
+        [twitter addURL:[NSURL URLWithString:@"http://www.neurocirugia.cl/"]];
         [twitter setInitialText:self.MensajeInicial];
         [twitter setCompletionHandler:completionHandler];
         
@@ -213,6 +204,7 @@
         mMapaConferenciaViewController *destino = (mMapaConferenciaViewController *)segue.destinationViewController;
         
         destino.salon = self.LugarCelda;
+        [self.BotonMapas setHidden:YES];
     }
 
     
@@ -271,7 +263,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Detalle SImposio"
@@ -322,7 +314,7 @@
     evento.endDate   = self.DateFin;
     evento.allDay = NO;
     
-    evento.URL = [NSURL URLWithString:@"http://www.sopnia.com"];
+    evento.URL = [NSURL URLWithString:@"http://www.neurocirugia.cl/"];
     
     EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];
     
@@ -341,7 +333,7 @@
     [self presentModalViewController:controlador animated:YES];
     controlador.editViewDelegate = self;
     
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Calendario"
                                                 withLabel:@"Revelo desde Detalle Simposio"

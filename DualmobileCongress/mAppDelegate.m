@@ -38,7 +38,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     [[AFNetworkActivityIndicatorManager sharedManager] setEnabled:YES];
     
     //Creamos un NSUSerDefault para soportar el control de la sincronización por intervalos de tiempo
-    [self NotificacionLocal];
+
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     if ([[NSUserDefaults standardUserDefaults] boolForKey:@"HasLaunchedOnce"])
     {}
@@ -72,12 +72,13 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     // Opcional: activa el modo debug para obtener información adicional.
     [GAI sharedInstance].debug = YES;
     // Creamos la instancia del tracker indicando el ID de seguimiento que hemos obtenido anteriormente.
-    id tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     
     NSLog(@"%@",tracker);
     
     
-    
+    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeSound];
+
     
     return YES;
     
@@ -93,32 +94,6 @@ static NSString *const kStoreName = @"Congresos.sqlite";
             abort();
         }
     }
-}
-
-#pragma mark - Notificacion Local
--(void)NotificacionLocal{
-    
-    NSDate *horaDispocitivo = [[NSDate alloc] initWithTimeIntervalSinceNow:0];
-    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss"];
-    
-    NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-    NSRange remplazoFecha = {11,8};
-    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"09:00:00"]];
-    UILocalNotification *notification = [[UILocalNotification alloc] init];
-    NSLog(@"esta es la fecha transformada %@",HoraActual);
-    // debe de activarse dentro de 5 segundos
-    NSLog(@"esta es la hra actual %@",[[NSDate alloc] initWithTimeIntervalSinceNow:5]);
-    notification.fireDate = HoraActual;
-    // mensaje que saldrá en la alerta
-    notification.alertBody = @"Ha Comenzado el congreso";
-    // sonido por defecto
-    notification.soundName = UILocalNotificationDefaultSoundName;
-    // título del botón
-    notification.alertAction = @"Ir a la Aplicacion";
-    notification.hasAction = YES;
-    // activa la notificación
-    [[UIApplication sharedApplication] scheduleLocalNotification:notification];
 }
 
 #pragma mark - Core Data stack
@@ -208,7 +183,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 
 - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken {
     
-    [[ParseOrbiter parseManagerWithApplicationID:@"YACUWrIsFNmUe3vLSjp4CAuiwDKzp5LGRtNyG8Fq" RESTAPIKey:@"UX2hpIyQeAbkUGFwhjDe136B4Eg6FhT59XnLBoNO"] registerDeviceToken:deviceToken withAlias:@"Callampa" badge:nil channels:[NSSet setWithArray:[NSArray arrayWithObjects:@"callampon",@"callampin",nil]  ]timeZone:[NSTimeZone defaultTimeZone] success:^(id responseObject) {
+    [[ParseOrbiter parseManagerWithApplicationID:@"JDCplV0wmV7msjnWuRyKRKRIUnZzmvX0mGOkvTf0" RESTAPIKey:@"67Y9vMcX1Vz0Sl6lIAEZnZTwGxL2R9hMALWf7QZ0"] registerDeviceToken:deviceToken withAlias:@"Neurocirugia2013" badge:nil channels:[NSSet setWithArray:[NSArray arrayWithObjects:@"neurocirugia",@"canalete",nil]  ]timeZone:[NSTimeZone defaultTimeZone] success:^(id responseObject) {
         NSLog(@"El Registro (con 'h' el 'ha' ése luchin) ha sido realizado : %@", responseObject);
         
     } failure:^(NSError *error) {
@@ -217,22 +192,21 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 }
 
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo {
-    id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoComenzar = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoComenzar sendEventWithCategory:@"uiAction"
                                withAction:@"push"
                                 withLabel:@"Recibido"
                                 withValue:nil];
     
-    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound];
+    [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeAlert];
     [application registerForRemoteNotificationTypes:UIRemoteNotificationTypeBadge];
     NSDictionary *payload = [userInfo objectForKey:@"aps"];
     NSString *alertMessage = [payload objectForKey:@"alert"];
     
-    
     UIApplicationState estadus = [application applicationState];
     if (estadus == UIApplicationStateActive) {
         
-               NSString *titulengue = @"OK";
+        NSString *titulengue = @"Me parece";
         NSString *texto = [[userInfo valueForKey:@"aps"] valueForKey:@"alert"];
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Te informamos que:"
                                                             message:texto
@@ -240,9 +214,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
                                                   cancelButtonTitle:titulengue
                                                   otherButtonTitles:nil, nil];
         [alertView show];
-        
-        
-}
+    }
     
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];
@@ -260,7 +232,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 
 -(void)applicationWillEnterForeground:(UIApplication *)application{
 
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:nil];
     [[UIApplication sharedApplication] cancelAllLocalNotifications];}
 
 - (void)applicationDidEnterBackground:(UIApplication *)application
@@ -274,8 +246,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
 }
 
 - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification {
-    NSLog(@"llegó la notificación");
-   // application.applicationIconBadgeNumber = application.applicationIconBadgeNumber +1;
+    NSLog(@"llegó la notificación local");
 }
 
 @end

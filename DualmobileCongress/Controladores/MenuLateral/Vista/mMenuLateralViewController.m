@@ -29,9 +29,9 @@
 
 -(void)awakeFromNib
 {
-    self.IconoMenu   = [[NSArray alloc]initWithObjects:@"butonhome.png",@"ButtonJornada.png",@"ButtonSpeakers.png",@"ButtonBusqueda.png",@"ButtonMapa.png", @"buttonSopnia.png",@"ButtonAbout.png", nil];
+    self.IconoMenu   = [[NSArray alloc]initWithObjects:@"butonhome.png",@"ButtonJornada.png",@"ButtonSpeakers.png",@"ButtonBusqueda.png",@"ButtonAbout", nil];
                     
-    self.MenuItems  = [[NSArray alloc]initWithObjects: @"Ahora",@"Jornada",@"Speaker",@"Busqueda",@"Mapas",@"Hazte Socio", nil];
+    self.MenuItems  = [[NSArray alloc]initWithObjects: @"Ahora",@"Jornada",@"Speaker",@"Busqueda",@"About", nil];
 }
 
 - (void)viewDidLoad
@@ -41,7 +41,7 @@
     self.slidingViewController.underLeftWidthLayout = ECFullWidth;
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_side_1.png",@"publi_side_2.png",@"publi_side_3.png", nil];
+                    @"publi_side_1.png",@"publi_side_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -53,7 +53,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Lateral"
@@ -91,7 +91,7 @@
 {
     NSString *identifier = [NSString stringWithFormat:@"%@", [self.MenuItems objectAtIndex:indexPath.row]];
     NSString *label = [[NSString alloc]initWithFormat:@"Tap Opcion %@",identifier];
-    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackingMenu = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     
     [trackingMenu sendEventWithCategory:@"uiAction"
                              withAction:@"Tap Menu Lateral"

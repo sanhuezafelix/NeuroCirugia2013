@@ -16,16 +16,15 @@
 @implementation mSeleccionJornadaViewController
 
 -(void)awakeFromNib{
-    self.Jornadas = [[NSArray alloc]initWithObjects:@"Miércoles 23",@"Jueves 24",@"Viernes 25",@"Sábado 26", nil];
-     self.InicioJornadas = [[NSArray alloc]initWithObjects:@"2013-10-23 14:00:00 +0000",@"2013-10-24 08:00:00 +0000",@"2013-10-25 07:30:00 +0000",@"2013-10-26 09:00:00 +0000", nil];
-    self.FinJornadas = [[NSArray alloc]initWithObjects:@"2013-10-23 20:31:00 +0000",@"2013-10-24 20:01:00 +0000",@"2013-10-25 21:01:00 +0000",@"2013-10-26 13:01:00 +0000", nil];
+    self.Jornadas = [[NSArray alloc]initWithObjects:@"Jueves 7",@"Viernes 8",@"Sábado 9", nil];
+     self.InicioJornadas = [[NSArray alloc]initWithObjects:@"2013-11-07 08:00:00 +0000",@"2013-11-08 07:30:00 +0000",@"2013-11-09 07:30:00 +0000", nil];
+    self.FinJornadas = [[NSArray alloc]initWithObjects:@"2013-11-07 21:01:00 +0000",@"2013-11-08 23:01:00 +0000",@"2013-11-09 19:31:00 +0000", nil];
 }
 
 - (void)viewDidLoad
 {    [super viewDidLoad];
-    //trackenado GA
     
-    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerJornada sendView:@"SeleccionJornada"];
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
                                resizableImageWithCapInsets:UIEdgeInsetsMake(0,0,0,0)];
@@ -41,7 +40,7 @@
     self.title = @" ";
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_2.png",@"publi_bot_3.png",@"publi_bot_1.png", nil];
+                    @"publi_bot_2.png",@"publi_bot_1.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -53,7 +52,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -109,7 +108,7 @@
 
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECRight];
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Selecion Jornada"
@@ -118,7 +117,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Selecion Jornada"

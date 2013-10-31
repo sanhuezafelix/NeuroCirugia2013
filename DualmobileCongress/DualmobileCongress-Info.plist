@@ -5,7 +5,7 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleDisplayName</key>
-	<string>mCongress</string>
+	<string>Neuro2013</string>
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIcons</key>
@@ -14,6 +14,12 @@
 		<dict>
 			<key>CFBundleIconFiles</key>
 			<array>
+				<string>icon_neurocirugia_80</string>
+				<string>icon_neurocirugia_29</string>
+				<string>icon_neurocirugia_120</string>
+				<string>icon_neurocirugia_114</string>
+				<string>icon_neurocirugia_58</string>
+				<string>icon_neurocirugia_57</string>
 				<string>icon_sopnia_58</string>
 				<string>icon_sopnia_80</string>
 				<string>icon_sopnia_29</string>

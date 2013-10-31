@@ -41,7 +41,7 @@
     
     //trackenado GA
     
-    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerJornada sendView:@"Simposio"];
     
     UIImage *NotButtonImage = [[UIImage imageNamed:@"boton_nota"]
@@ -52,7 +52,7 @@
     self.title = @" ";
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_3.png",@"publi_bot_2.png",@"publi_bot_1.png", nil];
+                    @"publi_bot_2.png",@"publi_bot_1.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];

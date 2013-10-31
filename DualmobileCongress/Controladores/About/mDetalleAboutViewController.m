@@ -20,7 +20,7 @@
     [super viewDidLoad];
     //trackenado GA
     
-    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerJornada = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerJornada sendView:@"DetalleAbout"];
     NSLog(@"%@",self.weburl);
     NSURL        *url       = [NSURL URLWithString:self.weburl];
@@ -29,7 +29,7 @@
     [self.WebView loadRequest:loadURL];
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_1.png",@"publi_bot_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];

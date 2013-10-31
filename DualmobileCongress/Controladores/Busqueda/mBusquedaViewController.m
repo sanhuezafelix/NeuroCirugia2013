@@ -28,7 +28,7 @@
     
     //trackenado GA
     
-    id trackerBusqueda = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerBusqueda = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerBusqueda sendView:@"Busqueda"];
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
@@ -46,7 +46,7 @@
     self.SearchTableview.scrollEnabled = YES;
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_2.png",@"publi_bot_1.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -59,7 +59,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -273,7 +273,7 @@
         [self CerrarTeclado];
     
     [self.slidingViewController anchorTopViewTo:ECRight];
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Busqueda"
@@ -286,7 +286,7 @@
     else
         [self CerrarTeclado];
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Busqueda"

@@ -11,7 +11,7 @@
 #import "mConexionRed.h"
 
 @interface mAboutViewController()
-
+//UA-37133331-3
 @end
 
 @implementation mAboutViewController
@@ -20,7 +20,7 @@
 {
     [super viewDidLoad];
     
-    id trackerAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerAbout sendView:@"About"];
     
     UIImage *barButtonImage = [[UIImage imageNamed:@"btnmenu.png"]
@@ -71,7 +71,7 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
    
     
-    id eventoMenuLateralDesdeAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralDesdeAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralDesdeAbout sendEventWithCategory:@"uiAction"
                         withAction:@"DespliegueMenuLateral"
                          withLabel:@"Abrío el menu lateral desde About"
@@ -81,7 +81,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
 [eventoNotificacionesDesdeAbout sendEventWithCategory:@"uiAction"
                                         withAction:@"DespliegueMenuLateral"
                                          withLabel:@"Abrió Notificaciones desde About"

@@ -31,7 +31,7 @@
 {
     [super viewDidLoad];
     
-    id trackerAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerAbout = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerAbout sendView:@"Socio"];
     
     
@@ -47,7 +47,7 @@
     self.title = @" ";
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_3.png",@"publi_bot_1.png",@"publi_bot_2.png", nil];
+                    @"publi_bot_1.png",@"publi_bot_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -59,7 +59,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -81,7 +81,7 @@
     [self.slidingViewController anchorTopViewTo:ECRight];
     
     
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Hazte Socio"
@@ -91,7 +91,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Hazte Socio"
@@ -108,7 +108,7 @@
     // Email Content
     NSString *messageBody = @"Gracias por contactarse con SOPNIA <br> <br>Le solicitamos que llene los siguientes datos: <br><br> Nombre: <br> Apellido: <br> Correo Electronico: <br> Numero de contacto: <br> <br>Gracias.";
     // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"sopnia@tie.cl"];
+    NSArray *toRecipents = [NSArray arrayWithObject:@"asanhuezal7.7@gmail.com"];
     // To bbc
 
     
@@ -151,7 +151,7 @@
 }
 
 -(void)GaMail{
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Envio E-Mail"

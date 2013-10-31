@@ -24,7 +24,7 @@
     
      //trackenado GA
         
-    id trackerMapa = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerMapa = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerMapa sendView:@"Mapa"];
     
 
@@ -41,7 +41,7 @@
        self.title = @" ";
     
     NSArray *arr = [NSArray arrayWithObjects:
-                     @"publi_bot_2.png",@"publi_bot_3.png",@"publi_bot_1.png", nil];
+                     @"publi_bot_2.png",@"publi_bot_1.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -57,7 +57,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -83,7 +83,7 @@
 }
 - (IBAction)RevelarMenuLateral:(id)sender {
      [self.slidingViewController anchorTopViewTo:ECRight];
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Mapas"
@@ -94,7 +94,7 @@
 
 - (IBAction)RevelarNotificaciones:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Mapas"

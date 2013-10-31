@@ -51,7 +51,7 @@
     
     //trackenado GA
 
-    id trackerAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerAhora sendView:@"Ahora"];
     
   
@@ -72,7 +72,7 @@
     self.refresh = refresh;
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_1.png",@"publi_bot_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -84,7 +84,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -105,7 +105,6 @@
     self.EnesteMomento = [[NSMutableArray alloc]initWithArray:[self CargarEnEsteMomento]];
     self.ProximasActividades = [[NSMutableArray alloc]initWithArray:[self CargarProximasActividades]];
     
-
     int rows;
     if (section == 0) {
         rows = [self.EnesteMomento count];
@@ -351,8 +350,8 @@
     [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
  
     NSString *strDate = [dateFormatter stringFromDate:horaDispositivo];
-    NSRange remplazoFecha = {0, 7};
-    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
+    NSRange remplazoFecha = {0, 6};
+    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-1"]];
     NSString *strDate2 = [dateFormatter stringFromDate:HoraActual];
     
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -374,15 +373,15 @@
 
 -(NSArray*)CargarProximasActividades{
     
-    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:5400];
+    NSDate *horaDispocitivo = [[NSDate alloc]initWithTimeIntervalSinceNow:0];
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
-    [dateFormatter setDateFormat:@"yyyy-MM-dd HH"];
+    [dateFormatter setDateFormat:@"yyyy-MM-dd HH:mm:ss zzzz"];
     
     NSDateFormatter *dateFormatter2 = [[NSDateFormatter alloc] init];
     [dateFormatter2 setDateFormat:@"yyyy-MM-dd"];
     
     NSString *strDate = [dateFormatter stringFromDate:horaDispocitivo];
-//    NSRange remplazoFecha = {0, 7};
+//       NSRange remplazoFecha = {0, 7};
 //    NSDate *HoraActual = [dateFormatter dateFromString:[strDate stringByReplacingCharactersInRange:remplazoFecha withString:@"2013-10"]];
     NSString *strDate2 = [dateFormatter2 stringFromDate:horaDispocitivo];
     
@@ -396,7 +395,6 @@
     
     NSPredicate *Predicado = [NSPredicate predicateWithFormat:@"(horaInicio > %@) AND (horaFin CONTAINS[cd] %@)",strDate,strDate2];
     [fetchRequest setPredicate:Predicado];
-    // [fetchRequest setFetchLimit:20];
     
     // Define how we want our entities to be sorted
     NSSortDescriptor* sortDescriptor = [[NSSortDescriptor alloc]
@@ -425,7 +423,7 @@
 {
     [self.slidingViewController anchorTopViewTo:ECRight];
     
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Ahora"
@@ -438,7 +436,7 @@
     [self.slidingViewController anchorTopViewTo:ECLeft];
 
     
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Ahora"

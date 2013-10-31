@@ -29,11 +29,13 @@
     
     [super viewDidLoad];
     //trackenado GA
-    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerDetalleConferencia = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerDetalleConferencia sendView:@"Detalle Conferencia"];
     
     if (self.LugarCelda != NULL) {
         self.Lugar.text = self.LugarCelda;
+        [self.BotonMapa setHidden:TRUE];
+
     }
     else{
         self.Lugar.text = @"";
@@ -78,6 +80,7 @@
         self.BotonSimposio.hidden = true;
         self.ContenidoExposicion.hidden = false;
         self.labelsimposio.text = self.textoLabelSimposio;
+        
     }
     
         NSLog(@"Contenido Nombre simposio==> %@",self.NombreSimposioPadre);
@@ -99,7 +102,7 @@
   
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_1.png",@"publi_bot_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -111,7 +114,7 @@
 - (void )imageTapped:(UITapGestureRecognizer *) gestureRecognizer
 {
     NSLog(@"tap imagen");
-    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id TokeImagenTracking = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [TokeImagenTracking sendEventWithCategory:@"uiAction"
                                    withAction:@"Tap Publicidad"
                                     withLabel:@"Tap Branding Principal"
@@ -146,17 +149,14 @@
             
         };
         
-      
-        
-       /* self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@ de %@ Expone %@ ", self.ActividadSpeaker,self.tituloCelda , self.Expositor.text ];*/
-         self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, XXXI Congreso Sopnia ", self.tituloCelda ];
+    self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy como oyente en %@ del LVI Congreso de Neurocirugia ", self.tipoEventoPadre2];
         
        
         
         Facebook.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [Facebook setInitialText:self.MensajeInicial];
         [Facebook addImage:[UIImage imageNamed:@"logoSopnia"]];
-        [Facebook addURL:[NSURL URLWithString:@"http://www.sopnia.com"]];
+        [Facebook addURL:[NSURL URLWithString:@"http://www.neurocirugia.cl"]];
         [Facebook setCompletionHandler:completionHandler];
         [self presentViewController:Facebook animated:YES completion:nil];
     }
@@ -166,7 +166,7 @@
 
 -(void)socialTracking:(NSString*)send:(NSString*)action{
     
-    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id socialTracking= [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [socialTracking sendSocial:send
                     withAction:action
                     withTarget:nil];
@@ -194,11 +194,11 @@
                     break;
             }
         };
-      self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy en %@, XXXI Congreso Sopnia ", self.tituloCelda ];
+      self.MensajeInicial = [[NSString alloc]initWithFormat:@"Estoy como oyente en %@ del LVI Congreso de Neurocirugia ", self.tituloCelda ];
         
         twitter.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
         [twitter addImage:[UIImage imageNamed:@"logoSopnia"]];
-        [twitter addURL:[NSURL URLWithString:@"http://www.sopnia.com"]];
+        [twitter addURL:[NSURL URLWithString:@"http://www.neurocirugia.cl"]];
         [twitter setInitialText:self.MensajeInicial];
         [twitter setCompletionHandler:completionHandler];
         
@@ -236,8 +236,8 @@
 
 - (IBAction)RevelarMenuLateral:(id)sender {
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateral = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Vista Detalle"
@@ -287,7 +287,7 @@
     evento.endDate   = self.DateFin;
     evento.allDay = NO;
     
-    evento.URL = [NSURL URLWithString:@"http://www.sopnia.com"];
+    evento.URL = [NSURL URLWithString:@"http://www.neurocirugia.cl"];
     
     EKEventEditViewController *controlador = [[EKEventEditViewController alloc]init];
     
@@ -306,7 +306,7 @@
     [self presentModalViewController:controlador animated:YES];
     controlador.editViewDelegate = self;
     
-    id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id gaiBotonCalendario = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [gaiBotonCalendario sendEventWithCategory:@"uiAction"
                                    withAction:@"Revelar Calendario"
                                     withLabel:@"Revelo el calendario"

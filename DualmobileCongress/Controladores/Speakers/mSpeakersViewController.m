@@ -25,7 +25,7 @@
     [super viewDidLoad];
     
     
-    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id trackerSpeaker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [trackerSpeaker sendView:@"Speaker"];
     
     
@@ -46,7 +46,7 @@
     self.SpeakerTableview.scrollEnabled = YES;
     
     NSArray *arr = [NSArray arrayWithObjects:
-                    @"publi_bot_1.png",@"publi_bot_2.png",@"publi_bot_3.png", nil];
+                    @"publi_bot_1.png",@"publi_bot_2.png", nil];
     [self.animationImageView setImagesArr:arr];
     self.animationImageView.showNavigator = NO;
     [self.animationImageView startAnimating];
@@ -227,7 +227,7 @@ if (searching)
         [self CerrarTeclado];
     
     [self.slidingViewController anchorTopViewTo:ECRight];
-    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoMenuLateralAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoMenuLateralAhora sendEventWithCategory:@"uiAction"
                                        withAction:@"Revelar Menu Lateral"
                                         withLabel:@"Revelo desde Speaker"
@@ -241,7 +241,7 @@ if (searching)
     else
         [self CerrarTeclado];
     [self.slidingViewController anchorTopViewTo:ECLeft];
-    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-2"];
+    id eventoNotificacionesDesdeAhora = [[GAI sharedInstance] trackerWithTrackingId:@"UA-37133331-3"];
     [eventoNotificacionesDesdeAhora sendEventWithCategory:@"uiAction"
                                                withAction:@"Revelar Notificaciones"
                                                 withLabel:@"Revelo desde Speaker"
