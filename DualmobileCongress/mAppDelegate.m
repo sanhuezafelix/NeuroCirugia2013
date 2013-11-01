@@ -52,7 +52,7 @@ static NSString *const kStoreName = @"Congresos.sqlite";
         NSDictionary *defaultValues = [NSDictionary dictionaryWithObjectsAndKeys:
                                        [NSNumber numberWithFloat:5.0], @"kIntervaloHoraSincro",
                                        
-                                       [NSNumber numberWithFloat:20.0], @"kIntervaloHoraNoSincro",
+                                       [NSNumber numberWithFloat:1.0], @"kIntervaloHoraNoSincro",
                                        [NSNumber numberWithBool:YES], @"kAutorizadorSincronizacion",
                                        [NSNumber numberWithBool:YES], @"kPrimeraSincro",
                                        
@@ -139,14 +139,14 @@ static NSString *const kStoreName = @"Congresos.sqlite";
     NSURL *applicationDocumentsDirectory = [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
     NSURL *storeURL = [applicationDocumentsDirectory URLByAppendingPathComponent:kStoreName];
     
-    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
-        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Congresos2" ofType:@"sqlite"]];
-        NSError* err = nil;
-        
-        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
-            NSLog(@"Oops, could copy preloaded data");
-    }
-}
+//    if (![[NSFileManager defaultManager] fileExistsAtPath:[storeURL path]]) {
+//        NSURL *preloadURL = [NSURL fileURLWithPath:[[NSBundle mainBundle] pathForResource:@"Congresos2" ofType:@"sqlite"]];
+//        NSError* err = nil;
+//        
+//        if (![[NSFileManager defaultManager] copyItemAtURL:preloadURL toURL:storeURL error:&err]) {
+//            NSLog(@"Oops, could copy preloaded data");
+//    }
+//}
     NSDictionary *options = @{
                               NSInferMappingModelAutomaticallyOption : @(YES),
                               NSMigratePersistentStoresAutomaticallyOption: @(YES)
